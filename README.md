@@ -12,4 +12,4 @@ From spring to winter, dig with Hans through the layers of the world - from unde
 
 Hans, a gardener in a cemetery, performs his daily tending tasks until one day, following a red string, he digs a hole and discovers a passage to an underground world. From spring to winter, he travels through four layers - underworld, roots, surface, sky - encountering the living and non-living that inhabit each. At every step, he faces the same dilemma : does this moment ask for his action, or simply for his presence? 
 
-![Overview](./assets/images/2026-05-19-scenario.png)
+![Graybox](./assets/images/2026-05-20-greyboxing.png)
