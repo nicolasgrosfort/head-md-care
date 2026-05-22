@@ -129,7 +129,7 @@ Material:
     - _normalStrengh: 0.0001
     m_Colors:
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
-    - _Color: {r: 32, g: 0, b: 23.689259, a: 1}
+    - _Color: {r: 102.75576, g: 0, b: 76.06899, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _GlassColor: {r: 1, g: 1, b: 1, a: 1}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
