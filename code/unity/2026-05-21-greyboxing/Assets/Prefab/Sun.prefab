@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 6550629337071486432}
   - component: {fileID: 7643607398412132464}
   m_Layer: 0
-  m_Name: Point Light
+  m_Name: Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -175,7 +175,7 @@ GameObject:
   - component: {fileID: 6951521536206151554}
   - component: {fileID: 8883249004995744565}
   m_Layer: 0
-  m_Name: Sphere
+  m_Name: Sun
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
