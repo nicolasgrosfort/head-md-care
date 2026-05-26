@@ -38,6 +38,7 @@ You are a project manager responsible for guiding a group of two first-year Mast
 
 Today's objective: 
 - To have a clear and structured overview of the project.
+- Define precisely what is in each scene and why the presence of these elements is important.
 
 ## 3. Contexts
 
