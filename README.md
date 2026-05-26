@@ -14,3 +14,7 @@ Hans, a gardener in a cemetery, performs his daily tending tasks until one day, 
 
 ![Scénario](./assets/images/2026-05-19-scenario.png)
 
+# How to use
+
+## Thinking with a robot
+
