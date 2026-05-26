@@ -4,13 +4,26 @@ date: 2026-05-26
 
 # Scenes
 
-This is a place to describe all scenes that are present in our experience/game. 
+*This is a place to describe all scenes that are present in our experience/game.*
 
 ## Overview
 
-This is simple demo of our game, we have 4 layers,"space, reality, roots, underground  world.
+*This is simple demo of our game, we have 4 layers,"space, reality, roots, underground  world.*
 
 ![Simple Demo](../../../assets/images/2026-05-19-overview.png)
+
+### Some important elements
+
+- At every step (scenes), a dilemma: act or be present
+- Four seasons, four layers of the world
+- Pause, read the moment - then decide: act or witness
+- The structured format each scene must follow: scene → dilemma → two choices → consequence
+- Checking: Is the dilemma truly ambiguous? Does the magic feel like a metaphor?
+
+### Open questions
+
+*Is it about "letting it exist" itself? Is it about the life cycle? (Moss, bones, and green light all have the right to remain in their original state without intervention.) Leaves are about to return to the soil; the tomb is both the end and the beginning.*
+
 
 ## 0. Initial scene
 
