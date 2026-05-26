@@ -6,6 +6,7 @@ A space intended for robots. Designed to be used with a CLI AI tool.
 
 `/memory`:  a history of conversations with the robot
 `/context`: the various pieces of information useful for situating the context of the project
+`/examples`: a collection of projects that align with our project, and that we can use as references
 
 # Instructions
 
@@ -81,4 +82,3 @@ Apply the reverse interview methodology. This means you should act like a mentor
 *Examples of what constitutes a good response from the robot*
 
 ...
-

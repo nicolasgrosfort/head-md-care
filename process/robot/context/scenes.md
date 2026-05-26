@@ -1,0 +1,26 @@
+---
+date: 2026-05-26
+---
+
+# Scenes
+
+This is a place to describe all scenes that are present in our experience/game. 
+
+## Overview
+
+This is simple demo of our game, we have 4 layers,"space, reality, roots, underground  world 
+
+![Simple Demo](../../../assets/images/2026-05-19-overview.png)
+
+## 0. Initial scene
+
+This show a tomb ,a tree and a red string which could entrance the underground world. The dilemma  is the tomb cavered by moss,user as a gardener shuld clean it, but if user use a high-pressure water gun to clean , the moss grow more.
+
+![Initial scene](../../../assets/images/2026-05-26-sketch-initial-scene.png)
+
+## 1. Underworld
+
+This represents the first level. The player is discovering a world underground, which contains tombs, maybe a leaf tomb, which represents the tomb of life and nature. We can see the red string, but it is partially hidden and covered by soil, bones, dust, etc. (to be defined).
+
+![Underworld sketch](../../../assets/images/2026-05-26-sketch-underworld.jpeg)
+![Underworld greybox](../../../assets/images/2026-05-22-greyboyxing-underworld.png)
