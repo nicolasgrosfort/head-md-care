@@ -67,9 +67,28 @@ We want the user to be as present as possible, attentive, alert, and to read the
 
 ## 1. Initial scene
 
+### Environment
 
+The player is in the cemetery of kings. It is spring. Leaves drift through the air, catching the light as they turn - slow, luminous, almost alive. The grass is green and abundant.
 
-This show a tomb ,a tree and a red string which could entrance the underground world. The dilemma  is the tomb cavered by moss,user as a gardener shuld clean it, but if user use a high-pressure water gun to clean , the moss grow more.
+| Plan         | Elements                                                                                                                           |
+| ------------ | ---------------------------------------------------------------------------------------------------------------------------------- |
+| `Foreground` | An ancient tomb covered in moss. An epitaph is engraved in unknown characters - the language of nature, unintelligible to a human. |
+| `Midground`  | A visible path. Other tombs scattered around.                                                                                      |
+| `Background` | A yew tree. Other trees in the distance.                                                                                           |
+
+### Interaction
+
+The player can interact freely with the environment. The scene reveals itself gradually - through patience or touch. A red string, hidden beneath the grass, connects the tomb to the yew tree and leads the way forward. Nature resists interference: the more the player disturbs it, the stronger it pushes back.
+
+| Action               | Description                                                                                                         | Input |
+| -------------------- | ------------------------------------------------------------------------------------------------------------------- | ----- |
+| `Do nothing`         | A gust of wind moves the grass and reveals the red string.                                                          | -     |
+| `Touch the grass`    | Moves the grass aside, as if pushed by hand. Reveals the red string and allows the player to follow it to the tree. | Drag  |
+| `Touch the string`   | Pulling on it brings the camera closer to the tree.                                                                 | Drag  |
+| `Remove the stones`  | Reveals a tunnel beneath the tree. Moves to the next scene.                                                         | Drag  |
+| `Tear the moss`      | Reveals the epitaph - incomprehensible. The more moss is torn, the faster it grows back.                            | Drag  |
+| `Pick up the leaves` | Dragging a leaf off screen removes it. The tree slowly withers and dies.                                            | Drag  |
 
 ![](2026-05-26-sketch-initial.png)
 
