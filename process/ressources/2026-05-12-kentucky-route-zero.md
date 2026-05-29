@@ -1,3 +1,9 @@
+---
+date: 2026-05-12
+url: https://kentuckyroutezero.com
+description: A slow, contemplative adventure game.
+why: Visual and narrative reference. Slow, contemplative.
+---
 # Images
 
 ![Kentucky Route Zero](../../assets/images/2026-05-12-kentucky-route-zero-1.webp)

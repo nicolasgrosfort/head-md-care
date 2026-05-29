@@ -4,7 +4,6 @@ url: https://www.terrestres.org/2018/10/14/la-theorie-de-la-fiction-panier/
 description: Drawing on all the resources of the imagination and against the grain of a dominant storytelling that glorifies the Hero, feminist writer Ursula K. Le Guin explores, in this 1986 text, other narrative possibilities for gatherers of stories and wild oats.
 why: Challenges traditional narrative structures and offers a new perspective on storytelling that aligns with our themes of care, vulnerability, and the human experience. Le Guin's idea of the "carrier bag" as a narrative form that holds stories and meanings rather than glorifying heroic action resonates with our desire to create a game that emphasizes connection, empathy, and the richness of everyday life.
 ---
-
 # Notes
 
 In the Palaeolithic, Neolithic and prehistoric era, between 65 and 80% of ==what human beings ate in those regions was gathered==; meat constituted the main diet only in the extreme Arctic.

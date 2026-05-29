@@ -4,7 +4,6 @@ url: https://vge.swisscovery.slsp.ch/discovery/fulldisplay?context=L&vid=41SLSP_
 description: Historical facts and milestones about the Plainpalais cemetery
 why: This resource provides historical context about the Plainpalais cemetery, which is the setting for our game. Understanding the history and significance of this location will help us create a more immersive and meaningful experience for players.
 ---
-
 # Notes
 
 ## Introduction

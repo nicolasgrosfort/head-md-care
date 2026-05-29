@@ -4,7 +4,6 @@ url: https://www.youtube.com/watch?v=RQF6s8NgeLU
 description: Care, how it operates in the world. Necessary for its habitability. The world is not liveable. It is only liveable because of care. Everyone needs care, but not everyone can procure it for themselves.
 why: This is relevant to our project as it provides a philosophical framework for understanding care and its implications for our game design.
 ---
-
 # Notes
 
 ## Autonomy and vulnerability — ==Paul Ricoeur==
