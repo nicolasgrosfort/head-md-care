@@ -47,6 +47,7 @@ The changing seasons make interaction with the red thread increasingly difficult
 | `Summer` | Chromatic aberration | 50 → 75       |
 | `Fall`   | Desaturated          | 25 → 50       |
 | `Winter` | Monochrome           | 0 → 25        |
+
 If the player does nothing, nature will replenish its energy on its own.
 
 ### Scene structure
