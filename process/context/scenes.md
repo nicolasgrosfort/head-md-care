@@ -88,7 +88,7 @@ Once found, they can pull it to advance the camera to the next scene. And so on.
 
 ## 1. Initial scene
 
-![Initial scene](2026-05-26-sketch-initial.png)
+![Initial scene](../../assets/images/2026-05-26-sketch-initial.png)
 
 ### Environment
 
@@ -135,22 +135,22 @@ The red string is no longer visible. The player must find it by interacting with
 # 3. Soil
 
  [To be defined]
-![](2026-05-26-sketch-soil.png)
+![](../../assets/images/2026-05-26-sketch-soil.png)
 
 # 4. Earth
 
  [To be defined]
 
-![](2026-05-26-sketch-earth.png)
+![](../../assets/images/2026-05-26-sketch-earth.png)
 
 # 5. Space
 
  [To be defined]
 
-![](2026-05-22-greyboyxing-space.png)
+![](../../assets/images/2026-05-22-greyboyxing-space.png)
 
 # 6. Portal
 
  [To be defined]
 
-![](2026-05-22-greyboyxing-portal.png)
+![](../../assets/images/2026-05-22-greyboyxing-portal.png)

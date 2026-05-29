@@ -10,4 +10,4 @@ All versions of Isle of the Dead depict a desolate and rocky islet seen across a
 
 # Images
 
-![](2026-05-06-isle-of-death.jpg)
+![Isle of the Dead](../../assets/images/2026-05-06-isle-of-death.jpg)

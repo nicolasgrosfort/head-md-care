@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "process/context/assets.md",
+                "file": "readme.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": true,
@@ -28,7 +28,7 @@
                 }
               },
               "icon": "lucide-file",
-              "title": "assets"
+              "title": "readme"
             }
           }
         ]
@@ -206,59 +206,23 @@
       "workspaces:Manage workspace layouts": false
     }
   },
-  "floating": {
-    "id": "769353e96f59a704",
-    "type": "floating",
-    "children": [
-      {
-        "id": "8cea9d61d1b30877",
-        "type": "window",
-        "children": [
-          {
-            "id": "827d061252bd5d8a",
-            "type": "tabs",
-            "children": [
-              {
-                "id": "94bd6c3df8373659",
-                "type": "leaf",
-                "state": {
-                  "type": "image",
-                  "state": {
-                    "file": "assets/images/2026-05-21-scenario.png"
-                  },
-                  "icon": "lucide-image",
-                  "title": "2026-05-21-scenario"
-                }
-              }
-            ]
-          }
-        ],
-        "direction": "vertical",
-        "x": -104,
-        "y": -1080,
-        "width": 1920,
-        "height": 1080,
-        "maximize": false,
-        "zoom": 0
-      }
-    ]
-  },
   "active": "d3a1552d480f14fd",
   "lastOpenFiles": [
-    "process/context/art-direction.md",
-    "process/code/unity/2026-05-21-greyboxing/Temp/ADB-Refreshaaa927fe98ab542c99c5576effcd71d4",
-    "process/code/unity/2026-05-21-greyboxing/Temp/ADB-Refresh41775dee7452e420689e5e24433fa0dc",
-    "process/code/unity/2026-05-21-greyboxing/Library/Artifacts/13/13d7ceb82a557672c7df354e7f6cbee2",
-    "process/code/unity/2026-05-21-greyboxing/Library/Artifacts/2c/2caddd7de9d150b81654f3ddffac828d",
-    "process/code/unity/2026-05-21-greyboxing/Library/Artifacts/06/06f6377e661db05b7e5f0f55a07929e7",
-    "process/code/unity/2026-05-21-greyboxing/Library/Artifacts/60/60291ccc7912006927f19c41e666d9cc",
-    "process/code/unity/2026-05-21-greyboxing/Library/Artifacts/d1/d19014a59631d64cb3da5458240a0004",
-    "process/code/unity/2026-05-21-greyboxing/Library/Artifacts/fc/fc436ffb7eca59db7459e813a12da377",
-    "process/code/unity/2026-05-21-greyboxing/Library/Artifacts/4c/4ceed063df763bd338b986a4948b2c1f",
-    "process/code/unity/2026-05-21-greyboxing/Library/Artifacts/f1/f1bc4ecbd09b1c49167e38c076abcf08",
-    "process/context/scenes.md",
+    "process/code/unity/2026-05-21-greyboxing/Temp/obj/Assembly-CSharp-Editor/Assembly-CSharp-Editor.GeneratedMSBuildEditorConfig.editorconfig",
+    "process/code/unity/2026-05-21-greyboxing/Temp/obj/Assembly-CSharp-Editor/Assembly-CSharp-Editor.csproj.AssemblyReference.cache",
+    "process/code/unity/2026-05-21-greyboxing/Temp/obj/Assembly-CSharp-Editor/Assembly-CSharp-Editor.assets.cache",
+    "process/code/unity/2026-05-21-greyboxing/Temp/obj/Assembly-CSharp/Assembly-CSharp.GeneratedMSBuildEditorConfig.editorconfig",
+    "process/code/unity/2026-05-21-greyboxing/Temp/obj/Assembly-CSharp/Assembly-CSharp.csproj.AssemblyReference.cache",
+    "process/code/unity/2026-05-21-greyboxing/Temp/bin/Debug",
+    "process/code/unity/2026-05-21-greyboxing/Temp/bin",
+    "process/code/unity/2026-05-21-greyboxing/Temp/obj/Assembly-CSharp/Assembly-CSharp.assets.cache",
+    "process/code/unity/2026-05-21-greyboxing/Temp/obj/Assembly-CSharp-Editor/project.nuget.cache",
+    "process/code/unity/2026-05-21-greyboxing/Temp/obj/Assembly-CSharp-Editor/project.assets.json",
+    "process/code/unity/2026-05-21-greyboxing/Temp/obj/Assembly-CSharp-Editor/Assembly-CSharp-Editor.csproj.nuget.g.targets",
     "process/context/assets.md",
     "assets/images/2026-05-21-scenario.png",
+    "process/context/art-direction.md",
+    "process/context/scenes.md",
     "process/robot/memory/2026-05-26-intial-and-underground-scene.md",
     "process/robot/memory/2026-05-29-scenes-structure-and-mechanics.md",
     "assets/images/2026-05-26-sketch-underworld.jpeg",
@@ -289,7 +253,6 @@
     "process/ressources/2026-05-12-porteus.md",
     "process/ressources/readme.md",
     "process/ressources/The Carrier Bag Theory of Fiction.md",
-    "process/ressources/Passage (jeux vidéo).md",
-    "process/ressources/Renouveler le paysage funéraire.md"
+    "process/ressources/Passage (jeux vidéo).md"
   ]
 }
