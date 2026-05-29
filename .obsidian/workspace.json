@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "readme.md",
+                "file": "code/readme.md",
                 "mode": "source",
                 "source": false
               },
@@ -94,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "readme.md",
+                "file": "code/readme.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -113,7 +113,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "readme.md",
+                "file": "code/readme.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
@@ -156,13 +156,25 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "readme.md",
+                "file": "code/readme.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
               "title": "Outline of readme"
+            }
+          },
+          {
+            "id": "ae1b49d10520acc2",
+            "type": "leaf",
+            "state": {
+              "type": "footnotes",
+              "state": {
+                "file": "code/readme.md"
+              },
+              "icon": "lucide-file-signature",
+              "title": "Footnotes"
             }
           }
         ]
@@ -180,12 +192,13 @@
       "daily-notes:Open today's daily note": false,
       "templates:Insert template": false,
       "command-palette:Open command palette": false,
-      "bases:Create new base": false
+      "bases:Create new base": false,
+      "workspaces:Manage workspace layouts": false
     }
   },
   "active": "d3a1552d480f14fd",
   "lastOpenFiles": [
-    "process/readme.md",
-    "readme.md"
+    "readme.md",
+    "process/readme.md"
   ]
 }
