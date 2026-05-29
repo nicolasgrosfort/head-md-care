@@ -32,6 +32,36 @@
             }
           }
         ]
+      },
+      {
+        "id": "2b8fd9992b57f9b5",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "f734af2c111971bd",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "process/context/scenes.md",
+                "mode": "source",
+                "source": false,
+                "backlinks": true,
+                "backlinkOpts": {
+                  "collapseAll": false,
+                  "extraContext": false,
+                  "sortOrder": "alphabetical",
+                  "showSearch": false,
+                  "searchQuery": "",
+                  "backlinkCollapsed": false,
+                  "unlinkedCollapsed": true
+                }
+              },
+              "icon": "lucide-file",
+              "title": "scenes"
+            }
+          }
+        ]
       }
     ],
     "direction": "vertical"
@@ -88,7 +118,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 374.5
+    "width": 374.5,
+    "collapsed": true
   },
   "right": {
     "id": "7f0cef7a8c8dae81",
@@ -206,7 +237,7 @@
       "workspaces:Manage workspace layouts": false
     }
   },
-  "active": "d3a1552d480f14fd",
+  "active": "f734af2c111971bd",
   "lastOpenFiles": [
     "assets/images/2026-05-26-sketch-underworld.jpeg",
     "assets/images/2026-05-26-sketch-initial.png",
