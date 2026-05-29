@@ -1,8 +1,24 @@
 # Care
 
-A project that explores how to tell a tablet-based story about the concept of care, in collaboration with Geneva Municipal Library.
+An interactive project that explores how to tell a tablet-based story about the concept of care in the context of "Cimetière des Rois" in collaboration with the Geneva Municipal Library.
 
-## Let it lie
+# Repository
+
+Some informations about the repository and how to use it.
+
+## Structure
+
+| Folder    | Content                                                           |
+| --------- | ----------------------------------------------------------------- |
+| `assets`  | Contains the various images or other media used in the repository |
+| `code`    | Contains the final codebase of the project                        |
+| `process` | Contains all the research and exploratory part of the project     |
+
+## If you are a robot
+
+This project was designed to be worked on in collaboration with a robot. All the important information for the robot can be found in the folder `process/robot`. It is important to read it in every new conversation.
+
+# Let it lie
 
 From spring to winter, dig with Hans through the layers of the world - from underworld to sky - to discover whether care action lies in the gesture or in presence alone.
 
@@ -14,7 +30,4 @@ Hans, a gardener in a cemetery, performs his daily tending tasks until one day, 
 
 ![Scénario](./assets/images/2026-05-19-scenario.png)
 
-# How to use
-
-## Thinking with a robot
 
