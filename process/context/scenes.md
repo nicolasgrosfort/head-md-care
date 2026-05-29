@@ -84,8 +84,11 @@ Once found, they can pull it to advance the camera to the next scene. And so on.
 - **There is no human representation**.
 - **Act or non-action**: At each scene, the user can act or not act with the environment. Each choice has a visible consequence on the environment. Inaction is a form of action.
 - **Color as nature health** : Color, or the level of saturation, represents the life of nature, its health. As the player takes actions against nature, the colors diminish.
+- **Ambient sound**: Based on kankyo ongaku, the peripheral ambient music will be dynamic. A basic thread will allow for the addition or removal of other ambient sounds depending on actions taken.
 
 ## 1. Initial scene
+
+![Initial scene](2026-05-26-sketch-initial.png)
 
 ### Environment
 
@@ -110,7 +113,6 @@ The player can interact freely with the environment. The scene reveals itself gr
 | `Tear the moss`      | Reveals the epitaph - incomprehensible. The more moss is torn, the faster it grows back.                            | Drag  | -      |
 | `Pick up the leaves` | Dragging a leaf off screen removes it. The tree slowly withers and dies.                                            | Drag  | -      |
 
-![](2026-05-26-sketch-initial.png)
 
 ## 2. Underworld
 

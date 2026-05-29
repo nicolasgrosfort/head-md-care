@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "process/robot/memory/2026-05-26-intial-and-underground-scene.md",
+                "file": "process/context/assets.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": true,
@@ -28,7 +28,7 @@
                 }
               },
               "icon": "lucide-file",
-              "title": "2026-05-26-intial-and-underground-scene"
+              "title": "assets"
             }
           }
         ]
@@ -206,11 +206,60 @@
       "workspaces:Manage workspace layouts": false
     }
   },
+  "floating": {
+    "id": "769353e96f59a704",
+    "type": "floating",
+    "children": [
+      {
+        "id": "8cea9d61d1b30877",
+        "type": "window",
+        "children": [
+          {
+            "id": "827d061252bd5d8a",
+            "type": "tabs",
+            "children": [
+              {
+                "id": "94bd6c3df8373659",
+                "type": "leaf",
+                "state": {
+                  "type": "image",
+                  "state": {
+                    "file": "assets/images/2026-05-21-scenario.png"
+                  },
+                  "icon": "lucide-image",
+                  "title": "2026-05-21-scenario"
+                }
+              }
+            ]
+          }
+        ],
+        "direction": "vertical",
+        "x": -104,
+        "y": -1080,
+        "width": 1920,
+        "height": 1080,
+        "maximize": false,
+        "zoom": 0
+      }
+    ]
+  },
   "active": "d3a1552d480f14fd",
   "lastOpenFiles": [
-    "process/robot/memory/2026-05-29-scenes-structure-and-mechanics.md",
-    "process/robot/memory/2026-05-26-intial-and-underground-scene.md",
     "process/context/scenes.md",
+    "process/context/assets.md",
+    "process/code/unity/2026-05-21-greyboxing/Temp/ProcessJobs",
+    "process/code/unity/2026-05-21-greyboxing/Library/EditorInstance.json",
+    "process/code/unity/2026-05-21-greyboxing/Temp/Burst/burst-aotdz2aj9e2.mtl",
+    "process/code/unity/2026-05-21-greyboxing/Temp/Burst/burst-aotzdu1q5y7.9jw",
+    "process/code/unity/2026-05-21-greyboxing/Temp/Burst/burst-aot0qh3euwt.myx",
+    "process/code/unity/2026-05-21-greyboxing/Temp/Burst/burst-aotuckk1kzu.g8i",
+    "process/code/unity/2026-05-21-greyboxing/Temp/Burst/burst-aotx37kfcv6.tra",
+    "process/code/unity/2026-05-21-greyboxing/Temp/Burst/burst-aot4yz3iqc1.8cx",
+    "process/code/unity/2026-05-21-greyboxing/Temp/Burst/burst-aot0qa1uij1.w1l",
+    "process/code/unity/2026-05-21-greyboxing/Temp/Burst/burst-aotp1quv11o.nci",
+    "assets/images/2026-05-21-scenario.png",
+    "process/robot/memory/2026-05-26-intial-and-underground-scene.md",
+    "process/robot/memory/2026-05-29-scenes-structure-and-mechanics.md",
     "assets/images/2026-05-26-sketch-underworld.jpeg",
     "assets/images/2026-05-26-sketch-initial.png",
     "assets/images/2026-05-26-sketch-soil.png",
@@ -223,7 +272,6 @@
     "process/ressources/2026-05-xx-isle-of-death.md",
     "assets/images/2026-05-06-isle-of-death.jpg",
     "assets/images/2026-05-06-iles-aux-morts.jpg",
-    "assets/images/2026-05-06-iles-aux-morts-1.jpg",
     "process/robot/readme.md",
     "process/journal/2026-04-29-group-formation-tree-concept.md",
     "process/context/readme.md",
@@ -242,17 +290,6 @@
     "process/ressources/The Carrier Bag Theory of Fiction.md",
     "process/ressources/Passage (jeux vidéo).md",
     "process/ressources/Renouveler le paysage funéraire.md",
-    "process/ressources/Une visite du cimetière de Plainpalais.md",
-    "process/ressources/Ethique du care.md",
-    "process/ressources/2026-05-12-kentucky-route-zero",
-    "process/ressources/2026-05-12-the-werlit-incident",
-    "process/ressources/2026-05-19-hohokum",
-    "process/ressources/2026-05-12-superhot",
-    "process/ressources/2026-05-12-porteus",
-    "process/robot/memory/2026-05-26-intial-and-underground-scene",
-    "process/robot/memory",
-    "memory/2026-05-26-intial-and-underground-scene",
-    "memory",
-    "process/ressources/2026-05-12-my-exercice"
+    "process/ressources/Une visite du cimetière de Plainpalais.md"
   ]
 }
