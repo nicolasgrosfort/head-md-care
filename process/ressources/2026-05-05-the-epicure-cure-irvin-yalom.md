@@ -1,9 +1,8 @@
 ---
-
 date: 2026-05-07
-url: "https://www.logique-emotionnelle.com/le-jardin-depicure-de-irvin-d-yalom/"
-description: "Reading notes on Irvin Yalom's work: The Epicurus Cure"
-why: "This book is relevant to our project because it explores themes of confronting death, savoring life, and the rippling effect of our actions, which align with the themes we want to explore in our game."
+url: https://www.logique-emotionnelle.com/le-jardin-depicure-de-irvin-d-yalom/
+description: Reading notes on Irvin Yalom's work: The Epicurus Cure
+why: This book is relevant to our project because it explores themes of confronting death, savoring life, and the rippling effect of our actions, which align with the themes we want to explore in our game.
 ---
 
 # Images
