@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "process/context/scenes.md",
+                "file": "process/journal/2026-05-26-context-engineering-setup.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": true,
@@ -28,37 +28,7 @@
                 }
               },
               "icon": "lucide-file",
-              "title": "scenes"
-            }
-          }
-        ]
-      },
-      {
-        "id": "f36976a155115399",
-        "type": "tabs",
-        "children": [
-          {
-            "id": "2ff148e7985fba8d",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "process/robot/readme.md",
-                "mode": "source",
-                "source": false,
-                "backlinks": true,
-                "backlinkOpts": {
-                  "collapseAll": false,
-                  "extraContext": false,
-                  "sortOrder": "alphabetical",
-                  "showSearch": false,
-                  "searchQuery": "",
-                  "backlinkCollapsed": false,
-                  "unlinkedCollapsed": true
-                }
-              },
-              "icon": "lucide-file",
-              "title": "readme"
+              "title": "2026-05-26-context-engineering-setup"
             }
           }
         ]
@@ -118,7 +88,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 205.5
+    "width": 532.5
   },
   "right": {
     "id": "7f0cef7a8c8dae81",
@@ -236,19 +206,37 @@
       "workspaces:Manage workspace layouts": false
     }
   },
-  "active": "2ff148e7985fba8d",
+  "active": "d3a1552d480f14fd",
   "lastOpenFiles": [
+    "process/journal/2026-05-22-greyboxing-complete-yarn-spinner.md",
+    "process/journal/2026-05-21-thread-entry-soil-research.md",
+    "process/journal/2026-05-20-greyboxing-start.md",
+    "process/journal/2026-05-19-presentation-thread-mechanic-borges.md",
+    "process/journal/2026-05-18-three-concepts-game-structure.md",
+    "process/journal/2026-05-15-verena-meeting-shaders.md",
+    "process/journal/2026-05-13-first-unity-build-jean-charles.md",
+    "process/journal/2026-05-12-unity-introduction-seve.md",
+    "process/journal/2026-05-08-let-it-lie-narrative.md",
+    "process/journal/2026-05-07-core-thesis-wu-wei.md",
+    "process/journal/2026-05-06-gardener-perspective.md",
+    "process/journal/2026-05-05-library-meeting-yew-trees.md",
+    "process/journal/2026-05-04-two-types-of-care.md",
+    "process/journal/2026-05-03-ai-as-genie.md",
+    "process/journal/2026-05-01-miyawaki-botanical-garden.md",
+    "process/journal/2026-04-30-storytelling-intro-borges.md",
+    "process/journal/2026-04-29-group-formation-tree-concept.md",
+    "process/journal/2026-04-28-exposition-visite-cimetiere.md",
+    "process/journal/2026-04-27-workshop-introduction.md",
+    "process/journal/2026-05-26-context-engineering-setup.md",
+    "process/journal/readme.md",
+    "process/robot/readme.md",
+    "process/context/readme.md",
     "process/context/scenes.md",
     "process/context/brief.md",
-    "process/journal/readme.md",
     "process/ressources/readme.md",
-    "process/robot/readme.md",
-    "process/readme.md",
-    "readme.md",
     "assets/images/2026-05-26-underworld.png",
     "assets/images/2026-05-22-greyboyxing.gif",
     "assets/images/2026-05-21-scenario.png",
-    "assets/images/2026-05-21.png",
-    "code/readme.md"
+    "assets/images/2026-05-21.png"
   ]
 }
