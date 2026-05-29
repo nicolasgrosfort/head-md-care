@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "process/journal/2026-05-26-context-engineering-setup.md",
+                "file": "process/ressources/readme.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": true,
@@ -28,7 +28,7 @@
                 }
               },
               "icon": "lucide-file",
-              "title": "2026-05-26-context-engineering-setup"
+              "title": "readme"
             }
           }
         ]
@@ -88,7 +88,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 532.5
+    "width": 241.5
   },
   "right": {
     "id": "7f0cef7a8c8dae81",
@@ -208,6 +208,13 @@
   },
   "active": "d3a1552d480f14fd",
   "lastOpenFiles": [
+    "process/ressources/2026-05-05-the-epicure-cure-irvin-yalom.md",
+    "process/journal/2026-05-26-context-engineering-setup.md",
+    "assets/images/2026-05-05-the-epicure-cure-irvin-yalom.webp",
+    "assets/images/2026-05-07-le-jardin-d-epicure-de-irvin-d-yalom.webp",
+    "process/ressources/Le jardin d'Épicure » de Irvin D. Yalom.md",
+    "process/ressources copy/readme.md",
+    "process/ressources copy",
     "process/journal/2026-05-22-greyboxing-complete-yarn-spinner.md",
     "process/journal/2026-05-21-thread-entry-soil-research.md",
     "process/journal/2026-05-20-greyboxing-start.md",
@@ -227,13 +234,8 @@
     "process/journal/2026-04-29-group-formation-tree-concept.md",
     "process/journal/2026-04-28-exposition-visite-cimetiere.md",
     "process/journal/2026-04-27-workshop-introduction.md",
-    "process/journal/2026-05-26-context-engineering-setup.md",
     "process/journal/readme.md",
     "process/robot/readme.md",
-    "process/context/readme.md",
-    "process/context/scenes.md",
-    "process/context/brief.md",
-    "process/ressources/readme.md",
     "assets/images/2026-05-26-underworld.png",
     "assets/images/2026-05-22-greyboyxing.gif",
     "assets/images/2026-05-21-scenario.png",
