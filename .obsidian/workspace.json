@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "process/ressources/2026-05-18-passage.md",
+                "file": "process/context/scenes.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": true,
@@ -28,7 +28,7 @@
                 }
               },
               "icon": "lucide-file",
-              "title": "2026-05-18-passage"
+              "title": "scenes"
             }
           }
         ]
@@ -63,7 +63,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "",
+                "query": "wu we",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -88,7 +88,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 462.5
+    "width": 374.5
   },
   "right": {
     "id": "7f0cef7a8c8dae81",
@@ -208,6 +208,23 @@
   },
   "active": "d3a1552d480f14fd",
   "lastOpenFiles": [
+    "assets/images/2026-05-26-sketch-underworld.jpeg",
+    "assets/images/2026-05-26-sketch-initial.png",
+    "assets/images/2026-05-26-sketch-soil.png",
+    "assets/images/2026-05-26-sketch-earth.png",
+    "process/context/scenes.md",
+    "assets/images/2026-05-22-greyboyxing-portal.png",
+    "assets/images/2026-05-22-greyboyxing-space.png",
+    "assets/images/2026-05-22-greyboyxing-initial.png",
+    "process/ressources/2026-05-06-isle-of-death.md",
+    "process/ressources/2026-05-18-passage.md",
+    "process/ressources/2026-05-xx-isle-of-death.md",
+    "assets/images/2026-05-06-isle-of-death.jpg",
+    "assets/images/2026-05-06-iles-aux-morts.jpg",
+    "assets/images/2026-05-06-iles-aux-morts-1.jpg",
+    "process/robot/readme.md",
+    "process/journal/2026-04-29-group-formation-tree-concept.md",
+    "process/context/readme.md",
     "process/ressources/2026-05-16-a-visit-to-the-plainpalais-cemetery.md",
     "process/ressources/2026-05-12-the-werlit-incident.md",
     "process/ressources/2026-05-12-superhot.md",
@@ -218,19 +235,9 @@
     "process/ressources/2026-05-05-the-epicure-cure-irvin-yalom.md",
     "process/ressources/2026-05-02-the-carrier-bag-theory-of-fiction.md",
     "process/ressources/2026-05-01-ethics-of-care.md",
-    "process/ressources/2026-05-18-passage.md",
     "assets/images/2026-05-12-proteus-1.jpg",
-    "assets/images/2026-05-12-proteus-2.jpg",
-    "assets/images/2026-05-12-proteus-3.jpg",
     "process/ressources/2026-05-12-porteus.md",
     "process/ressources/readme.md",
-    "assets/images/2026-05-19-hohokum.webp",
-    "assets/images/2026-05-12-the-werlit-incident-3.png",
-    "assets/images/2026-05-12-the-werlit-incident-2.png",
-    "assets/images/2026-05-12-the-werlit-incident-1.png",
-    "assets/images/2026-05-12-superhot-3.webp",
-    "assets/images/2026-05-12-superhot-2.webp",
-    "assets/images/2026-05-12-superhot-1.jpeg",
     "process/ressources/The Carrier Bag Theory of Fiction.md",
     "process/ressources/Passage (jeux vidéo).md",
     "process/ressources/Renouveler le paysage funéraire.md",
@@ -246,13 +253,6 @@
     "memory/2026-05-26-intial-and-underground-scene",
     "memory",
     "process/ressources/2026-05-12-my-exercice",
-    "presskit/readme.md",
-    "code/readme.md",
-    "process/robot/readme.md",
-    "process/readme.md",
-    "readme.md",
-    "process/journal/2026-05-26-context-engineering-setup.md",
-    "process/ressources/Le jardin d'Épicure » de Irvin D. Yalom.md",
-    "process/ressources copy/readme.md"
+    "presskit/readme.md"
   ]
 }
