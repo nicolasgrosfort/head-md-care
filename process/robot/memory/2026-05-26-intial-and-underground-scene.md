@@ -1,4 +1,6 @@
-
+---
+date: 2026-05-26
+---
 # Exploration of the initial and underground scene
 
 ![Summary pic](../../../assets/images/2026-05-21-scenario.png)

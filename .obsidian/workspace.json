@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "process/context/scenes.md",
+                "file": "process/robot/memory/2026-05-26-intial-and-underground-scene.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": true,
@@ -28,7 +28,7 @@
                 }
               },
               "icon": "lucide-file",
-              "title": "scenes"
+              "title": "2026-05-26-intial-and-underground-scene"
             }
           }
         ]
@@ -88,8 +88,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 374.5,
-    "collapsed": true
+    "width": 374.5
   },
   "right": {
     "id": "7f0cef7a8c8dae81",
@@ -209,11 +208,13 @@
   },
   "active": "d3a1552d480f14fd",
   "lastOpenFiles": [
+    "process/robot/memory/2026-05-29-scenes-structure-and-mechanics.md",
+    "process/robot/memory/2026-05-26-intial-and-underground-scene.md",
+    "process/context/scenes.md",
     "assets/images/2026-05-26-sketch-underworld.jpeg",
     "assets/images/2026-05-26-sketch-initial.png",
     "assets/images/2026-05-26-sketch-soil.png",
     "assets/images/2026-05-26-sketch-earth.png",
-    "process/context/scenes.md",
     "assets/images/2026-05-22-greyboyxing-portal.png",
     "assets/images/2026-05-22-greyboyxing-space.png",
     "assets/images/2026-05-22-greyboyxing-initial.png",
@@ -236,7 +237,6 @@
     "process/ressources/2026-05-05-the-epicure-cure-irvin-yalom.md",
     "process/ressources/2026-05-02-the-carrier-bag-theory-of-fiction.md",
     "process/ressources/2026-05-01-ethics-of-care.md",
-    "assets/images/2026-05-12-proteus-1.jpg",
     "process/ressources/2026-05-12-porteus.md",
     "process/ressources/readme.md",
     "process/ressources/The Carrier Bag Theory of Fiction.md",
@@ -253,7 +253,6 @@
     "process/robot/memory",
     "memory/2026-05-26-intial-and-underground-scene",
     "memory",
-    "process/ressources/2026-05-12-my-exercice",
-    "presskit/readme.md"
+    "process/ressources/2026-05-12-my-exercice"
   ]
 }
