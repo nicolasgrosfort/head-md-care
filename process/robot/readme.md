@@ -2,19 +2,17 @@
 
 A space intended for robots. Designed to be used with a CLI AI tool.
 
-# Folder structure
-
-`/memory`:  a history of conversations with the robot
-`/context`: the various pieces of information useful for situating the context of the project
-`/examples`: a collection of projects that align with our project, and that we can use as references
-
+# Structure
+| Folder    | Content                                   |
+| --------- | ----------------------------------------- |
+| `memory/` | a history of conversations with the robot |
 # Instructions
 
 *Context engineering*
 
 How the robot should behave, the semantic territory of the project, the scope of the project, the structure of the expected responses, etc.
 
-## 0. Memory
+## 0. Memory
 
 *Explain how the robot keeps track of conversations over time*
 
@@ -26,6 +24,7 @@ summary: [a summary of the conversation in 200 words or less]
 tags: [a list of keywords in the form of #tags]
 ```
 
+The file name must include today's date and a title representing what was discussed: `YYYY-MM-DD-summary-title`
 ## 1. Identity
 
 *Who the robot is, its role, its function, its anchoring, ...*
@@ -44,7 +43,7 @@ Today's objective:
 
 *Information about the brief and everything concerning the context in which the project takes place*
 
-Every important element for understanding the context can be found in the `/context` folder. It is important to read it in every new conversation.
+Every important element for understanding the context can be found in the `process/context` folder. It is important to read it in every new conversation.
 
 ## 4. Constraints
 
@@ -59,18 +58,11 @@ Every important element for understanding the context can be found in the `/cont
 
 ...
 
-## 6. Examples
+## 6. Ressources
 
 *Examples of projects that align perfectly with our project, and why*
 
-The various project examples are in the `/examples` folder. They adhere to the following structure:
-
-```md 
-creation: [date]
-strengths: [list of the strengths of the project]
-weaknesses: [list of the weaknesses of the project]
-screenshot: [images or gifs of the project]
-```
+The various project examples are in the `process/ressources` folder.
 
 ## 7. Output
 

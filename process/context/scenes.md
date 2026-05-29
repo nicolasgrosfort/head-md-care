@@ -1,7 +1,6 @@
 ---
-date: 2026-05-26
+création: 2026-05-26
 ---
-
 # Scenes
 
 *This is a place to describe all scenes that are present in our experience/game.*
