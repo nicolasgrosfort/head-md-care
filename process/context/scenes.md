@@ -43,10 +43,10 @@ The changing seasons make interaction with the red thread increasingly difficult
 
 | Season   | Color ambiant        | Nature health |
 | -------- | -------------------- | ------------- |
-| `Spring` | Vibrant              | 75 < 100      |
-| `Summer` | Chromatic dispection | 50 < 75       |
-| `Fall`   | Desaturated          | 25 < 50       |
-| `Winter` | Monochrome           | 0 < 25        |
+| `Spring` | Vibrant              | 75 → 100      |
+| `Summer` | Chromatic aberration | 50 → 75       |
+| `Fall`   | Desaturated          | 25 → 50       |
+| `Winter` | Monochrome           | 0 → 25        |
 If the player does nothing, nature will replenish its energy on its own.
 
 ### Scene structure
@@ -68,9 +68,7 @@ A red string embodies the link between life and death (and also between physical
 
 Finding the red thread is difficult (a bit like Where's Waldo?). The environment naturally hides it. The player can perform certain actions to discover it more easily.
 
-Once found, they can shoot it to advance the camera to the next scene. And so on.
-
-Depending on the season, it may be more or less difficult to progress and discover the thread.
+Once found, they can pull it to advance the camera to the next scene. And so on. Depending on the season, it may be more or less difficult to progress and discover the thread.
 
 ### Symbols and metaphors
 
@@ -103,43 +101,54 @@ The player is in the cemetery of kings. It is spring. Leaves drift through the a
 
 The player can interact freely with the environment. The scene reveals itself gradually - through patience or touch. A red string, hidden beneath the grass, connects the tomb to the yew tree and leads the way forward. Nature resists interference: the more the player disturbs it, the stronger it pushes back.
 
-| Action               | Description                                                                                                         | Input |
-| -------------------- | ------------------------------------------------------------------------------------------------------------------- | ----- |
-| `Do nothing`         | A gust of wind moves the grass and reveals the red string.                                                          | -     |
-| `Touch the grass`    | Moves the grass aside, as if pushed by hand. Reveals the red string and allows the player to follow it to the tree. | Drag  |
-| `Touch the string`   | Pulling on it brings the camera closer to the tree.                                                                 | Drag  |
-| `Remove the stones`  | Reveals a tunnel beneath the tree. Moves to the next scene.                                                         | Drag  |
-| `Tear the moss`      | Reveals the epitaph - incomprehensible. The more moss is torn, the faster it grows back.                            | Drag  |
-| `Pick up the leaves` | Dragging a leaf off screen removes it. The tree slowly withers and dies.                                            | Drag  |
+| Action               | Description                                                                                                         | Input | Impact |
+| -------------------- | ------------------------------------------------------------------------------------------------------------------- | ----- | ------ |
+| `Do nothing`         | A gust of wind moves the grass and reveals the red string.                                                          | -     | +      |
+| `Touch the grass`    | Moves the grass aside, as if pushed by hand. Reveals the red string and allows the player to follow it to the tree. | Drag  | o      |
+| `Touch the string`   | Pulling on it brings the camera closer to the tree.                                                                 | Drag  | o      |
+| `Remove the stones`  | Reveals a tunnel beneath the tree. Moves to the next scene.                                                         | Drag  | o      |
+| `Tear the moss`      | Reveals the epitaph - incomprehensible. The more moss is torn, the faster it grows back.                            | Drag  | -      |
+| `Pick up the leaves` | Dragging a leaf off screen removes it. The tree slowly withers and dies.                                            | Drag  | -      |
 
 ![](2026-05-26-sketch-initial.png)
 
 ## 2. Underworld
 
-This represents the first level. The player is discovering a world underground, which contains tombs, maybe a leaf tomb, which represents the tomb of life and nature. We can see the red string, but it is partially hidden and covered by soil, bones, dust, etc. (to be defined).
+### Environment
 
-There's a cold wind. The atmosphere is dark and cold. It's an abandoned place, a place no one has visited for a long time. The cold represents oblivion. The player enters this dark room. There is snow. The leaf on the tomb is illuminated; it's the only thing that is. The player must light the two torches in front of them to ward off the cold. Thus, moss grows back on the tomb, and life returns to this place of death. By lighting the torches, the player discovers the red string they are invited to follow and pull.
+The player is underground, in the kingdom of the dead. They arrive in the ancient temple of the "Cimetière des Rois" - the one that once stood at its entrance, facing the hospital. It has not disappeared; it has been buried. 
+
+The atmosphere is dark. No light, except for a single luminous leaf resting on the obelisk - a commemorative monument for the living, human and non-human alike. Its brightness reflects the player's actions in the previous scene. Stones fall from the ceiling. Tree roots break through, a reminder of where the player came from. 
+
+Giant earthworms occasionally emerge from the ground and watch. Bones lie scattered - seemingly human, but uncertain. The place abandoned. No one has been here for a long time. The cold represents oblivion.
+
+### Interactions
+
+The red string is no longer visible. The player must find it by interacting with the environment.
+
+[To be defined]
 
 ![Underworld greybox](../../assets/images/2026-05-22-greyboyxing-underworld.png)
 
 # 3. Soil
 
+ [To be defined]
 ![](2026-05-26-sketch-soil.png)
 
 # 4. Earth
 
-...
+ [To be defined]
 
 ![](2026-05-26-sketch-earth.png)
 
 # 5. Space
 
-...
+ [To be defined]
 
 ![](2026-05-22-greyboyxing-space.png)
 
 # 6. Portal
 
-...
+ [To be defined]
 
 ![](2026-05-22-greyboyxing-portal.png)
