@@ -1,0 +1,30 @@
+---
+date: 2026-05-26
+---
+# Exploration of the initial and underground scene
+
+![Summary pic](../../../assets/images/2026-05-21-scenario.png)
+
+# Step 1 - About initial scene
+
+![Initial pic and details](../../../assets/images/2026-05-26-initial-pic-and-details.png)
+
+## Details
+
+If users Pushing aside the weeds, they could see the red line. When the user long-presses and drags the red line, it will change from a curve to a straight line, and then the user follows the red line to the underground world. Like if the user is pulling the string. 
+
+![Red string](../../../assets/images/2026-05-26-redString-staue.jpg)
+
+# Step 2 - Underground
+
+Question : Should the part about coldness be added (representing snowy days)? Like an abandoned space? One that's been neglected?
+
+## Details
+Light up the lights to dispel the cold？Or use use the scene pasted in the following picture ?
+
+![Underground](../../../assets/images/2026-05-26-underworld.png)
+
+If user let leaves lie,vthe light of the glowing leaves will become brighter and brighter, and then the player can follow the red line back to the above-ground world, pass through the tomb and then pass through the gate of the planet.
+
+
+

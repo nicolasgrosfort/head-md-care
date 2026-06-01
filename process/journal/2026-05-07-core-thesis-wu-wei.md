@@ -1,0 +1,32 @@
+---
+date: 2026-05-07
+description: "Core thesis crystallized: fighting death diminishes care; three spatial levels defined; wú wéi introduced as the moral of the experience"
+---
+# Key decisions
+
+- **Three spatial levels of the story confirmed:** Underground / Ground surface / Above ground. (Directly becomes the 4-layer structure of the game.)
+- **Wú wéi as the moral of the experience:** Non-action in harmony with natural flow — introduced by Sabrina via Yi Jing (I Ching).
+
+# Key ideas
+
+## The crystallizing thesis
+
+> **"The more we fight death, the less we care for our habitat."**
+- Cemeteries paradoxically make death invisible: removing dead leaves, deep burials, thanatopraxis, cleaning tombs with chemicals.
+- Yet accepting death is the precondition of care and of truly inhabiting the world.
+- This paradox becomes the intellectual spine of the entire project.
+
+### From Guillem's research document (*Renouveler le paysage funéraire*)
+
+- **Cyclical vs. linear time:** Opposition between two representations of time and mortality. The project sides with cyclical time.
+- **Humusation (human composting):** The most care-full way to die — return fully to the earth. Human composting as total care.
+- **Adoucir par un idéal de continuité dans une forme d'au-delà:** Key phrase — softening death through an ideal of continuity in a form of beyond.
+
+## Wú wéi
+
+- "Not lazy inaction, but acting in harmony with the natural flow of things (the Tao), without resistance, without forced constraint or selfish intent, allowing maximum effectiveness."
+- The first time non-action is framed not as passivity but as the *right* form of care.
+
+# Field contact
+
+- Phone call with Guillem (landscape engineering master student at HEPIA).

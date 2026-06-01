@@ -1,0 +1,20 @@
+---
+date: 2026-04-30
+description: "Storytelling workshop — Hans first named as protagonist, first mention of Borges buried in Cimetière des Rois"
+---
+# Key decisions
+
+- **Emotion to design for:** Gratitude / feeling alive / contributing to something larger than oneself.
+
+# Key ideas
+
+- **Hans the gardener:** First explicit mention of Hans as a possible protagonist — one of the five characters painted by Clémens Wild for the exhibition.
+- **Noëlle (pompes funèbres):** Question raised whether to include the undertaker character in the story. Not resolved.
+- **Borges / Cimetière des Rois:** First mention of the connection — Borges is buried in Cimetière des Rois. His themes of labyrinths and infinity are noted as potentially relevant.
+- **Tombs linked to death, cemetery linked to life:** A distinction that becomes foundational to the project.
+- **Tree as link between worlds:** Continues from April 29. The tree appears as the living connector between the living and the dead.
+- **Agapè:** Explored briefly — unconditional, universal love as a possible emotional register. Not retained as central concept but informs the care framework.
+
+# Workshop
+
+- Attended the storytelling introduction session.

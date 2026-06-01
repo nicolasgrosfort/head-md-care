@@ -1,0 +1,258 @@
+{
+  "main": {
+    "id": "7ffae5cd2b72cb5a",
+    "type": "split",
+    "children": [
+      {
+        "id": "93c3c82ee3e8f182",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "d3a1552d480f14fd",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "readme.md",
+                "mode": "source",
+                "source": false,
+                "backlinks": true,
+                "backlinkOpts": {
+                  "collapseAll": false,
+                  "extraContext": false,
+                  "sortOrder": "alphabetical",
+                  "showSearch": false,
+                  "searchQuery": "",
+                  "backlinkCollapsed": false,
+                  "unlinkedCollapsed": true
+                }
+              },
+              "icon": "lucide-file",
+              "title": "readme"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "783418d56b2e3543",
+    "type": "split",
+    "children": [
+      {
+        "id": "cd27630204e4aeec",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "a3931beec67bd14c",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Files"
+            }
+          },
+          {
+            "id": "c6e504ccc4cab822",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "wu we",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "Search"
+            }
+          },
+          {
+            "id": "83e4e2e55ff5bef1",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "Bookmarks"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 374.5
+  },
+  "right": {
+    "id": "7f0cef7a8c8dae81",
+    "type": "split",
+    "children": [
+      {
+        "id": "1961b65398656002",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "d69a60288cc130cd",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "code/readme.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "Backlinks for readme"
+            }
+          },
+          {
+            "id": "f672c8a203c62bba",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "code/readme.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Outgoing links from readme"
+            }
+          },
+          {
+            "id": "48dd85bd4e62da27",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "Tags"
+            }
+          },
+          {
+            "id": "c4633a53434a7e49",
+            "type": "leaf",
+            "state": {
+              "type": "all-properties",
+              "state": {
+                "sortOrder": "frequency",
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-archive",
+              "title": "All properties"
+            }
+          },
+          {
+            "id": "ea241b6319dbe2b2",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "code/readme.md",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "Outline of readme"
+            }
+          },
+          {
+            "id": "ae1b49d10520acc2",
+            "type": "leaf",
+            "state": {
+              "type": "footnotes",
+              "state": {
+                "file": "code/readme.md"
+              },
+              "icon": "lucide-file-signature",
+              "title": "Footnotes"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false,
+      "bases:Create new base": false,
+      "workspaces:Manage workspace layouts": false
+    }
+  },
+  "active": "d3a1552d480f14fd",
+  "lastOpenFiles": [
+    "process/code/unity/2026-05-21-greyboxing/Temp/obj/Assembly-CSharp-Editor/Assembly-CSharp-Editor.GeneratedMSBuildEditorConfig.editorconfig",
+    "process/code/unity/2026-05-21-greyboxing/Temp/obj/Assembly-CSharp-Editor/Assembly-CSharp-Editor.csproj.AssemblyReference.cache",
+    "process/code/unity/2026-05-21-greyboxing/Temp/obj/Assembly-CSharp-Editor/Assembly-CSharp-Editor.assets.cache",
+    "process/code/unity/2026-05-21-greyboxing/Temp/obj/Assembly-CSharp/Assembly-CSharp.GeneratedMSBuildEditorConfig.editorconfig",
+    "process/code/unity/2026-05-21-greyboxing/Temp/obj/Assembly-CSharp/Assembly-CSharp.csproj.AssemblyReference.cache",
+    "process/code/unity/2026-05-21-greyboxing/Temp/bin/Debug",
+    "process/code/unity/2026-05-21-greyboxing/Temp/bin",
+    "process/code/unity/2026-05-21-greyboxing/Temp/obj/Assembly-CSharp/Assembly-CSharp.assets.cache",
+    "process/code/unity/2026-05-21-greyboxing/Temp/obj/Assembly-CSharp-Editor/project.nuget.cache",
+    "process/code/unity/2026-05-21-greyboxing/Temp/obj/Assembly-CSharp-Editor/project.assets.json",
+    "process/code/unity/2026-05-21-greyboxing/Temp/obj/Assembly-CSharp-Editor/Assembly-CSharp-Editor.csproj.nuget.g.targets",
+    "process/context/assets.md",
+    "assets/images/2026-05-21-scenario.png",
+    "process/context/art-direction.md",
+    "process/context/scenes.md",
+    "process/robot/memory/2026-05-26-intial-and-underground-scene.md",
+    "process/robot/memory/2026-05-29-scenes-structure-and-mechanics.md",
+    "assets/images/2026-05-26-sketch-underworld.jpeg",
+    "assets/images/2026-05-26-sketch-initial.png",
+    "assets/images/2026-05-26-sketch-soil.png",
+    "assets/images/2026-05-26-sketch-earth.png",
+    "assets/images/2026-05-22-greyboyxing-portal.png",
+    "assets/images/2026-05-22-greyboyxing-space.png",
+    "assets/images/2026-05-22-greyboyxing-initial.png",
+    "process/ressources/2026-05-06-isle-of-death.md",
+    "process/ressources/2026-05-18-passage.md",
+    "process/ressources/2026-05-xx-isle-of-death.md",
+    "assets/images/2026-05-06-isle-of-death.jpg",
+    "assets/images/2026-05-06-iles-aux-morts.jpg",
+    "process/robot/readme.md",
+    "process/journal/2026-04-29-group-formation-tree-concept.md",
+    "process/context/readme.md",
+    "process/ressources/2026-05-16-a-visit-to-the-plainpalais-cemetery.md",
+    "process/ressources/2026-05-12-the-werlit-incident.md",
+    "process/ressources/2026-05-12-superhot.md",
+    "process/ressources/2026-05-12-proteus.md",
+    "process/ressources/2026-05-12-my-exercice.md",
+    "process/ressources/2026-05-12-kentucky-route-zero.md",
+    "process/ressources/2026-05-06-renewing-the-funeral-landscape.md",
+    "process/ressources/2026-05-05-the-epicure-cure-irvin-yalom.md",
+    "process/ressources/2026-05-02-the-carrier-bag-theory-of-fiction.md",
+    "process/ressources/2026-05-01-ethics-of-care.md",
+    "process/ressources/2026-05-12-porteus.md",
+    "process/ressources/readme.md",
+    "process/ressources/The Carrier Bag Theory of Fiction.md",
+    "process/ressources/Passage (jeux vidéo).md"
+  ]
+}
