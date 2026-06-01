@@ -226,9 +226,9 @@
                   "state": {
                     "file": "process/explorations/0-moodboard.canvas",
                     "viewState": {
-                      "x": 1908.3703591853694,
-                      "y": 1139.1567554655392,
-                      "zoom": 0.6033333333333348
+                      "x": -442.86100156907787,
+                      "y": 1218.7929145137823,
+                      "zoom": -0.19117883125940827
                     }
                   },
                   "icon": "lucide-layout-dashboard",
@@ -248,8 +248,9 @@
       }
     ]
   },
-  "active": "5b1e9873b87212da",
+  "active": "de7c320d1e42f7b3",
   "lastOpenFiles": [
+    "process/context/5-first-interaction.md",
     "process/context/6-onboarding.md",
     "process/context/3-art-direction.md",
     "readme.md",
@@ -274,7 +275,6 @@
     "process/ressources/Pola.md",
     "process/ressources/2026-05-06-isle-of-death.md",
     "process/explorations",
-    "process/context/5-first-interaction.md",
     "process/context/2-assets.md",
     "process/context/1-scenes.md",
     "process/context/0-brief.md",
