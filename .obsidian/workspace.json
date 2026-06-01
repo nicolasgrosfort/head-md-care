@@ -11,24 +11,17 @@
             "id": "d3a1552d480f14fd",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "canvas",
               "state": {
-                "file": "readme.md",
-                "mode": "source",
-                "source": false,
-                "backlinks": true,
-                "backlinkOpts": {
-                  "collapseAll": false,
-                  "extraContext": false,
-                  "sortOrder": "alphabetical",
-                  "showSearch": false,
-                  "searchQuery": "",
-                  "backlinkCollapsed": false,
-                  "unlinkedCollapsed": true
+                "file": "process/context/4-moodboard.canvas",
+                "viewState": {
+                  "x": 0,
+                  "y": 0,
+                  "zoom": 0
                 }
               },
-              "icon": "lucide-file",
-              "title": "readme"
+              "icon": "lucide-layout-dashboard",
+              "title": "4-moodboard"
             }
           }
         ]
@@ -208,6 +201,14 @@
   },
   "active": "d3a1552d480f14fd",
   "lastOpenFiles": [
+    "process/context/5-first-interaction.md",
+    "process/context/6-onboarding.md",
+    "process/context/4-moodboard.canvas",
+    "process/context/3-art-direction.md",
+    "process/context/2-assets.md",
+    "process/context/1-scenes.md",
+    "process/context/0-brief.md",
+    "readme.md",
     "process/code/unity/2026-05-21-greyboxing/Temp/obj/Assembly-CSharp-Editor/Assembly-CSharp-Editor.GeneratedMSBuildEditorConfig.editorconfig",
     "process/code/unity/2026-05-21-greyboxing/Temp/obj/Assembly-CSharp-Editor/Assembly-CSharp-Editor.csproj.AssemblyReference.cache",
     "process/code/unity/2026-05-21-greyboxing/Temp/obj/Assembly-CSharp-Editor/Assembly-CSharp-Editor.assets.cache",
@@ -218,7 +219,6 @@
     "process/code/unity/2026-05-21-greyboxing/Temp/obj/Assembly-CSharp/Assembly-CSharp.assets.cache",
     "process/code/unity/2026-05-21-greyboxing/Temp/obj/Assembly-CSharp-Editor/project.nuget.cache",
     "process/code/unity/2026-05-21-greyboxing/Temp/obj/Assembly-CSharp-Editor/project.assets.json",
-    "process/code/unity/2026-05-21-greyboxing/Temp/obj/Assembly-CSharp-Editor/Assembly-CSharp-Editor.csproj.nuget.g.targets",
     "process/context/assets.md",
     "assets/images/2026-05-21-scenario.png",
     "process/context/art-direction.md",
@@ -246,13 +246,6 @@
     "process/ressources/2026-05-12-proteus.md",
     "process/ressources/2026-05-12-my-exercice.md",
     "process/ressources/2026-05-12-kentucky-route-zero.md",
-    "process/ressources/2026-05-06-renewing-the-funeral-landscape.md",
-    "process/ressources/2026-05-05-the-epicure-cure-irvin-yalom.md",
-    "process/ressources/2026-05-02-the-carrier-bag-theory-of-fiction.md",
-    "process/ressources/2026-05-01-ethics-of-care.md",
-    "process/ressources/2026-05-12-porteus.md",
-    "process/ressources/readme.md",
-    "process/ressources/The Carrier Bag Theory of Fiction.md",
-    "process/ressources/Passage (jeux vidéo).md"
+    "process/ressources/2026-05-06-renewing-the-funeral-landscape.md"
   ]
 }

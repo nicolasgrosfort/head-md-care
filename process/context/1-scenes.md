@@ -1,3 +1,7 @@
+---
+date: 2026-05-26
+---
+
 # Scenes
 
 A place to describe all scenes that are present in our experience/game.

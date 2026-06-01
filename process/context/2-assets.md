@@ -1,4 +1,9 @@
+---
+date: 2026-05-29
+---
+
 # Assets
+
 
 Describes the list of elements necessary to build the the [scenes](scenes.md). The scene that will be prototyped is the first one: `Initial`.
 
