@@ -11,13 +11,12 @@
             "id": "d3a1552d480f14fd",
             "type": "leaf",
             "state": {
-              "type": "bases",
+              "type": "image",
               "state": {
-                "file": "assets/assets.base",
-                "viewName": "Images"
+                "file": "assets/images/2026-01-24-make-me-pulse-nomadic-tribe-1.png"
               },
-              "icon": "lucide-layout-grid",
-              "title": "assets"
+              "icon": "lucide-image",
+              "title": "2026-01-24-make-me-pulse-nomadic-tribe-1"
             }
           }
         ]
@@ -52,7 +51,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "wu we",
+                "query": "isle-",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -77,7 +76,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 278.5
+    "width": 425.5
   },
   "right": {
     "id": "7f0cef7a8c8dae81",
@@ -195,14 +194,74 @@
       "workspaces:Manage workspace layouts": false
     }
   },
+  "floating": {
+    "id": "0ed52aa94b47df3f",
+    "type": "floating",
+    "children": [
+      {
+        "id": "6d2e0a896591f86a",
+        "type": "window",
+        "children": [
+          {
+            "id": "fcf62c3af765842a",
+            "type": "tabs",
+            "children": [
+              {
+                "id": "de7c320d1e42f7b3",
+                "type": "leaf",
+                "state": {
+                  "type": "canvas",
+                  "state": {
+                    "file": "process/explorations/0-moodboard.canvas",
+                    "viewState": {
+                      "x": 1759.9720466669833,
+                      "y": 1063.7793592506307,
+                      "zoom": -2.0699999999999985
+                    }
+                  },
+                  "icon": "lucide-layout-dashboard",
+                  "title": "0-moodboard"
+                }
+              }
+            ]
+          }
+        ],
+        "direction": "vertical",
+        "x": 602,
+        "y": 58,
+        "width": 1405.5,
+        "height": 1044,
+        "maximize": false,
+        "zoom": 0
+      }
+    ]
+  },
   "active": "d3a1552d480f14fd",
   "lastOpenFiles": [
     "process/explorations/0-moodboard.canvas",
+    "assets/images/2026-01-24-make-me-pulse-nomadic-tribe-1.png",
+    "process/ressources/2026-06-01-the-monolith-project.md",
+    "assets/images/2026-01-24-make-me-pulse-nomadic-tribe-6.gif",
+    "assets/images/2026-01-24-make-me-pulse-nomadic-tribe-5.png",
+    "assets/images/2026-01-24-make-me-pulse-nomadic-tribe-4.png",
+    "assets/images/2026-01-24-make-me-pulse-nomadic-tribe-3.png",
+    "assets/images/2026-01-24-make-me-pulse-nomadic-tribe-2.png",
+    "assets/2026-01-24-make-me-pulse-nomadic-tribe-6.gif",
+    "assets/2026-01-24-make-me-pulse-nomadic-tribe-5.png",
+    "assets/2026-01-24-make-me-pulse-nomadic-tribe-4.png",
+    "assets/2026-01-24-make-me-pulse-nomadic-tribe-3.png",
+    "process/ressources/2026-06-01-nomadic-tribe.md",
+    "process/ressources/Nomadic Tribe.md",
+    "process/ressources/The Monolith Project.md",
+    "process/context/3-art-direction.md",
     "assets/assets.base",
+    "process/ressources/2026-06-01-pola.md",
+    "process/ressources/2026-05-18-passage.md",
+    "process/ressources/Pola.md",
+    "process/ressources/2026-05-06-isle-of-death.md",
     "process/explorations",
     "process/context/5-first-interaction.md",
     "process/context/6-onboarding.md",
-    "process/context/3-art-direction.md",
     "process/context/2-assets.md",
     "process/context/1-scenes.md",
     "process/context/0-brief.md",
@@ -216,32 +275,14 @@
     "process/code/unity/2026-05-21-greyboxing/Temp/bin",
     "process/code/unity/2026-05-21-greyboxing/Temp/obj/Assembly-CSharp/Assembly-CSharp.assets.cache",
     "process/context/assets.md",
-    "assets/images/2026-05-21-scenario.png",
     "process/context/art-direction.md",
     "process/context/scenes.md",
     "process/robot/memory/2026-05-26-intial-and-underground-scene.md",
     "process/robot/memory/2026-05-29-scenes-structure-and-mechanics.md",
-    "assets/images/2026-05-26-sketch-underworld.jpeg",
-    "assets/images/2026-05-26-sketch-initial.png",
-    "assets/images/2026-05-26-sketch-soil.png",
-    "assets/images/2026-05-26-sketch-earth.png",
-    "assets/images/2026-05-22-greyboyxing-portal.png",
-    "assets/images/2026-05-22-greyboyxing-space.png",
-    "assets/images/2026-05-22-greyboyxing-initial.png",
-    "process/ressources/2026-05-06-isle-of-death.md",
-    "process/ressources/2026-05-18-passage.md",
     "process/ressources/2026-05-xx-isle-of-death.md",
-    "assets/images/2026-05-06-isle-of-death.jpg",
-    "assets/images/2026-05-06-iles-aux-morts.jpg",
     "process/robot/readme.md",
     "process/journal/2026-04-29-group-formation-tree-concept.md",
     "process/context/readme.md",
-    "process/ressources/2026-05-16-a-visit-to-the-plainpalais-cemetery.md",
-    "process/ressources/2026-05-12-the-werlit-incident.md",
-    "process/ressources/2026-05-12-superhot.md",
-    "process/ressources/2026-05-12-proteus.md",
-    "process/ressources/2026-05-12-my-exercice.md",
-    "process/ressources/2026-05-12-kentucky-route-zero.md",
-    "process/ressources/2026-05-06-renewing-the-funeral-landscape.md"
+    "process/ressources/2026-05-16-a-visit-to-the-plainpalais-cemetery.md"
   ]
 }
