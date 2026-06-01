@@ -11,17 +11,13 @@
             "id": "d3a1552d480f14fd",
             "type": "leaf",
             "state": {
-              "type": "canvas",
+              "type": "bases",
               "state": {
-                "file": "process/context/4-moodboard.canvas",
-                "viewState": {
-                  "x": 0,
-                  "y": 0,
-                  "zoom": 0
-                }
+                "file": "assets/assets.base",
+                "viewName": "Images"
               },
-              "icon": "lucide-layout-dashboard",
-              "title": "4-moodboard"
+              "icon": "lucide-layout-grid",
+              "title": "assets"
             }
           }
         ]
@@ -81,7 +77,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 374.5
+    "width": 278.5
   },
   "right": {
     "id": "7f0cef7a8c8dae81",
@@ -201,9 +197,11 @@
   },
   "active": "d3a1552d480f14fd",
   "lastOpenFiles": [
+    "process/explorations/0-moodboard.canvas",
+    "assets/assets.base",
+    "process/explorations",
     "process/context/5-first-interaction.md",
     "process/context/6-onboarding.md",
-    "process/context/4-moodboard.canvas",
     "process/context/3-art-direction.md",
     "process/context/2-assets.md",
     "process/context/1-scenes.md",
@@ -217,8 +215,6 @@
     "process/code/unity/2026-05-21-greyboxing/Temp/bin/Debug",
     "process/code/unity/2026-05-21-greyboxing/Temp/bin",
     "process/code/unity/2026-05-21-greyboxing/Temp/obj/Assembly-CSharp/Assembly-CSharp.assets.cache",
-    "process/code/unity/2026-05-21-greyboxing/Temp/obj/Assembly-CSharp-Editor/project.nuget.cache",
-    "process/code/unity/2026-05-21-greyboxing/Temp/obj/Assembly-CSharp-Editor/project.assets.json",
     "process/context/assets.md",
     "assets/images/2026-05-21-scenario.png",
     "process/context/art-direction.md",

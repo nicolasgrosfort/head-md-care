@@ -1,0 +1,7 @@
+views:
+  - type: cards
+    name: Images
+    filters:
+      and:
+        - file.inFolder("assets/images")
+    image: file.file
