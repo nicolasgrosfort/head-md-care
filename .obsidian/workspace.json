@@ -214,9 +214,9 @@
                   "state": {
                     "file": "process/explorations/0-moodboard.canvas",
                     "viewState": {
-                      "x": 2149.745404660785,
-                      "y": 1337.0358886456063,
-                      "zoom": -0.16333333333333155
+                      "x": 1895.5151007300028,
+                      "y": 1109.7733075675585,
+                      "zoom": 0.6033333333333348
                     }
                   },
                   "icon": "lucide-layout-dashboard",
@@ -239,8 +239,8 @@
   "active": "de7c320d1e42f7b3",
   "lastOpenFiles": [
     "assets/images/2026-06-01-GameExample-Gris-6.png",
-    "readme.md",
     "process/explorations/0-moodboard.canvas",
+    "readme.md",
     "assets/images/2026-06-01-GameExample-Gris-5.jpg",
     "assets/images/2026-06-01-GameExample-Gris-4.png",
     "assets/images/2026-01-24-make-me-pulse-nomadic-tribe-1.png",
