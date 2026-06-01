@@ -4,19 +4,19 @@
     "type": "split",
     "children": [
       {
-        "id": "93c3c82ee3e8f182",
+        "id": "5539b6c2ae7ca1db",
         "type": "tabs",
         "children": [
           {
-            "id": "d3a1552d480f14fd",
+            "id": "5b1e9873b87212da",
             "type": "leaf",
             "state": {
               "type": "image",
               "state": {
-                "file": "assets/images/2026-01-24-make-me-pulse-nomadic-tribe-1.png"
+                "file": "assets/images/2026-06-01-GameExample-Gris-6.png"
               },
               "icon": "lucide-image",
-              "title": "2026-01-24-make-me-pulse-nomadic-tribe-1"
+              "title": "2026-06-01-GameExample-Gris-6"
             }
           }
         ]
@@ -214,9 +214,9 @@
                   "state": {
                     "file": "process/explorations/0-moodboard.canvas",
                     "viewState": {
-                      "x": 1759.9720466669833,
-                      "y": 1063.7793592506307,
-                      "zoom": -2.0699999999999985
+                      "x": 2149.745404660785,
+                      "y": 1337.0358886456063,
+                      "zoom": -0.16333333333333155
                     }
                   },
                   "icon": "lucide-layout-dashboard",
@@ -236,9 +236,13 @@
       }
     ]
   },
-  "active": "d3a1552d480f14fd",
+  "active": "de7c320d1e42f7b3",
   "lastOpenFiles": [
+    "assets/images/2026-06-01-GameExample-Gris-6.png",
+    "readme.md",
     "process/explorations/0-moodboard.canvas",
+    "assets/images/2026-06-01-GameExample-Gris-5.jpg",
+    "assets/images/2026-06-01-GameExample-Gris-4.png",
     "assets/images/2026-01-24-make-me-pulse-nomadic-tribe-1.png",
     "process/ressources/2026-06-01-the-monolith-project.md",
     "assets/images/2026-01-24-make-me-pulse-nomadic-tribe-6.gif",
@@ -247,9 +251,6 @@
     "assets/images/2026-01-24-make-me-pulse-nomadic-tribe-3.png",
     "assets/images/2026-01-24-make-me-pulse-nomadic-tribe-2.png",
     "assets/2026-01-24-make-me-pulse-nomadic-tribe-6.gif",
-    "assets/2026-01-24-make-me-pulse-nomadic-tribe-5.png",
-    "assets/2026-01-24-make-me-pulse-nomadic-tribe-4.png",
-    "assets/2026-01-24-make-me-pulse-nomadic-tribe-3.png",
     "process/ressources/2026-06-01-nomadic-tribe.md",
     "process/ressources/Nomadic Tribe.md",
     "process/ressources/The Monolith Project.md",
@@ -265,7 +266,6 @@
     "process/context/2-assets.md",
     "process/context/1-scenes.md",
     "process/context/0-brief.md",
-    "readme.md",
     "process/code/unity/2026-05-21-greyboxing/Temp/obj/Assembly-CSharp-Editor/Assembly-CSharp-Editor.GeneratedMSBuildEditorConfig.editorconfig",
     "process/code/unity/2026-05-21-greyboxing/Temp/obj/Assembly-CSharp-Editor/Assembly-CSharp-Editor.csproj.AssemblyReference.cache",
     "process/code/unity/2026-05-21-greyboxing/Temp/obj/Assembly-CSharp-Editor/Assembly-CSharp-Editor.assets.cache",

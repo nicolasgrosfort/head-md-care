@@ -46,13 +46,15 @@
 		{"id":"0f1ba18d8cb9fc81","type":"file","file":"assets/images/2026-06-01-the-monolith-project-8.png","x":1380,"y":547,"width":244,"height":153},
 		{"id":"0ec0ca7a99d5b978","type":"file","file":"assets/images/2026-06-01-the-monolith-project-11.gif","x":1805,"y":231,"width":250,"height":157},
 		{"id":"80e8425da504bfea","type":"file","file":"assets/images/2026-06-01-the-monolith-project-5.png","x":1655,"y":547,"width":250,"height":157},
-		{"id":"d113e41d9cec6977","x":1730,"y":750,"width":400,"height":226,"type":"file","file":"2026-04-05-juan-carlos-cruz-3.gif"},
-		{"id":"bc32fc9e0c0cdd5b","x":1930,"y":446,"width":400,"height":251,"type":"file","file":"assets/images/2026-01-24-make-me-pulse-nomadic-tribe-1.png"},
-		{"id":"8c0496f8565e9617","x":2080,"y":137,"width":400,"height":251,"type":"file","file":"assets/images/2026-01-24-make-me-pulse-nomadic-tribe-2.png"},
-		{"id":"3c6749633cf376fa","x":2360,"y":444,"width":400,"height":253,"type":"file","file":"assets/images/2026-01-24-make-me-pulse-nomadic-tribe-3.png"},
-		{"id":"25d09601850c83b5","x":2160,"y":750,"width":400,"height":251,"type":"file","file":"assets/images/2026-01-24-make-me-pulse-nomadic-tribe-4.png"},
-		{"id":"e1177f180c893907","x":2600,"y":750,"width":400,"height":252,"type":"file","file":"assets/images/2026-01-24-make-me-pulse-nomadic-tribe-5.png"},
-		{"id":"bae28bfa4b8a0fe0","x":2520,"y":137,"width":400,"height":251,"type":"file","file":"assets/images/2026-01-24-make-me-pulse-nomadic-tribe-6.gif"}
+		{"id":"d113e41d9cec6977","type":"file","file":"2026-04-05-juan-carlos-cruz-3.gif","x":1730,"y":750,"width":400,"height":226},
+		{"id":"bc32fc9e0c0cdd5b","type":"file","file":"assets/images/2026-01-24-make-me-pulse-nomadic-tribe-1.png","x":1930,"y":446,"width":400,"height":251},
+		{"id":"8c0496f8565e9617","type":"file","file":"assets/images/2026-01-24-make-me-pulse-nomadic-tribe-2.png","x":2080,"y":137,"width":400,"height":251},
+		{"id":"3c6749633cf376fa","type":"file","file":"assets/images/2026-01-24-make-me-pulse-nomadic-tribe-3.png","x":2360,"y":444,"width":400,"height":253},
+		{"id":"25d09601850c83b5","type":"file","file":"assets/images/2026-01-24-make-me-pulse-nomadic-tribe-4.png","x":2160,"y":750,"width":400,"height":251},
+		{"id":"e1177f180c893907","type":"file","file":"assets/images/2026-01-24-make-me-pulse-nomadic-tribe-5.png","x":2600,"y":750,"width":400,"height":252},
+		{"id":"bae28bfa4b8a0fe0","type":"file","file":"assets/images/2026-01-24-make-me-pulse-nomadic-tribe-6.gif","x":2520,"y":137,"width":400,"height":251},
+		{"id":"d0ae368ddb19afad","type":"file","file":"assets/images/2026-06-01-GameExample-Gris-5.jpg","x":1720,"y":1007,"width":400,"height":225},
+		{"id":"326ce64effe5c878","x":2160,"y":1034,"width":660,"height":372,"type":"file","file":"assets/images/2026-06-01-GameExample-Gris-6.png"}
 	],
 	"edges":[]
 }
