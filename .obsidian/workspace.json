@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "process/ressources/2026-05-06-renewing-the-funeral-landscape.md",
+                "file": "process/ressources/2026-05-12-kentucky-route-zero.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": true,
@@ -28,7 +28,7 @@
                 }
               },
               "icon": "lucide-file",
-              "title": "2026-05-06-renewing-the-funeral-landscape"
+              "title": "2026-05-12-kentucky-route-zero"
             }
           }
         ]
@@ -243,9 +243,9 @@
                   "state": {
                     "file": "process/explorations/1-stories.canvas",
                     "viewState": {
-                      "x": -109.65982411816962,
-                      "y": 1054.2660145939026,
-                      "zoom": 0.032316343784331986
+                      "x": 1408.921850474507,
+                      "y": 898.0859636722097,
+                      "zoom": -1.1689177608489982
                     }
                   },
                   "icon": "lucide-layout-dashboard",
@@ -268,11 +268,15 @@
   },
   "active": "bdc8a8aebcca0230",
   "lastOpenFiles": [
+    "process/ressources/2026-05-12-kentucky-route-zero.md",
     "process/ressources/2026-05-06-renewing-the-funeral-landscape.md",
-    "process/explorations/1-stories.canvas",
-    "Untitled.md",
     "process/ressources/2026-05-06-isle-of-death.md",
     "process/ressources/2026-05-05-the-epicure-cure-irvin-yalom.md",
+    "process/explorations/1-stories.canvas",
+    "process/ressources/2026-05-16-a-visit-to-the-plainpalais-cemetery.md",
+    "process/ressources/2026-05-18-passage.md",
+    "process/ressources/2026-06-01-nomadic-tribe.md",
+    "Untitled.md",
     "process/ressources/2026-05-02-the-carrier-bag-theory-of-fiction.md",
     "assets/images/2026-06-02-masonic-symbols.jpeg",
     "assets/images/2026-06-02-carbon-at-the-basis-of-life.jpeg",
@@ -300,11 +304,9 @@
     "process/context/0-brief.md",
     "process/context/3-art-direction.md",
     "readme.md",
-    "process/ressources/2026-06-01-nomadic-tribe.md",
     "process/ressources/Nomadic Tribe.md",
     "process/ressources/The Monolith Project.md",
     "process/ressources/2026-06-01-pola.md",
-    "process/ressources/2026-05-18-passage.md",
     "process/ressources/Pola.md",
     "process/explorations",
     "process/code/unity/2026-05-21-greyboxing/Temp/obj/Assembly-CSharp-Editor/Assembly-CSharp-Editor.GeneratedMSBuildEditorConfig.editorconfig",
@@ -313,7 +315,6 @@
     "process/code/unity/2026-05-21-greyboxing/Temp/obj/Assembly-CSharp/Assembly-CSharp.GeneratedMSBuildEditorConfig.editorconfig",
     "process/code/unity/2026-05-21-greyboxing/Temp/obj/Assembly-CSharp/Assembly-CSharp.csproj.AssemblyReference.cache",
     "process/code/unity/2026-05-21-greyboxing/Temp/bin/Debug",
-    "process/context/assets.md",
-    "process/context/art-direction.md"
+    "process/context/assets.md"
   ]
 }
