@@ -1,9 +1,9 @@
 {
 	"nodes":[
-		{"id":"bc353210f2182430","x":-1060,"y":-348,"width":4080,"height":1996,"type":"group","label":"Brainstorming @ 2026-06-01"},
-		{"id":"22cf9e368e851b6f","x":-1060,"y":1920,"width":2680,"height":969,"type":"group","label":"Selection @ 2026-06-02"},
-		{"id":"713e76821c017645","x":-1040,"y":1940,"width":1222,"height":929,"type":"group","label":"Eryan"},
-		{"id":"6225e7c6cde3c65a","x":300,"y":1940,"width":1300,"height":514,"type":"group","label":"Nico"},
+		{"id":"bc353210f2182430","type":"group","x":-1280,"y":-348,"width":4300,"height":1996,"label":"Brainstorming @ 2026-06-01"},
+		{"id":"22cf9e368e851b6f","type":"group","x":-1060,"y":1920,"width":2680,"height":969,"label":"Selection @ 2026-06-02"},
+		{"id":"713e76821c017645","type":"group","x":-1040,"y":1940,"width":1222,"height":929,"label":"Eryan"},
+		{"id":"6225e7c6cde3c65a","type":"group","x":300,"y":1940,"width":1300,"height":514,"label":"Nico"},
 		{"id":"17eea2f1779666bd","type":"text","text":"Bonjour, \n\nMerci pour votre retour. \n\nLa permanence de Carouge m’a dit que je faisais de l’anémie, mais n’a pas précisé le « type ». \nEst-ce que ça pourrait être une piste ? Est-il possible de voir quelque chose avec les prises de sang ?\n\nJ’ai fait l’IRM hier, et je ferai l’échographie demain. \nJe n’ai pas reçu de retour du Dr Kolo après l’examen. Il m’a dit qu’il enverrait son rapport sous 3 jours. \n\nBelle journée à vous, \nNicolas","x":-209,"y":1253,"width":250,"height":60},
 		{"id":"f71057add924ad0b","type":"text","text":"Bonjour, \n\nMerci pour votre retour. \n\nLa permanence de Carouge m’a dit que je faisais de l’anémie, mais n’a pas précisé le « type ». \nEst-ce que ça pourrait être une piste ? Est-il possible de voir quelque chose avec les prises de sang ?\n\nJ’ai fait l’IRM hier, et je ferai l’échographie demain. \nJe n’ai pas reçu de retour du Dr Kolo après l’examen. Il m’a dit qu’il enverrait son rapport sous 3 jours. \n\nBelle journée à vous, \nNicolas","x":-209,"y":1253,"width":250,"height":60},
 		{"id":"99e81f7dfabd4846","type":"file","file":"assets/images/2026-05-06-isle-of-death-2.jpg","x":-564,"y":-103,"width":464,"height":243},
@@ -70,19 +70,19 @@
 		{"id":"0745eed5b0e0bbee","type":"file","file":"assets/images/2026-04-05-juan-carlos-cruz-3.gif","x":1720,"y":751,"width":400,"height":226},
 		{"id":"3ead142cd47b4dfa","type":"file","file":"assets/images/2026-06-01-the-monolith-project-7.png","x":785,"y":-328,"width":400,"height":251},
 		{"id":"82046389443edcea","type":"file","file":"assets/images/2026-04-05-juan-carlos-cruz-3.gif","x":320,"y":1960,"width":400,"height":226},
-		{"id":"2eb008fd7073b683","x":340,"y":2234,"width":280,"height":140,"type":"text","text":"animation lighting,bloom \ninteractive  \nsimplicity  "},
-		{"id":"70c2503bae5182ba","type":"text","text":"","x":656,"y":2028,"width":250,"height":60},
+		{"id":"2eb008fd7073b683","type":"text","text":"animation lighting,bloom \ninteractive  \nsimplicity  ","x":340,"y":2234,"width":280,"height":140},
 		{"id":"5e2f43ae0946e0f3","type":"file","file":"assets/images/2026-06-01-the-monolith-project-7.png","x":740,"y":1960,"width":400,"height":251},
-		{"id":"3a292ea73d612adc","x":760,"y":2254,"width":380,"height":180,"type":"text","text":"3d perspective\ndeep\n"},
+		{"id":"3a292ea73d612adc","type":"text","text":"3d perspective\ndeep\n","x":760,"y":2254,"width":380,"height":180},
 		{"id":"42d143170881f0b6","type":"file","file":"assets/images/2026-05-06-isle-of-death-3.jpg","x":1180,"y":1960,"width":400,"height":213},
-		{"id":"a942e2a7efcdbf83","x":1220,"y":2186,"width":340,"height":108,"type":"text","text":"painting\n(let you think about dream)\nmix if reality and dream\nisland "},
+		{"id":"a942e2a7efcdbf83","type":"text","text":"painting\n(let you think about dream)\nmix if reality and dream\nisland ","x":1220,"y":2186,"width":340,"height":108},
 		{"id":"f9a4c414c61901fa","type":"file","file":"assets/images/2026-06-01-material-1.png","x":-1020,"y":1960,"width":399,"height":523},
 		{"id":"b8458d1c2bca245d","type":"text","text":"- Color\n- Very thin (opacity)\n- Like paper\n- Imprint of flower made by a real flower\n","x":-1020,"y":2514,"width":250,"height":188,"color":"4"},
 		{"id":"c8c942ec33f54e54","type":"file","file":"assets/images/2026-06-01-GameExample-Gris-4.png","x":-590,"y":1960,"width":400,"height":220},
 		{"id":"f641b07685b76027","type":"text","text":"- Magic and unreal colors  \n-  Superposition, multilayers","x":-590,"y":2214,"width":250,"height":121,"color":"4"},
 		{"id":"d68223ddd8f97ae3","type":"text","text":"Useful for texturing and styling all stuff related to nature stuff","x":-1020,"y":2734,"width":250,"height":115,"color":"4"},
 		{"id":"381b748425c1312e","type":"file","file":"assets/images/2026-06-01-material-2.png","x":-140,"y":1960,"width":302,"height":399},
-		{"id":"d3cf41ddeff3012d","type":"text","text":"- Texturing\n- Material","x":-140,"y":2374,"width":250,"height":61,"color":"4"}
+		{"id":"d3cf41ddeff3012d","type":"text","text":"- Texturing\n- Material","x":-140,"y":2374,"width":250,"height":61,"color":"4"},
+		{"id":"445f0fea13234027","x":-1210,"y":309,"width":400,"height":630,"type":"file","file":"2026-04-28-presentation-exposition-code-couleur.jpeg"}
 	],
 	"edges":[]
 }
