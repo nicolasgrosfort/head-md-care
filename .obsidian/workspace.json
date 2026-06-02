@@ -104,7 +104,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "process/explorations/1-stories.canvas",
+                "file": "process/explorations/0-moodboard.canvas",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -114,7 +114,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for 1-stories"
+              "title": "Backlinks for 0-moodboard"
             }
           },
           {
@@ -217,6 +217,7 @@
           {
             "id": "0c9adfdb0708bb9f",
             "type": "tabs",
+            "dimension": 50.78125,
             "children": [
               {
                 "id": "ac5231aa22d29b64",
@@ -226,15 +227,22 @@
                   "state": {
                     "file": "process/explorations/0-moodboard.canvas",
                     "viewState": {
-                      "x": 1107.0777622005385,
-                      "y": 1154.9577517248958,
+                      "x": 2321.2255580183737,
+                      "y": 1250.0046751348789,
                       "zoom": -1.7210690919558207
                     }
                   },
                   "icon": "lucide-layout-dashboard",
                   "title": "0-moodboard"
                 }
-              },
+              }
+            ]
+          },
+          {
+            "id": "95a4d5105f48e27b",
+            "type": "tabs",
+            "dimension": 49.21875,
+            "children": [
               {
                 "id": "bdc8a8aebcca0230",
                 "type": "leaf",
@@ -252,8 +260,7 @@
                   "title": "1-stories"
                 }
               }
-            ],
-            "currentTab": 1
+            ]
           }
         ],
         "direction": "vertical",
@@ -266,55 +273,55 @@
       }
     ]
   },
-  "active": "bdc8a8aebcca0230",
+  "active": "ac5231aa22d29b64",
   "lastOpenFiles": [
-    "process/code/unity/2026-06-02-transparency/Library/LastSceneManagerSetup.txt",
-    "process/code/unity/2026-06-02-transparency/Temp/ADB-Refresh08a462b5d89fd404ab1482ae1746e7a2",
-    "process/code/unity/2026-06-02-transparency/Library/Search/propertyDatabase.db",
-    "process/code/unity/2026-06-02-transparency/Library/Search/propertyAliases.db",
-    "process/code/unity/2026-06-02-transparency/Library/Artifacts/50/50c71d3d1292b44951d7428883c9ae34",
-    "process/code/unity/2026-06-02-transparency/Library/Artifacts/cd/cd868e4d761835f0fad57ed726403e7e",
-    "process/code/unity/2026-06-02-transparency/Library/Artifacts/3b/3b9e2ffed588c8a865975b75d314c3b0",
-    "process/code/unity/2026-06-02-transparency/Library/Artifacts/5d/5db6b12d72de8d6779388cdabaef3c79",
-    "process/code/unity/2026-06-02-transparency/Library/Artifacts/03/0319315a9fe0450ea31f310f15667a91",
-    "process/code/unity/2026-06-02-transparency/Library/Artifacts/cf/cf6c264f6d72e296df2e3a664d31d308",
-    "process/code/unity/2026-06-02-transparency/Library/Artifacts/fc/fcb42210da0f803524156528c1db6d52",
-    "process/code/unity/2026-06-02-transparency/Library/PackageCache/com.unity.multiplayer.center@f01f4ba8d00a/Editor/MultiplayerCenterWindow/UI/Icons/d_Questionnaire.png",
-    "process/code/unity/2026-06-02-transparency/Library/PackageCache/com.unity.multiplayer.center@f01f4ba8d00a/Editor/MultiplayerCenterWindow/UI/Icons/d_PackageManager@2x.png",
-    "process/code/unity/2026-06-02-transparency/Library/PackageCache/com.unity.multiplayer.center@f01f4ba8d00a/Editor/MultiplayerCenterWindow/UI/Icons/d_PackageManager.png",
-    "process/code/unity/2026-06-02-transparency/Library/PackageCache/com.unity.multiplayer.center@f01f4ba8d00a/Editor/MultiplayerCenterWindow/UI/Icons/d_PackageInstalled@2x.png",
-    "process/code/unity/2026-06-02-transparency/Library/PackageCache/com.unity.multiplayer.center@f01f4ba8d00a/Editor/MultiplayerCenterWindow/UI/Icons/d_PackageInstalled.png",
-    "process/code/unity/2026-06-02-transparency/Library/PackageCache/com.unity.multiplayer.center@f01f4ba8d00a/Editor/MultiplayerCenterWindow/UI/Icons/d_Package.png",
-    "process/code/unity/2026-06-02-transparency/Library/PackageCache/com.unity.multiplayer.center@f01f4ba8d00a/Editor/MultiplayerCenterWindow/UI/Icons/d_Loading.png",
-    "process/code/unity/2026-06-02-transparency/Library/PackageCache/com.unity.multiplayer.center@f01f4ba8d00a/Editor/MultiplayerCenterWindow/UI/Icons/d_Check.png",
-    "process/code/unity/2026-06-02-transparency/Library/PackageCache/com.unity.multiplayer.center@f01f4ba8d00a/Editor/MultiplayerCenterWindow/UI/Icons/Questionnaire.png",
-    "process/code/unity/2026-06-02-transparency/Library/PackageCache/com.unity.multiplayer.center@f01f4ba8d00a/Editor/MultiplayerCenterWindow/UI/Icons/PackageManager@2x.png",
-    "process/code/unity/2026-06-02-transparency/Library/PackageCache/com.unity.multiplayer.center@f01f4ba8d00a/Documentation~/use-multiplayer-center.md",
-    "process/code/unity/2026-06-02-transparency/Library/PackageCache/com.unity.multiplayer.center@f01f4ba8d00a/Documentation~/sys-req.md",
-    "process/code/unity/2026-06-02-transparency/Library/PackageCache/com.unity.multiplayer.center@f01f4ba8d00a/Documentation~/index.md",
-    "process/code/unity/2026-06-02-transparency/Library/PackageCache/com.unity.multiplayer.center@f01f4ba8d00a/Documentation~/TableofContents.md",
-    "process/code/unity/2026-06-02-transparency/Library/PackageCache/com.unity.multiplayer.center@f01f4ba8d00a/Third Party Notices.md",
-    "process/code/unity/2026-06-02-transparency/Library/PackageCache/com.unity.multiplayer.center@f01f4ba8d00a/README.md",
-    "process/code/unity/2026-06-02-transparency/Library/PackageCache/com.unity.multiplayer.center@f01f4ba8d00a/LICENSE.md",
-    "process/code/unity/2026-06-02-transparency/Library/PackageCache/com.unity.multiplayer.center@f01f4ba8d00a/CHANGELOG.md",
-    "process/ressources/2026-05-12-kentucky-route-zero.md",
+    "assets/images/2026-06-02-hans-color.png",
+    "2026-06-02-hans-color.png",
     "process/explorations/1-stories.canvas",
-    "process/ressources/2026-05-06-renewing-the-funeral-landscape.md",
-    "process/ressources/2026-05-06-isle-of-death.md",
-    "process/ressources/2026-05-05-the-epicure-cure-irvin-yalom.md",
-    "process/ressources/2026-05-16-a-visit-to-the-plainpalais-cemetery.md",
-    "process/ressources/2026-05-18-passage.md",
-    "process/ressources/2026-06-01-nomadic-tribe.md",
-    "Untitled.md",
-    "process/ressources/2026-05-02-the-carrier-bag-theory-of-fiction.md",
-    "process/explorations/readme.md",
-    "process/readme.md",
-    "process/context/readme.md",
-    "process/context/6-stories.md",
-    "process/explorations/0-moodboard.canvas",
-    "process/context/5-onboarding.md",
-    "process/context/6-onboarding.md",
-    "process/context/1-scenes.md",
-    "process/context/2-assets.md"
+    "process/code/unity/2026-06-02-transparency/Library/expandedItems",
+    "process/code/unity/2026-06-02-transparency/Assembly-CSharp-Editor.csproj",
+    "process/code/unity/2026-06-02-transparency/Library/Artifacts/7c/7cf73a4fe0e28b0842e0122059617d25",
+    "process/code/unity/2026-06-02-transparency/Library/Artifacts/c6/c629ca897f3863dccec935fb42e3ed71",
+    "process/code/unity/2026-06-02-transparency/Library/Artifacts/62/62fbcf6fccce3966a90e06e37f5b07ac",
+    "process/code/unity/2026-06-02-transparency/Library/Artifacts/32/325fd18bbdf9ea99a3ef55e74f8ba0ac",
+    "process/code/unity/2026-06-02-transparency/Library/Artifacts/a2/a2c21c566ec2db6f44d90c31bc7ab1f6",
+    "process/code/unity/2026-06-02-transparency/Library/Artifacts/4a/4ab3ecaeb8c180f1f29d16ff3ebd7b4a",
+    "process/code/unity/2026-06-02-transparency/Library/Artifacts/f9/f91003e2187916090b7839ca1fe8088b",
+    "process/code/unity/2026-06-02-transparency/Library/Artifacts/42/42287e85dd54e7e03097f8e6c69ef688",
+    "process/code/unity/2026-06-02-transparency/Library/PackageCache/com.unity.visualscripting@8bed5ad90189/Documentation~/snippets/custom-c-nodes/vs-tasks-note-end.md",
+    "process/code/unity/2026-06-02-transparency/Library/PackageCache/com.unity.visualscripting@8bed5ad90189/Documentation~/snippets/custom-c-nodes/vs-open-graph-w-node.md",
+    "process/code/unity/2026-06-02-transparency/Library/PackageCache/com.unity.visualscripting@8bed5ad90189/Documentation~/snippets/custom-c-nodes/vs-ff-add-node.md",
+    "process/code/unity/2026-06-02-transparency/Library/PackageCache/com.unity.visualscripting@8bed5ad90189/Documentation~/snippets/input-system/nodes-note-package.md",
+    "process/code/unity/2026-06-02-transparency/Library/PackageCache/com.unity.visualscripting@8bed5ad90189/Documentation~/snippets/input-system/nodes-input-system-ports.md",
+    "process/code/unity/2026-06-02-transparency/Library/PackageCache/com.unity.visualscripting@8bed5ad90189/Documentation~/snippets/input-system/nodes-input-system-output-trigger-port.md",
+    "process/code/unity/2026-06-02-transparency/Library/PackageCache/com.unity.visualscripting@8bed5ad90189/Documentation~/snippets/input-system/nodes-input-action-change.md",
+    "process/code/unity/2026-06-02-transparency/Library/PackageCache/com.unity.visualscripting@8bed5ad90189/Documentation~/snippets/input-manager/nodes-note-manual.md",
+    "process/code/unity/2026-06-02-transparency/Library/PackageCache/com.unity.visualscripting@8bed5ad90189/Documentation~/snippets/input-manager/nodes-input-output-trigger.md",
+    "process/code/unity/2026-06-02-transparency/Library/PackageCache/com.unity.visualscripting@8bed5ad90189/Documentation~/snippets/input-manager/nodes-desc-end.md",
+    "process/code/unity/2026-06-02-transparency/Library/PackageCache/com.unity.visualscripting@8bed5ad90189/Documentation~/snippets/custom-events/vs-tasks-note-end.md",
+    "process/code/unity/2026-06-02-transparency/Library/PackageCache/com.unity.visualscripting@8bed5ad90189/Documentation~/snippets/custom-events/vs-right-click-project.md",
+    "process/code/unity/2026-06-02-transparency/Library/PackageCache/com.unity.visualscripting@8bed5ad90189/Editor/VisualScripting.Shared/EditorAssetResources/SplitButtonArrow.png",
+    "process/code/unity/2026-06-02-transparency/Library/PackageCache/com.unity.visualscripting@8bed5ad90189/Editor/VisualScripting.Core/IconMap/VariablesSaver@32x.png",
+    "process/code/unity/2026-06-02-transparency/Library/PackageCache/com.unity.visualscripting@8bed5ad90189/Editor/VisualScripting.Core/IconMap/VariablesAsset@32.png",
+    "process/code/unity/2026-06-02-transparency/Library/PackageCache/com.unity.visualscripting@8bed5ad90189/Editor/VisualScripting.Core/IconMap/Variables@32x.png",
+    "process/code/unity/2026-06-02-transparency/Library/PackageCache/com.unity.visualscripting@8bed5ad90189/Editor/VisualScripting.Core/IconMap/UnityMessageListener@32x.png",
+    "process/code/unity/2026-06-02-transparency/Library/PackageCache/com.unity.visualscripting@8bed5ad90189/Editor/VisualScripting.Core/IconMap/StateMachine@32x.png",
+    "process/code/unity/2026-06-02-transparency/Library/PackageCache/com.unity.visualscripting@8bed5ad90189/Editor/VisualScripting.Core/IconMap/State@32x.png",
+    "process/code/unity/2026-06-02-transparency/Library/PackageCache/com.unity.visualscripting@8bed5ad90189/Editor/VisualScripting.Core/IconMap/SceneVariables.png",
+    "process/code/unity/2026-06-02-transparency/Library/PackageCache/com.unity.visualscripting@8bed5ad90189/Editor/VisualScripting.Core/IconMap/GlobalMessageListener@32x.png",
+    "process/code/unity/2026-06-02-transparency/Library/PackageCache/com.unity.visualscripting@8bed5ad90189/Documentation~/snippets/vs-with-graph-open-ff.md",
+    "process/code/unity/2026-06-02-transparency/Library/PackageCache/com.unity.visualscripting@8bed5ad90189/Documentation~/snippets/vs-visual-scripting-window.md",
+    "process/code/unity/2026-06-02-transparency/Library/PackageCache/com.unity.visualscripting@8bed5ad90189/Documentation~/snippets/vs-save-script.md",
+    "process/code/unity/2026-06-02-transparency/Library/PackageCache/com.unity.visualscripting@8bed5ad90189/Documentation~/snippets/vs-return-unity.md",
+    "process/code/unity/2026-06-02-transparency/Library/PackageCache/com.unity.visualscripting@8bed5ad90189/Documentation~/snippets/vs-regen-node-library.md",
+    "process/code/unity/2026-06-02-transparency/Library/PackageCache/com.unity.visualscripting@8bed5ad90189/Documentation~/snippets/vs-open-state-menu.md",
+    "process/code/unity/2026-06-02-transparency/Library/PackageCache/com.unity.visualscripting@8bed5ad90189/Documentation~/snippets/vs-open-project-window.md",
+    "process/code/unity/2026-06-02-transparency/Library/PackageCache/com.unity.visualscripting@8bed5ad90189/Documentation~/snippets/vs-open-project-settings.md",
+    "process/code/unity/2026-06-02-transparency/Library/PackageCache/com.unity.visualscripting@8bed5ad90189/Documentation~/snippets/vs-open-new-external-code.md",
+    "process/code/unity/2026-06-02-transparency/Library/PackageCache/com.unity.visualscripting@8bed5ad90189/Documentation~/snippets/vs-open-inspector-window.md",
+    "process/code/unity/2026-06-02-transparency/Library/PackageCache/com.unity.visualscripting@8bed5ad90189/Documentation~/snippets/vs-open-hierarchy-window.md",
+    "process/code/unity/2026-06-02-transparency/Library/PackageCache/com.unity.visualscripting@8bed5ad90189/Documentation~/snippets/vs-open-graph.md",
+    "process/code/unity/2026-06-02-transparency/Library/PackageCache/com.unity.visualscripting@8bed5ad90189/Documentation~/snippets/vs-open-graph-inspector.md",
+    "process/explorations/0-moodboard.canvas"
   ]
 }
