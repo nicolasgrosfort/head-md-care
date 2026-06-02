@@ -92,7 +92,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "assets/images/2026-06-02-perenial-plants.jpeg",
+                "file": "process/explorations/1-stories.canvas",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for 2026-06-02-perenial-plants"
+              "title": "Backlinks for 1-stories"
             }
           },
           {
@@ -231,9 +231,9 @@
                   "state": {
                     "file": "process/explorations/1-stories.canvas",
                     "viewState": {
-                      "x": 3737.99694974562,
-                      "y": 1308.5214656875655,
-                      "zoom": -0.33427116520459466
+                      "x": 2000,
+                      "y": 1154.5,
+                      "zoom": -1.6962873719756781
                     }
                   },
                   "icon": "lucide-layout-dashboard",
@@ -254,21 +254,22 @@
       }
     ]
   },
-  "active": "a3931beec67bd14c",
+  "active": "bdc8a8aebcca0230",
   "lastOpenFiles": [
-    "process/explorations/1-stories.canvas",
-    "assets/images/2026-06-02-raking-up-fallen-leaves.jpeg",
+    "2026-06-02-carbon-at-the-basis-of-life.jpeg",
     "assets/images/2026-06-02-perenial-plants.jpeg",
+    "process/explorations/1-stories.canvas",
+    "2026-06-02-masonic-symbols.jpeg",
+    "2026-06-02-clay-soil.jpeg",
+    "assets/images/2026-06-02-raking-up-fallen-leaves.jpeg",
     "assets/images/2026-06-02-the-red-grave.jpeg",
     "assets/images/2026-06-02-graves-without-heirs.jpeg",
     "IMG_8741.jpeg",
     "assets/images/2026-05-02-the-cemetery-meadows.jpeg",
     "assets/images/2026-06-02-former-marsh.jpeg",
     "assets/images/2026-06-02-ancient-temple.jpeg",
-    "assets/images/2026-06-02-planting-ivy.jpeg",
     "process/explorations/readme.md",
     "process/readme.md",
-    "assets/images/2026-06-02-dancing-on-death.jpeg",
     "process/context/readme.md",
     "process/context/6-stories.md",
     "EB5B66BE-05DE-4C97-9FB2-F0DFDBB4BDF9_1_201_a.heic",
