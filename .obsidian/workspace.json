@@ -268,8 +268,16 @@
   },
   "active": "bdc8a8aebcca0230",
   "lastOpenFiles": [
+    "process/yarn/Project.yarnproject",
+    "process/yarn/LetItLie.yarnproject",
+    "process/yarn/Initial.yarn",
+    "process/yarn/Dialogue.yarn",
     "process/ressources/2026-05-12-kentucky-route-zero.md",
     "process/explorations/1-stories.canvas",
+    "Project.yarnproject",
+    "2026-06-02-let-it-lie.yarnproject",
+    "process/yarn/2026-06-02-let-it-lie.yarnproject",
+    "process/yarn",
     "process/ressources/2026-05-06-renewing-the-funeral-landscape.md",
     "process/ressources/2026-05-06-isle-of-death.md",
     "process/ressources/2026-05-05-the-epicure-cure-irvin-yalom.md",
@@ -307,13 +315,6 @@
     "process/ressources/Nomadic Tribe.md",
     "process/ressources/The Monolith Project.md",
     "process/ressources/2026-06-01-pola.md",
-    "process/ressources/Pola.md",
-    "process/explorations",
-    "process/code/unity/2026-05-21-greyboxing/Temp/obj/Assembly-CSharp-Editor/Assembly-CSharp-Editor.GeneratedMSBuildEditorConfig.editorconfig",
-    "process/code/unity/2026-05-21-greyboxing/Temp/obj/Assembly-CSharp-Editor/Assembly-CSharp-Editor.csproj.AssemblyReference.cache",
-    "process/code/unity/2026-05-21-greyboxing/Temp/obj/Assembly-CSharp-Editor/Assembly-CSharp-Editor.assets.cache",
-    "process/code/unity/2026-05-21-greyboxing/Temp/obj/Assembly-CSharp/Assembly-CSharp.GeneratedMSBuildEditorConfig.editorconfig",
-    "process/code/unity/2026-05-21-greyboxing/Temp/obj/Assembly-CSharp/Assembly-CSharp.csproj.AssemblyReference.cache",
-    "process/code/unity/2026-05-21-greyboxing/Temp/bin/Debug"
+    "process/ressources/Pola.md"
   ]
 }

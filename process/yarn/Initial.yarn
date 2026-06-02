@@ -1,0 +1,14 @@
+title: Start
+---
+The player sees the string going into the iPad.
+-> Pull the string
+    <<jump PullString>>
+-> Do nothing
+    <<jump Start>>
+===
+
+title: PullString
+position: 1,183
+---
+Hello
+===

@@ -1,0 +1,17 @@
+{
+    "projectFileVersion": 4,
+    "sourceFiles": [
+        "**/*.yarn"
+    ],
+    "baseLanguage": "en",
+    "editorOptions": {
+        "yarnScriptEditor": {
+            "projectGraphPositions": {
+                "Initial.yarn": {
+                    "x": 12,
+                    "y": 12
+                }
+            }
+        }
+    }
+}
