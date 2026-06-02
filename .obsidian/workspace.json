@@ -11,10 +11,12 @@
             "id": "f22e87c5ef441ae6",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
-              "icon": "lucide-file",
-              "title": "New tab"
+              "type": "image",
+              "state": {
+                "file": "assets/images/2026-06-02-perenial-plants.jpeg"
+              },
+              "icon": "lucide-image",
+              "title": "2026-06-02-perenial-plants"
             }
           }
         ]
@@ -90,6 +92,7 @@
             "state": {
               "type": "backlink",
               "state": {
+                "file": "assets/images/2026-06-02-perenial-plants.jpeg",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -99,7 +102,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks"
+              "title": "Backlinks for 2026-06-02-perenial-plants"
             }
           },
           {
@@ -228,9 +231,9 @@
                   "state": {
                     "file": "process/explorations/1-stories.canvas",
                     "viewState": {
-                      "x": 2330.6811555359227,
-                      "y": 1941.9675405275264,
-                      "zoom": -0.5012221651003265
+                      "x": 3737.99694974562,
+                      "y": 1308.5214656875655,
+                      "zoom": -0.33427116520459466
                     }
                   },
                   "icon": "lucide-layout-dashboard",
@@ -251,12 +254,14 @@
       }
     ]
   },
-  "active": "f22e87c5ef441ae6",
+  "active": "a3931beec67bd14c",
   "lastOpenFiles": [
+    "process/explorations/1-stories.canvas",
+    "assets/images/2026-06-02-raking-up-fallen-leaves.jpeg",
+    "assets/images/2026-06-02-perenial-plants.jpeg",
     "assets/images/2026-06-02-the-red-grave.jpeg",
     "assets/images/2026-06-02-graves-without-heirs.jpeg",
     "IMG_8741.jpeg",
-    "process/explorations/1-stories.canvas",
     "assets/images/2026-05-02-the-cemetery-meadows.jpeg",
     "assets/images/2026-06-02-former-marsh.jpeg",
     "assets/images/2026-06-02-ancient-temple.jpeg",
@@ -264,8 +269,6 @@
     "process/explorations/readme.md",
     "process/readme.md",
     "assets/images/2026-06-02-dancing-on-death.jpeg",
-    "assets/images/2026-06-02-pilgrim-of-death.jpeg",
-    "assets/images/2026-06-02-portal-tree.jpeg",
     "process/context/readme.md",
     "process/context/6-stories.md",
     "EB5B66BE-05DE-4C97-9FB2-F0DFDBB4BDF9_1_201_a.heic",
