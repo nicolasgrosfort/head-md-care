@@ -11,12 +11,10 @@
             "id": "f22e87c5ef441ae6",
             "type": "leaf",
             "state": {
-              "type": "image",
-              "state": {
-                "file": "assets/images/2026-05-02-the-cemetery-meadows.jpeg"
-              },
-              "icon": "lucide-image",
-              "title": "2026-05-02-the-cemetery-meadows"
+              "type": "empty",
+              "state": {},
+              "icon": "lucide-file",
+              "title": "New tab"
             }
           }
         ]
@@ -92,7 +90,6 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "assets/images/2026-05-02-the-cemetery-meadows.jpeg",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +99,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for 2026-05-02-the-cemetery-meadows"
+              "title": "Backlinks"
             }
           },
           {
@@ -231,9 +228,9 @@
                   "state": {
                     "file": "process/explorations/1-stories.canvas",
                     "viewState": {
-                      "x": 2064.897927063944,
-                      "y": 1620.3697700091006,
-                      "zoom": -0.6768835639953611
+                      "x": 2330.6811555359227,
+                      "y": 1941.9675405275264,
+                      "zoom": -0.5012221651003265
                     }
                   },
                   "icon": "lucide-layout-dashboard",
@@ -254,23 +251,23 @@
       }
     ]
   },
-  "active": "a3931beec67bd14c",
+  "active": "f22e87c5ef441ae6",
   "lastOpenFiles": [
+    "assets/images/2026-06-02-the-red-grave.jpeg",
+    "assets/images/2026-06-02-graves-without-heirs.jpeg",
+    "IMG_8741.jpeg",
     "process/explorations/1-stories.canvas",
+    "assets/images/2026-05-02-the-cemetery-meadows.jpeg",
     "assets/images/2026-06-02-former-marsh.jpeg",
     "assets/images/2026-06-02-ancient-temple.jpeg",
-    "assets/images/2026-05-02-the-cemetery-meadows.jpeg",
     "assets/images/2026-06-02-planting-ivy.jpeg",
     "process/explorations/readme.md",
     "process/readme.md",
     "assets/images/2026-06-02-dancing-on-death.jpeg",
     "assets/images/2026-06-02-pilgrim-of-death.jpeg",
     "assets/images/2026-06-02-portal-tree.jpeg",
-    "assets/images/2026-06-02-trimming-the-ivy.jpeg",
-    "assets/images/2026-06-02-grave-butterfly.jpeg",
     "process/context/readme.md",
     "process/context/6-stories.md",
-    "assets/images/2026-06-02-rare-moss.jpeg",
     "EB5B66BE-05DE-4C97-9FB2-F0DFDBB4BDF9_1_201_a.heic",
     "process/explorations/0-moodboard.canvas",
     "2B5C3A77-6DFE-46A3-8091-6536A026ACFF_1_201_a.heic",
