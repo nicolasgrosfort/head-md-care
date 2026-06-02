@@ -13,10 +13,10 @@
             "state": {
               "type": "image",
               "state": {
-                "file": "assets/images/2026-06-02-dancing-on-death.jpeg"
+                "file": "assets/images/2026-05-02-the-cemetery-meadows.jpeg"
               },
               "icon": "lucide-image",
-              "title": "2026-06-02-dancing-on-death"
+              "title": "2026-05-02-the-cemetery-meadows"
             }
           }
         ]
@@ -92,7 +92,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "assets/images/2026-06-02-dancing-on-death.jpeg",
+                "file": "assets/images/2026-05-02-the-cemetery-meadows.jpeg",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for 2026-06-02-dancing-on-death"
+              "title": "Backlinks for 2026-05-02-the-cemetery-meadows"
             }
           },
           {
@@ -231,9 +231,9 @@
                   "state": {
                     "file": "process/explorations/1-stories.canvas",
                     "viewState": {
-                      "x": 504,
-                      "y": 130,
-                      "zoom": -0.8137792825698852
+                      "x": 2064.897927063944,
+                      "y": 1620.3697700091006,
+                      "zoom": -0.6768835639953611
                     }
                   },
                   "icon": "lucide-layout-dashboard",
@@ -257,23 +257,25 @@
   "active": "a3931beec67bd14c",
   "lastOpenFiles": [
     "process/explorations/1-stories.canvas",
-    "assets/images/2026-06-02-pilgrim-of-death.jpeg",
+    "assets/images/2026-06-02-former-marsh.jpeg",
+    "assets/images/2026-06-02-ancient-temple.jpeg",
+    "assets/images/2026-05-02-the-cemetery-meadows.jpeg",
+    "assets/images/2026-06-02-planting-ivy.jpeg",
+    "process/explorations/readme.md",
+    "process/readme.md",
     "assets/images/2026-06-02-dancing-on-death.jpeg",
+    "assets/images/2026-06-02-pilgrim-of-death.jpeg",
     "assets/images/2026-06-02-portal-tree.jpeg",
     "assets/images/2026-06-02-trimming-the-ivy.jpeg",
     "assets/images/2026-06-02-grave-butterfly.jpeg",
-    "process/explorations/readme.md",
     "process/context/readme.md",
     "process/context/6-stories.md",
     "assets/images/2026-06-02-rare-moss.jpeg",
     "EB5B66BE-05DE-4C97-9FB2-F0DFDBB4BDF9_1_201_a.heic",
     "process/explorations/0-moodboard.canvas",
-    "IMG_8796.jpeg",
-    "assets/images/2026-04-28-presentation-exposition-code-couleur.jpeg",
     "2B5C3A77-6DFE-46A3-8091-6536A026ACFF_1_201_a.heic",
     "process/context/5-onboarding.md",
     "process/context/6-onboarding.md",
-    "assets/images/2026-04-05-juan-carlos-cruz-3.gif",
     "process/context/1-scenes.md",
     "process/context/2-assets.md",
     "process/ressources/2026-06-01-the-monolith-project.md",
@@ -281,7 +283,6 @@
     "process/context/0-brief.md",
     "process/context/3-art-direction.md",
     "readme.md",
-    "assets/images/2026-06-01-GameExample-Gris-6.png",
     "process/ressources/2026-06-01-nomadic-tribe.md",
     "process/ressources/Nomadic Tribe.md",
     "process/ressources/The Monolith Project.md",
@@ -301,7 +302,6 @@
     "process/context/scenes.md",
     "process/robot/memory/2026-05-26-intial-and-underground-scene.md",
     "process/robot/memory/2026-05-29-scenes-structure-and-mechanics.md",
-    "process/ressources/2026-05-xx-isle-of-death.md",
-    "process/robot/readme.md"
+    "process/ressources/2026-05-xx-isle-of-death.md"
   ]
 }
