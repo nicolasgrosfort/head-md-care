@@ -13,10 +13,10 @@
             "state": {
               "type": "image",
               "state": {
-                "file": "assets/images/2026-06-02-grave-butterfly.jpeg"
+                "file": "assets/images/2026-06-02-portal-tree.jpeg"
               },
               "icon": "lucide-image",
-              "title": "2026-06-02-grave-butterfly"
+              "title": "2026-06-02-portal-tree"
             }
           }
         ]
@@ -92,7 +92,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "assets/images/2026-06-02-grave-butterfly.jpeg",
+                "file": "assets/images/2026-06-02-portal-tree.jpeg",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for 2026-06-02-grave-butterfly"
+              "title": "Backlinks for 2026-06-02-portal-tree"
             }
           },
           {
@@ -257,11 +257,13 @@
   "active": "a3931beec67bd14c",
   "lastOpenFiles": [
     "process/explorations/1-stories.canvas",
+    "assets/images/2026-06-02-trimming-the-ivy.jpeg",
+    "assets/images/2026-06-02-portal-tree.jpeg",
+    "assets/images/2026-06-02-grave-butterfly.jpeg",
     "process/explorations/readme.md",
     "process/context/readme.md",
     "process/context/6-stories.md",
     "assets/images/2026-06-02-rare-moss.jpeg",
-    "assets/images/2026-06-02-grave-butterfly.jpeg",
     "EB5B66BE-05DE-4C97-9FB2-F0DFDBB4BDF9_1_201_a.heic",
     "process/explorations/0-moodboard.canvas",
     "IMG_8796.jpeg",
@@ -280,8 +282,6 @@
     "assets/images/2026-06-01-GameExample-Gris-6.png",
     "assets/images/2026-06-01-GameExample-Gris-5.jpg",
     "assets/images/2026-06-01-GameExample-Gris-4.png",
-    "assets/images/2026-01-24-make-me-pulse-nomadic-tribe-1.png",
-    "assets/images/2026-01-24-make-me-pulse-nomadic-tribe-6.gif",
     "process/ressources/2026-06-01-nomadic-tribe.md",
     "process/ressources/Nomadic Tribe.md",
     "process/ressources/The Monolith Project.md",

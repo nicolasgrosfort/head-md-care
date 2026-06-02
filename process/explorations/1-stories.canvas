@@ -1,9 +1,10 @@
 {
 	"nodes":[
 		{"id":"865236c05b2a2bab","type":"text","text":"# Grave Butterflies\n\nA grave is covered with small black pebbles. A butterfly sits on the stones. It looks as if it is there to die, and turn into a pebble itself.\n\n![Grave Butterflies](2026-06-02-grave-butterfly.jpeg)","x":-460,"y":200,"width":380,"height":830},
-		{"id":"f01a802c7ce04d08","type":"text","text":"","x":-120,"y":1400,"width":250,"height":60},
 		{"id":"4b04caf933763e09","type":"text","text":"*List of stories collected during interviews and observations at the Cimetière des Rois.*","x":20,"y":-220,"width":380,"height":85,"color":"3"},
-		{"id":"918ccc9fb9741241","type":"text","text":"# Rare Moss\n\nRare types of moss grow on graves. A form of new life, a new ecosystem born from the dead. These mosses are protected. Graves are not allowed to be cleaned (except by families). These rare mosses grow because the material of the graves is not native.\n\n![](2026-06-02-rare-moss.jpeg)","x":210,"y":460,"width":380,"height":902}
+		{"id":"918ccc9fb9741241","type":"text","text":"# Rare Moss\n\nRare types of moss grow on graves. A form of new life, a new ecosystem born from the dead. These mosses are protected. Graves are not allowed to be cleaned (except by families). These rare mosses grow because the material of the graves is not native.\n\n![](2026-06-02-rare-moss.jpeg)","x":210,"y":460,"width":380,"height":902},
+		{"id":"f01a802c7ce04d08","type":"text","text":"# Trimming the ivy\n\nSandrine and Verena are trimming the ivy at the base of the tree trunk. This is both for aesthetic reasons and to allow the tree to breathe.\n\n![Trimming the ivy](2026-06-02-trimming-the-ivy.jpeg)","x":-280,"y":1140,"width":380,"height":815},
+		{"id":"9dd1f0836702ae0f","x":780,"y":980,"width":380,"height":911,"type":"text","text":"# Portal Trees\n\nDuring my first meeting with Sandrine and Verena, the gardeners at the Cemetery of Kings, Verena told me about the myth surrounding the Cedars, which, in some beliefs, represent a gateway between the world of the living and the world of the dead.\n\n![Portal Trees](2026-06-02-portal-tree.jpeg)\n"}
 	],
 	"edges":[]
 }
