@@ -28,7 +28,7 @@ date: 2026-06-01
 2. *How do they know what they should do?* 
 3. *What happens if they don’t?*
 4. *Do I show the user what to do? If yes, how?*
-5. *Is there something glowing? A sound? something moving? A light? A color?*
-6. *How does the user feel when they accomplished their first action?* 
-7. *What happens next?*
-8. *list the interactions that you will have to implement ( for eg. drag for X/to X)*
+	1. *Is there something glowing? A sound? something moving? A light? A color?*
+5. *How does the user feel when they accomplished their first action?* 
+6. *What happens next?*
+	1. *list the interactions that you will have to implement ( for eg. drag for X/to X)*

@@ -6,7 +6,7 @@
       {
         "id": "dd832a5dfeccfa4d",
         "type": "tabs",
-        "dimension": 28.20665083135392,
+        "dimension": 62.5914315569488,
         "children": [
           {
             "id": "bdc8a8aebcca0230",
@@ -37,7 +37,7 @@
       {
         "id": "317cb80d82fef5e9",
         "type": "tabs",
-        "dimension": 71.79334916864607,
+        "dimension": 37.4085684430512,
         "children": [
           {
             "id": "f22e87c5ef441ae6",
@@ -47,9 +47,9 @@
               "state": {
                 "file": "process/explorations/0-moodboard.canvas",
                 "viewState": {
-                  "x": 77.49691935100665,
-                  "y": 1633.1363611722586,
-                  "zoom": -1.1296968992551166
+                  "x": 895.902708509215,
+                  "y": 505.5025440981314,
+                  "zoom": -1.5399357820053878
                 }
               },
               "icon": "lucide-layout-dashboard",
@@ -113,8 +113,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200,
-    "collapsed": true
+    "width": 200
   },
   "right": {
     "id": "7f0cef7a8c8dae81",
@@ -130,7 +129,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "process/context/5-onboarding.md",
+                "file": "process/explorations/0-moodboard.canvas",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -140,7 +139,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for 5-onboarding"
+              "title": "Backlinks for 0-moodboard"
             }
           },
           {
@@ -232,10 +231,52 @@
       "workspaces:Manage workspace layouts": false
     }
   },
-  "active": "bdc8a8aebcca0230",
+  "floating": {
+    "id": "0ed52aa94b47df3f",
+    "type": "floating",
+    "children": [
+      {
+        "id": "cde99ca15d56eeb7",
+        "type": "window",
+        "children": [
+          {
+            "id": "0c9adfdb0708bb9f",
+            "type": "tabs",
+            "children": [
+              {
+                "id": "ac5231aa22d29b64",
+                "type": "leaf",
+                "state": {
+                  "type": "canvas",
+                  "state": {
+                    "file": "process/explorations/0-moodboard.canvas",
+                    "viewState": {
+                      "x": 980,
+                      "y": 1270.5,
+                      "zoom": -1.8307189151231145
+                    }
+                  },
+                  "icon": "lucide-layout-dashboard",
+                  "title": "0-moodboard"
+                }
+              }
+            ]
+          }
+        ],
+        "direction": "vertical",
+        "x": -104,
+        "y": -1080,
+        "width": 1920,
+        "height": 1080,
+        "maximize": false,
+        "zoom": 0
+      }
+    ]
+  },
+  "active": "ac5231aa22d29b64",
   "lastOpenFiles": [
-    "process/explorations/0-moodboard.canvas",
     "process/context/5-onboarding.md",
+    "process/explorations/0-moodboard.canvas",
     "process/context/6-onboarding.md",
     "assets/images/2026-04-05-juan-carlos-cruz-3.gif",
     "process/context/1-scenes.md",
