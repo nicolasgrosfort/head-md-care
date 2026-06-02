@@ -11,12 +11,24 @@
             "id": "f22e87c5ef441ae6",
             "type": "leaf",
             "state": {
-              "type": "image",
+              "type": "markdown",
               "state": {
-                "file": "assets/images/2026-06-02-perenial-plants.jpeg"
+                "file": "process/ressources/2026-05-06-renewing-the-funeral-landscape.md",
+                "mode": "source",
+                "source": false,
+                "backlinks": true,
+                "backlinkOpts": {
+                  "collapseAll": false,
+                  "extraContext": false,
+                  "sortOrder": "alphabetical",
+                  "showSearch": false,
+                  "searchQuery": "",
+                  "backlinkCollapsed": false,
+                  "unlinkedCollapsed": true
+                }
               },
-              "icon": "lucide-image",
-              "title": "2026-06-02-perenial-plants"
+              "icon": "lucide-file",
+              "title": "2026-05-06-renewing-the-funeral-landscape"
             }
           }
         ]
@@ -76,7 +88,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200
+    "width": 604.5
   },
   "right": {
     "id": "7f0cef7a8c8dae81",
@@ -231,9 +243,9 @@
                   "state": {
                     "file": "process/explorations/1-stories.canvas",
                     "viewState": {
-                      "x": 2000,
-                      "y": 1154.5,
-                      "zoom": -1.6962873719756781
+                      "x": -109.65982411816962,
+                      "y": 1054.2660145939026,
+                      "zoom": 0.032316343784331986
                     }
                   },
                   "icon": "lucide-layout-dashboard",
@@ -256,18 +268,22 @@
   },
   "active": "bdc8a8aebcca0230",
   "lastOpenFiles": [
-    "2026-06-02-carbon-at-the-basis-of-life.jpeg",
-    "assets/images/2026-06-02-perenial-plants.jpeg",
+    "process/ressources/2026-05-06-renewing-the-funeral-landscape.md",
     "process/explorations/1-stories.canvas",
-    "2026-06-02-masonic-symbols.jpeg",
-    "2026-06-02-clay-soil.jpeg",
+    "Untitled.md",
+    "process/ressources/2026-05-06-isle-of-death.md",
+    "process/ressources/2026-05-05-the-epicure-cure-irvin-yalom.md",
+    "process/ressources/2026-05-02-the-carrier-bag-theory-of-fiction.md",
+    "assets/images/2026-06-02-masonic-symbols.jpeg",
+    "assets/images/2026-06-02-carbon-at-the-basis-of-life.jpeg",
+    "assets/images/2026-06-02-perenial-plants.jpeg",
+    "assets/images/2026-06-02-clay-soil.jpeg",
     "assets/images/2026-06-02-raking-up-fallen-leaves.jpeg",
     "assets/images/2026-06-02-the-red-grave.jpeg",
     "assets/images/2026-06-02-graves-without-heirs.jpeg",
     "IMG_8741.jpeg",
     "assets/images/2026-05-02-the-cemetery-meadows.jpeg",
     "assets/images/2026-06-02-former-marsh.jpeg",
-    "assets/images/2026-06-02-ancient-temple.jpeg",
     "process/explorations/readme.md",
     "process/readme.md",
     "process/context/readme.md",
@@ -290,7 +306,6 @@
     "process/ressources/2026-06-01-pola.md",
     "process/ressources/2026-05-18-passage.md",
     "process/ressources/Pola.md",
-    "process/ressources/2026-05-06-isle-of-death.md",
     "process/explorations",
     "process/code/unity/2026-05-21-greyboxing/Temp/obj/Assembly-CSharp-Editor/Assembly-CSharp-Editor.GeneratedMSBuildEditorConfig.editorconfig",
     "process/code/unity/2026-05-21-greyboxing/Temp/obj/Assembly-CSharp-Editor/Assembly-CSharp-Editor.csproj.AssemblyReference.cache",
@@ -299,10 +314,6 @@
     "process/code/unity/2026-05-21-greyboxing/Temp/obj/Assembly-CSharp/Assembly-CSharp.csproj.AssemblyReference.cache",
     "process/code/unity/2026-05-21-greyboxing/Temp/bin/Debug",
     "process/context/assets.md",
-    "process/context/art-direction.md",
-    "process/context/scenes.md",
-    "process/robot/memory/2026-05-26-intial-and-underground-scene.md",
-    "process/robot/memory/2026-05-29-scenes-structure-and-mechanics.md",
-    "process/ressources/2026-05-xx-isle-of-death.md"
+    "process/context/art-direction.md"
   ]
 }
