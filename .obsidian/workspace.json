@@ -243,9 +243,9 @@
                   "state": {
                     "file": "process/explorations/1-stories.canvas",
                     "viewState": {
-                      "x": 1408.921850474507,
-                      "y": 898.0859636722097,
-                      "zoom": -1.1689177608489982
+                      "x": 1906.0562495022637,
+                      "y": 1391.21045093874,
+                      "zoom": -1.5293677314793301
                     }
                   },
                   "icon": "lucide-layout-dashboard",
@@ -269,10 +269,10 @@
   "active": "bdc8a8aebcca0230",
   "lastOpenFiles": [
     "process/ressources/2026-05-12-kentucky-route-zero.md",
+    "process/explorations/1-stories.canvas",
     "process/ressources/2026-05-06-renewing-the-funeral-landscape.md",
     "process/ressources/2026-05-06-isle-of-death.md",
     "process/ressources/2026-05-05-the-epicure-cure-irvin-yalom.md",
-    "process/explorations/1-stories.canvas",
     "process/ressources/2026-05-16-a-visit-to-the-plainpalais-cemetery.md",
     "process/ressources/2026-05-18-passage.md",
     "process/ressources/2026-06-01-nomadic-tribe.md",
@@ -314,7 +314,6 @@
     "process/code/unity/2026-05-21-greyboxing/Temp/obj/Assembly-CSharp-Editor/Assembly-CSharp-Editor.assets.cache",
     "process/code/unity/2026-05-21-greyboxing/Temp/obj/Assembly-CSharp/Assembly-CSharp.GeneratedMSBuildEditorConfig.editorconfig",
     "process/code/unity/2026-05-21-greyboxing/Temp/obj/Assembly-CSharp/Assembly-CSharp.csproj.AssemblyReference.cache",
-    "process/code/unity/2026-05-21-greyboxing/Temp/bin/Debug",
-    "process/context/assets.md"
+    "process/code/unity/2026-05-21-greyboxing/Temp/bin/Debug"
   ]
 }
