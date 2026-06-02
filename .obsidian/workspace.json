@@ -11,24 +11,17 @@
             "id": "f22e87c5ef441ae6",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "canvas",
               "state": {
-                "file": "process/ressources/2026-05-12-kentucky-route-zero.md",
-                "mode": "source",
-                "source": false,
-                "backlinks": true,
-                "backlinkOpts": {
-                  "collapseAll": false,
-                  "extraContext": false,
-                  "sortOrder": "alphabetical",
-                  "showSearch": false,
-                  "searchQuery": "",
-                  "backlinkCollapsed": false,
-                  "unlinkedCollapsed": true
+                "file": "process/explorations/1-stories.canvas",
+                "viewState": {
+                  "x": 675.0186507104629,
+                  "y": 1733.4657453116242,
+                  "zoom": -0.8614047670364383
                 }
               },
-              "icon": "lucide-file",
-              "title": "2026-05-12-kentucky-route-zero"
+              "icon": "lucide-layout-dashboard",
+              "title": "1-stories"
             }
           }
         ]
@@ -88,7 +81,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 604.5
+    "width": 228.5
   },
   "right": {
     "id": "7f0cef7a8c8dae81",
@@ -206,96 +199,33 @@
       "workspaces:Manage workspace layouts": false
     }
   },
-  "floating": {
-    "id": "0ed52aa94b47df3f",
-    "type": "floating",
-    "children": [
-      {
-        "id": "cde99ca15d56eeb7",
-        "type": "window",
-        "children": [
-          {
-            "id": "0c9adfdb0708bb9f",
-            "type": "tabs",
-            "dimension": 61.875,
-            "children": [
-              {
-                "id": "ac5231aa22d29b64",
-                "type": "leaf",
-                "state": {
-                  "type": "canvas",
-                  "state": {
-                    "file": "process/explorations/0-moodboard.canvas",
-                    "viewState": {
-                      "x": 1661.1792893830684,
-                      "y": 1359.9133744429053,
-                      "zoom": 1
-                    }
-                  },
-                  "icon": "lucide-layout-dashboard",
-                  "title": "0-moodboard"
-                }
-              }
-            ]
-          },
-          {
-            "id": "95a4d5105f48e27b",
-            "type": "tabs",
-            "dimension": 38.125,
-            "children": [
-              {
-                "id": "bdc8a8aebcca0230",
-                "type": "leaf",
-                "state": {
-                  "type": "canvas",
-                  "state": {
-                    "file": "process/explorations/1-stories.canvas",
-                    "viewState": {
-                      "x": 1906.0562495022637,
-                      "y": 1391.21045093874,
-                      "zoom": -1.5293677314793301
-                    }
-                  },
-                  "icon": "lucide-layout-dashboard",
-                  "title": "1-stories"
-                }
-              }
-            ]
-          }
-        ],
-        "direction": "vertical",
-        "x": -104,
-        "y": -1080,
-        "width": 1920,
-        "height": 1080,
-        "maximize": false,
-        "zoom": 0
-      }
-    ]
-  },
-  "active": "ac5231aa22d29b64",
+  "active": "f22e87c5ef441ae6",
   "lastOpenFiles": [
-    "process/code/unity/2026-06-02-transparency/Library/Artifacts/86/861d8cca66c42cfd951b68623e6ab464",
-    "process/code/unity/2026-06-02-transparency/Library/Artifacts/49/491f691cd4c2b80346244b40451322d4",
-    "process/code/unity/2026-06-02-transparency/Library/Artifacts/71/7139d026f6631def904ac87ef34a6b58",
-    "process/code/unity/2026-06-02-transparency/Library/ShaderCache/shader/Lit9335/00/b74fbdf10a241a6a91c285d50aa77759.bin",
-    "process/code/unity/2026-06-02-transparency/Library/ShaderCache/shader/Lit9335/00/24396bad856d40117b53c3ebe8e5ac9b.bin",
-    "process/code/unity/2026-06-02-transparency/Library/ShaderCache/shader/Lit9335/00/12ab946e0cfac818c921d43e706605f7.bin",
-    "process/code/unity/2026-06-02-transparency/Library/ShaderCache/shader/Lit9335/00/dbd9a1e8331645b1de1bc680bd7b0cc1.bin",
-    "process/code/unity/2026-06-02-transparency/Library/ShaderCache/shader/Lit9335/00/8b5c8ee72954075384d57d5550360137.bin",
-    "process/code/unity/2026-06-02-transparency/Library/ShaderCache/shader/Lit9335/00/c9658afea3f37ceb4b1b2752fa6795ec.bin",
-    "process/code/unity/2026-06-02-transparency/Library/ShaderCache/shader/Lit9335/00/d1a395475a21d2fe159ceaf9f27a1d61.bin",
-    "process/code/unity/2026-06-02-transparency/Library/ShaderCache/shader/Lit9335/00/a40a06b399ff3ae9540a85f33cfb0bef.bin",
-    "process/code/unity/2026-06-02-transparency/Library/PackageCache/com.unity.probuilder@1f279ab829b7/Content/Icons/Tools/ShapeTool/on/Torus@2x.png",
-    "process/code/unity/2026-06-02-transparency/Library/PackageCache/com.unity.probuilder@1f279ab829b7/Content/Icons/Tools/ShapeTool/on/Torus.png",
-    "process/code/unity/2026-06-02-transparency/Library/PackageCache/com.unity.probuilder@1f279ab829b7/Content/Icons/Tools/ShapeTool/on/Stair@2x.png",
-    "process/code/unity/2026-06-02-transparency/Library/PackageCache/com.unity.probuilder@1f279ab829b7/Content/Icons/Tools/ShapeTool/on/Stair.png",
-    "process/code/unity/2026-06-02-transparency/Library/PackageCache/com.unity.probuilder@1f279ab829b7/Content/Icons/Tools/ShapeTool/on/Sprite@2x.png",
-    "process/code/unity/2026-06-02-transparency/Library/PackageCache/com.unity.probuilder@1f279ab829b7/Content/Icons/Tools/ShapeTool/on/Sprite.png",
-    "process/code/unity/2026-06-02-transparency/Library/PackageCache/com.unity.probuilder@1f279ab829b7/Content/Icons/Tools/ShapeTool/on/Sphere@2x.png",
-    "process/code/unity/2026-06-02-transparency/Library/PackageCache/com.unity.probuilder@1f279ab829b7/Content/Icons/Tools/ShapeTool/on/Sphere.png",
-    "process/code/unity/2026-06-02-transparency/Library/PackageCache/com.unity.probuilder@1f279ab829b7/Content/Icons/Tools/ShapeTool/on/Prism@2x.png",
-    "process/code/unity/2026-06-02-transparency/Library/PackageCache/com.unity.probuilder@1f279ab829b7/Content/Icons/Tools/ShapeTool/on/Prism.png",
+    "process/code/unity/2026-06-02-onboarding/Temp/ADB-Refresh02a28878711414100881c518a0504a4a",
+    "process/explorations/0-moodboard.canvas",
+    "process/context/1-scenes.md",
+    "process/code/unity/2026-06-02-onboarding/Library/ShaderCache/shader/Lit9335/00/4031d2be797122f8f5d57147da1f2afb.bin",
+    "process/code/unity/2026-06-02-onboarding/Library/ShaderCache/shader/Lit9335/00/ecb5ca4fedb404b6d96c1d6e9e6663cd.bin",
+    "process/code/unity/2026-06-02-onboarding/Library/ShaderCache/shader/Lit9335/00/ff3853df0e69d649077b99a86f840784.bin",
+    "process/code/unity/2026-06-02-onboarding/Library/ShaderCache/shader/Lit9335/00/dff2370fa9a9849bc94162d8ee31b16b.bin",
+    "process/code/unity/2026-06-02-onboarding/Library/ShaderCache/shader/Lit9335/00/bec25bd8405e5b8e8e969ce2f3e4e3e6.bin",
+    "process/code/unity/2026-06-02-onboarding/Library/ShaderCache/shader/Lit9335/00/30953f0ca7d32264039f484dcbaa8c72.bin",
+    "process/code/unity/2026-06-02-onboarding/Library/ShaderCache/shader/Lit9335/00/93cc2c6918806989954a7cb597bcd919.bin",
+    "process/code/unity/2026-06-02-onboarding/Library/ShaderCache/shader/Lit9335/00/e659c5d2f287ef89920397e3002a3a04.bin",
+    "process/code/unity/2026-06-02-onboarding/Library/ShaderCache/shader/Lit9335/00/74b2614e86bb56157bddc97e565dc4b1.bin",
+    "process/code/unity/2026-06-02-onboarding/Library/ShaderCache/shader/Lit9335/00/260b9547d4a66f48b4089847008a2176.bin",
+    "process/code/unity/2026-06-02-onboarding/Assets/Grass And Moss Decals Pack/Textures/Plain_Grass_3/Plain_Grass_3_Normal.png",
+    "process/code/unity/2026-06-02-onboarding/Assets/Grass And Moss Decals Pack/Textures/Plain_Grass_3/Plain_Grass_3_Cookie.png",
+    "process/code/unity/2026-06-02-onboarding/Assets/Grass And Moss Decals Pack/Textures/Plain_Grass_3/Plain_Grass_3_BaseColor.png",
+    "process/code/unity/2026-06-02-onboarding/Assets/Grass And Moss Decals Pack/Textures/Plain_Grass_3/Plain_Grass_3_Albedo.png",
+    "process/code/unity/2026-06-02-onboarding/Assets/Grass And Moss Decals Pack/Textures/Plain_Grass_2/Plain_Grass_2_Normal.png",
+    "process/code/unity/2026-06-02-onboarding/Assets/Grass And Moss Decals Pack/Textures/Plain_Grass_2/Plain_Grass_2_Cookie.png",
+    "process/code/unity/2026-06-02-onboarding/Assets/Grass And Moss Decals Pack/Textures/Plain_Grass_2/Plain_Grass_2_BaseColor.png",
+    "process/code/unity/2026-06-02-onboarding/Assets/Grass And Moss Decals Pack/Textures/Plain_Grass_2/Plain_Grass_2_Albedo.png",
+    "process/code/unity/2026-06-02-onboarding/Assets/Grass And Moss Decals Pack/Textures/Plain_Grass_1/Plain_Grass_1_Normal.png",
+    "process/code/unity/2026-06-02-onboarding/Assets/Grass And Moss Decals Pack/Textures/Plain_Grass_1/Plain_Grass_1_Cookie.png",
+    "process/explorations/1-stories.canvas",
+    "process/ressources/2026-05-12-kentucky-route-zero.md",
     "process/code/unity/2026-06-02-transparency/Library/PackageCache/com.unity.probuilder@1f279ab829b7/Samples~/Runtime/Runtime Editing/README.md",
     "process/code/unity/2026-06-02-transparency/Library/PackageCache/com.unity.probuilder@1f279ab829b7/External/KdTree/README.md",
     "process/code/unity/2026-06-02-transparency/Library/PackageCache/com.unity.probuilder@1f279ab829b7/External/KdTree/LICENSE.md",
@@ -318,10 +248,6 @@
     "process/code/unity/2026-06-02-transparency/Library/PackageCache/com.unity.probuilder@1f279ab829b7/Documentation~/uv-editor.md",
     "process/code/unity/2026-06-02-transparency/Library/PackageCache/com.unity.probuilder@1f279ab829b7/Documentation~/uv-editor-toolbar.md",
     "process/code/unity/2026-06-02-transparency/Library/PackageCache/com.unity.probuilder@1f279ab829b7/Documentation~/tools.md",
-    "process/code/unity/2026-06-02-transparency/Library/PackageCache/com.unity.probuilder@1f279ab829b7/Documentation~/tool-options-overlay.md",
-    "process/code/unity/2026-06-02-transparency/Library/PackageCache/com.unity.probuilder@1f279ab829b7/Documentation~/snap-to-grid.md",
-    "process/code/unity/2026-06-02-transparency/Library/PackageCache/com.unity.probuilder@1f279ab829b7/Documentation~/smoothing-groups.md",
-    "process/explorations/1-stories.canvas",
-    "process/explorations/0-moodboard.canvas"
+    "process/code/unity/2026-06-02-transparency/Library/PackageCache/com.unity.probuilder@1f279ab829b7/Documentation~/tool-options-overlay.md"
   ]
 }
