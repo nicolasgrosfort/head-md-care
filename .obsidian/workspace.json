@@ -4,56 +4,19 @@
     "type": "split",
     "children": [
       {
-        "id": "dd832a5dfeccfa4d",
-        "type": "tabs",
-        "dimension": 62.5914315569488,
-        "children": [
-          {
-            "id": "bdc8a8aebcca0230",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "process/context/5-onboarding.md",
-                "mode": "source",
-                "source": false,
-                "backlinks": true,
-                "backlinkOpts": {
-                  "collapseAll": false,
-                  "extraContext": false,
-                  "sortOrder": "alphabetical",
-                  "showSearch": false,
-                  "searchQuery": "",
-                  "backlinkCollapsed": false,
-                  "unlinkedCollapsed": true
-                }
-              },
-              "icon": "lucide-file",
-              "title": "5-onboarding"
-            }
-          }
-        ]
-      },
-      {
         "id": "317cb80d82fef5e9",
         "type": "tabs",
-        "dimension": 37.4085684430512,
         "children": [
           {
             "id": "f22e87c5ef441ae6",
             "type": "leaf",
             "state": {
-              "type": "canvas",
+              "type": "image",
               "state": {
-                "file": "process/explorations/0-moodboard.canvas",
-                "viewState": {
-                  "x": 895.902708509215,
-                  "y": 505.5025440981314,
-                  "zoom": -1.5399357820053878
-                }
+                "file": "assets/images/2026-06-02-grave-butterfly.jpeg"
               },
-              "icon": "lucide-layout-dashboard",
-              "title": "0-moodboard"
+              "icon": "lucide-image",
+              "title": "2026-06-02-grave-butterfly"
             }
           }
         ]
@@ -129,7 +92,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "process/explorations/0-moodboard.canvas",
+                "file": "assets/images/2026-06-02-grave-butterfly.jpeg",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -139,7 +102,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for 0-moodboard"
+              "title": "Backlinks for 2026-06-02-grave-butterfly"
             }
           },
           {
@@ -259,8 +222,26 @@
                   "icon": "lucide-layout-dashboard",
                   "title": "0-moodboard"
                 }
+              },
+              {
+                "id": "bdc8a8aebcca0230",
+                "type": "leaf",
+                "state": {
+                  "type": "canvas",
+                  "state": {
+                    "file": "process/explorations/1-stories.canvas",
+                    "viewState": {
+                      "x": 504,
+                      "y": 130,
+                      "zoom": -0.8137792825698852
+                    }
+                  },
+                  "icon": "lucide-layout-dashboard",
+                  "title": "1-stories"
+                }
               }
-            ]
+            ],
+            "currentTab": 1
           }
         ],
         "direction": "vertical",
@@ -273,11 +254,20 @@
       }
     ]
   },
-  "active": "ac5231aa22d29b64",
+  "active": "a3931beec67bd14c",
   "lastOpenFiles": [
-    "process/context/5-onboarding.md",
+    "process/explorations/1-stories.canvas",
+    "process/explorations/readme.md",
+    "process/context/readme.md",
+    "process/context/6-stories.md",
+    "assets/images/2026-06-02-rare-moss.jpeg",
+    "assets/images/2026-06-02-grave-butterfly.jpeg",
+    "EB5B66BE-05DE-4C97-9FB2-F0DFDBB4BDF9_1_201_a.heic",
     "process/explorations/0-moodboard.canvas",
-    "2026-04-28-presentation-exposition-code-couleur.jpeg",
+    "IMG_8796.jpeg",
+    "assets/images/2026-04-28-presentation-exposition-code-couleur.jpeg",
+    "2B5C3A77-6DFE-46A3-8091-6536A026ACFF_1_201_a.heic",
+    "process/context/5-onboarding.md",
     "process/context/6-onboarding.md",
     "assets/images/2026-04-05-juan-carlos-cruz-3.gif",
     "process/context/1-scenes.md",
@@ -292,9 +282,6 @@
     "assets/images/2026-06-01-GameExample-Gris-4.png",
     "assets/images/2026-01-24-make-me-pulse-nomadic-tribe-1.png",
     "assets/images/2026-01-24-make-me-pulse-nomadic-tribe-6.gif",
-    "assets/images/2026-01-24-make-me-pulse-nomadic-tribe-5.png",
-    "assets/images/2026-01-24-make-me-pulse-nomadic-tribe-4.png",
-    "assets/images/2026-01-24-make-me-pulse-nomadic-tribe-3.png",
     "process/ressources/2026-06-01-nomadic-tribe.md",
     "process/ressources/Nomadic Tribe.md",
     "process/ressources/The Monolith Project.md",
@@ -309,17 +296,12 @@
     "process/code/unity/2026-05-21-greyboxing/Temp/obj/Assembly-CSharp/Assembly-CSharp.GeneratedMSBuildEditorConfig.editorconfig",
     "process/code/unity/2026-05-21-greyboxing/Temp/obj/Assembly-CSharp/Assembly-CSharp.csproj.AssemblyReference.cache",
     "process/code/unity/2026-05-21-greyboxing/Temp/bin/Debug",
-    "process/code/unity/2026-05-21-greyboxing/Temp/bin",
-    "process/code/unity/2026-05-21-greyboxing/Temp/obj/Assembly-CSharp/Assembly-CSharp.assets.cache",
     "process/context/assets.md",
     "process/context/art-direction.md",
     "process/context/scenes.md",
     "process/robot/memory/2026-05-26-intial-and-underground-scene.md",
     "process/robot/memory/2026-05-29-scenes-structure-and-mechanics.md",
     "process/ressources/2026-05-xx-isle-of-death.md",
-    "process/robot/readme.md",
-    "process/journal/2026-04-29-group-formation-tree-concept.md",
-    "process/context/readme.md",
-    "process/ressources/2026-05-16-a-visit-to-the-plainpalais-cemetery.md"
+    "process/robot/readme.md"
   ]
 }
