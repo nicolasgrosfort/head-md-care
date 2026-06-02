@@ -13,10 +13,10 @@
             "state": {
               "type": "image",
               "state": {
-                "file": "assets/images/2026-06-02-portal-tree.jpeg"
+                "file": "assets/images/2026-06-02-dancing-on-death.jpeg"
               },
               "icon": "lucide-image",
-              "title": "2026-06-02-portal-tree"
+              "title": "2026-06-02-dancing-on-death"
             }
           }
         ]
@@ -92,7 +92,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "assets/images/2026-06-02-portal-tree.jpeg",
+                "file": "assets/images/2026-06-02-dancing-on-death.jpeg",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for 2026-06-02-portal-tree"
+              "title": "Backlinks for 2026-06-02-dancing-on-death"
             }
           },
           {
@@ -257,8 +257,10 @@
   "active": "a3931beec67bd14c",
   "lastOpenFiles": [
     "process/explorations/1-stories.canvas",
-    "assets/images/2026-06-02-trimming-the-ivy.jpeg",
+    "assets/images/2026-06-02-pilgrim-of-death.jpeg",
+    "assets/images/2026-06-02-dancing-on-death.jpeg",
     "assets/images/2026-06-02-portal-tree.jpeg",
+    "assets/images/2026-06-02-trimming-the-ivy.jpeg",
     "assets/images/2026-06-02-grave-butterfly.jpeg",
     "process/explorations/readme.md",
     "process/context/readme.md",
@@ -280,8 +282,6 @@
     "process/context/3-art-direction.md",
     "readme.md",
     "assets/images/2026-06-01-GameExample-Gris-6.png",
-    "assets/images/2026-06-01-GameExample-Gris-5.jpg",
-    "assets/images/2026-06-01-GameExample-Gris-4.png",
     "process/ressources/2026-06-01-nomadic-tribe.md",
     "process/ressources/Nomadic Tribe.md",
     "process/ressources/The Monolith Project.md",
