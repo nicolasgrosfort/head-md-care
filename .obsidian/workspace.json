@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "readme.md",
+                "file": "process/readme.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": true,
@@ -225,6 +225,7 @@
   },
   "active": "f22e87c5ef441ae6",
   "lastOpenFiles": [
+    "readme.md",
     "assets/images/2026-06-03-ivy-1.jpeg",
     "process/explorations/0-moodboard.canvas",
     "assets/images/2026-06-03-ivy-4.jpg",
