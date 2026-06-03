@@ -11,24 +11,17 @@
             "id": "f22e87c5ef441ae6",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "canvas",
               "state": {
-                "file": "process/readme.md",
-                "mode": "source",
-                "source": false,
-                "backlinks": true,
-                "backlinkOpts": {
-                  "collapseAll": false,
-                  "extraContext": false,
-                  "sortOrder": "alphabetical",
-                  "showSearch": false,
-                  "searchQuery": "",
-                  "backlinkCollapsed": false,
-                  "unlinkedCollapsed": true
+                "file": "process/explorations/0-moodboard.canvas",
+                "viewState": {
+                  "x": 1843.720507337073,
+                  "y": 1986.3880093954515,
+                  "zoom": 1
                 }
               },
-              "icon": "lucide-file",
-              "title": "readme"
+              "icon": "lucide-layout-dashboard",
+              "title": "0-moodboard"
             }
           },
           {
@@ -105,7 +98,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 228.5
+    "width": 228.5,
+    "collapsed": true
   },
   "right": {
     "id": "7f0cef7a8c8dae81",
@@ -225,6 +219,7 @@
   },
   "active": "f22e87c5ef441ae6",
   "lastOpenFiles": [
+    "process/readme.md",
     "readme.md",
     "assets/images/2026-06-03-ivy-1.jpeg",
     "process/explorations/0-moodboard.canvas",
@@ -271,7 +266,6 @@
     "process/code/unity/2026-06-02-transparency/Library/PackageCache/com.unity.probuilder@1f279ab829b7/Documentation~/uv_dropdown.md",
     "process/code/unity/2026-06-02-transparency/Library/PackageCache/com.unity.probuilder@1f279ab829b7/Documentation~/uv-editor.md",
     "process/code/unity/2026-06-02-transparency/Library/PackageCache/com.unity.probuilder@1f279ab829b7/Documentation~/uv-editor-toolbar.md",
-    "process/code/unity/2026-06-02-transparency/Library/PackageCache/com.unity.probuilder@1f279ab829b7/Documentation~/tools.md",
-    "process/code/unity/2026-06-02-transparency/Library/PackageCache/com.unity.probuilder@1f279ab829b7/Documentation~/tool-options-overlay.md"
+    "process/code/unity/2026-06-02-transparency/Library/PackageCache/com.unity.probuilder@1f279ab829b7/Documentation~/tools.md"
   ]
 }
