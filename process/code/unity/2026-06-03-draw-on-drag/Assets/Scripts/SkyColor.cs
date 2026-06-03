@@ -44,6 +44,7 @@ public class SkyColor : MonoBehaviour
         float t = MossCounter.Instance.Percentage / 100f;
 
         _colorAdjustments.saturation.value = Mathf.Lerp(saturationAtEmpty, saturationAtFull, t);
+        _colorAdjustments.hueShift.value = Mathf.Lerp(hueAtEmpty, hueAtFull, t);
         _vignette.intensity.value = Mathf.Lerp(0.5f, 0.1f, t);
         _chromaticAberration.intensity.value = Mathf.Lerp(0.5f, 0.1f, t);
     }

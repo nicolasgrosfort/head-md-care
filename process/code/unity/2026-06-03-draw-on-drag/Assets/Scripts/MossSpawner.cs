@@ -37,14 +37,16 @@ public class MossSpawner : MonoBehaviour
     public float timeBetweenPrefabs = 0.05f;
 
     [Header("Accélération")]
-    public float delayReduction = 0.5f; // secondes retirées à chaque repousse
-    public float minRegrowDelay = 0.5f; // délai minimum
-    public float speedMultiplier = 1.5f; // multiplie la vitesse à chaque repousse
-    public float maxSpeedMultiplier = 10f; // vitesse maximum
+    public float delayReduction = 0.5f;
+    public float minRegrowDelay = 0.5f;
+    public float speedMultiplier = 1.5f;
+    public float maxSpeedMultiplier = 10f;
+    public float regrowMultiplier = 1.2f; // multiplie la quantité à chaque repousse
+    public float maxRegrowMultiplier = 3f; // quantité maximum
 
     private float _currentDelay;
-    private float _currentSpeed;
     private float _currentTimeBetween;
+    private float _currentRegrowMultiplier = 1f;
 
     [Header("Caméra")]
     public bool cameraVisibleOnly = true;
@@ -104,17 +106,20 @@ public class MossSpawner : MonoBehaviour
 
     public void OnMossErased()
     {
-        // Réduit le délai
         _currentDelay = Mathf.Max(minRegrowDelay, _currentDelay - delayReduction);
 
-        // Accélère la vitesse progressive
         _currentTimeBetween = Mathf.Max(
             timeBetweenPrefabs / maxSpeedMultiplier,
             _currentTimeBetween / speedMultiplier
         );
 
+        _currentRegrowMultiplier = Mathf.Min(
+            maxRegrowMultiplier,
+            _currentRegrowMultiplier * regrowMultiplier
+        );
+
         Debug.Log(
-            $"Repousse accélérée — délai: {_currentDelay:F1}s, vitesse: {_currentTimeBetween:F3}s"
+            $"Repousse — délai: {_currentDelay:F1}s | vitesse: {_currentTimeBetween:F3}s | quantité: x{_currentRegrowMultiplier:F1}"
         );
     }
 
@@ -326,7 +331,10 @@ public class MossSpawner : MonoBehaviour
             yield return new WaitForSeconds(_currentDelay);
 
             int missing = MossCounter.Instance.Total - MossCounter.Instance.Remaining;
-            yield return StartCoroutine(RegrowMissing(missing));
+            int toRegrow = Mathf.RoundToInt(missing * _currentRegrowMultiplier);
+
+            // Peut dépasser le total — on plafonne dans Regrow via Mathf.Min
+            yield return StartCoroutine(RegrowMissing(toRegrow));
         }
     }
 
