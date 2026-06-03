@@ -1,3 +1,6 @@
+// IEnumerator import ?
+
+using System.Collections;
 using UnityEngine;
 
 public class MossSpawner : MonoBehaviour
@@ -28,6 +31,12 @@ public class MossSpawner : MonoBehaviour
     public float minScale = 0.3f;
     public float maxScale = 0.8f;
 
+    [Header("Repousse")]
+    public bool autoRegrow = true;
+    public float regrowDelay = 5f; // secondes avant que la mousse repousse
+    public float regrowInterval = 10f; // secondes entre chaque repousse complète
+    public float timeBetweenPrefabs = 0.05f;
+
     [Header("Caméra")]
     public bool cameraVisibleOnly = true;
 
@@ -37,6 +46,9 @@ public class MossSpawner : MonoBehaviour
     {
         _cam = Camera.main;
         Spawn();
+
+        if (autoRegrow)
+            StartCoroutine(RegrowRoutine());
     }
 
     [ContextMenu("Regenerate")]
@@ -166,7 +178,7 @@ public class MossSpawner : MonoBehaviour
         return Vector3.up;
     }
 
-    private void PlacePrefab(Vector3 position, Vector3 normal)
+    private void PlacePrefab(Vector3 position, Vector3 normal, bool isRegrow = false)
     {
         Vector3 spawnPos = position + normal * offset;
 
@@ -181,7 +193,10 @@ public class MossSpawner : MonoBehaviour
         GameObject go = Instantiate(mossPrefab, spawnPos, baseRotation * randomSpin, transform);
         go.transform.localScale = Vector3.one * scale;
 
-        MossCounter.Instance?.Register(1);
+        if (isRegrow)
+            MossCounter.Instance?.Regrow(1); // remonte le Remaining sans toucher au Total
+        else
+            MossCounter.Instance?.Register(1);
     }
 
     private bool IsVisibleFromCamera(Vector3 point)
@@ -271,5 +286,159 @@ public class MossSpawner : MonoBehaviour
         }
 
         return Vector3.zero;
+    }
+
+    private IEnumerator RegrowRoutine()
+    {
+        while (true)
+        {
+            yield return new WaitUntil(() =>
+                MossCounter.Instance != null
+                && MossCounter.Instance.Remaining < MossCounter.Instance.Total
+            );
+
+            yield return new WaitForSeconds(regrowDelay);
+
+            // Ne respawn QUE les prefabs manquants, sans reset le compteur
+            int missing = MossCounter.Instance.Total - MossCounter.Instance.Remaining;
+            Debug.Log($"Repousse de {missing} prefabs...");
+
+            yield return StartCoroutine(RegrowMissing(missing));
+
+            yield return new WaitForSeconds(regrowInterval);
+        }
+    }
+
+    private IEnumerator RegrowMissing(int count)
+    {
+        Collider[] obstacles = FindObjectsByType<Collider>(FindObjectsInactive.Exclude);
+        System.Collections.Generic.List<Collider> targets = new();
+        foreach (Collider col in obstacles)
+            if ((obstacleLayer.value & (1 << col.gameObject.layer)) != 0)
+                targets.Add(col);
+
+        if (targets.Count == 0)
+            yield break;
+
+        int regrown = 0;
+
+        while (regrown < count)
+        {
+            Collider target = targets[Random.Range(0, targets.Count)];
+            Vector3 center = cameraVisibleOnly
+                ? FindVisibleSurfacePoint(target)
+                : FindSurfacePoint(target);
+
+            if (center == Vector3.zero)
+                continue;
+
+            foreach (var point in GetIslandPoints(center, target))
+            {
+                if (regrown >= count)
+                    yield break;
+
+                PlacePrefab(point.position, point.normal, isRegrow: true); // ← true ici
+                regrown++;
+                yield return new WaitForSeconds(timeBetweenPrefabs);
+            }
+        }
+    }
+
+    private IEnumerator SpawnProgressive()
+    {
+        Collider[] obstacles = FindObjectsByType<Collider>(FindObjectsInactive.Exclude);
+        System.Collections.Generic.List<Collider> targets = new();
+        foreach (Collider col in obstacles)
+            if ((obstacleLayer.value & (1 << col.gameObject.layer)) != 0)
+                targets.Add(col);
+
+        int spawned = 0;
+        int attempts = 0;
+        int maxAttempts = islandCount * 50;
+
+        while (spawned < islandCount && attempts < maxAttempts)
+        {
+            attempts++;
+            Collider target = targets[Random.Range(0, targets.Count)];
+            Vector3 center = cameraVisibleOnly
+                ? FindVisibleSurfacePoint(target)
+                : FindSurfacePoint(target);
+
+            if (center == Vector3.zero)
+                continue;
+
+            // Place prefab par prefab avec pause
+            int placed = 0;
+            foreach (var point in GetIslandPoints(center, target))
+            {
+                PlacePrefab(point.position, point.normal, isRegrow: true);
+                placed++;
+                yield return new WaitForSeconds(timeBetweenPrefabs);
+            }
+
+            if (placed > 0)
+                spawned++;
+        }
+    }
+
+    // Structure pour retourner position + normale
+    private struct SurfacePoint
+    {
+        public Vector3 position,
+            normal;
+    }
+
+    private System.Collections.Generic.IEnumerable<SurfacePoint> GetIslandPoints(
+        Vector3 center,
+        Collider col
+    )
+    {
+        float noiseOffsetX = Random.Range(0f, 999f);
+        float noiseOffsetY = Random.Range(0f, 999f);
+
+        Vector3 normal = GetSurfaceNormal(center, col);
+        Vector3 tangent = Vector3.Cross(normal, Vector3.up);
+        if (tangent.sqrMagnitude < 0.01f)
+            tangent = Vector3.Cross(normal, Vector3.forward);
+        tangent.Normalize();
+        Vector3 bitangent = Vector3.Cross(normal, tangent).normalized;
+
+        int gridRes = Mathf.CeilToInt(Mathf.Sqrt(pointsPerIsland));
+        float step = (islandRadius * 2f) / gridRes;
+
+        for (int xi = 0; xi < gridRes; xi++)
+        {
+            for (int yi = 0; yi < gridRes; yi++)
+            {
+                float localX = -islandRadius + xi * step + Random.Range(-step * 0.4f, step * 0.4f);
+                float localY = -islandRadius + yi * step + Random.Range(-step * 0.4f, step * 0.4f);
+
+                Vector3 samplePoint = center + tangent * localX + bitangent * localY;
+
+                float nx = (samplePoint.x + noiseOffsetX) * noiseScale;
+                float ny = (samplePoint.z + noiseOffsetY) * noiseScale;
+
+                float noiseValue =
+                    Mathf.PerlinNoise(nx, ny) * 0.5f
+                    + Mathf.PerlinNoise(nx * 2.1f, ny * 2.1f) * 0.3f
+                    + Mathf.PerlinNoise(nx * 4.3f, ny * 4.3f) * 0.2f;
+
+                float dist = Mathf.Sqrt(localX * localX + localY * localY);
+                float fade = 1f - Mathf.SmoothStep(0f, islandRadius, dist);
+
+                if (noiseValue * fade < noiseThreshold)
+                    continue;
+
+                Ray ray = new Ray(samplePoint + normal * islandRadius, -normal);
+                if (!Physics.Raycast(ray, out RaycastHit hit, islandRadius * 2f, obstacleLayer))
+                    continue;
+                if (Vector3.Distance(hit.point, center) > islandRadius * 1.5f)
+                    continue;
+                if (cameraVisibleOnly && !IsVisibleFromCamera(hit.point))
+                    continue;
+
+                yield return new SurfacePoint { position = hit.point, normal = hit.normal };
+            }
+        }
     }
 }

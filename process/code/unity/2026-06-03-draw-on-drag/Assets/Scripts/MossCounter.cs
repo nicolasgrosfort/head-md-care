@@ -38,6 +38,12 @@ public class MossCounter : MonoBehaviour
         UpdateUI();
     }
 
+    public void Regrow(int count = 1)
+    {
+        Remaining = Mathf.Min(Total, Remaining + count);
+        UpdateUI();
+    }
+
     private void UpdateUI()
     {
         int percentage = Total > 0 ? Mathf.RoundToInt((float)Remaining / Total * 100f) : 0;
