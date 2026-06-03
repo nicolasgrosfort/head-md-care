@@ -8,6 +8,8 @@ public class MossCounter : MonoBehaviour
     [Header("UI")]
     public TMP_Text counterText;
 
+    public float Percentage => Total > 0 ? (float)Remaining / Total * 100f : 0f;
+
     public int Total { get; private set; }
     public int Remaining { get; private set; }
 
@@ -38,9 +40,11 @@ public class MossCounter : MonoBehaviour
 
     private void UpdateUI()
     {
-        if (counterText != null)
-            counterText.text = $"Mousse : {Remaining} / {Total}";
+        int percentage = Total > 0 ? Mathf.RoundToInt((float)Remaining / Total * 100f) : 0;
 
-        Debug.Log($"Mousse : {Remaining} / {Total}");
+        if (counterText != null)
+            counterText.text = $"Mousse : {percentage}%";
+
+        Debug.Log($"Mousse : {percentage}% ({Remaining} / {Total})");
     }
 }

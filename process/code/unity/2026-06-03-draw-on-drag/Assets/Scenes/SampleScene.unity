@@ -157,11 +157,11 @@ MonoBehaviour:
   obstacleLayer:
     serializedVersion: 2
     m_Bits: 64
-  islandCount: 50
-  islandRadius: 5
-  pointsPerIsland: 1000
-  noiseScale: 1.5
-  noiseThreshold: 0.5
+  islandCount: 10
+  islandRadius: 1
+  pointsPerIsland: 200
+  noiseScale: 1
+  noiseThreshold: 0.3
   offset: 0.02
   minAngle: -20
   maxAngle: 20
@@ -241,6 +241,7 @@ GameObject:
   - component: {fileID: 330585544}
   - component: {fileID: 330585547}
   - component: {fileID: 330585548}
+  - component: {fileID: 330585549}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -382,6 +383,25 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 4294967295
   m_MaxRayIntersections: 0
+--- !u!114 &330585549
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 330585543}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6540dbac19b2f442cab7657456903649, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
+  volume: {fileID: 832575518}
+  hueAtFull: 0
+  hueAtEmpty: 180
+  saturationAtFull: 20
+  saturationAtEmpty: -50
+  brightnessAtFull: 0
+  brightnessAtEmpty: -0.3
 --- !u!1 &362873738
 GameObject:
   m_ObjectHideFlags: 0
@@ -1011,7 +1031,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7587355203902330065, guid: bfe514bb17c2a4a4894d82db6881c610, type: 3}
       propertyPath: m_Layer
-      value: 6
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7851895571385137271, guid: bfe514bb17c2a4a4894d82db6881c610, type: 3}
       propertyPath: m_LocalScale.x
