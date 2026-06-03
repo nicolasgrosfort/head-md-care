@@ -7,7 +7,7 @@ public class MossEraser : MonoBehaviour
     public LayerMask erasableLayer;
 
     [Header("Rayon d'effacement")]
-    public float eraseRadius = 0.3f;
+    public float eraseRadius = 0.01f;
 
     private Camera _cam;
 

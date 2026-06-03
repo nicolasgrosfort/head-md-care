@@ -98,7 +98,16 @@ public class MossSpawner : MonoBehaviour
         float noiseOffsetX = Random.Range(0f, 999f);
         float noiseOffsetY = Random.Range(0f, 999f);
 
-        // Grille de points dans le rayon de l'îlot
+        // Normale approximative au centre de l'îlot
+        Vector3 normal = GetSurfaceNormal(center, col);
+
+        // Deux axes perpendiculaires à la normale = plan local de la surface
+        Vector3 tangent = Vector3.Cross(normal, Vector3.up);
+        if (tangent.sqrMagnitude < 0.01f)
+            tangent = Vector3.Cross(normal, Vector3.forward);
+        tangent.Normalize();
+        Vector3 bitangent = Vector3.Cross(normal, tangent).normalized;
+
         int gridRes = Mathf.CeilToInt(Mathf.Sqrt(pointsPerIsland));
         float step = (islandRadius * 2f) / gridRes;
 
@@ -106,34 +115,35 @@ public class MossSpawner : MonoBehaviour
         {
             for (int yi = 0; yi < gridRes; yi++)
             {
-                // Position sur la grille locale à l'îlot
-                float localX = -islandRadius + xi * step + Random.Range(-step * 0.3f, step * 0.3f);
-                float localY = -islandRadius + yi * step + Random.Range(-step * 0.3f, step * 0.3f);
+                float localX = -islandRadius + xi * step + Random.Range(-step * 0.4f, step * 0.4f);
+                float localY = -islandRadius + yi * step + Random.Range(-step * 0.4f, step * 0.4f);
 
-                // Plusieurs octaves de noise pour un résultat organique
-                float nx = (center.x + localX + noiseOffsetX) * noiseScale;
-                float ny = (center.z + localY + noiseOffsetY) * noiseScale;
+                // Point dans le plan de la surface
+                Vector3 samplePoint = center + tangent * localX + bitangent * localY;
+
+                // Noise multi-octaves
+                float nx = (samplePoint.x + noiseOffsetX) * noiseScale;
+                float ny = (samplePoint.z + noiseOffsetY) * noiseScale;
 
                 float noiseValue =
                     Mathf.PerlinNoise(nx, ny) * 0.5f
-                    + Mathf.PerlinNoise(nx * 2f, ny * 2f) * 0.3f
-                    + Mathf.PerlinNoise(nx * 4f, ny * 4f) * 0.2f;
+                    + Mathf.PerlinNoise(nx * 2.1f, ny * 2.1f) * 0.3f
+                    + Mathf.PerlinNoise(nx * 4.3f, ny * 4.3f) * 0.2f;
 
-                // Fade organique sur les bords (cercle doux)
+                // Bord doux
                 float dist = Mathf.Sqrt(localX * localX + localY * localY);
                 float fade = 1f - Mathf.SmoothStep(0f, islandRadius, dist);
 
                 if (noiseValue * fade < noiseThreshold)
                     continue;
 
-                // Raycast depuis ce point vers la surface
-                Vector3 rayOrigin = center + new Vector3(localX, islandRadius, localY);
-                Ray ray = new Ray(rayOrigin, (center - rayOrigin).normalized);
+                // Raycast depuis le point + normale vers la surface
+                Ray ray = new Ray(samplePoint + normal * islandRadius, -normal);
 
-                if (!Physics.Raycast(ray, out RaycastHit hit, islandRadius * 3f, obstacleLayer))
+                if (!Physics.Raycast(ray, out RaycastHit hit, islandRadius * 2f, obstacleLayer))
                     continue;
 
-                if (Vector3.Distance(hit.point, center) > islandRadius * 1.2f)
+                if (Vector3.Distance(hit.point, center) > islandRadius * 1.5f)
                     continue;
 
                 if (cameraVisibleOnly && !IsVisibleFromCamera(hit.point))
@@ -142,6 +152,18 @@ public class MossSpawner : MonoBehaviour
                 PlacePrefab(hit.point, hit.normal);
             }
         }
+    }
+
+    private Vector3 GetSurfaceNormal(Vector3 point, Collider col)
+    {
+        Bounds b = col.bounds;
+        Vector3 dir = (point - b.center).normalized;
+        Ray ray = new Ray(b.center + dir * b.extents.magnitude * 2f, -dir);
+
+        if (Physics.Raycast(ray, out RaycastHit hit, b.extents.magnitude * 4f, obstacleLayer))
+            return hit.normal;
+
+        return Vector3.up;
     }
 
     private void PlacePrefab(Vector3 position, Vector3 normal)
