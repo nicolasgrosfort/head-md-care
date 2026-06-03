@@ -8,14 +8,16 @@ public class MossSpawner : MonoBehaviour
     [Header("Obstacles ciblés")]
     public LayerMask obstacleLayer;
 
-    [Header("Zones de mousse")]
-    public int zoneCount = 5; // Nombre de zones
-    public float zoneRadius = 1.5f; // Rayon de chaque zone
+    [Header("Îlots")]
+    public int islandCount = 5; // Nombre d'îlots dans la scène
+    public float islandRadius = 0.5f; // Taille de chaque îlot
 
     [Header("Densité")]
-    public int pointsPerZone = 20; // Prefabs par zone
-    public float noiseScale = 1.5f; // Echelle du noise (+ grand = + étalé)
-    public float noiseThreshold = 0.5f; // Seuil : 0 = dense, 1 = rare
+    public int pointsPerIsland = 30; // Prefabs par îlot
+    public float noiseScale = 2f; // Grain du noise
+
+    [Range(0f, 1f)]
+    public float noiseThreshold = 0.4f; // 0 = dense, 1 = rare
 
     [Header("Placement")]
     public float offset = 0.02f;
@@ -23,80 +25,96 @@ public class MossSpawner : MonoBehaviour
     public float maxAngle = 20f;
 
     [Header("Variation de taille")]
-    public float minScale = 0.8f;
-    public float maxScale = 1.2f;
+    public float minScale = 0.3f;
+    public float maxScale = 0.8f;
 
-    void Start()
-    {
-        Spawn();
-    }
+    void Start() => Spawn();
 
     [ContextMenu("Regenerate")]
     public void Spawn()
     {
-        // Nettoie les anciens
         foreach (Transform child in transform)
             DestroyImmediate(child.gameObject);
 
-        // Trouve tous les colliders sur le layer obstacle
         Collider[] obstacles = FindObjectsByType<Collider>(FindObjectsInactive.Exclude);
 
+        // Filtre uniquement les colliders sur le bon layer
+        System.Collections.Generic.List<Collider> targets = new();
         foreach (Collider col in obstacles)
         {
-            if ((obstacleLayer.value & (1 << col.gameObject.layer)) == 0)
+            if ((obstacleLayer.value & (1 << col.gameObject.layer)) != 0)
+                targets.Add(col);
+        }
+
+        if (targets.Count == 0)
+        {
+            Debug.LogWarning("MossSpawner: aucun obstacle trouvé sur le layer sélectionné.");
+            return;
+        }
+
+        // Génère les îlots
+        for (int i = 0; i < islandCount; i++)
+        {
+            // Choisit un obstacle aléatoire
+            Collider target = targets[Random.Range(0, targets.Count)];
+
+            // Trouve un point aléatoire sur sa surface
+            Vector3 islandCenter = FindSurfacePoint(target);
+            if (islandCenter == Vector3.zero)
                 continue;
 
-            SpawnOnCollider(col);
+            SpawnIsland(islandCenter, target);
         }
     }
 
-    private void SpawnOnCollider(Collider col)
+    private Vector3 FindSurfacePoint(Collider col)
     {
-        Bounds bounds = col.bounds;
-
-        for (int z = 0; z < zoneCount; z++)
+        Bounds b = col.bounds;
+        for (int attempt = 0; attempt < 50; attempt++)
         {
-            float noiseOffsetX = Random.Range(0f, 999f);
-            float noiseOffsetZ = Random.Range(0f, 999f);
+            Vector3 dir = Random.onUnitSphere;
+            Ray ray = new Ray(b.center + dir * b.extents.magnitude * 2f, -dir);
+            if (Physics.Raycast(ray, out RaycastHit hit, b.extents.magnitude * 4f, obstacleLayer))
+                return hit.point;
+        }
+        return Vector3.zero;
+    }
 
-            for (int i = 0; i < pointsPerZone; i++)
-            {
-                // Direction aléatoire sur une sphère
-                Vector3 randomDir = Random.onUnitSphere;
+    private void SpawnIsland(Vector3 center, Collider col)
+    {
+        float noiseOffsetX = Random.Range(0f, 999f);
+        float noiseOffsetY = Random.Range(0f, 999f);
 
-                // Origine : depuis l'extérieur du bounds dans cette direction
-                Vector3 rayOrigin = bounds.center + randomDir * bounds.extents.magnitude * 2f;
+        for (int i = 0; i < pointsPerIsland; i++)
+        {
+            // Point aléatoire dans la sphère de l'îlot
+            Vector3 randomOffset = Random.insideUnitSphere * islandRadius;
+            Vector3 rayOrigin = center + randomOffset;
 
-                // Tire vers le centre
-                Ray ray = new Ray(rayOrigin, -randomDir);
+            // Tire vers le centre de l'îlot pour coller à la surface
+            Ray ray = new Ray(
+                rayOrigin + (center - rayOrigin).normalized * -islandRadius,
+                (center - rayOrigin).normalized
+            );
 
-                if (
-                    !Physics.Raycast(
-                        ray,
-                        out RaycastHit hit,
-                        bounds.extents.magnitude * 4f,
-                        obstacleLayer
-                    )
-                )
-                    continue;
+            if (!Physics.Raycast(ray, out RaycastHit hit, islandRadius * 3f, obstacleLayer))
+                continue;
 
-                // Perlin noise basé sur la position du hit
-                float nx = (hit.point.x + noiseOffsetX) * noiseScale;
-                float nz = (hit.point.z + noiseOffsetZ) * noiseScale;
-                float noiseValue = Mathf.PerlinNoise(nx, nz);
+            // Doit rester dans le rayon de l'îlot
+            if (Vector3.Distance(hit.point, center) > islandRadius)
+                continue;
 
-                if (noiseValue < noiseThreshold)
-                    continue;
+            // Perlin noise pour la forme organique
+            float nx = (hit.point.x + noiseOffsetX) * noiseScale;
+            float ny = (hit.point.y + noiseOffsetY) * noiseScale;
+            float noiseValue = Mathf.PerlinNoise(nx, ny);
 
-                // Vérifie qu'on est dans le rayon de la zone
-                Vector3 zoneCenter = new Vector3(
-                    Random.Range(bounds.min.x, bounds.max.x),
-                    bounds.center.y,
-                    Random.Range(bounds.min.z, bounds.max.z)
-                );
+            // Fade sur les bords : plus on est loin du centre, plus c'est rare
+            float distanceFade = 1f - (Vector3.Distance(hit.point, center) / islandRadius);
+            if (noiseValue * distanceFade < noiseThreshold)
+                continue;
 
-                PlacePrefab(hit.point, hit.normal);
-            }
+            PlacePrefab(hit.point, hit.normal);
         }
     }
 
@@ -110,11 +128,9 @@ public class MossSpawner : MonoBehaviour
             Random.Range(0f, 360f),
             Random.Range(minAngle, maxAngle)
         );
-        Quaternion finalRotation = baseRotation * randomSpin;
 
         float scale = Random.Range(minScale, maxScale);
-
-        GameObject go = Instantiate(mossPrefab, spawnPos, finalRotation, transform);
+        GameObject go = Instantiate(mossPrefab, spawnPos, baseRotation * randomSpin, transform);
         go.transform.localScale = Vector3.one * scale;
     }
 }
