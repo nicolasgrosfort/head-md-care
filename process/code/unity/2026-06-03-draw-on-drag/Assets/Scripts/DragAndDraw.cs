@@ -3,9 +3,19 @@ using UnityEngine.InputSystem;
 
 public class DragAndDraw : MonoBehaviour
 {
+    [Header("Leaf")]
     public GameObject prefabToPlace;
+
+    [Header("Placement rules")]
     public LayerMask obstacleLayer;
     public float minSpacing = 0.1f;
+
+    [Header("Placement")]
+    public float offset = 0.05f;
+
+    [Header("Random rotation")]
+    public float minAngle = -30f;
+    public float maxAngle = 30f;
 
     private Camera _cam;
     private Vector3 _lastPlacedPosition;
@@ -52,7 +62,20 @@ public class DragAndDraw : MonoBehaviour
 
     private void PlacePrefab(Vector3 position, Vector3 normal)
     {
-        Quaternion rotation = Quaternion.FromToRotation(Vector3.up, normal);
-        Instantiate(prefabToPlace, position, rotation);
+        Vector3 spawnPos = position + normal * offset;
+
+        // Base alignée sur la normale
+        Quaternion baseRotation = Quaternion.FromToRotation(Vector3.up, normal);
+
+        // Rotation aléatoire sur les 3 axes
+        Quaternion randomRotation = Quaternion.Euler(
+            Random.Range(minAngle, maxAngle), // X
+            Random.Range(0f, 360f), // Y — tour complet
+            Random.Range(minAngle, maxAngle) // Z
+        );
+
+        Quaternion finalRotation = baseRotation * randomRotation;
+
+        Instantiate(prefabToPlace, spawnPos, finalRotation);
     }
 }
