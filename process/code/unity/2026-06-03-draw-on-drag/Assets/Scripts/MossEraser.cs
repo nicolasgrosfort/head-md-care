@@ -33,10 +33,13 @@ public class MossEraser : MonoBehaviour
         if (!Physics.Raycast(ray, out RaycastHit hit, Mathf.Infinity, erasableLayer))
             return;
 
-        // Efface tous les prefabs dans le rayon autour du point frappé
         Collider[] colliders = Physics.OverlapSphere(hit.point, eraseRadius, erasableLayer);
+
         foreach (Collider col in colliders)
+        {
+            MossCounter.Instance?.Remove(1);
             Destroy(col.gameObject);
+        }
     }
 
     void OnDrawGizmosSelected()

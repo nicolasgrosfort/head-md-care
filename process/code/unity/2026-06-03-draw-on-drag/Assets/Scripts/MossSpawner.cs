@@ -44,6 +44,9 @@ public class MossSpawner : MonoBehaviour
     {
         _cam = Camera.main;
 
+        // Reset le compteur avant de régénérer
+        MossCounter.Instance?.Reset();
+
         foreach (Transform child in transform)
             DestroyImmediate(child.gameObject);
 
@@ -143,6 +146,8 @@ public class MossSpawner : MonoBehaviour
         float scale = Random.Range(minScale, maxScale);
         GameObject go = Instantiate(mossPrefab, spawnPos, baseRotation * randomSpin, transform);
         go.transform.localScale = Vector3.one * scale;
+
+        MossCounter.Instance?.Register(1);
     }
 
     private bool IsVisibleFromCamera(Vector3 point)
