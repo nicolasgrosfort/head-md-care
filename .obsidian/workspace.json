@@ -11,12 +11,41 @@
             "id": "f22e87c5ef441ae6",
             "type": "leaf",
             "state": {
-              "type": "image",
+              "type": "markdown",
               "state": {
-                "file": "assets/images/2026-06-03-dead-tree-1.jpg"
+                "file": "readme.md",
+                "mode": "source",
+                "source": false,
+                "backlinks": true,
+                "backlinkOpts": {
+                  "collapseAll": false,
+                  "extraContext": false,
+                  "sortOrder": "alphabetical",
+                  "showSearch": false,
+                  "searchQuery": "",
+                  "backlinkCollapsed": false,
+                  "unlinkedCollapsed": true
+                }
               },
-              "icon": "lucide-image",
-              "title": "2026-06-03-dead-tree-1"
+              "icon": "lucide-file",
+              "title": "readme"
+            }
+          },
+          {
+            "id": "9c06f3d42f4c113d",
+            "type": "leaf",
+            "state": {
+              "type": "canvas",
+              "state": {
+                "file": "process/explorations/1-stories.canvas",
+                "viewState": {
+                  "x": 3162.4171569422865,
+                  "y": 1364.5256155413717,
+                  "zoom": -0.943524131214796
+                }
+              },
+              "icon": "lucide-layout-dashboard",
+              "title": "1-stories"
             }
           }
         ]
@@ -194,18 +223,20 @@
       "workspaces:Manage workspace layouts": false
     }
   },
-  "active": "a3931beec67bd14c",
+  "active": "f22e87c5ef441ae6",
   "lastOpenFiles": [
+    "assets/images/2026-06-03-ivy-1.jpeg",
     "process/explorations/0-moodboard.canvas",
-    "assets/images/2026-06-03-dead-tree-8.jpg",
-    "assets/images/2026-06-03-dead-tree-1.jpg",
-    "assets/images/2026-06-03-dead-tree-7.jpg",
-    "assets/images/2026-06-03-dead-tree-5.jpg",
-    "assets/images/2026-06-03-dead-tree-6.jpeg",
-    "assets/images/2026-06-03-dead-tree-4.webp",
-    "assets/images/2026-06-03-dead-tree-3.webp",
-    "assets/images/2026-06-03-dead-tree-2.jpg",
+    "assets/images/2026-06-03-ivy-4.jpg",
+    "assets/images/2026-06-03-ivy-3.jpg",
+    "assets/images/2026-06-03-ivy-2.jpg",
+    "assets/images/2026-06-03-moss-3.webp",
+    "assets/images/2026-06-03-moss-2.jpg",
+    "assets/images/2026-06-03-moss-1.jpg",
+    "assets/images/2026-06-03-inclined-tomb.jpeg",
     "process/explorations/1-stories.canvas",
+    "assets/images/2026-06-03-dead-tree-1.jpg",
+    "assets/images/2026-06-03-dead-tree-8.jpg",
     "process/code/unity/2026-06-02-transparency/Temp/obj/Assembly-CSharp-Editor/Assembly-CSharp-Editor.GeneratedMSBuildEditorConfig.editorconfig",
     "process/code/unity/2026-05-21-greyboxing/Temp/obj/Assembly-CSharp-Editor/Assembly-CSharp-Editor.GeneratedMSBuildEditorConfig.editorconfig",
     "process/code/unity/2026-06-02-transparency/Temp/obj/Assembly-CSharp-Editor/Assembly-CSharp-Editor.csproj.AssemblyReference.cache",
@@ -217,8 +248,6 @@
     "process/code/unity/2026-05-21-greyboxing/Temp/obj/Assembly-CSharp-Editor/Assembly-CSharp-Editor.assets.cache",
     "process/code/unity/2026-06-02-transparency/Temp/obj/Assembly-CSharp/Assembly-CSharp.GeneratedMSBuildEditorConfig.editorconfig",
     "process/context/1-scenes.md",
-    "process/code/unity/2026-06-02-onboarding/Assets/Grass And Moss Decals Pack/Textures/Plain_Grass_3/Plain_Grass_3_Normal.png",
-    "process/code/unity/2026-06-02-onboarding/Assets/Grass And Moss Decals Pack/Textures/Plain_Grass_3/Plain_Grass_3_Cookie.png",
     "process/ressources/2026-05-12-kentucky-route-zero.md",
     "process/code/unity/2026-06-02-transparency/Library/PackageCache/com.unity.probuilder@1f279ab829b7/Samples~/Runtime/Runtime Editing/README.md",
     "process/code/unity/2026-06-02-transparency/Library/PackageCache/com.unity.probuilder@1f279ab829b7/External/KdTree/README.md",
