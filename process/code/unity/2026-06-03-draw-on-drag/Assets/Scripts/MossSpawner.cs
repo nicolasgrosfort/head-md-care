@@ -33,9 +33,18 @@ public class MossSpawner : MonoBehaviour
 
     [Header("Repousse")]
     public bool autoRegrow = true;
-    public float regrowDelay = 5f; // secondes avant que la mousse repousse
-    public float regrowInterval = 10f; // secondes entre chaque repousse complète
+    public float regrowDelay = 5f;
     public float timeBetweenPrefabs = 0.05f;
+
+    [Header("Accélération")]
+    public float delayReduction = 0.5f; // secondes retirées à chaque repousse
+    public float minRegrowDelay = 0.5f; // délai minimum
+    public float speedMultiplier = 1.5f; // multiplie la vitesse à chaque repousse
+    public float maxSpeedMultiplier = 10f; // vitesse maximum
+
+    private float _currentDelay;
+    private float _currentSpeed;
+    private float _currentTimeBetween;
 
     [Header("Caméra")]
     public bool cameraVisibleOnly = true;
@@ -45,8 +54,9 @@ public class MossSpawner : MonoBehaviour
     void Start()
     {
         _cam = Camera.main;
+        _currentDelay = regrowDelay;
+        _currentTimeBetween = timeBetweenPrefabs;
         Spawn();
-
         if (autoRegrow)
             StartCoroutine(RegrowRoutine());
     }
@@ -90,6 +100,22 @@ public class MossSpawner : MonoBehaviour
 
             SpawnIsland(islandCenter, target);
         }
+    }
+
+    public void OnMossErased()
+    {
+        // Réduit le délai
+        _currentDelay = Mathf.Max(minRegrowDelay, _currentDelay - delayReduction);
+
+        // Accélère la vitesse progressive
+        _currentTimeBetween = Mathf.Max(
+            timeBetweenPrefabs / maxSpeedMultiplier,
+            _currentTimeBetween / speedMultiplier
+        );
+
+        Debug.Log(
+            $"Repousse accélérée — délai: {_currentDelay:F1}s, vitesse: {_currentTimeBetween:F3}s"
+        );
     }
 
     private Vector3 FindSurfacePoint(Collider col)
@@ -297,15 +323,10 @@ public class MossSpawner : MonoBehaviour
                 && MossCounter.Instance.Remaining < MossCounter.Instance.Total
             );
 
-            yield return new WaitForSeconds(regrowDelay);
+            yield return new WaitForSeconds(_currentDelay);
 
-            // Ne respawn QUE les prefabs manquants, sans reset le compteur
             int missing = MossCounter.Instance.Total - MossCounter.Instance.Remaining;
-            Debug.Log($"Repousse de {missing} prefabs...");
-
             yield return StartCoroutine(RegrowMissing(missing));
-
-            yield return new WaitForSeconds(regrowInterval);
         }
     }
 
@@ -339,7 +360,7 @@ public class MossSpawner : MonoBehaviour
 
                 PlacePrefab(point.position, point.normal, isRegrow: true); // ← true ici
                 regrown++;
-                yield return new WaitForSeconds(timeBetweenPrefabs);
+                yield return new WaitForSeconds(_currentTimeBetween);
             }
         }
     }

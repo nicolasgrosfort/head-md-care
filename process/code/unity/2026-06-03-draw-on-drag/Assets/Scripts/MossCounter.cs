@@ -51,6 +51,6 @@ public class MossCounter : MonoBehaviour
         if (counterText != null)
             counterText.text = $"Mousse : {percentage}%";
 
-        Debug.Log($"Mousse : {percentage}% ({Remaining} / {Total})");
+        // Debug.Log($"Mousse : {percentage}% ({Remaining} / {Total})");
     }
 }
