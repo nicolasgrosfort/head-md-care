@@ -11,17 +11,12 @@
             "id": "f22e87c5ef441ae6",
             "type": "leaf",
             "state": {
-              "type": "canvas",
+              "type": "image",
               "state": {
-                "file": "process/explorations/1-stories.canvas",
-                "viewState": {
-                  "x": 675.0186507104629,
-                  "y": 1733.4657453116242,
-                  "zoom": -0.8614047670364383
-                }
+                "file": "assets/images/2026-06-03-dead-tree-1.jpg"
               },
-              "icon": "lucide-layout-dashboard",
-              "title": "1-stories"
+              "icon": "lucide-image",
+              "title": "2026-06-03-dead-tree-1"
             }
           }
         ]
@@ -199,32 +194,31 @@
       "workspaces:Manage workspace layouts": false
     }
   },
-  "active": "f22e87c5ef441ae6",
+  "active": "a3931beec67bd14c",
   "lastOpenFiles": [
-    "process/code/unity/2026-06-02-onboarding/Temp/ADB-Refresh02a28878711414100881c518a0504a4a",
     "process/explorations/0-moodboard.canvas",
+    "assets/images/2026-06-03-dead-tree-8.jpg",
+    "assets/images/2026-06-03-dead-tree-1.jpg",
+    "assets/images/2026-06-03-dead-tree-7.jpg",
+    "assets/images/2026-06-03-dead-tree-5.jpg",
+    "assets/images/2026-06-03-dead-tree-6.jpeg",
+    "assets/images/2026-06-03-dead-tree-4.webp",
+    "assets/images/2026-06-03-dead-tree-3.webp",
+    "assets/images/2026-06-03-dead-tree-2.jpg",
+    "process/explorations/1-stories.canvas",
+    "process/code/unity/2026-06-02-transparency/Temp/obj/Assembly-CSharp-Editor/Assembly-CSharp-Editor.GeneratedMSBuildEditorConfig.editorconfig",
+    "process/code/unity/2026-05-21-greyboxing/Temp/obj/Assembly-CSharp-Editor/Assembly-CSharp-Editor.GeneratedMSBuildEditorConfig.editorconfig",
+    "process/code/unity/2026-06-02-transparency/Temp/obj/Assembly-CSharp-Editor/Assembly-CSharp-Editor.csproj.AssemblyReference.cache",
+    "process/code/unity/2026-05-21-greyboxing/Temp/obj/Assembly-CSharp-Editor/Assembly-CSharp-Editor.csproj.AssemblyReference.cache",
+    "process/code/unity/2026-06-02-onboarding/Temp/obj/Assembly-CSharp/Assembly-CSharp.GeneratedMSBuildEditorConfig.editorconfig",
+    "process/code/unity/2026-06-02-onboarding/Temp/obj/Assembly-CSharp/Assembly-CSharp.csproj.AssemblyReference.cache",
+    "process/code/unity/2026-06-02-onboarding/Temp/obj/Assembly-CSharp/Assembly-CSharp.assets.cache",
+    "process/code/unity/2026-06-02-onboarding/Temp/obj/Assembly-CSharp-Editor/Assembly-CSharp-Editor.GeneratedMSBuildEditorConfig.editorconfig",
+    "process/code/unity/2026-05-21-greyboxing/Temp/obj/Assembly-CSharp-Editor/Assembly-CSharp-Editor.assets.cache",
+    "process/code/unity/2026-06-02-transparency/Temp/obj/Assembly-CSharp/Assembly-CSharp.GeneratedMSBuildEditorConfig.editorconfig",
     "process/context/1-scenes.md",
-    "process/code/unity/2026-06-02-onboarding/Library/ShaderCache/shader/Lit9335/00/4031d2be797122f8f5d57147da1f2afb.bin",
-    "process/code/unity/2026-06-02-onboarding/Library/ShaderCache/shader/Lit9335/00/ecb5ca4fedb404b6d96c1d6e9e6663cd.bin",
-    "process/code/unity/2026-06-02-onboarding/Library/ShaderCache/shader/Lit9335/00/ff3853df0e69d649077b99a86f840784.bin",
-    "process/code/unity/2026-06-02-onboarding/Library/ShaderCache/shader/Lit9335/00/dff2370fa9a9849bc94162d8ee31b16b.bin",
-    "process/code/unity/2026-06-02-onboarding/Library/ShaderCache/shader/Lit9335/00/bec25bd8405e5b8e8e969ce2f3e4e3e6.bin",
-    "process/code/unity/2026-06-02-onboarding/Library/ShaderCache/shader/Lit9335/00/30953f0ca7d32264039f484dcbaa8c72.bin",
-    "process/code/unity/2026-06-02-onboarding/Library/ShaderCache/shader/Lit9335/00/93cc2c6918806989954a7cb597bcd919.bin",
-    "process/code/unity/2026-06-02-onboarding/Library/ShaderCache/shader/Lit9335/00/e659c5d2f287ef89920397e3002a3a04.bin",
-    "process/code/unity/2026-06-02-onboarding/Library/ShaderCache/shader/Lit9335/00/74b2614e86bb56157bddc97e565dc4b1.bin",
-    "process/code/unity/2026-06-02-onboarding/Library/ShaderCache/shader/Lit9335/00/260b9547d4a66f48b4089847008a2176.bin",
     "process/code/unity/2026-06-02-onboarding/Assets/Grass And Moss Decals Pack/Textures/Plain_Grass_3/Plain_Grass_3_Normal.png",
     "process/code/unity/2026-06-02-onboarding/Assets/Grass And Moss Decals Pack/Textures/Plain_Grass_3/Plain_Grass_3_Cookie.png",
-    "process/code/unity/2026-06-02-onboarding/Assets/Grass And Moss Decals Pack/Textures/Plain_Grass_3/Plain_Grass_3_BaseColor.png",
-    "process/code/unity/2026-06-02-onboarding/Assets/Grass And Moss Decals Pack/Textures/Plain_Grass_3/Plain_Grass_3_Albedo.png",
-    "process/code/unity/2026-06-02-onboarding/Assets/Grass And Moss Decals Pack/Textures/Plain_Grass_2/Plain_Grass_2_Normal.png",
-    "process/code/unity/2026-06-02-onboarding/Assets/Grass And Moss Decals Pack/Textures/Plain_Grass_2/Plain_Grass_2_Cookie.png",
-    "process/code/unity/2026-06-02-onboarding/Assets/Grass And Moss Decals Pack/Textures/Plain_Grass_2/Plain_Grass_2_BaseColor.png",
-    "process/code/unity/2026-06-02-onboarding/Assets/Grass And Moss Decals Pack/Textures/Plain_Grass_2/Plain_Grass_2_Albedo.png",
-    "process/code/unity/2026-06-02-onboarding/Assets/Grass And Moss Decals Pack/Textures/Plain_Grass_1/Plain_Grass_1_Normal.png",
-    "process/code/unity/2026-06-02-onboarding/Assets/Grass And Moss Decals Pack/Textures/Plain_Grass_1/Plain_Grass_1_Cookie.png",
-    "process/explorations/1-stories.canvas",
     "process/ressources/2026-05-12-kentucky-route-zero.md",
     "process/code/unity/2026-06-02-transparency/Library/PackageCache/com.unity.probuilder@1f279ab829b7/Samples~/Runtime/Runtime Editing/README.md",
     "process/code/unity/2026-06-02-transparency/Library/PackageCache/com.unity.probuilder@1f279ab829b7/External/KdTree/README.md",
