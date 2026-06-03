@@ -28,17 +28,27 @@ public class MossSpawner : MonoBehaviour
     public float minScale = 0.3f;
     public float maxScale = 0.8f;
 
-    void Start() => Spawn();
+    [Header("Caméra")]
+    public bool cameraVisibleOnly = true;
+
+    private Camera _cam;
+
+    void Start()
+    {
+        _cam = Camera.main;
+        Spawn();
+    }
 
     [ContextMenu("Regenerate")]
     public void Spawn()
     {
+        _cam = Camera.main;
+
         foreach (Transform child in transform)
             DestroyImmediate(child.gameObject);
 
         Collider[] obstacles = FindObjectsByType<Collider>(FindObjectsInactive.Exclude);
 
-        // Filtre uniquement les colliders sur le bon layer
         System.Collections.Generic.List<Collider> targets = new();
         foreach (Collider col in obstacles)
         {
@@ -52,15 +62,16 @@ public class MossSpawner : MonoBehaviour
             return;
         }
 
-        // Génère les îlots
         for (int i = 0; i < islandCount; i++)
         {
-            // Choisit un obstacle aléatoire
             Collider target = targets[Random.Range(0, targets.Count)];
 
-            // Trouve un point aléatoire sur sa surface
             Vector3 islandCenter = FindSurfacePoint(target);
             if (islandCenter == Vector3.zero)
+                continue;
+
+            // Vérifie que le centre de l'îlot est visible
+            if (cameraVisibleOnly && !IsVisibleFromCamera(islandCenter))
                 continue;
 
             SpawnIsland(islandCenter, target);
@@ -132,5 +143,15 @@ public class MossSpawner : MonoBehaviour
         float scale = Random.Range(minScale, maxScale);
         GameObject go = Instantiate(mossPrefab, spawnPos, baseRotation * randomSpin, transform);
         go.transform.localScale = Vector3.one * scale;
+    }
+
+    private bool IsVisibleFromCamera(Vector3 point)
+    {
+        Vector3 viewport = _cam.WorldToViewportPoint(point);
+        return viewport.x >= 0f
+            && viewport.x <= 1f
+            && viewport.y >= 0f
+            && viewport.y <= 1f
+            && viewport.z > 0f;
     }
 }
