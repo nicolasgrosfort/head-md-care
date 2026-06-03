@@ -219,6 +219,7 @@
   },
   "active": "f22e87c5ef441ae6",
   "lastOpenFiles": [
+    "process/code/unity/2026-06-03-draw-on-drag",
     "process/readme.md",
     "readme.md",
     "assets/images/2026-06-03-ivy-1.jpeg",
@@ -265,7 +266,6 @@
     "process/code/unity/2026-06-02-transparency/Library/PackageCache/com.unity.probuilder@1f279ab829b7/Documentation~/vertex-colors.md",
     "process/code/unity/2026-06-02-transparency/Library/PackageCache/com.unity.probuilder@1f279ab829b7/Documentation~/uv_dropdown.md",
     "process/code/unity/2026-06-02-transparency/Library/PackageCache/com.unity.probuilder@1f279ab829b7/Documentation~/uv-editor.md",
-    "process/code/unity/2026-06-02-transparency/Library/PackageCache/com.unity.probuilder@1f279ab829b7/Documentation~/uv-editor-toolbar.md",
-    "process/code/unity/2026-06-02-transparency/Library/PackageCache/com.unity.probuilder@1f279ab829b7/Documentation~/tools.md"
+    "process/code/unity/2026-06-02-transparency/Library/PackageCache/com.unity.probuilder@1f279ab829b7/Documentation~/uv-editor-toolbar.md"
   ]
 }
