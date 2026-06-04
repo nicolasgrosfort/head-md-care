@@ -1,8 +1,8 @@
 {
 	"nodes":[
 		{"id":"bc353210f2182430","type":"group","x":-1280,"y":-348,"width":4300,"height":1996,"label":"Brainstorming @ 2026-06-01"},
-		{"id":"22cf9e368e851b6f","type":"group","x":-1280,"y":1760,"width":2680,"height":969,"label":"Selection @ 2026-06-02"},
 		{"id":"a3e41fb46a558184","type":"group","x":1480,"y":1780,"width":885,"height":1720,"label":"Dead Tree"},
+		{"id":"22cf9e368e851b6f","type":"group","x":-1280,"y":1760,"width":2680,"height":969,"label":"Selection @ 2026-06-02"},
 		{"id":"713e76821c017645","type":"group","x":-1260,"y":1780,"width":1222,"height":929,"label":"Eryan"},
 		{"id":"344b706135e0f4df","type":"group","x":2440,"y":2800,"width":1775,"height":440,"label":"Ivy"},
 		{"id":"6225e7c6cde3c65a","type":"group","x":80,"y":1780,"width":1300,"height":514,"label":"Nico"},
@@ -100,13 +100,13 @@
 		{"id":"c56b2159175f7a9f","type":"file","file":"assets/images/2026-06-03-ivy-1.jpeg","x":2460,"y":2820,"width":400,"height":232},
 		{"id":"c17d39522ee8c90b","type":"file","file":"assets/images/2026-06-03-ivy-2.jpg","x":2905,"y":2820,"width":400,"height":266},
 		{"id":"b95b6515f0929e4b","type":"file","file":"assets/images/2026-06-03-ivy-3.jpg","x":3350,"y":2820,"width":400,"height":266},
-		{"id":"1d6958b02b3a2414","type":"file","file":"assets/images/2026-06-03-dead-tree-1.jpg","x":1500,"y":1800,"width":400,"height":266},
 		{"id":"f9699d38f6b74d19","type":"file","file":"assets/images/2026-06-03-dead-tree-8.jpg","x":1500,"y":2920,"width":400,"height":533},
 		{"id":"3f8ab2beccf808eb","type":"file","file":"assets/images/2026-06-03-dead-tree-6.jpeg","x":1500,"y":2620,"width":400,"height":266},
-		{"id":"9cf68c4faecc3719","type":"file","file":"assets/images/2026-06-03-dead-tree-2.jpg","x":1500,"y":2117,"width":400,"height":143},
 		{"id":"43db74793c559dac","type":"file","file":"assets/images/2026-06-03-dead-tree-4.webp","x":1500,"y":2355,"width":400,"height":225},
-		{"id":"94bd68fd1eefbf2c","type":"file","file":"assets/images/2026-06-03-dead-tree-3.webp","x":1945,"y":2117,"width":399,"height":227},
-		{"id":"6351644963a5cd6b","type":"file","file":"assets/images/2026-06-03-dead-tree-5.jpg","x":1945,"y":2400,"width":400,"height":220}
+		{"id":"6351644963a5cd6b","type":"file","file":"assets/images/2026-06-03-dead-tree-5.jpg","x":1945,"y":2400,"width":400,"height":220},
+		{"id":"1d6958b02b3a2414","type":"file","file":"assets/images/2026-06-03-dead-tree-1.jpg","x":1500,"y":1800,"width":400,"height":266},
+		{"id":"9cf68c4faecc3719","type":"file","file":"assets/images/2026-06-03-dead-tree-2.jpg","x":1500,"y":2117,"width":400,"height":143},
+		{"id":"94bd68fd1eefbf2c","type":"file","file":"assets/images/2026-06-03-dead-tree-3.webp","x":1945,"y":2117,"width":399,"height":227}
 	],
 	"edges":[]
 }

@@ -32,8 +32,8 @@
               "state": {
                 "file": "process/explorations/1-stories.canvas",
                 "viewState": {
-                  "x": 3162.4171569422865,
-                  "y": 1364.5256155413717,
+                  "x": 2448.76774975607,
+                  "y": 1697.2042865605104,
                   "zoom": -0.943524131214796
                 }
               },
@@ -41,7 +41,8 @@
               "title": "1-stories"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -217,19 +218,19 @@
       "workspaces:Manage workspace layouts": false
     }
   },
-  "active": "f22e87c5ef441ae6",
+  "active": "9c06f3d42f4c113d",
   "lastOpenFiles": [
+    "process/explorations/0-moodboard.canvas",
+    "process/code/unity/2026-06-03-draw-on-drag/Temp/__Backupscenes/0.backup",
+    "process/code/unity/2026-06-03-draw-on-drag/Temp/__Backupscenes",
+    "process/code/unity/2026-06-03-draw-on-drag/Library/UndoStack.bin",
+    "process/code/unity/2026-06-03-draw-on-drag/Library/UndoData.bin",
+    "process/code/unity/2026-06-03-draw-on-drag/Temp/ADB-Refresh7d6eaa10ecc794a8e878733575b8bc0e",
+    "process/code/unity/2026-06-03-draw-on-drag/Temp/ADB-Refresh08ba51f5318204884b17f9d2b57c81b9",
     "process/code/unity/2026-06-03-draw-on-drag/Library/Bee/CachedNodeOutput/af0ce5fadbe700d2e79c628c9df0f5c1_out",
     "process/code/unity/2026-06-03-draw-on-drag/Library/Bee/artifacts/mvdfrm/Unity.Mathematics.Editor.ref.dll_C54418FC61DECAC0.mvfrm",
     "process/code/unity/2026-06-03-draw-on-drag/Library/Bee/CachedNodeOutput/7d7401a0f857e7ab516e403cc536938a_out",
     "process/code/unity/2026-06-03-draw-on-drag/Library/Bee/CachedNodeOutput/d749396f285c098996accb1f7b344689_out",
-    "process/code/unity/2026-06-03-draw-on-drag/Library/Bee/CachedNodeOutput/deb393deea5860533578cbffa7215230_out",
-    "process/code/unity/2026-06-03-draw-on-drag/Library/Bee/artifacts/mvdfrm/Unity.Mathematics.ref.dll_666CAD8168029801.mvfrm",
-    "process/code/unity/2026-06-03-draw-on-drag/Library/Bee/CachedNodeOutput/434c4549feb48e53cf8cad529140edf0_out",
-    "process/code/unity/2026-06-03-draw-on-drag/Library/Bee/CachedNodeOutput/71c01d5d326ecd2961ed77882f5f1d9d_out",
-    "process/code/unity/2026-06-03-draw-on-drag/Library/Bee/CachedNodeOutput/f66e70a0c4e5abb13663ed013bd5d161_out",
-    "process/code/unity/2026-06-03-draw-on-drag/Library/Bee/artifacts/mvdfrm/Unity.PlasticSCM.Editor.ref.dll_61765147EED78A29.mvfrm",
-    "process/code/unity/2026-06-03-draw-on-drag/Library/Bee/artifacts/mvdfrm/Unity.ProBuilder.AddOns.Editor.ref.dll_37FD6B15BEA38A03.mvfrm",
     "process/code/unity/2026-06-03-draw-on-drag/Library/PackageCache/com.unity.probuilder@1f279ab829b7/Content/Icons/Tools/ShapeTool/on/Torus@2x.png",
     "process/code/unity/2026-06-03-draw-on-drag/Library/PackageCache/com.unity.probuilder@1f279ab829b7/Content/Icons/Tools/ShapeTool/on/Torus.png",
     "process/code/unity/2026-06-03-draw-on-drag/Library/PackageCache/com.unity.probuilder@1f279ab829b7/Content/Icons/Tools/ShapeTool/on/Stair@2x.png",
@@ -265,7 +266,6 @@
     "process/code/unity/2026-06-03-draw-on-drag/Library/PackageCache/com.unity.probuilder@1f279ab829b7/Documentation~/tool-options-overlay.md",
     "process/code/unity/2026-06-03-draw-on-drag/Library/PackageCache/com.unity.probuilder@1f279ab829b7/Documentation~/snap-to-grid.md",
     "process/code/unity/2026-06-03-draw-on-drag/Library/PackageCache/com.unity.probuilder@1f279ab829b7/Documentation~/smoothing-groups.md",
-    "process/explorations/0-moodboard.canvas",
     "process/explorations/1-stories.canvas"
   ]
 }
