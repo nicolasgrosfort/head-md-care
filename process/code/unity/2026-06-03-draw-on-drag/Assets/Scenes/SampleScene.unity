@@ -152,7 +152,7 @@ MonoBehaviour:
   obstacleLayer:
     serializedVersion: 2
     m_Bits: 64
-  islandCount: 50
+  islandCount: 100
   islandRadius: 0.5
   pointsPerIsland: 400
   noiseScale: 1
@@ -160,8 +160,8 @@ MonoBehaviour:
   offset: 0.01
   minAngle: -20
   maxAngle: 20
-  minScale: 0.02
-  maxScale: 0.05
+  minScale: 0.01
+  maxScale: 0.025
   autoRegrow: 1
   regrowDelay: 5
   timeBetweenPrefabs: 0.05
