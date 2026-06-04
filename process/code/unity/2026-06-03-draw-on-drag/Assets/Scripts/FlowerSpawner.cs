@@ -38,6 +38,7 @@ public class FlowerSpawner : MonoBehaviour
             if (
                 hit.collider.gameObject.layer == LayerMask.NameToLayer("Obstacle")
                 || hit.collider.gameObject.layer == LayerMask.NameToLayer("Leaf")
+                || hit.collider.gameObject.layer == LayerMask.NameToLayer("Ivy")
             )
             {
                 Debug.Log("Obstacle détecté, pas de fleur ici !");
