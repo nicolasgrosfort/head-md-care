@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::CameraViews
   views:
   - viewName: Front
-    position: {x: 2.12, y: 3.28, z: -10.14}
-    rotation: {x: 0, y: -13.43, z: 0}
+    position: {x: -2.98, y: 1.48, z: -4.48}
+    rotation: {x: 0, y: 25.233, z: 0}
   - viewName: God
     position: {x: 2.12, y: 17.64, z: -0.72}
     rotation: {x: 90, y: -13.43, z: 0}
