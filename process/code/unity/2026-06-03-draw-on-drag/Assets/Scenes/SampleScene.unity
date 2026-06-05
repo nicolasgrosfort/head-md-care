@@ -278,12 +278,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::IvySpawner
   pathLength: 20
-  stepSize: 0.05
   surfaceMask:
     serializedVersion: 2
     m_Bits: 4294967295
-  surfaceOffset: 1
-  raycastDownDistance: 1
+  surfaceOffset: 0.03
+  raycastDownDistance: 0.5
+  lostSurfaceSearchRadius: 0.3
+  pointSpacing: 0.5
   pathRadius: 0.02
   rows: 8
   columns: 6
