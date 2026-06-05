@@ -436,7 +436,7 @@ MonoBehaviour:
     enableAmbientOcclusion: 1
     enableMaterialOptimize: 1
     aoDensity: 1
-    rootSpread: 5
+    rootSpread: 4.25
     groundOffset: 0
     rootMatrix:
       e00: 1
@@ -708,7 +708,7 @@ MonoBehaviour:
     vertEnd: 0
     capRange: 0
     breakOffset: 1
-    size: 5
+    size: 4.25
     scale: 1
     offset: 0
     baseAngle: 0
