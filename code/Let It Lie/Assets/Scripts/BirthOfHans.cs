@@ -35,6 +35,9 @@ public class BirthOfHans : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
     [SerializeField]
     private Camera mainCamera;
 
+    [SerializeField]
+    private SceneTransition sceneTransition;
+
     private Coroutine holdCoroutine;
 
     void OnEnable()
@@ -86,7 +89,10 @@ public class BirthOfHans : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
     private IEnumerator HoldRoutine()
     {
         if (gameState.life >= 100f)
+        {
+            sceneTransition.GoToNextScene();
             yield break;
+        }
 
         float duration = Random.Range(minDuration, maxDuration);
         float elapsed = 0f;
