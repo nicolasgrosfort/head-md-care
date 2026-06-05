@@ -5,12 +5,18 @@ public class LeafSpawner : MonoBehaviour
     public GameObject leafPrefab;
     public int maxLeaves = 100;
 
+    [SerializeField]
+    private SceneTransition sceneTransition;
+
     private int count = 0;
 
     void Update()
     {
         if (count >= maxLeaves)
+        {
+            sceneTransition.GoToNextScene();
             return;
+        }
 
         if (Random.value < 0.05f) // ~3 feuilles/sec
         {
