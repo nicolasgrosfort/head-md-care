@@ -14,12 +14,12 @@ public class FlowerSpawner : MonoBehaviour
             && Touchscreen.current.primaryTouch.press.wasPressedThisFrame
         )
         {
-            Debug.Log("Touch détecté !");
+            // Debug.Log("Touch détecté !");
             // ...
         }
         else if (Mouse.current != null && Mouse.current.leftButton.wasPressedThisFrame)
         {
-            Debug.Log("Clic souris détecté !");
+            // Debug.Log("Clic souris détecté !");
             Vector2 mousePos = Mouse.current.position.ReadValue();
             TrySpawn(mousePos);
         }
@@ -28,20 +28,21 @@ public class FlowerSpawner : MonoBehaviour
     void TrySpawn(Vector2 screenPos)
     {
         Ray ray = cam.ScreenPointToRay(screenPos);
-        Debug.Log("Raycast lancé depuis : " + screenPos);
+        // Debug.Log("Raycast lancé depuis : " + screenPos);
 
         if (Physics.Raycast(ray, out RaycastHit hit))
         {
-            Debug.Log("Hit : " + hit.collider.name + " à " + hit.point);
+            // Debug.Log("Hit : " + hit.collider.name + " à " + hit.point);
 
             // Bloque si le layer est "Obstacle"
             if (
                 hit.collider.gameObject.layer == LayerMask.NameToLayer("Obstacle")
                 || hit.collider.gameObject.layer == LayerMask.NameToLayer("Leaf")
                 || hit.collider.gameObject.layer == LayerMask.NameToLayer("Ivy")
+                || hit.collider.gameObject.layer == LayerMask.NameToLayer("Rock")
             )
             {
-                Debug.Log("Obstacle détecté, pas de fleur ici !");
+                // Debug.Log("Obstacle détecté, pas de fleur ici !");
                 return;
             }
 
@@ -49,7 +50,7 @@ public class FlowerSpawner : MonoBehaviour
         }
         else
         {
-            Debug.Log("Rien touché - pas de collider ?");
+            // Debug.Log("Rien touché - pas de collider ?");
         }
     }
 

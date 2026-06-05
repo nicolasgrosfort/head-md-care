@@ -49,7 +49,7 @@ public class DragAndDraw : MonoBehaviour
 
         if (!Physics.Raycast(ray, out RaycastHit hit, Mathf.Infinity, obstacleLayer))
         {
-            Debug.Log("No hit");
+            // Debug.Log("No hit");
             return;
         }
 

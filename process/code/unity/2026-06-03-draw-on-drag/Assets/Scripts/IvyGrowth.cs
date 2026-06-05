@@ -34,7 +34,7 @@ public class IvyGrowth : MonoBehaviour
 
         if (bezierShape == null)
         {
-            Debug.LogError("BezierShape introuvable !");
+            // Debug.LogError("BezierShape introuvable !");
             return;
         }
 
@@ -46,7 +46,7 @@ public class IvyGrowth : MonoBehaviour
         foreach (var p in list)
             originalPoints.Add(p);
 
-        Debug.Log($"BezierShape trouvé avec {originalPoints.Count} points.");
+        // Debug.Log($"BezierShape trouvé avec {originalPoints.Count} points.");
     }
 
     void Update()
@@ -75,7 +75,7 @@ public class IvyGrowth : MonoBehaviour
             float proj = Vector2.Dot(delta, dragDirection.normalized);
             growT = Mathf.Clamp01(proj / dragDistanceToFull);
 
-            Debug.Log($"growT = {growT}"); // ← ajoute cette ligne
+            // Debug.Log($"growT = {growT}"); // ← ajoute cette ligne
         }
 
         if (mouse.leftButton.wasReleasedThisFrame)

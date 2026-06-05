@@ -20,7 +20,7 @@ public class FlowerWiggle : MonoBehaviour
             if (child.name.Contains("Bone") || child.name.Contains("Stem"))
             {
                 stemBone = child;
-                Debug.Log("Bone trouvé : " + stemBone.name);
+                // Debug.Log("Bone trouvé : " + stemBone.name);
                 break;
             }
         }
@@ -29,7 +29,7 @@ public class FlowerWiggle : MonoBehaviour
         {
             // Fallback : prend le premier enfant
             stemBone = transform.GetChild(0);
-            Debug.Log("Fallback bone : " + stemBone.name);
+            // Debug.Log("Fallback bone : " + stemBone.name);
         }
 
         baseRotation = stemBone.localRotation;

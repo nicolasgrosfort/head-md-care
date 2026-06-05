@@ -33,7 +33,7 @@ public class SkyColor : MonoBehaviour
         )
             return;
 
-        Debug.LogWarning("SkyColor: Color Adjustments introuvable sur le Volume.");
+        // Debug.LogWarning("SkyColor: Color Adjustments introuvable sur le Volume.");
     }
 
     void Update()

@@ -85,7 +85,7 @@ public class MossSpawner : MonoBehaviour
 
         if (targets.Count == 0)
         {
-            Debug.LogWarning("MossSpawner: aucun obstacle trouvé sur le layer sélectionné.");
+            // Debug.LogWarning("MossSpawner: aucun obstacle trouvé sur le layer sélectionné.");
             return;
         }
 
@@ -118,9 +118,9 @@ public class MossSpawner : MonoBehaviour
             _currentRegrowMultiplier * regrowMultiplier
         );
 
-        Debug.Log(
-            $"Repousse — délai: {_currentDelay:F1}s | vitesse: {_currentTimeBetween:F3}s | quantité: x{_currentRegrowMultiplier:F1}"
-        );
+        // Debug.Log(
+        //     $"Repousse — délai: {_currentDelay:F1}s | vitesse: {_currentTimeBetween:F3}s | quantité: x{_currentRegrowMultiplier:F1}"
+        // );
     }
 
     private Vector3 FindSurfacePoint(Collider col)
