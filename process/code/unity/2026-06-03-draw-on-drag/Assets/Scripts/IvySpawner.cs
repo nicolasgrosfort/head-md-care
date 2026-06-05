@@ -1,310 +1,287 @@
-using System.Collections;
 using System.Collections.Generic;
-using System.Reflection;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
 public class SurfacePathDrawer : MonoBehaviour
 {
-    [Header("Chemin")]
-    public float pathLength = 10f;
-    public LayerMask surfaceMask = ~0;
-    public float surfaceOffset = 0.03f;
+    [Header("Caméra")]
+    public Camera cam;
 
-    [Tooltip(
-        "Distance du raycast vers le bas pour coller à la surface.\nAugmente si le chemin s'arrête trop tôt."
-    )]
-    public float raycastDownDistance = 1f;
+    [Header("Branche")]
+    public int maxPoints = 40;
+    public float segmentLength = 0.02f;
+    public float branchRadius = 0.02f;
 
-    [Tooltip(
-        "Rayon de recherche quand la surface est perdue.\nPermet de passer les arêtes et les creux."
-    )]
-    public float lostSurfaceSearchRadius = 0.3f;
-
-    [Header("Espacement des points")]
-    [Tooltip("Distance entre chaque point de contrôle Bézier (mètres)")]
-    public float pointSpacing = 0.5f;
-
-    [Header("BezierShape")]
-    public float pathRadius = 0.15f;
-    public int rows = 8;
-    public int columns = 6;
-
-    [Header("Virage aléatoire")]
     [Range(0f, 45f)]
-    public float maxAngleVariation = 15f;
+    public float maxAngle = 20f;
+    public int meshFaces = 8;
 
-    [Header("Matériau (optionnel)")]
-    public Material pathMaterial;
+    [Tooltip("Combien de steps sans surface avant d'abandonner")]
+    public int maxLostStreak = 8;
 
-    private Camera _cam;
+    [Tooltip("Distance max de recherche quand la surface est perdue")]
+    public float searchRadius = 0.1f;
 
-    private System.Type _bezierShapeType;
-    private System.Type _bezierPointType;
-    private FieldInfo _pointsField;
-    private FieldInfo _radiusField;
-    private FieldInfo _rowsField;
-    private FieldInfo _columnsField;
-    private FieldInfo _smoothField;
-    private FieldInfo _closeLoopField;
-    private MethodInfo _refreshMethod;
+    [Header("Matériau")]
+    public Material branchMaterial;
+
+    int _count = 0;
 
     void Awake()
     {
-        _cam = Camera.main;
-        CacheReflection();
+        if (cam == null)
+            cam = Camera.main;
     }
 
     void Update()
     {
         if (Mouse.current != null && Mouse.current.leftButton.wasPressedThisFrame)
-            TryDrawPath();
+        {
+            Ray ray = cam.ScreenPointToRay(Mouse.current.position.ReadValue());
+            if (Physics.Raycast(ray, out RaycastHit hit, 200f))
+                SpawnBranch(hit);
+        }
     }
 
-    void CacheReflection()
+    void SpawnBranch(RaycastHit hit)
     {
-        foreach (var asm in System.AppDomain.CurrentDomain.GetAssemblies())
+        Vector3 tangent = FindTangent(hit.normal);
+        Vector3 dir = Quaternion.AngleAxis(Random.Range(0f, 360f), hit.normal) * tangent;
+
+        List<PathNode> nodes = CreateNodes(hit.point, hit.normal, dir);
+        if (nodes == null || nodes.Count < 2)
         {
-            _bezierShapeType = asm.GetType("UnityEngine.ProBuilder.BezierShape");
-            if (_bezierShapeType != null)
-                break;
-        }
-        if (_bezierShapeType == null)
-        {
-            Debug.LogError("[SurfacePathDrawer] BezierShape introuvable !");
+            Debug.LogWarning("[SurfacePathDrawer] Pas assez de noeuds");
             return;
         }
 
-        foreach (var asm in System.AppDomain.CurrentDomain.GetAssemblies())
-        {
-            _bezierPointType = asm.GetType("UnityEngine.ProBuilder.BezierPoint");
-            if (_bezierPointType != null)
-                break;
-        }
+        GameObject root = new GameObject("Branch_" + _count++);
+        root.transform.SetParent(transform);
 
-        var flags = BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Instance;
-        _pointsField = _bezierShapeType.GetField(
-            "points",
-            BindingFlags.Public | BindingFlags.Instance
-        );
-        _radiusField = _bezierShapeType.GetField("radius", flags);
-        _rowsField = _bezierShapeType.GetField("rows", flags);
-        _columnsField = _bezierShapeType.GetField("columns", flags);
-        _smoothField = _bezierShapeType.GetField("smooth", flags);
-        _closeLoopField = _bezierShapeType.GetField("closeLoop", flags);
-        _refreshMethod = _bezierShapeType.GetMethod(
-            "Refresh",
-            BindingFlags.Public | BindingFlags.Instance
-        );
+        MeshFilter mf = root.AddComponent<MeshFilter>();
+        MeshRenderer mr = root.AddComponent<MeshRenderer>();
+        mf.mesh = BuildMesh(nodes);
+        mr.material =
+            branchMaterial != null
+                ? branchMaterial
+                : new Material(Shader.Find("Universal Render Pipeline/Lit"));
+
+        Debug.Log($"[SurfacePathDrawer] Branche : {nodes.Count} noeuds");
     }
 
-    void TryDrawPath()
+    // ─────────────────────────────────────────────────────────────────────────
+
+    class PathNode
     {
-        if (_bezierShapeType == null || _bezierPointType == null)
-            return;
+        public Vector3 position;
+        public Vector3 normal;
 
-        Vector2 mousePos = Mouse.current.position.ReadValue();
-        Ray ray = _cam.ScreenPointToRay(mousePos);
-
-        if (!Physics.Raycast(ray, out RaycastHit hit, Mathf.Infinity, surfaceMask))
-            return; // clic dans le vide, silencieux
-
-        float internalStep = Mathf.Min(pointSpacing * 0.25f, 0.05f);
-
-        List<Vector3> densePoints = BuildDensePoints(
-            hit.point + hit.normal * surfaceOffset,
-            hit.normal,
-            GetRandomDirectionOnSurface(hit.normal),
-            internalStep
-        );
-
-        if (densePoints.Count < 2)
-            return;
-
-        List<Vector3> spacedPoints = ResampleByDistance(densePoints, pointSpacing);
-        if (spacedPoints.Count < 2)
-            return;
-
-        Debug.Log(
-            $"[SurfacePathDrawer] {densePoints.Count} pts denses → {spacedPoints.Count} pts espacés"
-        );
-        CreateBezierShape(spacedPoints);
+        public PathNode(Vector3 p, Vector3 n)
+        {
+            position = p;
+            normal = n;
+        }
     }
 
-    List<Vector3> BuildDensePoints(Vector3 start, Vector3 startNormal, Vector3 startDir, float step)
+    // ── Génération itérative (plus robuste que récursive) ─────────────────────
+
+    List<PathNode> CreateNodes(Vector3 startPos, Vector3 startNormal, Vector3 startDir)
     {
-        var points = new List<Vector3> { start };
-        Vector3 pos = start;
+        var nodes = new List<PathNode>();
+        nodes.Add(new PathNode(startPos, startNormal));
+
+        Vector3 pos = startPos;
         Vector3 normal = startNormal;
         Vector3 dir = startDir;
-        float dist = 0f;
-        int max = Mathf.CeilToInt(pathLength / step) + 10;
-        int lostStreak = 0;
+        int lost = 0;
 
-        for (int i = 0; i < max && dist < pathLength; i++)
+        for (int i = 1; i < maxPoints; i++)
         {
-            dir =
-                Quaternion.AngleAxis(
-                    Random.Range(-maxAngleVariation, maxAngleVariation) * step,
-                    normal
-                ) * dir;
+            // Variation angulaire tous les 2 steps
+            if (i % 2 == 0)
+                dir = Quaternion.AngleAxis(Random.Range(-maxAngle, maxAngle), normal) * dir;
             dir = Vector3.ProjectOnPlane(dir, normal).normalized;
-            if (dir.sqrMagnitude < 0.001f)
-                dir = GetRandomDirectionOnSurface(normal);
 
-            Vector3 candidate = pos + dir * step + normal * raycastDownDistance;
+            Vector3 nextPos = pos;
+            Vector3 nextNormal = normal;
             bool found = false;
 
-            // ── Tentative 1 : raycast direct vers le bas ──────────────────────
-            if (
-                Physics.Raycast(
-                    candidate,
-                    -normal,
-                    out RaycastHit h,
-                    raycastDownDistance * 2.5f,
-                    surfaceMask
-                )
-            )
+            // ── Avance le long de la normale (reste collé) ────────────────────
+            Vector3 p1 = pos + normal * segmentLength;
+            if (Physics.Raycast(new Ray(pos, normal), out RaycastHit h0, segmentLength))
+                p1 = h0.point;
+
+            // ── Cas 1 : mur devant ────────────────────────────────────────────
+            if (Physics.Raycast(new Ray(p1, dir), out RaycastHit h1, segmentLength))
             {
-                pos = h.point + h.normal * surfaceOffset;
-                normal = h.normal;
-                dir = Vector3.ProjectOnPlane(dir, normal).normalized;
-                points.Add(pos);
-                dist += step;
+                nextPos = h1.point;
+                nextNormal = -dir;
+                dir = normal; // tourne autour du coin
                 found = true;
-                lostStreak = 0;
             }
             else
             {
-                // ── Tentative 2 : recherche sphérique autour du candidat ──────
-                Collider[] nearby = Physics.OverlapSphere(
-                    candidate,
-                    lostSurfaceSearchRadius,
-                    surfaceMask
-                );
-                if (nearby.Length > 0)
-                {
-                    // Prend le point le plus proche sur le collider le plus near
-                    Vector3 closest = nearby[0].ClosestPoint(candidate);
-                    Vector3 approxNormal = (candidate - closest).normalized;
+                Vector3 p2 = p1 + dir * segmentLength;
 
-                    // Raycast depuis au-dessus de ce point trouvé
-                    Vector3 above = closest + approxNormal * raycastDownDistance;
-                    if (
-                        Physics.Raycast(
-                            above,
-                            -approxNormal,
-                            out RaycastHit h2,
-                            raycastDownDistance * 2f,
-                            surfaceMask
-                        )
+                // ── Cas 2 : surface plate ─────────────────────────────────────
+                if (
+                    Physics.Raycast(
+                        new Ray(p2 + normal * 0.01f, -normal),
+                        out RaycastHit h2,
+                        segmentLength * 2f
                     )
+                )
+                {
+                    nextPos = h2.point;
+                    nextNormal = h2.normal;
+                    found = true;
+                }
+                // ── Cas 3 : pente descendante ─────────────────────────────────
+                else if (
+                    Physics.Raycast(
+                        new Ray(p2 - normal * segmentLength + normal * 0.01f, -normal),
+                        out RaycastHit h3,
+                        segmentLength * 2f
+                    )
+                )
+                {
+                    nextPos = h3.point;
+                    nextNormal = h3.normal;
+                    found = true;
+                }
+                // ── Cas 4 : recherche sphérique (arête, creux, gap) ───────────
+                else
+                {
+                    Vector3 searchOrigin = p2;
+                    Collider[] nearby = Physics.OverlapSphere(searchOrigin, searchRadius);
+                    float bestDist = float.MaxValue;
+                    Vector3 bestPos = Vector3.zero;
+                    Vector3 bestNormal = normal;
+
+                    foreach (var col in nearby)
                     {
-                        pos = h2.point + h2.normal * surfaceOffset;
-                        normal = h2.normal;
-                        dir = Vector3.ProjectOnPlane(dir, normal).normalized;
-                        points.Add(pos);
-                        dist += step;
+                        Vector3 closest = col.ClosestPoint(searchOrigin);
+                        float d = Vector3.Distance(searchOrigin, closest);
+                        if (d < bestDist)
+                        {
+                            bestDist = d;
+                            bestPos = closest;
+                            // Raycast pour récupérer la vraie normale
+                            Vector3 fromAbove = closest + normal * 0.05f;
+                            if (Physics.Raycast(fromAbove, -normal, out RaycastHit hN, 0.2f))
+                            {
+                                bestPos = hN.point;
+                                bestNormal = hN.normal;
+                            }
+                        }
+                    }
+
+                    if (bestDist < float.MaxValue)
+                    {
+                        nextPos = bestPos;
+                        nextNormal = bestNormal;
                         found = true;
-                        lostStreak = 0;
                     }
                 }
             }
 
-            if (!found)
+            if (found)
             {
-                lostStreak++;
-                // Tolère 3 steps perdus consécutifs avant d'arrêter
-                if (lostStreak >= 3)
-                    break;
+                // Offset de surface pour éviter le z-fighting
+                nextPos += nextNormal * 0.005f;
+                nodes.Add(new PathNode(nextPos, nextNormal));
+                pos = nextPos;
+                normal = nextNormal;
+                dir = Vector3.ProjectOnPlane(dir, normal).normalized;
+                if (dir.sqrMagnitude < 0.001f)
+                    dir = FindTangent(normal);
+                lost = 0;
             }
-        }
-        return points;
-    }
-
-    List<Vector3> ResampleByDistance(List<Vector3> input, float spacing)
-    {
-        var result = new List<Vector3> { input[0] };
-        float accumulated = 0f;
-
-        for (int i = 1; i < input.Count; i++)
-        {
-            float segLen = Vector3.Distance(input[i - 1], input[i]);
-            if (segLen < 0.0001f)
-                continue;
-            accumulated += segLen;
-
-            while (accumulated >= spacing)
-            {
-                float overflow = accumulated - spacing;
-                float t = 1f - (overflow / segLen);
-                result.Add(Vector3.Lerp(input[i - 1], input[i], t));
-                accumulated -= spacing;
-            }
-        }
-
-        if (Vector3.Distance(result[result.Count - 1], input[input.Count - 1]) > 0.01f)
-            result.Add(input[input.Count - 1]);
-
-        return result;
-    }
-
-    Vector3 GetRandomDirectionOnSurface(Vector3 normal)
-    {
-        Vector3 r = Random.onUnitSphere;
-        Vector3 t = Vector3.Cross(normal, r).normalized;
-        if (t.sqrMagnitude < 0.001f)
-            t = Vector3.Cross(normal, r + Vector3.up).normalized;
-        return t;
-    }
-
-    void CreateBezierShape(List<Vector3> pts)
-    {
-        GameObject go = new GameObject("BezierPath");
-        var bezierShape = go.AddComponent(_bezierShapeType);
-
-        var listType = typeof(List<>).MakeGenericType(_bezierPointType);
-        var bpList = System.Activator.CreateInstance(listType) as IList;
-
-        var flags = BindingFlags.Public | BindingFlags.Instance;
-        var posField = _bezierPointType.GetField("position", flags);
-        var tanInField = _bezierPointType.GetField("tangentIn", flags);
-        var tanOutField = _bezierPointType.GetField("tangentOut", flags);
-        var rotField = _bezierPointType.GetField("rotation", flags);
-
-        for (int i = 0; i < pts.Count; i++)
-        {
-            Vector3 tangentDir;
-            if (i == 0)
-                tangentDir = (pts[1] - pts[0]).normalized * pointSpacing * 0.4f;
-            else if (i == pts.Count - 1)
-                tangentDir = (pts[i] - pts[i - 1]).normalized * pointSpacing * 0.4f;
             else
-                tangentDir = (pts[i + 1] - pts[i - 1]).normalized * pointSpacing * 0.4f;
-
-            var bp = System.Activator.CreateInstance(_bezierPointType);
-            posField?.SetValue(bp, pts[i]);
-            tanInField?.SetValue(bp, pts[i] - tangentDir);
-            tanOutField?.SetValue(bp, pts[i] + tangentDir);
-            rotField?.SetValue(bp, Quaternion.identity);
-            bpList.Add(bp);
+            {
+                lost++;
+                // Continue d'avancer "dans le vide" en gardant la direction
+                // pour avoir une chance de retomber sur une surface
+                pos += dir * segmentLength;
+                if (lost >= maxLostStreak)
+                {
+                    Debug.LogWarning(
+                        $"[SurfacePathDrawer] Abandon après {nodes.Count} noeuds (surface introuvable)"
+                    );
+                    break;
+                }
+            }
         }
 
-        _pointsField?.SetValue(bezierShape, bpList);
-        _radiusField?.SetValue(bezierShape, pathRadius);
-        _rowsField?.SetValue(bezierShape, rows);
-        _columnsField?.SetValue(bezierShape, columns);
-        _smoothField?.SetValue(bezierShape, true);
-        _closeLoopField?.SetValue(bezierShape, false);
-        _refreshMethod?.Invoke(bezierShape, null);
+        return nodes;
+    }
 
-        if (pathMaterial != null)
+    // ── Mesh tubulaire ────────────────────────────────────────────────────────
+
+    Mesh BuildMesh(List<PathNode> nodes)
+    {
+        Mesh mesh = new Mesh();
+        int n = nodes.Count;
+
+        Vector3[] vertices = new Vector3[n * meshFaces];
+        Vector3[] normals = new Vector3[n * meshFaces];
+        Vector2[] uv = new Vector2[n * meshFaces];
+        int[] triangles = new int[(n - 1) * meshFaces * 6];
+
+        float vStep = (2f * Mathf.PI) / meshFaces;
+
+        for (int i = 0; i < n; i++)
         {
-            var mr = go.GetComponent<MeshRenderer>();
-            if (mr != null)
-                mr.material = pathMaterial;
+            Vector3 fw = Vector3.zero;
+            if (i > 0)
+                fw += nodes[i - 1].position - nodes[i].position;
+            if (i < n - 1)
+                fw += nodes[i].position - nodes[i + 1].position;
+            if (fw == Vector3.zero)
+                fw = Vector3.forward;
+            fw.Normalize();
+
+            Vector3 up = nodes[i].normal.normalized;
+            Quaternion orientation = Quaternion.LookRotation(fw, up);
+
+            for (int v = 0; v < meshFaces; v++)
+            {
+                Vector3 p =
+                    nodes[i].position
+                    + orientation * Vector3.up * (branchRadius * Mathf.Sin(v * vStep))
+                    + orientation * Vector3.right * (branchRadius * Mathf.Cos(v * vStep));
+
+                vertices[i * meshFaces + v] = p;
+                normals[i * meshFaces + v] = (p - nodes[i].position).normalized;
+                uv[i * meshFaces + v] = new Vector2((float)v / meshFaces, (float)i / (n - 1));
+            }
+
+            if (i < n - 1)
+            {
+                for (int v = 0; v < meshFaces; v++)
+                {
+                    int t = i * meshFaces * 6 + v * 6;
+                    triangles[t] = ((v + 1) % meshFaces) + i * meshFaces;
+                    triangles[t + 1] = triangles[t + 4] = v + i * meshFaces;
+                    triangles[t + 2] = triangles[t + 3] =
+                        ((v + 1) % meshFaces + meshFaces) + i * meshFaces;
+                    triangles[t + 5] = (meshFaces + v % meshFaces) + i * meshFaces;
+                }
+            }
         }
 
-        Debug.Log($"[SurfacePathDrawer] ✅ BezierShape créé ({pts.Count} points)");
+        mesh.vertices = vertices;
+        mesh.triangles = triangles;
+        mesh.normals = normals;
+        mesh.uv = uv;
+        mesh.RecalculateBounds();
+        return mesh;
+    }
+
+    Vector3 FindTangent(Vector3 normal)
+    {
+        Vector3 t1 = Vector3.Cross(normal, Vector3.forward);
+        Vector3 t2 = Vector3.Cross(normal, Vector3.up);
+        return (t1.magnitude > t2.magnitude) ? t1 : t2;
     }
 }

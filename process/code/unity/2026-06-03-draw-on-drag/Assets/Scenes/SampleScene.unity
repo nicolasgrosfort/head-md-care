@@ -277,19 +277,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7bbfb843e9434453ea2bf13b7bbb262b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::IvySpawner
-  pathLength: 20
-  surfaceMask:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  surfaceOffset: 0.03
-  raycastDownDistance: 0.5
-  lostSurfaceSearchRadius: 0.3
-  pointSpacing: 0.5
-  pathRadius: 0.02
-  rows: 8
-  columns: 6
-  maxAngleVariation: 15
-  pathMaterial: {fileID: 2100000, guid: 2659b9387f6ab4124bad86dd6fe7788a, type: 2}
+  cam: {fileID: 330585545}
+  maxPoints: 100
+  segmentLength: 0.02
+  branchRadius: 0.02
+  maxAngle: 20
+  meshFaces: 8
+  maxLostStreak: 100
+  searchRadius: 0.1
+  branchMaterial: {fileID: 2100000, guid: 2659b9387f6ab4124bad86dd6fe7788a, type: 2}
 --- !u!120 &204653802
 LineRenderer:
   serializedVersion: 3
