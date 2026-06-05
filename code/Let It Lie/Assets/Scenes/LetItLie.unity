@@ -818,7 +818,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   leafPrefab: {fileID: 8427177176639999065, guid: f414211c8ae0f45b58f9996c1ed8ed5d, type: 3}
-  maxLeaves: 100
+  maxLeaves: 500
   sceneTransition: {fileID: 455747966}
 --- !u!4 &1256795299
 Transform:

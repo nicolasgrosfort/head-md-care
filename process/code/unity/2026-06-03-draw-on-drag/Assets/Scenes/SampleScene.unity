@@ -531,7 +531,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LeafSpawner
   leafPrefab: {fileID: 972512563}
-  totalLeaves: 1000
+  totalLeaves: 200
   leavesPerBatch: 20
   batchInterval: 0.05
   spawnAreaSize: {x: 10, y: 0, z: 10}
