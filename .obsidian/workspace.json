@@ -11,27 +11,38 @@
             "id": "f22e87c5ef441ae6",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "canvas",
               "state": {
-                "file": "process/ressources/2026-05-12-kentucky-route-zero.md",
-                "mode": "source",
-                "source": false,
-                "backlinks": true,
-                "backlinkOpts": {
-                  "collapseAll": false,
-                  "extraContext": false,
-                  "sortOrder": "alphabetical",
-                  "showSearch": false,
-                  "searchQuery": "",
-                  "backlinkCollapsed": false,
-                  "unlinkedCollapsed": true
+                "file": "process/explorations/0-moodboard.canvas",
+                "viewState": {
+                  "x": 1843.720507337073,
+                  "y": 1986.3880093954515,
+                  "zoom": 1
                 }
               },
-              "icon": "lucide-file",
-              "title": "2026-05-12-kentucky-route-zero"
+              "icon": "lucide-layout-dashboard",
+              "title": "0-moodboard"
+            }
+          },
+          {
+            "id": "9c06f3d42f4c113d",
+            "type": "leaf",
+            "state": {
+              "type": "canvas",
+              "state": {
+                "file": "process/explorations/1-stories.canvas",
+                "viewState": {
+                  "x": 2448.76774975607,
+                  "y": 1697.2042865605104,
+                  "zoom": -0.943524131214796
+                }
+              },
+              "icon": "lucide-layout-dashboard",
+              "title": "1-stories"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -88,7 +99,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 604.5
+    "width": 228.5,
+    "collapsed": true
   },
   "right": {
     "id": "7f0cef7a8c8dae81",
@@ -104,7 +116,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "process/explorations/1-stories.canvas",
+                "file": "2026-06-02-hans-color.png",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -114,7 +126,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for 1-stories"
+              "title": "Backlinks for 2026-06-02-hans-color"
             }
           },
           {
@@ -206,115 +218,54 @@
       "workspaces:Manage workspace layouts": false
     }
   },
-  "floating": {
-    "id": "0ed52aa94b47df3f",
-    "type": "floating",
-    "children": [
-      {
-        "id": "cde99ca15d56eeb7",
-        "type": "window",
-        "children": [
-          {
-            "id": "0c9adfdb0708bb9f",
-            "type": "tabs",
-            "children": [
-              {
-                "id": "ac5231aa22d29b64",
-                "type": "leaf",
-                "state": {
-                  "type": "canvas",
-                  "state": {
-                    "file": "process/explorations/0-moodboard.canvas",
-                    "viewState": {
-                      "x": 1107.0777622005385,
-                      "y": 1154.9577517248958,
-                      "zoom": -1.7210690919558207
-                    }
-                  },
-                  "icon": "lucide-layout-dashboard",
-                  "title": "0-moodboard"
-                }
-              },
-              {
-                "id": "bdc8a8aebcca0230",
-                "type": "leaf",
-                "state": {
-                  "type": "canvas",
-                  "state": {
-                    "file": "process/explorations/1-stories.canvas",
-                    "viewState": {
-                      "x": 1906.0562495022637,
-                      "y": 1391.21045093874,
-                      "zoom": -1.5293677314793301
-                    }
-                  },
-                  "icon": "lucide-layout-dashboard",
-                  "title": "1-stories"
-                }
-              }
-            ],
-            "currentTab": 1
-          }
-        ],
-        "direction": "vertical",
-        "x": -104,
-        "y": -1080,
-        "width": 1920,
-        "height": 1080,
-        "maximize": false,
-        "zoom": 0
-      }
-    ]
-  },
-  "active": "bdc8a8aebcca0230",
+  "active": "9c06f3d42f4c113d",
   "lastOpenFiles": [
-    "process/code/unity/2026-06-02-transparency/Library/LastSceneManagerSetup.txt",
-    "process/code/unity/2026-06-02-transparency/Temp/ADB-Refresh08a462b5d89fd404ab1482ae1746e7a2",
-    "process/code/unity/2026-06-02-transparency/Library/Search/propertyDatabase.db",
-    "process/code/unity/2026-06-02-transparency/Library/Search/propertyAliases.db",
-    "process/code/unity/2026-06-02-transparency/Library/Artifacts/50/50c71d3d1292b44951d7428883c9ae34",
-    "process/code/unity/2026-06-02-transparency/Library/Artifacts/cd/cd868e4d761835f0fad57ed726403e7e",
-    "process/code/unity/2026-06-02-transparency/Library/Artifacts/3b/3b9e2ffed588c8a865975b75d314c3b0",
-    "process/code/unity/2026-06-02-transparency/Library/Artifacts/5d/5db6b12d72de8d6779388cdabaef3c79",
-    "process/code/unity/2026-06-02-transparency/Library/Artifacts/03/0319315a9fe0450ea31f310f15667a91",
-    "process/code/unity/2026-06-02-transparency/Library/Artifacts/cf/cf6c264f6d72e296df2e3a664d31d308",
-    "process/code/unity/2026-06-02-transparency/Library/Artifacts/fc/fcb42210da0f803524156528c1db6d52",
-    "process/code/unity/2026-06-02-transparency/Library/PackageCache/com.unity.multiplayer.center@f01f4ba8d00a/Editor/MultiplayerCenterWindow/UI/Icons/d_Questionnaire.png",
-    "process/code/unity/2026-06-02-transparency/Library/PackageCache/com.unity.multiplayer.center@f01f4ba8d00a/Editor/MultiplayerCenterWindow/UI/Icons/d_PackageManager@2x.png",
-    "process/code/unity/2026-06-02-transparency/Library/PackageCache/com.unity.multiplayer.center@f01f4ba8d00a/Editor/MultiplayerCenterWindow/UI/Icons/d_PackageManager.png",
-    "process/code/unity/2026-06-02-transparency/Library/PackageCache/com.unity.multiplayer.center@f01f4ba8d00a/Editor/MultiplayerCenterWindow/UI/Icons/d_PackageInstalled@2x.png",
-    "process/code/unity/2026-06-02-transparency/Library/PackageCache/com.unity.multiplayer.center@f01f4ba8d00a/Editor/MultiplayerCenterWindow/UI/Icons/d_PackageInstalled.png",
-    "process/code/unity/2026-06-02-transparency/Library/PackageCache/com.unity.multiplayer.center@f01f4ba8d00a/Editor/MultiplayerCenterWindow/UI/Icons/d_Package.png",
-    "process/code/unity/2026-06-02-transparency/Library/PackageCache/com.unity.multiplayer.center@f01f4ba8d00a/Editor/MultiplayerCenterWindow/UI/Icons/d_Loading.png",
-    "process/code/unity/2026-06-02-transparency/Library/PackageCache/com.unity.multiplayer.center@f01f4ba8d00a/Editor/MultiplayerCenterWindow/UI/Icons/d_Check.png",
-    "process/code/unity/2026-06-02-transparency/Library/PackageCache/com.unity.multiplayer.center@f01f4ba8d00a/Editor/MultiplayerCenterWindow/UI/Icons/Questionnaire.png",
-    "process/code/unity/2026-06-02-transparency/Library/PackageCache/com.unity.multiplayer.center@f01f4ba8d00a/Editor/MultiplayerCenterWindow/UI/Icons/PackageManager@2x.png",
-    "process/code/unity/2026-06-02-transparency/Library/PackageCache/com.unity.multiplayer.center@f01f4ba8d00a/Documentation~/use-multiplayer-center.md",
-    "process/code/unity/2026-06-02-transparency/Library/PackageCache/com.unity.multiplayer.center@f01f4ba8d00a/Documentation~/sys-req.md",
-    "process/code/unity/2026-06-02-transparency/Library/PackageCache/com.unity.multiplayer.center@f01f4ba8d00a/Documentation~/index.md",
-    "process/code/unity/2026-06-02-transparency/Library/PackageCache/com.unity.multiplayer.center@f01f4ba8d00a/Documentation~/TableofContents.md",
-    "process/code/unity/2026-06-02-transparency/Library/PackageCache/com.unity.multiplayer.center@f01f4ba8d00a/Third Party Notices.md",
-    "process/code/unity/2026-06-02-transparency/Library/PackageCache/com.unity.multiplayer.center@f01f4ba8d00a/README.md",
-    "process/code/unity/2026-06-02-transparency/Library/PackageCache/com.unity.multiplayer.center@f01f4ba8d00a/LICENSE.md",
-    "process/code/unity/2026-06-02-transparency/Library/PackageCache/com.unity.multiplayer.center@f01f4ba8d00a/CHANGELOG.md",
-    "process/ressources/2026-05-12-kentucky-route-zero.md",
-    "process/explorations/1-stories.canvas",
-    "process/ressources/2026-05-06-renewing-the-funeral-landscape.md",
-    "process/ressources/2026-05-06-isle-of-death.md",
-    "process/ressources/2026-05-05-the-epicure-cure-irvin-yalom.md",
-    "process/ressources/2026-05-16-a-visit-to-the-plainpalais-cemetery.md",
-    "process/ressources/2026-05-18-passage.md",
-    "process/ressources/2026-06-01-nomadic-tribe.md",
-    "Untitled.md",
-    "process/ressources/2026-05-02-the-carrier-bag-theory-of-fiction.md",
-    "process/explorations/readme.md",
-    "process/readme.md",
-    "process/context/readme.md",
-    "process/context/6-stories.md",
     "process/explorations/0-moodboard.canvas",
-    "process/context/5-onboarding.md",
-    "process/context/6-onboarding.md",
-    "process/context/1-scenes.md",
-    "process/context/2-assets.md"
+    "process/code/unity/2026-06-03-draw-on-drag/Temp/__Backupscenes/0.backup",
+    "process/code/unity/2026-06-03-draw-on-drag/Temp/__Backupscenes",
+    "process/code/unity/2026-06-03-draw-on-drag/Library/UndoStack.bin",
+    "process/code/unity/2026-06-03-draw-on-drag/Library/UndoData.bin",
+    "process/code/unity/2026-06-03-draw-on-drag/Temp/ADB-Refresh7d6eaa10ecc794a8e878733575b8bc0e",
+    "process/code/unity/2026-06-03-draw-on-drag/Temp/ADB-Refresh08ba51f5318204884b17f9d2b57c81b9",
+    "process/code/unity/2026-06-03-draw-on-drag/Library/Bee/CachedNodeOutput/af0ce5fadbe700d2e79c628c9df0f5c1_out",
+    "process/code/unity/2026-06-03-draw-on-drag/Library/Bee/artifacts/mvdfrm/Unity.Mathematics.Editor.ref.dll_C54418FC61DECAC0.mvfrm",
+    "process/code/unity/2026-06-03-draw-on-drag/Library/Bee/CachedNodeOutput/7d7401a0f857e7ab516e403cc536938a_out",
+    "process/code/unity/2026-06-03-draw-on-drag/Library/Bee/CachedNodeOutput/d749396f285c098996accb1f7b344689_out",
+    "process/code/unity/2026-06-03-draw-on-drag/Library/PackageCache/com.unity.probuilder@1f279ab829b7/Content/Icons/Tools/ShapeTool/on/Torus@2x.png",
+    "process/code/unity/2026-06-03-draw-on-drag/Library/PackageCache/com.unity.probuilder@1f279ab829b7/Content/Icons/Tools/ShapeTool/on/Torus.png",
+    "process/code/unity/2026-06-03-draw-on-drag/Library/PackageCache/com.unity.probuilder@1f279ab829b7/Content/Icons/Tools/ShapeTool/on/Stair@2x.png",
+    "process/code/unity/2026-06-03-draw-on-drag/Library/PackageCache/com.unity.probuilder@1f279ab829b7/Content/Icons/Tools/ShapeTool/on/Stair.png",
+    "process/code/unity/2026-06-03-draw-on-drag/Library/PackageCache/com.unity.probuilder@1f279ab829b7/Content/Icons/Tools/ShapeTool/on/Sprite@2x.png",
+    "process/code/unity/2026-06-03-draw-on-drag/Library/PackageCache/com.unity.probuilder@1f279ab829b7/Content/Icons/Tools/ShapeTool/on/Sprite.png",
+    "process/code/unity/2026-06-03-draw-on-drag/Library/PackageCache/com.unity.probuilder@1f279ab829b7/Content/Icons/Tools/ShapeTool/on/Sphere@2x.png",
+    "process/code/unity/2026-06-03-draw-on-drag/Library/PackageCache/com.unity.probuilder@1f279ab829b7/Content/Icons/Tools/ShapeTool/on/Sphere.png",
+    "process/code/unity/2026-06-03-draw-on-drag/Library/PackageCache/com.unity.probuilder@1f279ab829b7/Content/Icons/Tools/ShapeTool/on/Prism@2x.png",
+    "process/code/unity/2026-06-03-draw-on-drag/Library/PackageCache/com.unity.probuilder@1f279ab829b7/Content/Icons/Tools/ShapeTool/on/Prism.png",
+    "process/code/unity/2026-06-03-draw-on-drag/Library/PackageCache/com.unity.probuilder@1f279ab829b7/Samples~/Runtime/Runtime Editing/README.md",
+    "process/code/unity/2026-06-03-draw-on-drag/Library/PackageCache/com.unity.probuilder@1f279ab829b7/External/KdTree/README.md",
+    "process/code/unity/2026-06-03-draw-on-drag/Library/PackageCache/com.unity.probuilder@1f279ab829b7/External/KdTree/LICENSE.md",
+    "process/code/unity/2026-06-03-draw-on-drag/Library/PackageCache/com.unity.probuilder@1f279ab829b7/Documentation~/workflow-walkthroughs.md",
+    "process/code/unity/2026-06-03-draw-on-drag/Library/PackageCache/com.unity.probuilder@1f279ab829b7/Documentation~/workflow-vertexcolors.md",
+    "process/code/unity/2026-06-03-draw-on-drag/Library/PackageCache/com.unity.probuilder@1f279ab829b7/Documentation~/workflow-uvs.md",
+    "process/code/unity/2026-06-03-draw-on-drag/Library/PackageCache/com.unity.probuilder@1f279ab829b7/Documentation~/workflow-texture-mapping.md",
+    "process/code/unity/2026-06-03-draw-on-drag/Library/PackageCache/com.unity.probuilder@1f279ab829b7/Documentation~/workflow-materials.md",
+    "process/code/unity/2026-06-03-draw-on-drag/Library/PackageCache/com.unity.probuilder@1f279ab829b7/Documentation~/workflow-exporting.md",
+    "process/code/unity/2026-06-03-draw-on-drag/Library/PackageCache/com.unity.probuilder@1f279ab829b7/Documentation~/workflow-edit.md",
+    "process/code/unity/2026-06-03-draw-on-drag/Library/PackageCache/com.unity.probuilder@1f279ab829b7/Documentation~/workflow-edit-tips.md",
+    "process/code/unity/2026-06-03-draw-on-drag/Library/PackageCache/com.unity.probuilder@1f279ab829b7/Documentation~/workflow-edit-tasks.md",
+    "process/code/unity/2026-06-03-draw-on-drag/Library/PackageCache/com.unity.probuilder@1f279ab829b7/Documentation~/workflow-edit-smoothing.md",
+    "process/code/unity/2026-06-03-draw-on-drag/Library/PackageCache/com.unity.probuilder@1f279ab829b7/Documentation~/workflow-create.md",
+    "process/code/unity/2026-06-03-draw-on-drag/Library/PackageCache/com.unity.probuilder@1f279ab829b7/Documentation~/workflow-create-bezier.md",
+    "process/code/unity/2026-06-03-draw-on-drag/Library/PackageCache/com.unity.probuilder@1f279ab829b7/Documentation~/whats-new.md",
+    "process/code/unity/2026-06-03-draw-on-drag/Library/PackageCache/com.unity.probuilder@1f279ab829b7/Documentation~/vertex-positions.md",
+    "process/code/unity/2026-06-03-draw-on-drag/Library/PackageCache/com.unity.probuilder@1f279ab829b7/Documentation~/vertex-colors.md",
+    "process/code/unity/2026-06-03-draw-on-drag/Library/PackageCache/com.unity.probuilder@1f279ab829b7/Documentation~/uv_dropdown.md",
+    "process/code/unity/2026-06-03-draw-on-drag/Library/PackageCache/com.unity.probuilder@1f279ab829b7/Documentation~/uv-editor.md",
+    "process/code/unity/2026-06-03-draw-on-drag/Library/PackageCache/com.unity.probuilder@1f279ab829b7/Documentation~/uv-editor-toolbar.md",
+    "process/code/unity/2026-06-03-draw-on-drag/Library/PackageCache/com.unity.probuilder@1f279ab829b7/Documentation~/tools.md",
+    "process/code/unity/2026-06-03-draw-on-drag/Library/PackageCache/com.unity.probuilder@1f279ab829b7/Documentation~/tool-options-overlay.md",
+    "process/code/unity/2026-06-03-draw-on-drag/Library/PackageCache/com.unity.probuilder@1f279ab829b7/Documentation~/snap-to-grid.md",
+    "process/code/unity/2026-06-03-draw-on-drag/Library/PackageCache/com.unity.probuilder@1f279ab829b7/Documentation~/smoothing-groups.md",
+    "process/explorations/1-stories.canvas"
   ]
 }

@@ -1,5 +1,6 @@
 title: Start
 ---
+// Minimalist ambiance
 The player sees the string going into the iPad.
 -> Pull the string
     <<jump PullString>>

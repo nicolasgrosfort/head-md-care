@@ -1,6 +1,10 @@
 # Care
 
 An interactive project that explores how to tell a tablet-based story about the concept of care in the context of "Cimetière des Rois" in collaboration with the Geneva Municipal Library.
+¨
+# Obsidian
+
+The documentation for this repository is built in Obsidian, and you’ll have a better experience opening it with the app.
 
 # Repository
 
