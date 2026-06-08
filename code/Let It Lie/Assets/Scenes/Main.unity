@@ -1043,9 +1043,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: '::'
   gameState: {fileID: 11400000, guid: bff1d43fc4e1244ff89e8eb800ecae34, type: 2}
   nightColor: {r: 0.05, g: 0.05, b: 0.15, a: 1}
-  sunriseColor: {r: 0.050980393, g: 0.050980393, b: 0.14509805, a: 1}
+  sunriseColor: {r: 0.19289193, g: 0.19289188, b: 0.549, a: 1}
   dayColor: {r: 0.4, g: 0.7, b: 1, a: 1}
-  sunsetColor: {r: 0.4, g: 0.69803923, b: 0.99607843, a: 1}
+  sunsetColor: {r: 0.19215687, g: 0.19215687, b: 0.54901963, a: 1}
 --- !u!114 &1900599443
 MonoBehaviour:
   m_ObjectHideFlags: 0
