@@ -12,3 +12,7 @@ Contains the important and significant steps that guided and influenced the vari
 | `journal`     | A record of the information, discussions and important milestones that marked the project             |
 | `ressources`  | A collection of projects that align with our project, and that we can use as references               |
 | `robot`       | A space intended for robots which explains how he should behave and what the important information is |
+
+# Journal
+
+![journal](journal.base)

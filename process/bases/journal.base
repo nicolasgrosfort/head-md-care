@@ -1,0 +1,13 @@
+views:
+  - type: table
+    name: Table
+    filters:
+      and:
+        - file.inFolder("process/journal")
+    order:
+      - file.name
+      - date
+      - description
+    sort:
+      - property: date
+        direction: DESC
