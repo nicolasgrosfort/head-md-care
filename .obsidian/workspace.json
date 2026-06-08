@@ -4,8 +4,9 @@
     "type": "split",
     "children": [
       {
-        "id": "317cb80d82fef5e9",
+        "id": "566a7a44ed22e14a",
         "type": "tabs",
+        "dimension": 44.574175824175825,
         "children": [
           {
             "id": "f22e87c5ef441ae6",
@@ -23,26 +24,41 @@
               "icon": "lucide-layout-dashboard",
               "title": "0-moodboard"
             }
-          },
+          }
+        ]
+      },
+      {
+        "id": "317cb80d82fef5e9",
+        "type": "tabs",
+        "dimension": 55.425824175824175,
+        "children": [
           {
             "id": "9c06f3d42f4c113d",
             "type": "leaf",
+            "pinned": true,
             "state": {
-              "type": "canvas",
+              "type": "markdown",
               "state": {
-                "file": "process/explorations/1-stories.canvas",
-                "viewState": {
-                  "x": 2448.76774975607,
-                  "y": 1697.2042865605104,
-                  "zoom": -0.943524131214796
+                "file": "process/journal/2026-06-08.md",
+                "mode": "source",
+                "source": false,
+                "backlinks": true,
+                "backlinkOpts": {
+                  "collapseAll": false,
+                  "extraContext": false,
+                  "sortOrder": "alphabetical",
+                  "showSearch": false,
+                  "searchQuery": "",
+                  "backlinkCollapsed": false,
+                  "unlinkedCollapsed": true
                 }
               },
-              "icon": "lucide-layout-dashboard",
-              "title": "1-stories"
+              "pinned": true,
+              "icon": "lucide-file",
+              "title": "2026-06-08"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -99,8 +115,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 228.5,
-    "collapsed": true
+    "width": 228.5
   },
   "right": {
     "id": "7f0cef7a8c8dae81",
@@ -220,17 +235,23 @@
   },
   "active": "9c06f3d42f4c113d",
   "lastOpenFiles": [
+    "code/Let It Lie/Temp/ADB-Refreshd046da647c3464713b2c33a3aef1f9bb",
+    "code/Let It Lie/Temp/ADB-Refresh461a091dad5d5448180cc331e8a1aadc",
+    "code/Let It Lie/Temp/ADB-Refreshbc73abc95345e4d0ab9cfd9af384a1aa",
+    "code/Let It Lie/Temp/ADB-Refresheae043db1ecac4630ab8088ca29a8104",
+    "code/Let It Lie/Temp/ADB-Refreshf2f073f1677b3407983ba05210a1bec0",
+    "code/Let It Lie/Temp/ADB-Refresh3ea7d87e0e7fd4f8585c12a843c1e9f7",
+    "code/Let It Lie/Temp/ADB-Refresh343d236fd9322461f823f380d2c4d0ac",
+    "code/Let It Lie/Temp/ADB-Refresh71dbf06049073466fb3c43f637edf00d",
+    "code/Let It Lie/Temp/ADB-Refresh2630568adb7e04fe9aa1ed3fa4a8bf98",
+    "code/Let It Lie/Temp/ADB-Refresh06dd98cb7a79447018a42af499dc6958",
+    "code/Let It Lie/Temp/ADB-Refresh93ce4e72387364626824ae1639fcc0d9",
+    "code/Let It Lie/Assets/Textures/Leaves.png",
+    "code/Let It Lie/Assets/Leaves.png",
+    "process/readme.md",
+    "process/journal/2026-06-08.md",
+    "process/explorations/1-stories.canvas",
     "process/explorations/0-moodboard.canvas",
-    "process/code/unity/2026-06-03-draw-on-drag/Temp/__Backupscenes/0.backup",
-    "process/code/unity/2026-06-03-draw-on-drag/Temp/__Backupscenes",
-    "process/code/unity/2026-06-03-draw-on-drag/Library/UndoStack.bin",
-    "process/code/unity/2026-06-03-draw-on-drag/Library/UndoData.bin",
-    "process/code/unity/2026-06-03-draw-on-drag/Temp/ADB-Refresh7d6eaa10ecc794a8e878733575b8bc0e",
-    "process/code/unity/2026-06-03-draw-on-drag/Temp/ADB-Refresh08ba51f5318204884b17f9d2b57c81b9",
-    "process/code/unity/2026-06-03-draw-on-drag/Library/Bee/CachedNodeOutput/af0ce5fadbe700d2e79c628c9df0f5c1_out",
-    "process/code/unity/2026-06-03-draw-on-drag/Library/Bee/artifacts/mvdfrm/Unity.Mathematics.Editor.ref.dll_C54418FC61DECAC0.mvfrm",
-    "process/code/unity/2026-06-03-draw-on-drag/Library/Bee/CachedNodeOutput/7d7401a0f857e7ab516e403cc536938a_out",
-    "process/code/unity/2026-06-03-draw-on-drag/Library/Bee/CachedNodeOutput/d749396f285c098996accb1f7b344689_out",
     "process/code/unity/2026-06-03-draw-on-drag/Library/PackageCache/com.unity.probuilder@1f279ab829b7/Content/Icons/Tools/ShapeTool/on/Torus@2x.png",
     "process/code/unity/2026-06-03-draw-on-drag/Library/PackageCache/com.unity.probuilder@1f279ab829b7/Content/Icons/Tools/ShapeTool/on/Torus.png",
     "process/code/unity/2026-06-03-draw-on-drag/Library/PackageCache/com.unity.probuilder@1f279ab829b7/Content/Icons/Tools/ShapeTool/on/Stair@2x.png",
@@ -239,8 +260,6 @@
     "process/code/unity/2026-06-03-draw-on-drag/Library/PackageCache/com.unity.probuilder@1f279ab829b7/Content/Icons/Tools/ShapeTool/on/Sprite.png",
     "process/code/unity/2026-06-03-draw-on-drag/Library/PackageCache/com.unity.probuilder@1f279ab829b7/Content/Icons/Tools/ShapeTool/on/Sphere@2x.png",
     "process/code/unity/2026-06-03-draw-on-drag/Library/PackageCache/com.unity.probuilder@1f279ab829b7/Content/Icons/Tools/ShapeTool/on/Sphere.png",
-    "process/code/unity/2026-06-03-draw-on-drag/Library/PackageCache/com.unity.probuilder@1f279ab829b7/Content/Icons/Tools/ShapeTool/on/Prism@2x.png",
-    "process/code/unity/2026-06-03-draw-on-drag/Library/PackageCache/com.unity.probuilder@1f279ab829b7/Content/Icons/Tools/ShapeTool/on/Prism.png",
     "process/code/unity/2026-06-03-draw-on-drag/Library/PackageCache/com.unity.probuilder@1f279ab829b7/Samples~/Runtime/Runtime Editing/README.md",
     "process/code/unity/2026-06-03-draw-on-drag/Library/PackageCache/com.unity.probuilder@1f279ab829b7/External/KdTree/README.md",
     "process/code/unity/2026-06-03-draw-on-drag/Library/PackageCache/com.unity.probuilder@1f279ab829b7/External/KdTree/LICENSE.md",
@@ -263,9 +282,6 @@
     "process/code/unity/2026-06-03-draw-on-drag/Library/PackageCache/com.unity.probuilder@1f279ab829b7/Documentation~/uv-editor.md",
     "process/code/unity/2026-06-03-draw-on-drag/Library/PackageCache/com.unity.probuilder@1f279ab829b7/Documentation~/uv-editor-toolbar.md",
     "process/code/unity/2026-06-03-draw-on-drag/Library/PackageCache/com.unity.probuilder@1f279ab829b7/Documentation~/tools.md",
-    "process/code/unity/2026-06-03-draw-on-drag/Library/PackageCache/com.unity.probuilder@1f279ab829b7/Documentation~/tool-options-overlay.md",
-    "process/code/unity/2026-06-03-draw-on-drag/Library/PackageCache/com.unity.probuilder@1f279ab829b7/Documentation~/snap-to-grid.md",
-    "process/code/unity/2026-06-03-draw-on-drag/Library/PackageCache/com.unity.probuilder@1f279ab829b7/Documentation~/smoothing-groups.md",
-    "process/explorations/1-stories.canvas"
+    "process/code/unity/2026-06-03-draw-on-drag/Library/PackageCache/com.unity.probuilder@1f279ab829b7/Documentation~/tool-options-overlay.md"
   ]
 }
