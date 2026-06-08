@@ -31,6 +31,7 @@ public class GameState : ScriptableObject
     public void IncreaseTime()
     {
         time += timeSpeed;
+
         if (time > 1f)
         {
             time = 0f;
@@ -38,9 +39,9 @@ public class GameState : ScriptableObject
         }
     }
 
-    public void IncreaseSeason()
+    public void IncreaseSeason(float amount = 0.25f)
     {
-        season += 0.25f;
+        season += amount;
         if (season >= 1f)
             season = 0f;
     }
