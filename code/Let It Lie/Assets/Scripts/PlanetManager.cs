@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class MoonManager : MonoBehaviour
+public class PlanetManager : MonoBehaviour
 {
     [SerializeField]
     private GameState gameState;
