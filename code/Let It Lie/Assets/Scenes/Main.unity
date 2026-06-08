@@ -560,6 +560,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1077732502}
   - component: {fileID: 1077732503}
+  - component: {fileID: 1077732504}
   m_Layer: 0
   m_Name: Moon
   m_TagString: Untagged
@@ -595,6 +596,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5f2b96f61a604308b19cb7942568a0a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
+  gameState: {fileID: 11400000, guid: bff1d43fc4e1244ff89e8eb800ecae34, type: 2}
+  radius: 25
+  initialAngle: 90
+--- !u!114 &1077732504
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1077732501}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ffbcfb02b15604fc89c1fb9636b598c5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlanetManager
   gameState: {fileID: 11400000, guid: bff1d43fc4e1244ff89e8eb800ecae34, type: 2}
   radius: 25
   initialAngle: 90
@@ -721,13 +737,15 @@ GameObject:
   - component: {fileID: 1357790208}
   - component: {fileID: 1357790210}
   - component: {fileID: 1357790209}
+  - component: {fileID: 1357790212}
+  - component: {fileID: 1357790211}
   m_Layer: 0
   m_Name: Main Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1357790208
 Transform:
   m_ObjectHideFlags: 0
@@ -782,8 +800,8 @@ Light:
   m_Enabled: 1
   serializedVersion: 13
   m_Type: 1
-  m_Color: {r: 1, g: 0.97364175, b: 0.6273585, a: 1}
-  m_Intensity: 3
+  m_Color: {r: 0.6784314, g: 0.6784314, b: 0.7921569, a: 1}
+  m_Intensity: 0.5
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -837,6 +855,35 @@ Light:
   m_LightUnit: 1
   m_LuxAtDistance: 1
   m_EnableSpotReflector: 1
+--- !u!114 &1357790211
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1357790207}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a2dcee3b62d5d4c9281b9cf8d31b61e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::LightManager
+  gameState: {fileID: 11400000, guid: bff1d43fc4e1244ff89e8eb800ecae34, type: 2}
+  nightColor: {r: 0.75711995, g: 0.75711995, b: 0.8867924, a: 1}
+  dayColor: {r: 1, g: 0.93333334, b: 0.30980393, a: 1}
+  nightIntensity: 0.5
+  dayIntensity: 3
+--- !u!114 &1357790212
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1357790207}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a7f6496910ee4d0b88e660c8b4fcd19, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
 --- !u!1 &1533906647
 GameObject:
   m_ObjectHideFlags: 0
@@ -1025,9 +1072,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: '::'
   gameState: {fileID: 11400000, guid: bff1d43fc4e1244ff89e8eb800ecae34, type: 2}
   nightColor: {r: 0.05, g: 0.05, b: 0.15, a: 1}
-  sunriseColor: {r: 0.8, g: 0.4, b: 0.2, a: 1}
+  sunriseColor: {r: 0.050980393, g: 0.050980393, b: 0.14509805, a: 1}
   dayColor: {r: 0.4, g: 0.7, b: 1, a: 1}
-  sunsetColor: {r: 0.9019608, g: 0.10196079, b: 0.3275207, a: 1}
+  sunsetColor: {r: 0.4, g: 0.69803923, b: 0.99607843, a: 1}
 --- !u!114 &1900599443
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1147,6 +1194,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1998194181}
   - component: {fileID: 1998194182}
+  - component: {fileID: 1998194183}
   m_Layer: 0
   m_Name: Sun
   m_TagString: Untagged
@@ -1182,6 +1230,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5f2b96f61a604308b19cb7942568a0a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MoonManager
+  gameState: {fileID: 11400000, guid: bff1d43fc4e1244ff89e8eb800ecae34, type: 2}
+  radius: 25
+  initialAngle: -90
+--- !u!114 &1998194183
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1998194180}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ffbcfb02b15604fc89c1fb9636b598c5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlanetManager
   gameState: {fileID: 11400000, guid: bff1d43fc4e1244ff89e8eb800ecae34, type: 2}
   radius: 25
   initialAngle: -90
