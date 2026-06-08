@@ -5,11 +5,10 @@ using UnityEngine.EventSystems;
 public class TimeManager : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
 {
     [SerializeField]
-    private float _holdDuration = 0.5f;
-
-    [SerializeField]
     private GameState gameState;
 
+    [SerializeField]
+    private float _holdDuration = 0.5f;
     private float _downTime = -1f;
     private bool _holdFired;
     private Coroutine _speedRoutine;

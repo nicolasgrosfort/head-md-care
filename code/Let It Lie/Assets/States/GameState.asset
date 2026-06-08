@@ -16,4 +16,6 @@ MonoBehaviour:
   season: 0
   time: 0
   timeSpeed: 0.00001
-  timeSpeedIncrement: 0.000001
+  timeSpeedIncrement: 1e-10
+  defaultTimeSpeed: 0.00001
+  maxTimeSpeed: 0.001
