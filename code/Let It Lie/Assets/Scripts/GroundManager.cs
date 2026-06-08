@@ -5,9 +5,9 @@ public class GroundManager : MonoBehaviour
     [SerializeField]
     private GameState gameState;
 
-    private float initial = 20f;
+    private float initial;
     public float min = -10;
-    public float max = 20f;
+    public float max = 10f;
 
     void Start()
     {
@@ -17,9 +17,6 @@ public class GroundManager : MonoBehaviour
     void Update()
     {
         float progressiveSeason = gameState.season + gameState.time * 0.25f;
-        // float t = (Mathf.Sin(progressiveSeason * Mathf.PI * 2f) + 1f) * 0.5f;
-        // float y = initial + Mathf.Lerp(min, max, t);
-        // transform.position = new Vector3(transform.position.x, y, transform.position.z);
 
         float t = Mathf.Sin((progressiveSeason - 0.25f) * Mathf.PI * 2f);
         float y = initial + Mathf.Lerp(0f, t > 0f ? max : min, Mathf.Abs(t));
