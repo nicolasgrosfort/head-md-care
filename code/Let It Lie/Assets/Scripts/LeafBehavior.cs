@@ -81,7 +81,8 @@ public class LeafBehaviour : MonoBehaviour, IPointerClickHandler
             gameState.maxTimeSpeed,
             gameState.timeSpeed
         );
-        _rb.linearDamping = Mathf.Lerp(baseDrag + slowDrag, 0.1f, t);
+
+        _rb.AddForce(Vector3.down * Mathf.Lerp(1f, 50f, t), ForceMode.Acceleration);
 
         Debug.Log(t);
 
@@ -117,9 +118,8 @@ public class LeafBehaviour : MonoBehaviour, IPointerClickHandler
             0f,
             UnityEngine.Random.Range(-lateralImpulse, lateralImpulse)
         );
-        _rb.AddForce(lateral, ForceMode.Impulse);
 
-        // Rotation initiale aléatoire
+        _rb.AddForce(lateral, ForceMode.Impulse);
         _rb.AddTorque(UnityEngine.Random.insideUnitSphere * torqueImpulse, ForceMode.Impulse);
     }
 
