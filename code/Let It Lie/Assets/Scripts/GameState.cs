@@ -5,7 +5,7 @@ using UnityEngine;
 public class GameState : ScriptableObject
 {
     [Header("Global state")]
-    public float life = 0f; // 0-1, 0 = death, 1 = alive
+    public float life = 0.5f; // 0-1, 0 = not enough, 0.5 = balanced, 1 = too much
     public float season = 0f; // 0-1, 0 = spring, 0.25 = summer, 0.5 = autumn, 0.75 = winter
     public float time = 0f; // 0-1, 0 = midnight, 0.25 = sunrise, 0.5 = noon, 0.75 = sunset
     public float timeSpeed = 0.00001f; // how fast time progresses
