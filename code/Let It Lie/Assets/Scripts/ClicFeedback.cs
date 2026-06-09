@@ -19,19 +19,22 @@ public class ClicFeedback : MonoBehaviour, IPointerClickHandler
         );
 
         // Raycast 3D pour récupérer la profondeur
-        float depthRadius = 0.15f; // valeur par défaut si rien touché
+        float depthRadius = 0f; // valeur par défaut si rien touché
 
         Ray ray = Camera.main.ScreenPointToRay(eventData.position);
         if (Physics.Raycast(ray, out RaycastHit hit))
         {
-            // Distance caméra → point touché
-            float depth = hit.distance;
+            if (hit.collider.CompareTag("Leaf"))
+            {
+                // Distance caméra → point touché
+                float depth = hit.distance;
 
-            // Plus loin = plus grand, plus proche = plus petit
-            // Normalise entre une distance min (1m) et max (20m)
-            float t = Mathf.InverseLerp(20f, 120f, depth);
-            depthRadius = Mathf.Lerp(0.15f, 0.05f, t);
-            Debug.Log($"Hit à {depth:F1}m (t={t:F2})");
+                // Plus loin = plus grand, plus proche = plus petit
+                // Normalise entre une distance min (1m) et max (20m)
+                float t = Mathf.InverseLerp(20f, 120f, depth);
+                depthRadius = Mathf.Lerp(0.15f, 0.05f, t);
+                Debug.Log($"Hit à {depth:F1}m (t={t:F2})");
+            }
         }
 
         if (_rippleCoroutine != null)

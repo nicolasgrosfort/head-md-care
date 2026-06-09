@@ -101,11 +101,11 @@ Material:
     - _DstBlend: 0
     - _DstBlendAlpha: 0
     - _EnvironmentReflections: 1
-    - _FogDensity: 0.05
-    - _FogEnd: 80
+    - _FogDensity: 1
+    - _FogEnd: 130
     - _FogHeightMax: 4
     - _FogHeightMin: -2
-    - _FogStart: 5
+    - _FogStart: 39.4
     - _GlossMapScale: 0
     - _Glossiness: 0
     - _GlossyReflections: 0
