@@ -29,12 +29,15 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _Frequency: 20
+    - _Frequency: 18
     - _Radius: 0.3
-    - _Speed: 3
-    - _Strength: 0.05
-    - _Time2: 1.0001891
+    - _RingWidth: 0.06
+    - _Speed: 2
+    - _Strength: 0
+    - _Time2: 6.0536394
+    - _WaveFront: 0.1309273
+    - _WaveWidth: 0.026185459
     m_Colors:
-    - _Center: {r: 0.65590066, g: 0.52671087, b: 0, a: 0}
+    - _Center: {r: 0.64770645, g: 0.25378266, b: 0, a: 0}
   m_BuildTextureStacks: []
   m_AllowLocking: 1

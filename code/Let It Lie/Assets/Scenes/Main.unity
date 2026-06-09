@@ -1674,7 +1674,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   gameState: {fileID: 11400000, guid: bff1d43fc4e1244ff89e8eb800ecae34, type: 2}
-  rippleImage: {fileID: 2027898642}
+  rippleMaterial: {fileID: 2100000, guid: a7d8e1c555da94ac297f44e29b887110, type: 2}
   rippleDuration: 1
 --- !u!114 &2118482671
 MonoBehaviour:
