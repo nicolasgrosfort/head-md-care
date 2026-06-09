@@ -12,17 +12,24 @@
             "id": "f22e87c5ef441ae6",
             "type": "leaf",
             "state": {
-              "type": "canvas",
+              "type": "markdown",
               "state": {
-                "file": "process/explorations/0-moodboard.canvas",
-                "viewState": {
-                  "x": 1843.720507337073,
-                  "y": 1986.3880093954515,
-                  "zoom": 1
+                "file": "process/journal/2026-06-09.md",
+                "mode": "source",
+                "source": false,
+                "backlinks": true,
+                "backlinkOpts": {
+                  "collapseAll": false,
+                  "extraContext": false,
+                  "sortOrder": "alphabetical",
+                  "showSearch": false,
+                  "searchQuery": "",
+                  "backlinkCollapsed": false,
+                  "unlinkedCollapsed": true
                 }
               },
-              "icon": "lucide-layout-dashboard",
-              "title": "0-moodboard"
+              "icon": "lucide-file",
+              "title": "2026-06-09"
             }
           }
         ]
@@ -39,7 +46,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "process/journal/2026-06-08.md",
+                "file": "process/readme.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": true,
@@ -55,7 +62,7 @@
               },
               "pinned": true,
               "icon": "lucide-file",
-              "title": "2026-06-08"
+              "title": "readme"
             }
           }
         ]
@@ -233,19 +240,23 @@
       "workspaces:Manage workspace layouts": false
     }
   },
-  "active": "9c06f3d42f4c113d",
+  "active": "f22e87c5ef441ae6",
   "lastOpenFiles": [
-    "code/Let It Lie/Temp/ADB-Refresh2fa69a5b7833942c7b0cc517b12a528f",
-    "code/Let It Lie/Temp/ADB-Refresh4a7533fd5ef904f0f8913b58f7c25400",
-    "code/Let It Lie/Temp/ADB-Refresh5235b2ed79a2e4d3c9204c311e317579",
-    "code/Let It Lie/Temp/ADB-Refresha55e0583008884ef29c4440201de424e",
-    "code/Let It Lie/Temp/Burst/burst-aotbyt1gii7.fyl",
-    "code/Let It Lie/Temp/Burst/burst-aotsx44vycg.r7g",
-    "code/Let It Lie/Temp/Burst/burst-aot1l036x8r.0ui",
-    "code/Let It Lie/Temp/Burst/burst-aot9jf1ut4c.7ja",
-    "code/Let It Lie/Temp/Burst/burst-aots4vbjni6.8c7",
-    "code/Let It Lie/Temp/Burst/burst-aotu3791llt.ec8",
-    "code/Let It Lie/Temp/Burst/burst-aot34speeto.0dc",
+    "code/Let It Lie/Temp/ADB-Refreshbd5755ce4ff9445979b816ba5d088a82",
+    "process/code/unity/2026-06-03-draw-on-drag/Temp/ADB-Refreshbc1d4587d665a4eb187d08efc1a3910f",
+    "code/Let It Lie/Temp/Burst/burst-aot1aw19bh2.s7e",
+    "code/Let It Lie/Temp/Burst/burst-aotnfat33ed.ahn",
+    "code/Let It Lie/Temp/Burst/burst-aotwj1dvlai.3oh",
+    "code/Let It Lie/Temp/Burst/burst-aotwendir6c.dkb",
+    "code/Let It Lie/Temp/Burst/burst-aot7uf62aqh.6rb",
+    "code/Let It Lie/Temp/Burst/burst-aotefkcb47v.y6e",
+    "code/Let It Lie/Temp/Burst/burst-aot0u8zcg2h.u64",
+    "code/Let It Lie/Temp/Burst/burst-aotqom5dssu.zyy",
+    "code/Let It Lie/Temp/Burst/burst-aotexp1h70d.xk0",
+    "process/readme.md",
+    "process/journal/2026-06-09.md",
+    "process/journal/2026-06-08-chore-interaction.md",
+    "process/explorations/0-moodboard.canvas",
     "code/Let It Lie/Assets/Textures/Leaves.png",
     "code/Let It Lie/Assets/Textures/Fog.png",
     "code/Let It Lie/Assets/Textures/ParticleCloudWhite.png",
@@ -278,10 +289,6 @@
     "code/Let It Lie/Library/PackageCache/com.unity.probuilder@1f279ab829b7/Documentation~/uv-editor.md",
     "code/Let It Lie/Library/PackageCache/com.unity.probuilder@1f279ab829b7/Documentation~/uv-editor-toolbar.md",
     "code/Let It Lie/Library/PackageCache/com.unity.probuilder@1f279ab829b7/Documentation~/tools.md",
-    "code/Let It Lie/Library/PackageCache/com.unity.probuilder@1f279ab829b7/Documentation~/tool-options-overlay.md",
-    "code/Let It Lie/Library/PackageCache/com.unity.probuilder@1f279ab829b7/Documentation~/snap-to-grid.md",
-    "code/Let It Lie/Library/PackageCache/com.unity.probuilder@1f279ab829b7/Documentation~/smoothing-groups.md",
-    "process/explorations/1-stories.canvas",
-    "process/explorations/0-moodboard.canvas"
+    "process/explorations/1-stories.canvas"
   ]
 }
