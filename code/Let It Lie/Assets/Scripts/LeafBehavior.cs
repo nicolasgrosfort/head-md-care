@@ -4,7 +4,7 @@ using UnityEngine.EventSystems;
 
 [RequireComponent(typeof(Rigidbody))]
 [RequireComponent(typeof(BoxCollider))]
-public class LeafBehaviour : MonoBehaviour, IPointerClickHandler
+public class LeafBehaviour : MonoBehaviour
 {
     // ── Paramètres exposés dans l'Inspector ───────────────────────────────────
 
@@ -94,18 +94,6 @@ public class LeafBehaviour : MonoBehaviour, IPointerClickHandler
         CheckIfRested();
     }
 
-    public void OnPointerClick(PointerEventData eventData)
-    {
-        if (_hasLanded)
-            gameObject.SetActive(false);
-        else
-        {
-            slowDrag = Mathf.Min(slowDrag + dampingOnClick, 20f);
-        }
-
-        Debug.Log("Leaf clicked! Current life: " + gameState.life);
-    }
-
     // ── API publique ──────────────────────────────────────────────────────────
 
     /// <summary>
@@ -159,4 +147,17 @@ public class LeafBehaviour : MonoBehaviour, IPointerClickHandler
         _rb.Sleep(); // coupe la simulation physique → 0 overhead une fois posée
         OnRested?.Invoke(this);
     }
+
+    public void ApplySlowBomb(float intensity = 1f)
+    {
+        slowDrag = Mathf.Min(slowDrag + dampingOnClick * intensity, 20f);
+    }
+
+    public void TransformToFlower()
+    {
+        // TODO : remplacer la feuille par une fleur
+        gameObject.SetActive(false);
+    }
+
+    public bool IsLanded() => _hasLanded;
 }

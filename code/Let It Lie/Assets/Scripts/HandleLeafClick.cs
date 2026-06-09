@@ -3,6 +3,8 @@ using UnityEngine.EventSystems;
 
 public class HandleLeafClick : MonoBehaviour, IPointerClickHandler
 {
+    [Header("Bombe")]
+    public float bombRadius = 10f;
     public GameState gameState;
 
     public void OnPointerClick(PointerEventData eventData)
@@ -14,9 +16,32 @@ public class HandleLeafClick : MonoBehaviour, IPointerClickHandler
             LeafBehaviour leaf = hit.collider.GetComponent<LeafBehaviour>();
             if (leaf != null)
             {
-                leaf.OnPointerClick(eventData);
-                return;
+                if (leaf.IsLanded())
+                {
+                    leaf.TransformToFlower();
+                    return;
+                }
+                else
+                {
+                    ExplodeSlowBomb(hit.point);
+                    return;
+                }
             }
+        }
+    }
+
+    private void ExplodeSlowBomb(Vector3 center)
+    {
+        Collider[] hits = Physics.OverlapSphere(center, bombRadius);
+        foreach (Collider col in hits)
+        {
+            LeafBehaviour leaf = col.GetComponent<LeafBehaviour>();
+            if (leaf == null)
+                continue;
+
+            float dist = Vector3.Distance(center, col.transform.position);
+            float falloff = 1f - Mathf.Clamp01(dist / bombRadius); // 1 au centre, 0 au bord
+            leaf.ApplySlowBomb(falloff);
         }
     }
 }

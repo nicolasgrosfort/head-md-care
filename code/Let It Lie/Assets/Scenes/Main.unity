@@ -689,7 +689,7 @@ MonoBehaviour:
   leafPrefab: {fileID: 8427177176639999065, guid: f414211c8ae0f45b58f9996c1ed8ed5d, type: 3}
   gameState: {fileID: 11400000, guid: bff1d43fc4e1244ff89e8eb800ecae34, type: 2}
   poolSize: 1000
-  leavesPerBatch: 10
+  leavesPerBatch: 50
   batchInterval: 2
   spawnAreaSize: {x: 40, y: 40}
   spawnHeight: 10
@@ -1622,6 +1622,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d54d5c0b62e1442ab9deb1772a16a5e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
+  bombRadius: 10
   gameState: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
