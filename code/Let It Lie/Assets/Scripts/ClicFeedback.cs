@@ -1,57 +1,67 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.EventSystems;
-using UnityEngine.UI;
+using UnityEngine.Rendering.Universal;
 
 public class ClicFeedback : MonoBehaviour, IPointerClickHandler
 {
     public GameState gameState;
+    public Material rippleMaterial;
+    public float rippleDuration = 0.8f;
+
+    private Coroutine _rippleCoroutine;
 
     public void OnPointerClick(PointerEventData eventData)
     {
-        Transform feedback = transform.Find("Feedback");
-        if (feedback == null)
-            return;
-
-        RectTransform canvasRect = GetComponent<RectTransform>();
-        RectTransformUtility.ScreenPointToLocalPointInRectangle(
-            canvasRect,
-            eventData.position,
-            eventData.pressEventCamera,
-            out Vector2 localPos
+        // Convertit position écran → UV (0-1)
+        Vector2 uv = new Vector2(
+            eventData.position.x / Screen.width,
+            eventData.position.y / Screen.height
         );
 
-        feedback.GetComponent<RectTransform>().anchoredPosition = localPos;
-        feedback.gameObject.SetActive(true);
-        StartCoroutine(AnimateSize(feedback.gameObject, 0.3f, 0.2f));
+        if (_rippleCoroutine != null)
+            StopCoroutine(_rippleCoroutine);
+
+        _rippleCoroutine = StartCoroutine(AnimateRipple(uv));
     }
 
-    private IEnumerator AnimateSize(GameObject obj, float delay, float duration)
+    private IEnumerator AnimateRipple(Vector2 center)
     {
-        RectTransform rt = obj.GetComponent<RectTransform>();
+        rippleMaterial.SetVector("_Center", new Vector4(center.x, center.y, 0, 0));
 
-        Vector3 originalScale = rt.localScale;
-        Vector3 startScale = originalScale * 0.1f;
-        Vector3 targetScale = originalScale;
-
-        // Grow
+        float duration = 1.2f;
         float elapsed = 0f;
+
         while (elapsed < duration)
         {
-            float t = elapsed / duration;
-            rt.localScale = Vector3.Lerp(startScale, targetScale, t);
             elapsed += Time.deltaTime;
+            float t = elapsed / duration;
+
+            // Radius : départ doux avec SmoothStep
+            float smoothT = Mathf.SmoothStep(0f, 1f, t);
+            float ringRadius = Mathf.Lerp(0f, 0.3f, smoothT); // ← max réduit à 0.5
+
+            // Largeur de l'anneau
+            float ringWidth = Mathf.Lerp(0.12f, 0.06f, smoothT);
+
+            // Amplitude : montée douce, descente longue
+            float amplitude =
+                t < 0.15f
+                    ? Mathf.Lerp(0f, 0.025f, t / 0.15f) // ← force réduite à 0.025
+                    : Mathf.Lerp(0.025f, 0f, (t - 0.15f) / 0.85f);
+
+            // Fréquence : démarre bas, monte doucement
+            float frequency = Mathf.Lerp(8f, 18f, smoothT); // ← démarre à 8 au lieu de 20
+
+            rippleMaterial.SetFloat("_Time2", elapsed * 6f);
+            rippleMaterial.SetFloat("_Strength", amplitude);
+            rippleMaterial.SetFloat("_Radius", ringRadius);
+            rippleMaterial.SetFloat("_RingWidth", ringWidth);
+            rippleMaterial.SetFloat("_Frequency", frequency);
+
             yield return null;
         }
 
-        yield return new WaitForSeconds(delay);
-        rt.localScale = originalScale;
-        obj.SetActive(false);
-    }
-
-    private IEnumerator DisableAfterDelay(GameObject obj, float delay)
-    {
-        yield return new WaitForSeconds(delay);
-        obj.SetActive(false);
+        rippleMaterial.SetFloat("_Strength", 0f);
     }
 }
