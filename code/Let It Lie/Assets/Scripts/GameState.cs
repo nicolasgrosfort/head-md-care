@@ -68,14 +68,14 @@ public class GameState : ScriptableObject
     public void IncreaseTimeSpeed()
     {
         float t = (timeSpeed - defaultTimeSpeed) / (maxTimeSpeed - defaultTimeSpeed);
-        float increment = timeSpeedIncrement * 0.03f * (2f * t + 0.05f);
+        float increment = timeSpeedIncrement * 0.03f * (2f * t + 0.1f);
         timeSpeed = Mathf.Min(timeSpeed + increment, maxTimeSpeed);
     }
 
     public void DecreaseTimeSpeed()
     {
         float t = (timeSpeed - defaultTimeSpeed) / (maxTimeSpeed - defaultTimeSpeed);
-        float increment = timeSpeedIncrement * 0.03f * (2f * t + 0.05f);
+        float increment = timeSpeedIncrement * 0.04f * (2f * t + 0.05f);
         timeSpeed = Mathf.Max(timeSpeed - increment, minTimeSpeed);
     }
 
