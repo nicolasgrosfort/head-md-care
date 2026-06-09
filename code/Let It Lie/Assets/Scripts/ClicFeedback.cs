@@ -29,35 +29,27 @@ public class ClicFeedback : MonoBehaviour, IPointerClickHandler
     {
         rippleMaterial.SetVector("_Center", new Vector4(center.x, center.y, 0, 0));
 
-        float duration = 1.2f;
+        float duration = 0.6f;
         float elapsed = 0f;
 
         while (elapsed < duration)
         {
             elapsed += Time.deltaTime;
             float t = elapsed / duration;
-
-            // Radius : départ doux avec SmoothStep
             float smoothT = Mathf.SmoothStep(0f, 1f, t);
-            float ringRadius = Mathf.Lerp(0f, 0.3f, smoothT); // ← max réduit à 0.5
 
-            // Largeur de l'anneau
-            float ringWidth = Mathf.Lerp(0.12f, 0.06f, smoothT);
+            float waveFront = Mathf.Lerp(0f, 0.15f, smoothT); // ← réduit
+            float waveWidth = Mathf.Lerp(0.01f, 0.03f, smoothT);
 
-            // Amplitude : montée douce, descente longue
             float amplitude =
-                t < 0.15f
-                    ? Mathf.Lerp(0f, 0.025f, t / 0.15f) // ← force réduite à 0.025
-                    : Mathf.Lerp(0.025f, 0f, (t - 0.15f) / 0.85f);
+                t < 0.1f
+                    ? Mathf.Lerp(0f, 0.006f, t / 0.1f) // ← fix + réduit
+                    : Mathf.Lerp(0.006f, 0f, (t - 0.1f) / 0.9f);
 
-            // Fréquence : démarre bas, monte doucement
-            float frequency = Mathf.Lerp(8f, 18f, smoothT); // ← démarre à 8 au lieu de 20
-
-            rippleMaterial.SetFloat("_Time2", elapsed * 6f);
+            rippleMaterial.SetFloat("_Time2", elapsed * 10f);
             rippleMaterial.SetFloat("_Strength", amplitude);
-            rippleMaterial.SetFloat("_Radius", ringRadius);
-            rippleMaterial.SetFloat("_RingWidth", ringWidth);
-            rippleMaterial.SetFloat("_Frequency", frequency);
+            rippleMaterial.SetFloat("_WaveFront", waveFront);
+            rippleMaterial.SetFloat("_WaveWidth", waveWidth);
 
             yield return null;
         }
