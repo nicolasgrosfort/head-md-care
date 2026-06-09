@@ -15,7 +15,6 @@ public class TimeManager : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
 
     private void Update()
     {
-        // Le temps passe toujours
         gameState.IncreaseTime();
 
         // Détection du hold

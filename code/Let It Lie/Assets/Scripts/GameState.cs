@@ -5,13 +5,30 @@ using UnityEngine;
 public class GameState : ScriptableObject
 {
     [Header("Global state")]
+    [Range(0f, 1f)]
     public float life = 0.5f; // 0-1, 0 = not enough, 0.5 = balanced, 1 = too much
+
+    [Range(0f, 1f)]
     public float season = 0f; // 0-1, 0 = spring, 0.25 = summer, 0.5 = autumn, 0.75 = winter
+
+    [Header("Time")]
+    [Range(0f, 1f)]
     public float time = 0f; // 0-1, 0 = midnight, 0.25 = sunrise, 0.5 = noon, 0.75 = sunset
-    public float timeSpeed = 0.00001f; // how fast time progresses
-    public float timeSpeedIncrement = 0.000000001f;
-    public float defaultTimeSpeed = 0.00001f;
-    public float maxTimeSpeed = 0.0001f;
+
+    [Range(0f, 1f)]
+    public float timeSpeed = 0.01f;
+
+    [Range(0f, 1f)]
+    public float defaultTimeSpeed = 0.01f;
+
+    [Range(0f, 1f)]
+    public float maxTimeSpeed = 1f;
+
+    [Range(0f, 1f)]
+    public float minTimeSpeed = 0f;
+
+    [Range(0f, 1f)]
+    public float timeSpeedIncrement = 0.1f;
 
     public event Action<float> OnRecoverLife;
     public event Action<float> OnDecreaseLife;
@@ -22,7 +39,7 @@ public class GameState : ScriptableObject
 
     public void Reset()
     {
-        life = 0f;
+        life = 0.5f;
         season = 0f;
         time = 0f;
         timeSpeed = defaultTimeSpeed;
@@ -30,7 +47,7 @@ public class GameState : ScriptableObject
 
     public void IncreaseTime()
     {
-        time += timeSpeed;
+        time += timeSpeed * 0.001f;
 
         if (time > 1f)
         {
@@ -39,18 +56,28 @@ public class GameState : ScriptableObject
         }
     }
 
-    public void IncreaseSeason(float amount = 0.25f)
+    public void IncreaseSeason()
     {
-        season += amount;
+        float seasonIncrement = 0.25f;
+        season += seasonIncrement;
+
         if (season >= 1f)
             season = 0f;
     }
 
-    public void IncreaseTimeSpeed(float amount = 0.000001f) =>
-        timeSpeed = Mathf.Min(timeSpeed + amount, maxTimeSpeed);
+    public void IncreaseTimeSpeed()
+    {
+        float t = (timeSpeed - defaultTimeSpeed) / (maxTimeSpeed - defaultTimeSpeed);
+        float increment = timeSpeedIncrement * 0.01f * (2f * t + 0.05f);
+        timeSpeed = Mathf.Min(timeSpeed + increment, maxTimeSpeed);
+    }
 
-    public void DecreaseTimeSpeed(float amount = 0.000001f) =>
-        timeSpeed = Mathf.Max(timeSpeed - amount, defaultTimeSpeed);
+    public void DecreaseTimeSpeed()
+    {
+        float t = (timeSpeed - defaultTimeSpeed) / (maxTimeSpeed - defaultTimeSpeed);
+        float increment = timeSpeedIncrement * 0.02f * (2f * t + 0.05f);
+        timeSpeed = Mathf.Max(timeSpeed - increment, minTimeSpeed);
+    }
 
     public void ResetTimeSpeed() => timeSpeed = defaultTimeSpeed;
 

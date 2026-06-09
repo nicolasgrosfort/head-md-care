@@ -83,6 +83,8 @@ public class LeafBehaviour : MonoBehaviour, IPointerClickHandler
         );
         _rb.linearDamping = Mathf.Lerp(baseDrag + slowDrag, 0.1f, t);
 
+        Debug.Log(t);
+
         CheckIfRested();
     }
 
