@@ -6,30 +6,23 @@
       {
         "id": "566a7a44ed22e14a",
         "type": "tabs",
-        "dimension": 44.574175824175825,
+        "dimension": 86.26373626373626,
         "children": [
           {
             "id": "f22e87c5ef441ae6",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "canvas",
               "state": {
-                "file": "process/journal/2026-06-09.md",
-                "mode": "source",
-                "source": false,
-                "backlinks": true,
-                "backlinkOpts": {
-                  "collapseAll": false,
-                  "extraContext": false,
-                  "sortOrder": "alphabetical",
-                  "showSearch": false,
-                  "searchQuery": "",
-                  "backlinkCollapsed": false,
-                  "unlinkedCollapsed": true
+                "file": "process/explorations/1-stories.canvas",
+                "viewState": {
+                  "x": 2163.026952271906,
+                  "y": 552.4171055557757,
+                  "zoom": -0.7774466188422764
                 }
               },
-              "icon": "lucide-file",
-              "title": "2026-06-09"
+              "icon": "lucide-layout-dashboard",
+              "title": "1-stories"
             }
           }
         ]
@@ -37,7 +30,7 @@
       {
         "id": "317cb80d82fef5e9",
         "type": "tabs",
-        "dimension": 55.425824175824175,
+        "dimension": 13.736263736263737,
         "children": [
           {
             "id": "9c06f3d42f4c113d",
@@ -242,22 +235,22 @@
   },
   "active": "f22e87c5ef441ae6",
   "lastOpenFiles": [
-    "code/Let It Lie/Temp/ADB-Refresh240133da5b36647bfba2dba8c164d080",
-    "code/Let It Lie/Temp/ADB-Refresh840667d786f074e40983dcd4eee07d21",
-    "code/Let It Lie/Temp/ADB-Refresh1d30d2d3edcd04f8eb9f12842ee49390",
-    "code/Let It Lie/Temp/ADB-Refreshea9d514d048154d1081e6378dbeddb65",
-    "code/Let It Lie/Temp/Burst/burst-aotz5i8mwc9.kyq",
-    "code/Let It Lie/Temp/Burst/burst-aotvdywc1c8.5gd",
-    "code/Let It Lie/Temp/Burst/burst-aotj4fzg6ya.a6r",
-    "code/Let It Lie/Temp/Burst/burst-aotig3do1tv.8pi",
-    "code/Let It Lie/Temp/Burst/burst-aot1buyz6wh.1qm",
-    "code/Let It Lie/Temp/Burst/burst-aotpa6781xp.hd2",
-    "code/Let It Lie/Temp/Burst/burst-aotuddwk7ld.9rd",
+    "code/Let It Lie/Temp/ADB-Refresh63b04cfbccfbc4c86899dd9cf61221bf",
+    "code/Let It Lie/Temp/ADB-Refresh62f5653322adb45f5aa0a3b31eb8cceb",
+    "code/Let It Lie/Temp/ADB-Refresh340089e0db9984eca81c2f08558d18fe",
+    "code/Let It Lie/Temp/ADB-Refresh6b586dd2ec19b4e6299e0a8f1875f31b",
+    "code/Let It Lie/Temp/Burst/burst-aotylr398v2.au7",
+    "code/Let It Lie/Temp/Burst/burst-aott7r263mw.37c",
+    "code/Let It Lie/Temp/Burst/burst-aotatgw3ipm.pbs",
+    "code/Let It Lie/Temp/Burst/burst-aot6pj25vif.suu",
+    "code/Let It Lie/Temp/Burst/burst-aoteqibexmc.e13",
+    "code/Let It Lie/Temp/Burst/burst-aot3s0xjdgp.40y",
+    "code/Let It Lie/Temp/Burst/burst-aotk7cp7lty.o4e",
+    "process/journal/2026-06-09.md",
     "process/code/unity/2026-06-02-transparency/Assets/Tomb-textures/mossy_rock_disp_4k.png",
     "process/code/unity/2026-06-02-transparency/Assets/Tomb-textures/mossy_rock_diff_4k.jpg",
     "process/code/unity/2026-06-02-transparency/Assets/Tomb-textures/mossy_rock_diff_4k 1.jpg",
     "process/readme.md",
-    "process/journal/2026-06-09.md",
     "process/journal/2026-06-08-chore-interaction.md",
     "process/explorations/0-moodboard.canvas",
     "code/Let It Lie/Assets/Textures/Leaves.png",

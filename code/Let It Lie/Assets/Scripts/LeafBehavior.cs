@@ -43,7 +43,7 @@ public class LeafBehaviour : MonoBehaviour, IPointerClickHandler
     [Range(0.1f, 2f)]
     public float restConfirmDuration = 0.4f;
 
-    public float dampingOnClick = 5f;
+    public float dampingOnClick = 50f;
     private float slowDrag = 0f;
     public GameState gameState;
 
@@ -84,7 +84,12 @@ public class LeafBehaviour : MonoBehaviour, IPointerClickHandler
 
         _rb.AddForce(Vector3.down * Mathf.Lerp(1f, 50f, t), ForceMode.Acceleration);
 
-        Debug.Log(t);
+        // Applique le slowDrag accumulé au clic
+        if (slowDrag > 0f)
+        {
+            Vector3 dragForce = -_rb.linearVelocity * slowDrag;
+            _rb.AddForce(dragForce, ForceMode.Acceleration);
+        }
 
         CheckIfRested();
     }
@@ -97,6 +102,8 @@ public class LeafBehaviour : MonoBehaviour, IPointerClickHandler
         {
             slowDrag = Mathf.Min(slowDrag + dampingOnClick, 20f);
         }
+
+        Debug.Log("Leaf clicked! Current life: " + gameState.life);
     }
 
     // ── API publique ──────────────────────────────────────────────────────────
@@ -118,6 +125,9 @@ public class LeafBehaviour : MonoBehaviour, IPointerClickHandler
             0f,
             UnityEngine.Random.Range(-lateralImpulse, lateralImpulse)
         );
+
+        Vector3 dragForce = -_rb.linearVelocity * slowDrag;
+        _rb.AddForce(dragForce, ForceMode.Acceleration);
 
         _rb.AddForce(lateral, ForceMode.Impulse);
         _rb.AddTorque(UnityEngine.Random.insideUnitSphere * torqueImpulse, ForceMode.Impulse);

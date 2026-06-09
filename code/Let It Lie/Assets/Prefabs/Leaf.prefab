@@ -161,5 +161,5 @@ MonoBehaviour:
   torqueImpulse: 1
   restVelocityThreshold: 0.05
   restConfirmDuration: 0.4
-  dampingOnClick: 5
+  dampingOnClick: 50
   gameState: {fileID: 11400000, guid: bff1d43fc4e1244ff89e8eb800ecae34, type: 2}

@@ -1491,6 +1491,7 @@ GameObject:
   - component: {fileID: 2118482671}
   - component: {fileID: 2118482670}
   - component: {fileID: 2118482675}
+  - component: {fileID: 2118482676}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -1609,6 +1610,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::TimeManager
   gameState: {fileID: 11400000, guid: bff1d43fc4e1244ff89e8eb800ecae34, type: 2}
   _holdDuration: 0.1
+--- !u!114 &2118482676
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2118482669}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7d54d5c0b62e1442ab9deb1772a16a5e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
+  gameState: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
