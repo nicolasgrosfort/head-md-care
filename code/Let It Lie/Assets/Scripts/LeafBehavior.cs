@@ -4,7 +4,7 @@ using UnityEngine.EventSystems;
 
 [RequireComponent(typeof(Rigidbody))]
 [RequireComponent(typeof(BoxCollider))]
-public class LeafBehaviour : MonoBehaviour, IPointerClickHandler
+public class LeafBehaviour : MonoBehaviour
 {
     // ── Paramètres exposés dans l'Inspector ───────────────────────────────────
 
@@ -43,7 +43,7 @@ public class LeafBehaviour : MonoBehaviour, IPointerClickHandler
     [Range(0.1f, 2f)]
     public float restConfirmDuration = 0.4f;
 
-    public float dampingOnClick = 5f;
+    public float dampingOnClick = 50f;
     private float slowDrag = 0f;
     public GameState gameState;
 
@@ -81,19 +81,17 @@ public class LeafBehaviour : MonoBehaviour, IPointerClickHandler
             gameState.maxTimeSpeed,
             gameState.timeSpeed
         );
-        _rb.linearDamping = Mathf.Lerp(baseDrag + slowDrag, 0.1f, t);
+
+        _rb.AddForce(Vector3.down * Mathf.Lerp(1f, 50f, t), ForceMode.Acceleration);
+
+        // Applique le slowDrag accumulé au clic
+        if (slowDrag > 0f)
+        {
+            Vector3 dragForce = -_rb.linearVelocity * slowDrag;
+            _rb.AddForce(dragForce, ForceMode.Acceleration);
+        }
 
         CheckIfRested();
-    }
-
-    public void OnPointerClick(PointerEventData eventData)
-    {
-        if (_hasLanded)
-            gameObject.SetActive(false);
-        else
-        {
-            slowDrag = Mathf.Min(slowDrag + dampingOnClick, 20f);
-        }
     }
 
     // ── API publique ──────────────────────────────────────────────────────────
@@ -115,9 +113,11 @@ public class LeafBehaviour : MonoBehaviour, IPointerClickHandler
             0f,
             UnityEngine.Random.Range(-lateralImpulse, lateralImpulse)
         );
-        _rb.AddForce(lateral, ForceMode.Impulse);
 
-        // Rotation initiale aléatoire
+        Vector3 dragForce = -_rb.linearVelocity * slowDrag;
+        _rb.AddForce(dragForce, ForceMode.Acceleration);
+
+        _rb.AddForce(lateral, ForceMode.Impulse);
         _rb.AddTorque(UnityEngine.Random.insideUnitSphere * torqueImpulse, ForceMode.Impulse);
     }
 
@@ -147,4 +147,17 @@ public class LeafBehaviour : MonoBehaviour, IPointerClickHandler
         _rb.Sleep(); // coupe la simulation physique → 0 overhead une fois posée
         OnRested?.Invoke(this);
     }
+
+    public void ApplySlowBomb(float intensity = 1f)
+    {
+        slowDrag = Mathf.Min(slowDrag + dampingOnClick * intensity, 20f);
+    }
+
+    public void TransformToFlower()
+    {
+        // TODO : remplacer la feuille par une fleur
+        gameObject.SetActive(false);
+    }
+
+    public bool IsLanded() => _hasLanded;
 }

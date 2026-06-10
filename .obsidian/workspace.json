@@ -6,30 +6,23 @@
       {
         "id": "566a7a44ed22e14a",
         "type": "tabs",
-        "dimension": 44.574175824175825,
+        "dimension": 86.26373626373626,
         "children": [
           {
             "id": "f22e87c5ef441ae6",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "canvas",
               "state": {
-                "file": "process/journal/2026-06-09.md",
-                "mode": "source",
-                "source": false,
-                "backlinks": true,
-                "backlinkOpts": {
-                  "collapseAll": false,
-                  "extraContext": false,
-                  "sortOrder": "alphabetical",
-                  "showSearch": false,
-                  "searchQuery": "",
-                  "backlinkCollapsed": false,
-                  "unlinkedCollapsed": true
+                "file": "process/explorations/1-stories.canvas",
+                "viewState": {
+                  "x": 2163.026952271906,
+                  "y": 552.4171055557757,
+                  "zoom": -0.7774466188422764
                 }
               },
-              "icon": "lucide-file",
-              "title": "2026-06-09"
+              "icon": "lucide-layout-dashboard",
+              "title": "1-stories"
             }
           }
         ]
@@ -37,7 +30,7 @@
       {
         "id": "317cb80d82fef5e9",
         "type": "tabs",
-        "dimension": 55.425824175824175,
+        "dimension": 13.736263736263737,
         "children": [
           {
             "id": "9c06f3d42f4c113d",
@@ -242,31 +235,31 @@
   },
   "active": "f22e87c5ef441ae6",
   "lastOpenFiles": [
-    "code/Let It Lie/Temp/ADB-Refreshbd5755ce4ff9445979b816ba5d088a82",
-    "process/code/unity/2026-06-03-draw-on-drag/Temp/ADB-Refreshbc1d4587d665a4eb187d08efc1a3910f",
-    "code/Let It Lie/Temp/Burst/burst-aot1aw19bh2.s7e",
-    "code/Let It Lie/Temp/Burst/burst-aotnfat33ed.ahn",
-    "code/Let It Lie/Temp/Burst/burst-aotwj1dvlai.3oh",
-    "code/Let It Lie/Temp/Burst/burst-aotwendir6c.dkb",
-    "code/Let It Lie/Temp/Burst/burst-aot7uf62aqh.6rb",
-    "code/Let It Lie/Temp/Burst/burst-aotefkcb47v.y6e",
-    "code/Let It Lie/Temp/Burst/burst-aot0u8zcg2h.u64",
-    "code/Let It Lie/Temp/Burst/burst-aotqom5dssu.zyy",
-    "code/Let It Lie/Temp/Burst/burst-aotexp1h70d.xk0",
-    "process/readme.md",
+    "code/Let It Lie/Temp/ADB-Refresh7281096931b164426af09acf4e64ac51",
+    "code/Let It Lie/Temp/ADB-Refresh8baaf1e32539d46acb1ee30c0d4b30e6",
+    "code/Let It Lie/Temp/ADB-Refreshc9d7d479b6b2b45bcb35c19d724ed779",
+    "code/Let It Lie/Temp/ADB-Refresh28108626244444590a23bd8bb9e98be9",
+    "code/Let It Lie/Temp/ADB-Refresh739fbb855ee78421582d970ff69f89a4",
+    "code/Let It Lie/Temp/ADB-Refresh3ba8f9075750d4a15806c0be96601ab5",
+    "code/Let It Lie/Temp/Burst/burst-aot96c15jpa.8su",
+    "code/Let It Lie/Temp/Burst/burst-aot5vqfzm8d.9gd",
+    "code/Let It Lie/Temp/Burst/burst-aothji77ia2.d1h",
+    "code/Let It Lie/Temp/Burst/burst-aot6bijl3gi.ddl",
+    "code/Let It Lie/Temp/Burst/burst-aotwshi3d2n.ngd",
+    "code/Let It Lie/Assets/Textures/Clic.png",
+    "code/Let It Lie/Assets/Textures/Click.png",
+    "code/Let It Lie/Assets/Textures/Clic.jpg",
+    "code/Let It Lie/Assets/Textures/Unknown-2.jpg",
     "process/journal/2026-06-09.md",
+    "process/code/unity/2026-06-02-transparency/Assets/Tomb-textures/mossy_rock_disp_4k.png",
+    "process/code/unity/2026-06-02-transparency/Assets/Tomb-textures/mossy_rock_diff_4k.jpg",
+    "process/code/unity/2026-06-02-transparency/Assets/Tomb-textures/mossy_rock_diff_4k 1.jpg",
+    "process/readme.md",
     "process/journal/2026-06-08-chore-interaction.md",
     "process/explorations/0-moodboard.canvas",
     "code/Let It Lie/Assets/Textures/Leaves.png",
     "code/Let It Lie/Assets/Textures/Fog.png",
     "code/Let It Lie/Assets/Textures/ParticleCloudWhite.png",
-    "code/Let It Lie/Assets/Tree 1_Textures/translucency_gloss.png",
-    "code/Let It Lie/Assets/Tree 1_Textures/shadow.png",
-    "code/Let It Lie/Assets/Tree 1_Textures/normal_specular.png",
-    "code/Let It Lie/Assets/Tree 1_Textures/diffuse.png",
-    "code/Let It Lie/Library/PackageCache/com.unity.probuilder@1f279ab829b7/Content/Icons/Tools/ShapeTool/on/Torus@2x.png",
-    "code/Let It Lie/Library/PackageCache/com.unity.probuilder@1f279ab829b7/Content/Icons/Tools/ShapeTool/on/Torus.png",
-    "code/Let It Lie/Library/PackageCache/com.unity.probuilder@1f279ab829b7/Content/Icons/Tools/ShapeTool/on/Stair@2x.png",
     "code/Let It Lie/Library/PackageCache/com.unity.probuilder@1f279ab829b7/Samples~/Runtime/Runtime Editing/README.md",
     "code/Let It Lie/Library/PackageCache/com.unity.probuilder@1f279ab829b7/External/KdTree/README.md",
     "code/Let It Lie/Library/PackageCache/com.unity.probuilder@1f279ab829b7/External/KdTree/LICENSE.md",

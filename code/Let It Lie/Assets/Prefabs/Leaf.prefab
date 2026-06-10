@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 5997190752766375733}
   m_Layer: 0
   m_Name: Leaf
-  m_TagString: Untagged
+  m_TagString: Leaf
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -161,5 +161,5 @@ MonoBehaviour:
   torqueImpulse: 1
   restVelocityThreshold: 0.05
   restConfirmDuration: 0.4
-  dampingOnClick: 5
+  dampingOnClick: 50
   gameState: {fileID: 11400000, guid: bff1d43fc4e1244ff89e8eb800ecae34, type: 2}
