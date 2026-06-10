@@ -4,17 +4,35 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "GameState", menuName = "Game/GameState")]
 public class GameState : ScriptableObject
 {
-    [Header("Global state")]
+    [Header("Life")]
+    [Tooltip("0 = dead, 0.5 = balanced, 1 = alive")]
     [Range(0f, 1f)]
-    public float life = 0.5f; // 0-1, 0 = not enough, 0.5 = balanced, 1 = too much
+    public float life = 0.5f;
 
     [Range(0f, 1f)]
-    public float season = 0f; // 0-1, 0 = spring, 0.25 = summer, 0.5 = autumn, 0.75 = winter
+    public float defaultLife = 0.5f;
+
+    [Header("Season")]
+    [Tooltip("0-1, 0 = spring, 0.25 = summer, 0.5 = fall, 0.75 = winter")]
+    [Range(0f, 1f)]
+    public float season = 0f;
+    private readonly float seasonCycle = 0.25f;
+
+    [Range(0f, 1f)]
+    public float defaultSeason = 0.5f;
 
     [Header("Time")]
+    [Tooltip("0 = night, 0.25 = sunrise, 0.5 = day, 0.75 = sunset")]
     [Range(0f, 1f)]
-    public float time = 0f; // 0-1, 0 = midnight, 0.25 = sunrise, 0.5 = noon, 0.75 = sunset
+    public float time = 0f;
 
+    [Range(0f, 1f)]
+    public float defaultTime = 0f;
+
+    [Range(0.0001f, 0.1f)]
+    public float timeFactor = 0.001f;
+
+    [Header("Speed")]
     [Range(0f, 1f)]
     public float timeSpeed = 0.01f;
 
@@ -32,6 +50,8 @@ public class GameState : ScriptableObject
 
     public event Action<float> OnRecoverLife;
     public event Action<float> OnDecreaseLife;
+    public event Action<float> OnTimeChange;
+    public event Action<float> OnSeasonChange;
 
     public void OnEnable() => Reset();
 
@@ -39,30 +59,30 @@ public class GameState : ScriptableObject
 
     public void Reset()
     {
-        life = 0.5f;
-        season = 0f;
-        time = 0f;
+        life = defaultLife;
+        season = defaultSeason;
+        time = defaultTime;
         timeSpeed = defaultTimeSpeed;
     }
 
     public void IncreaseTime()
     {
-        time += timeSpeed * 0.001f;
-
+        time += timeSpeed * timeFactor;
         if (time > 1f)
-        {
             time = 0f;
-            IncreaseSeason();
-        }
+
+        OnTimeChange?.Invoke(time);
+        IncreaseSeason();
     }
 
     public void IncreaseSeason()
     {
-        float seasonIncrement = 0.25f;
-        season += seasonIncrement;
-
+        season += timeSpeed * timeFactor * seasonCycle;
         if (season >= 1f)
             season = 0f;
+
+        if (season % seasonCycle == 0f)
+            OnSeasonChange?.Invoke(season);
     }
 
     public void IncreaseTimeSpeed()
