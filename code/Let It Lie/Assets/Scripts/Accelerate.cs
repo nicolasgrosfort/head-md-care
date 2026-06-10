@@ -26,11 +26,7 @@ public class Accelerate : MonoBehaviour
 
     void Update()
     {
-        float acceleration = Mathf.InverseLerp(
-            gameState.defaultTimeSpeed,
-            gameState.maxTimeSpeed,
-            gameState.timeSpeed
-        );
+        float acceleration = gameState.NormalisedTimeSpeed;
 
         Camera.main.fieldOfView = Mathf.Lerp(60f, 65f, acceleration);
         Camera.main.transform.localPosition =

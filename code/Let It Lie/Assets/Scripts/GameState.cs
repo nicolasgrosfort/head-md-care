@@ -35,6 +35,7 @@ public class GameState : ScriptableObject
 
     [Range(0.0001f, 0.1f)]
     public float timeFactor = 0.001f;
+    private int currentDayNight = -1;
 
     [Header("Speed")]
     [Range(0f, 1f)]
@@ -52,6 +53,10 @@ public class GameState : ScriptableObject
     [Range(0f, 1f)]
     public float timeSpeedIncrement = 0.2f;
 
+    [Header("Wind")]
+    public Vector3 windForce = new Vector3(0.5f, 0f, 0f);
+    public float windTurbulence = 0.2f;
+
     public enum InteractionType
     {
         None,
@@ -64,6 +69,7 @@ public class GameState : ScriptableObject
 
     public event Action<float> OnLifeChange;
     public event Action<float> OnTimeChange;
+    public event Action<float> OnDayNightChange;
     public event Action<float> OnSeasonChange;
     public event Action<float> OnSpeedChange;
     public event Action OnClick;
@@ -89,6 +95,7 @@ public class GameState : ScriptableObject
         OnTimeChange = null;
         OnSeasonChange = null;
         OnSpeedChange = null;
+        OnDayNightChange = null;
         OnInteractionChange = null;
         OnClick = null;
         OnHold = null;
@@ -101,7 +108,6 @@ public class GameState : ScriptableObject
     {
         currentInteraction = type;
         OnInteractionChange?.Invoke(currentInteraction);
-        Debug.Log($"Interaction changed to {currentInteraction}");
 
         switch (type)
         {
@@ -136,6 +142,7 @@ public class GameState : ScriptableObject
 
         ChangeSeason();
         ChangeLife();
+        ChangeDayNight();
 
         OnTimeChange?.Invoke(time);
     }
@@ -182,6 +189,16 @@ public class GameState : ScriptableObject
             OnSeasonChange?.Invoke(season);
 
             Debug.Log($"Season changed to {currentSeason}");
+        }
+    }
+
+    private void ChangeDayNight()
+    {
+        int dayNight = Mathf.FloorToInt(time / 0.5f);
+        if (currentDayNight != dayNight)
+        {
+            currentDayNight = dayNight;
+            OnDayNightChange?.Invoke(time);
         }
     }
 }
