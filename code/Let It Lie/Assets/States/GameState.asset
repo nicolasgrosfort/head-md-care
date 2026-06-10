@@ -13,8 +13,14 @@ MonoBehaviour:
   m_Name: GameState
   m_EditorClassIdentifier: Assembly-CSharp::GameState
   life: 0.5
-  season: 0
-  time: 0.11023015
+  defaultLife: 0.5
+  lifeIncrement: 0.00001
+  lifeDecrement: -0.0001
+  season: 0.5
+  defaultSeason: 0.5
+  time: 0
+  defaultTime: 0
+  timeFactor: 0.001
   timeSpeed: 0.01
   defaultTimeSpeed: 0.01
   maxTimeSpeed: 1

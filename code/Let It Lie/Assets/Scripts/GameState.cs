@@ -12,6 +12,9 @@ public class GameState : ScriptableObject
     [Range(0f, 1f)]
     public float defaultLife = 0.5f;
 
+    public float lifeIncrement = 0.00001f;
+    public float lifeDecrement = -0.0001f;
+
     [Header("Season")]
     [Tooltip("0-1, 0 = spring, 0.25 = summer, 0.5 = fall, 0.75 = winter")]
     [Range(0f, 1f)]
@@ -49,12 +52,16 @@ public class GameState : ScriptableObject
     [Range(0f, 1f)]
     public float timeSpeedIncrement = 0.1f;
 
-    public event Action<float> OnRecoverLife;
-    public event Action<float> OnDecreaseLife;
+    public event Action<float> OnLifeChange;
     public event Action<float> OnTimeChange;
     public event Action<float> OnSeasonChange;
 
     /* PUBLIC METHODS */
+    public float NormalisedTimeSpeed =>
+        Mathf.InverseLerp(defaultTimeSpeed, maxTimeSpeed, timeSpeed);
+
+    public float LifeChange => Mathf.Lerp(lifeIncrement, lifeDecrement, NormalisedTimeSpeed);
+
     public void OnEnable() => Reset();
 
     public void OnDisable() => Reset();
@@ -73,8 +80,10 @@ public class GameState : ScriptableObject
         if (time > 1f)
             time = 0f;
 
+        ChangeSeason();
+        ChangeLife();
+
         OnTimeChange?.Invoke(time);
-        IncreaseSeason();
     }
 
     public void IncreaseTimeSpeed()
@@ -93,27 +102,20 @@ public class GameState : ScriptableObject
 
     public void ResetTimeSpeed() => timeSpeed = defaultTimeSpeed;
 
-    public void RecoverLife(float amount)
-    {
-        life += amount;
-        if (life > 1f)
-            life = 1f;
-
-        OnRecoverLife?.Invoke(amount);
-    }
-
-    public void DecreaseLife(float amount)
-    {
-        life -= amount;
-        if (life < 0f)
-            life = 0f;
-
-        OnDecreaseLife?.Invoke(amount);
-    }
-
     /* PRIVATE METHODS */
 
-    private void IncreaseSeason()
+    private void ChangeLife()
+    {
+        life += LifeChange;
+        if (life > 1f)
+            life = 1f;
+        else if (life < 0f)
+            life = 0f;
+
+        OnLifeChange?.Invoke(LifeChange);
+    }
+
+    private void ChangeSeason()
     {
         season += timeSpeed * timeFactor * seasonCycle;
         if (season >= 1f)
@@ -124,6 +126,7 @@ public class GameState : ScriptableObject
         {
             currentSeason = nextSeason;
             OnSeasonChange?.Invoke(season);
+
             Debug.Log($"Season changed to {currentSeason}");
         }
     }
