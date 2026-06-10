@@ -17,6 +17,7 @@ public class GameState : ScriptableObject
     [Range(0f, 1f)]
     public float season = 0f;
     private readonly float seasonCycle = 0.25f;
+    private int currentSeason = -1;
 
     [Range(0f, 1f)]
     public float defaultSeason = 0.5f;
@@ -53,6 +54,7 @@ public class GameState : ScriptableObject
     public event Action<float> OnTimeChange;
     public event Action<float> OnSeasonChange;
 
+    /* PUBLIC METHODS */
     public void OnEnable() => Reset();
 
     public void OnDisable() => Reset();
@@ -73,16 +75,6 @@ public class GameState : ScriptableObject
 
         OnTimeChange?.Invoke(time);
         IncreaseSeason();
-    }
-
-    public void IncreaseSeason()
-    {
-        season += timeSpeed * timeFactor * seasonCycle;
-        if (season >= 1f)
-            season = 0f;
-
-        if (season % seasonCycle == 0f)
-            OnSeasonChange?.Invoke(season);
     }
 
     public void IncreaseTimeSpeed()
@@ -117,5 +109,22 @@ public class GameState : ScriptableObject
             life = 0f;
 
         OnDecreaseLife?.Invoke(amount);
+    }
+
+    /* PRIVATE METHODS */
+
+    private void IncreaseSeason()
+    {
+        season += timeSpeed * timeFactor * seasonCycle;
+        if (season >= 1f)
+            season = 0f;
+
+        int nextSeason = Mathf.FloorToInt(season / seasonCycle);
+        if (currentSeason != nextSeason)
+        {
+            currentSeason = nextSeason;
+            OnSeasonChange?.Invoke(season);
+            Debug.Log($"Season changed to {currentSeason}");
+        }
     }
 }
