@@ -159,21 +159,27 @@ public class LeafBehaviour : MonoBehaviour
     public void TransformToFlower()
     {
         if (flowerPrefab == null)
-        {
-            Debug.LogWarning("flowerPrefab non assigné !");
             return;
+
+        Vector3 spawnPosition = transform.position;
+        Quaternion spawnRotation = transform.rotation; // fallback
+
+        // Raycast pour trouver la normale de la surface
+        if (
+            Physics.Raycast(
+                transform.position + Vector3.up * 0.1f,
+                Vector3.down,
+                out RaycastHit hit,
+                0.5f
+            )
+        )
+        {
+            // Aligne Y de la fleur avec la normale de la surface
+            spawnRotation = Quaternion.FromToRotation(Vector3.up, hit.normal);
+            spawnPosition = hit.point; // pose exactement sur la surface
         }
 
-        // Position de la feuille
-        Vector3 spawnPosition = transform.position;
-
-        // Rotation basée sur la normale de la feuille (axe Y vers le haut de la feuille)
-        Quaternion spawnRotation = transform.rotation;
-
-        // Instancie la fleur
-        GameObject flower = Instantiate(flowerPrefab, spawnPosition, spawnRotation);
-
-        // Désactive la feuille
+        Instantiate(flowerPrefab, spawnPosition, spawnRotation);
         gameObject.SetActive(false);
     }
 
