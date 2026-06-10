@@ -1969,7 +1969,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TimeManager
   gameState: {fileID: 11400000, guid: bff1d43fc4e1244ff89e8eb800ecae34, type: 2}
-  _holdDuration: 0
+  _holdDuration: 0.3
 --- !u!114 &2118482676
 MonoBehaviour:
   m_ObjectHideFlags: 0

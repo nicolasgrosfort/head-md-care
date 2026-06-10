@@ -50,21 +50,75 @@ public class GameState : ScriptableObject
     public float minTimeSpeed = 0f;
 
     [Range(0f, 1f)]
-    public float timeSpeedIncrement = 0.1f;
+    public float timeSpeedIncrement = 0.2f;
+
+    public enum InteractionType
+    {
+        None,
+        Drag,
+        Click,
+        Hold,
+    }
+
+    private InteractionType currentInteraction = InteractionType.None;
 
     public event Action<float> OnLifeChange;
     public event Action<float> OnTimeChange;
     public event Action<float> OnSeasonChange;
+    public event Action<float> OnSpeedChange;
+    public event Action OnClick;
+    public event Action OnHold;
+    public event Action OnDrag;
+    public event Action OnInteractionEnd;
+    public event Action<InteractionType> OnInteractionChange;
 
-    /* PUBLIC METHODS */
+    /* PUBLIC COMPUTED PROPERTIES */
     public float NormalisedTimeSpeed =>
         Mathf.InverseLerp(defaultTimeSpeed, maxTimeSpeed, timeSpeed);
 
     public float LifeChange => Mathf.Lerp(lifeIncrement, lifeDecrement, NormalisedTimeSpeed);
 
+    public InteractionType CurrentInteraction => currentInteraction;
+
+    /* PUBLIC METHODS */
     public void OnEnable() => Reset();
 
-    public void OnDisable() => Reset();
+    public void OnDisable()
+    {
+        OnLifeChange = null;
+        OnTimeChange = null;
+        OnSeasonChange = null;
+        OnSpeedChange = null;
+        OnInteractionChange = null;
+        OnClick = null;
+        OnHold = null;
+        OnDrag = null;
+        OnInteractionEnd = null;
+        Reset();
+    }
+
+    public void SetInteraction(InteractionType type)
+    {
+        currentInteraction = type;
+        OnInteractionChange?.Invoke(currentInteraction);
+        Debug.Log($"Interaction changed to {currentInteraction}");
+
+        switch (type)
+        {
+            case InteractionType.Click:
+                OnClick?.Invoke();
+                break;
+            case InteractionType.Hold:
+                OnHold?.Invoke();
+                break;
+            case InteractionType.Drag:
+                OnDrag?.Invoke();
+                break;
+            case InteractionType.None:
+                OnInteractionEnd?.Invoke();
+                break;
+        }
+    }
 
     public void Reset()
     {
@@ -91,6 +145,7 @@ public class GameState : ScriptableObject
         float t = (timeSpeed - defaultTimeSpeed) / (maxTimeSpeed - defaultTimeSpeed);
         float increment = timeSpeedIncrement * 0.03f * (2f * t + 0.2f);
         timeSpeed = Mathf.Min(timeSpeed + increment, maxTimeSpeed);
+        OnSpeedChange?.Invoke(timeSpeed);
     }
 
     public void DecreaseTimeSpeed()
@@ -98,9 +153,8 @@ public class GameState : ScriptableObject
         float t = (timeSpeed - defaultTimeSpeed) / (maxTimeSpeed - defaultTimeSpeed);
         float increment = timeSpeedIncrement * 0.04f * (2f * t + 0.05f);
         timeSpeed = Mathf.Max(timeSpeed - increment, minTimeSpeed);
+        OnSpeedChange?.Invoke(timeSpeed);
     }
-
-    public void ResetTimeSpeed() => timeSpeed = defaultTimeSpeed;
 
     /* PRIVATE METHODS */
 

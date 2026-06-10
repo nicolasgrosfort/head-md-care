@@ -1,48 +1,44 @@
 using System.Collections;
 using UnityEngine;
-using UnityEngine.EventSystems;
 
-public class TimeManager : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
+public class TimeManager : MonoBehaviour
 {
     [SerializeField]
     private GameState gameState;
 
-    [SerializeField]
-    private float _holdDuration = 0.5f;
-    private float _downTime = -1f;
-    private bool _holdFired;
     private Coroutine _speedRoutine;
+
+    private void OnEnable()
+    {
+        gameState.OnHold += StartAccelerate;
+        gameState.OnInteractionEnd += StartDecelerate;
+    }
+
+    private void OnDisable()
+    {
+        gameState.OnHold -= StartAccelerate;
+        gameState.OnInteractionEnd -= StartDecelerate;
+    }
 
     private void Update()
     {
         gameState.IncreaseTime();
-
-        // Détection du hold
-        if (_downTime >= 0 && !_holdFired && Time.time - _downTime >= _holdDuration)
-        {
-            _holdFired = true;
-            _speedRoutine = StartCoroutine(AccelerateRoutine());
-        }
     }
 
-    public void OnPointerDown(PointerEventData e)
+    private void StartAccelerate()
     {
-        _downTime = Time.time;
-        _holdFired = false;
-    }
-
-    public void OnPointerUp(PointerEventData e)
-    {
-        _downTime = -1f;
-
         if (_speedRoutine != null)
-        {
             StopCoroutine(_speedRoutine);
-            _speedRoutine = StartCoroutine(DecelerateRoutine());
-        }
+        _speedRoutine = StartCoroutine(AccelerateRoutine());
     }
 
-    // Monte la vitesse tant qu'on hold
+    private void StartDecelerate()
+    {
+        if (_speedRoutine != null)
+            StopCoroutine(_speedRoutine);
+        _speedRoutine = StartCoroutine(DecelerateRoutine());
+    }
+
     private IEnumerator AccelerateRoutine()
     {
         while (true)
@@ -52,7 +48,6 @@ public class TimeManager : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
         }
     }
 
-    // Redescend la vitesse au relâché
     private IEnumerator DecelerateRoutine()
     {
         while (gameState.timeSpeed > gameState.defaultTimeSpeed)
