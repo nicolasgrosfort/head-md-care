@@ -5855,6 +5855,14 @@ PrefabInstance:
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: d9247b00cc4c74973bfbfd04e994fbbd, type: 2}
+    - target: {fileID: -3118394593089341666, guid: fdce7fea4fbb4419ba1eb79f62b70123, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: e9eebab7c30c34b7486fc58512477785, type: 2}
+    - target: {fileID: -169030125210246271, guid: fdce7fea4fbb4419ba1eb79f62b70123, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: b6478ad964e9c4ec9bc28aff626ec9dc, type: 2}
     - target: {fileID: 919132149155446097, guid: fdce7fea4fbb4419ba1eb79f62b70123, type: 3}
       propertyPath: m_Name
       value: Leaves-and-branch
@@ -35898,7 +35906,7 @@ GameObject:
   - component: {fileID: 1071195846}
   - component: {fileID: 1071195845}
   m_Layer: 0
-  m_Name: Tomb1
+  m_Name: Tomb1ll
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
