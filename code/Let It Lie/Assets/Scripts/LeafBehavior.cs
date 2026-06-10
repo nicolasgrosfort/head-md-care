@@ -18,7 +18,7 @@ public class LeafBehaviour : MonoBehaviour
     public float dragVariance = 0.5f;
 
     [Tooltip("Résistance en rotation.")]
-    [Range(0f, 1f)]
+    [Range(0f, 2f)]
     public float angularDrag = 0.8f;
 
     [Tooltip("Masse de la feuille (kg).")]
@@ -31,7 +31,7 @@ public class LeafBehaviour : MonoBehaviour
     public float lateralImpulse = 0.5f;
 
     [Tooltip("Force de rotation max appliquée au spawn.")]
-    [Range(0f, 1f)]
+    [Range(0f, 2f)]
     public float torqueImpulse = 0.3f;
 
     [Header("Détection de pose")]
