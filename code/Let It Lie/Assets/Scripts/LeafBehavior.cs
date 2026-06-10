@@ -47,6 +47,9 @@ public class LeafBehaviour : MonoBehaviour
     private float slowDrag = 0f;
     public GameState gameState;
 
+    [Header("Fleur")]
+    public GameObject flowerPrefab;
+
     // ── Événement ─────────────────────────────────────────────────────────────
 
     /// <summary>Déclenché une fois quand la feuille s'est posée.</summary>
@@ -155,7 +158,22 @@ public class LeafBehaviour : MonoBehaviour
 
     public void TransformToFlower()
     {
-        // TODO : remplacer la feuille par une fleur
+        if (flowerPrefab == null)
+        {
+            Debug.LogWarning("flowerPrefab non assigné !");
+            return;
+        }
+
+        // Position de la feuille
+        Vector3 spawnPosition = transform.position;
+
+        // Rotation basée sur la normale de la feuille (axe Y vers le haut de la feuille)
+        Quaternion spawnRotation = transform.rotation;
+
+        // Instancie la fleur
+        GameObject flower = Instantiate(flowerPrefab, spawnPosition, spawnRotation);
+
+        // Désactive la feuille
         gameObject.SetActive(false);
     }
 

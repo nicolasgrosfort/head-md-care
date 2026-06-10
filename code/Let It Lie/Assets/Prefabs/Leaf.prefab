@@ -163,3 +163,4 @@ MonoBehaviour:
   restConfirmDuration: 0.4
   dampingOnClick: 50
   gameState: {fileID: 11400000, guid: bff1d43fc4e1244ff89e8eb800ecae34, type: 2}
+  flowerPrefab: {fileID: 440452780328071791, guid: b5ddca80235e04bc592cec82371d4b39, type: 3}
