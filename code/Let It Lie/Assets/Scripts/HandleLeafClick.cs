@@ -18,7 +18,7 @@ public class HandleLeafClick : MonoBehaviour, IPointerClickHandler
             {
                 if (leaf.IsLanded())
                 {
-                    leaf.TransformToFlower();
+                    leaf.CatchLeaf();
                     return;
                 }
                 else

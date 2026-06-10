@@ -49,6 +49,7 @@ public class LeafBehaviour : MonoBehaviour
 
     [Header("Fleur")]
     public GameObject flowerPrefab;
+    public float transformDelay = 3f;
 
     // ── Événement ─────────────────────────────────────────────────────────────
 
@@ -149,6 +150,8 @@ public class LeafBehaviour : MonoBehaviour
         _hasLanded = true;
         _rb.Sleep(); // coupe la simulation physique → 0 overhead une fois posée
         OnRested?.Invoke(this);
+
+        Invoke(nameof(TransformToFlower), transformDelay);
     }
 
     public void ApplySlowBomb(float intensity = 1f)
@@ -180,6 +183,12 @@ public class LeafBehaviour : MonoBehaviour
         }
 
         Instantiate(flowerPrefab, spawnPosition, spawnRotation);
+        gameObject.SetActive(false);
+    }
+
+    public void CatchLeaf()
+    {
+        CancelInvoke(nameof(TransformToFlower)); // annule la transformation
         gameObject.SetActive(false);
     }
 
