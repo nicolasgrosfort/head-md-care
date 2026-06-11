@@ -69,8 +69,8 @@ public class GameState : ScriptableObject
 
     public event Action<float> OnLifeChange;
     public event Action<float> OnTimeChange;
-    public event Action<float> OnDayNightChange;
-    public event Action<float> OnSeasonChange;
+    public event Action<int, int> OnDayNightChange;
+    public event Action<int> OnSeasonChange;
     public event Action<float> OnSpeedChange;
     public event Action OnClick;
     public event Action OnHold;
@@ -84,7 +84,16 @@ public class GameState : ScriptableObject
 
     public float LifeChange => Mathf.Lerp(lifeIncrement, lifeDecrement, NormalisedTimeSpeed);
 
+    public int CurrentSeason => currentSeason;
+    public int CurrentDayNight => currentDayNight;
     public InteractionType CurrentInteraction => currentInteraction;
+
+    public float Spring => 0.25f;
+    public float Summer => 0.5f;
+    public float Fall => 0.75f;
+    public float Winter => 1f;
+    public float Day => 0.5f;
+    public float Night => 0f;
 
     /* PUBLIC METHODS */
     public void OnEnable() => Reset();
@@ -186,7 +195,7 @@ public class GameState : ScriptableObject
         if (currentSeason != nextSeason)
         {
             currentSeason = nextSeason;
-            OnSeasonChange?.Invoke(season);
+            OnSeasonChange?.Invoke(currentSeason);
 
             Debug.Log($"Season changed to {currentSeason}");
         }
@@ -198,7 +207,7 @@ public class GameState : ScriptableObject
         if (currentDayNight != dayNight)
         {
             currentDayNight = dayNight;
-            OnDayNightChange?.Invoke(time);
+            OnDayNightChange?.Invoke(currentDayNight, currentSeason);
         }
     }
 }
