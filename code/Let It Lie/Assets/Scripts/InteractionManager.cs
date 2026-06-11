@@ -32,7 +32,7 @@ public class InteractionManager
         if (eventData.delta.magnitude > dragThreshold)
         {
             StopHoldRoutine();
-            gameState.SetInteraction(GameState.InteractionType.Drag);
+            gameState.SetInteraction(GameState.InteractionType.Drag, eventData.position);
         }
     }
 
@@ -42,16 +42,16 @@ public class InteractionManager
 
         if (gameState.CurrentInteraction == GameState.InteractionType.Drag)
         {
-            gameState.SetInteraction(GameState.InteractionType.None);
+            gameState.SetInteraction(GameState.InteractionType.None, eventData.position);
             return;
         }
 
         if (gameState.CurrentInteraction != GameState.InteractionType.Hold)
         {
-            gameState.SetInteraction(GameState.InteractionType.Click);
+            gameState.SetInteraction(GameState.InteractionType.Click, eventData.position);
         }
 
-        gameState.SetInteraction(GameState.InteractionType.None);
+        gameState.SetInteraction(GameState.InteractionType.None, eventData.position);
     }
 
     private IEnumerator HoldRoutine()

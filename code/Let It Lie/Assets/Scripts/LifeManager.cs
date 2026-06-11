@@ -2,8 +2,6 @@ using UnityEngine;
 using UnityEngine.Rendering;
 using UnityEngine.Rendering.Universal;
 
-[RequireComponent(typeof(Volume))]
-[RequireComponent(typeof(GameState))]
 public class LifeManager : MonoBehaviour
 {
     [SerializeField]

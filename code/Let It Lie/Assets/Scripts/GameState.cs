@@ -75,7 +75,7 @@ public class GameState : ScriptableObject
     public event Action<int, int> OnDayNightChange;
     public event Action<int> OnSeasonChange;
     public event Action<float> OnSpeedChange;
-    public event Action OnClick;
+    public event Action<Vector2> OnClick;
     public event Action OnHold;
     public event Action OnDrag;
     public event Action OnInteractionEnd;
@@ -124,7 +124,7 @@ public class GameState : ScriptableObject
         Reset();
     }
 
-    public void SetInteraction(InteractionType type)
+    public void SetInteraction(InteractionType type, Vector2 screenPos = default)
     {
         currentInteraction = type;
         OnInteractionChange?.Invoke(currentInteraction);
@@ -132,7 +132,7 @@ public class GameState : ScriptableObject
         switch (type)
         {
             case InteractionType.Click:
-                OnClick?.Invoke();
+                OnClick?.Invoke(screenPos);
                 break;
             case InteractionType.Hold:
                 OnHold?.Invoke();

@@ -28,6 +28,10 @@ public class TreeManager : MonoBehaviour
     [SerializeField]
     private FlowerZone[] zones;
 
+    [Header("Wind")]
+    [SerializeField]
+    private WindManager windManager;
+
     private class LeafData
     {
         public GameObject gameObject;
@@ -97,6 +101,8 @@ public class TreeManager : MonoBehaviour
         gameState.OnSummerDay += OnSummerDay;
         gameState.OnWinterNight += OnWinterNight;
         gameState.OnWinterDay += OnWinterDay;
+
+        gameState.OnClick += OnClick;
     }
 
     private void OnDisable()
@@ -109,6 +115,36 @@ public class TreeManager : MonoBehaviour
         gameState.OnSummerDay -= OnSummerDay;
         gameState.OnWinterNight -= OnWinterNight;
         gameState.OnWinterDay -= OnWinterDay;
+
+        gameState.OnClick -= OnClick;
+    }
+
+    private void OnClick(Vector2 screenPos)
+    {
+        if (windManager == null)
+            return;
+
+        Ray ray = Camera.main.ScreenPointToRay(screenPos);
+
+        // Plan horizontal à hauteur fixe (ex: hauteur moyenne des feuilles)
+        Plane horizontal = new Plane(
+            Vector3.up,
+            new Vector3(0f, windManager.windPlane.position.y, 0f)
+        );
+        if (!horizontal.Raycast(ray, out float enter))
+            return;
+
+        Vector3 clickPoint = ray.GetPoint(enter);
+
+        Vector3 direction = ray.direction;
+        direction.y = 0f;
+        windManager.windDirection = direction.normalized;
+
+        var rbs = _allLeaves
+            .FindAll(l => l.hasFallen && l.gameObject.activeSelf)
+            .ConvertAll(l => l.rb);
+
+        windManager.TriggerGust(rbs, windManager.windPlane, clickPoint);
     }
 
     private void OnFallNight(int cycle, int season)
