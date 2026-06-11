@@ -82,26 +82,6 @@ public class TreeManager : MonoBehaviour
         }
     }
 
-    // ─── Wither ───────────────────────────────────────────────────────────────
-
-    public void Wither(float percentage)
-    {
-        foreach (var leaf in _allLeaves)
-            leaf.gameObject.SetActive(true);
-
-        int toHide = Mathf.RoundToInt(_allLeaves.Count * (1f - percentage));
-        List<LeafData> shuffled = new(_allLeaves);
-
-        for (int i = shuffled.Count - 1; i > 0; i--)
-        {
-            int j = Random.Range(0, i + 1);
-            (shuffled[i], shuffled[j]) = (shuffled[j], shuffled[i]);
-        }
-
-        for (int i = 0; i < toHide; i++)
-            shuffled[i].gameObject.SetActive(false);
-    }
-
     // ─── Saisons ──────────────────────────────────────────────────────────────
 
     private void HandleDayNightChange(int dayNight, int season)
@@ -128,18 +108,20 @@ public class TreeManager : MonoBehaviour
         if (dayNight == 0)
             return;
 
-        foreach (var leaf in _allLeaves)
+        List<LeafData> shuffled = new(_allLeaves);
+        for (int i = shuffled.Count - 1; i > 0; i--)
         {
-            SpawnFlower(leaf);
-            leaf.rb.isKinematic = true;
-            leaf.transform.SetParent(leaf.initialParent);
-            leaf.transform.localPosition = leaf.initialLocalPosition;
-            leaf.transform.localRotation = leaf.initialLocalRotation;
-            leaf.gameObject.SetActive(true);
-            StartCoroutine(GrowRoutine(leaf));
+            int j = Random.Range(0, i + 1);
+            (shuffled[i], shuffled[j]) = (shuffled[j], shuffled[i]);
         }
 
-        Wither(gameState.life);
+        int toShow = Mathf.RoundToInt(_allLeaves.Count * gameState.life);
+
+        for (int i = 0; i < _allLeaves.Count; i++)
+        {
+            bool shouldGrow = i < toShow;
+            StartCoroutine(SpringRoutine(shuffled[i], Random.Range(0f, 5f), shouldGrow));
+        }
     }
 
     private void OnSummer(int dayNight)
@@ -149,7 +131,7 @@ public class TreeManager : MonoBehaviour
 
         foreach (var leaf in _allLeaves)
             if (leaf.flowerAnimator != null)
-                leaf.flowerAnimator.SetTrigger("Dead");
+                StartCoroutine(KillFlowerRoutine(leaf, Random.Range(0f, 5f)));
     }
 
     private void OnFall(int dayNight)
@@ -274,5 +256,32 @@ public class TreeManager : MonoBehaviour
         );
         leaf.rb.AddForce(force, ForceMode.Impulse);
         leaf.rb.AddTorque(Random.insideUnitSphere * 0.3f, ForceMode.Impulse);
+    }
+
+    private IEnumerator KillFlowerRoutine(LeafData leaf, float delay)
+    {
+        yield return new WaitForSeconds(delay);
+
+        if (leaf.flowerAnimator != null)
+            leaf.flowerAnimator.SetTrigger("Dead");
+    }
+
+    private IEnumerator SpringRoutine(LeafData leaf, float delay, bool shouldGrow)
+    {
+        yield return new WaitForSeconds(delay);
+
+        if (!shouldGrow)
+        {
+            leaf.gameObject.SetActive(false);
+            yield break;
+        }
+
+        SpawnFlower(leaf);
+        leaf.rb.isKinematic = true;
+        leaf.transform.SetParent(leaf.initialParent);
+        leaf.transform.localPosition = leaf.initialLocalPosition;
+        leaf.transform.localRotation = leaf.initialLocalRotation;
+        leaf.gameObject.SetActive(true);
+        StartCoroutine(GrowRoutine(leaf));
     }
 }
