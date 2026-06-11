@@ -25,6 +25,9 @@ public class TreeManager : MonoBehaviour
     [SerializeField]
     private GameObject flowerPrefab;
 
+    [SerializeField]
+    private FlowerZone[] zones;
+
     private class LeafData
     {
         public GameObject gameObject;
@@ -34,8 +37,6 @@ public class TreeManager : MonoBehaviour
         public Transform initialParent;
         public Vector3 initialLocalPosition;
         public Quaternion initialLocalRotation;
-        public Vector3 fallPosition;
-        public Quaternion fallRotation;
         public Vector3 initialScale;
         public GameObject spawnedFlower;
         public Animator flowerAnimator;
@@ -190,6 +191,15 @@ public class TreeManager : MonoBehaviour
         return list.GetRange(0, count);
     }
 
+    private Vector3 GetRandomSpawnPosition()
+    {
+        if (zones.Length == 0)
+            return Vector3.zero;
+
+        FlowerZone zone = zones[Random.Range(0, zones.Length)];
+        return zone.GetRandomPosition();
+    }
+
     // COROUTINES
 
     private IEnumerator HumificationRoutine(LeafData leaf, float delay)
@@ -245,14 +255,11 @@ public class TreeManager : MonoBehaviour
 
         if (leaf.gameObject.activeSelf)
             yield break;
-
-        if (flowerPrefab == null)
-            yield break;
-        if (leaf.spawnedFlower != null)
+        if (flowerPrefab == null || leaf.spawnedFlower != null)
             yield break;
 
-        Vector3 pos = leaf.transform.position;
-        Quaternion rot = leaf.transform.rotation;
+        Vector3 pos = GetRandomSpawnPosition();
+        Quaternion rot = Quaternion.Euler(0f, Random.Range(0f, 360f), 0f);
 
         leaf.spawnedFlower = Instantiate(flowerPrefab, pos, rot);
         leaf.flowerAnimator = leaf.spawnedFlower.GetComponent<Animator>();

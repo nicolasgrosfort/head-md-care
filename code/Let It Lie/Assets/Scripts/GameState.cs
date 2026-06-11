@@ -23,7 +23,7 @@ public class GameState : ScriptableObject
     private int currentSeason = -1;
 
     [Range(0f, 1f)]
-    public float defaultSeason = 0.5f;
+    public float defaultSeason = 0.25f;
 
     [Header("Time")]
     [Tooltip("0 = night, 0.25 = sunrise, 0.5 = day, 0.75 = sunset")]
