@@ -13,6 +13,12 @@ public class TreeManager : MonoBehaviour
     private string leafPrefix = "Leaf";
 
     [SerializeField]
+    private float fallDelayMin = 0f;
+
+    [SerializeField]
+    private float fallDelayMax = 3f;
+
+    [SerializeField]
     private Material leafMaterial;
 
     [Header("Flower")]
@@ -73,23 +79,6 @@ public class TreeManager : MonoBehaviour
                     initialScale = child.localScale,
                 }
             );
-        }
-    }
-
-    private void Update()
-    {
-        foreach (var leaf in _allLeaves)
-        {
-            if (leaf.rb.isKinematic)
-                continue;
-
-            // Vector3 velocity = leaf.rb.linearVelocity;
-            // leaf.rb.AddForce(-velocity.normalized * velocity.sqrMagnitude * 0.1f, ForceMode.Force);
-            // leaf.rb.AddTorque(Random.insideUnitSphere * 0.05f, ForceMode.Force);
-
-            // Vector2 turbulence2D = Random.insideUnitCircle * gameState.windTurbulence;
-            // Vector3 wind = gameState.windForce + new Vector3(turbulence2D.x, 0f, turbulence2D.y);
-            // leaf.rb.AddForce(wind, ForceMode.Force);
         }
     }
 
@@ -172,17 +161,7 @@ public class TreeManager : MonoBehaviour
         {
             if (!leaf.gameObject.activeSelf)
                 continue;
-
-            leaf.transform.SetParent(null);
-            leaf.rb.isKinematic = false;
-
-            Vector3 force = new Vector3(
-                Random.Range(-0.3f, 0.3f),
-                Random.Range(-0.1f, 0f),
-                Random.Range(-0.3f, 0.3f)
-            );
-            leaf.rb.AddForce(force, ForceMode.Impulse);
-            leaf.rb.AddTorque(Random.insideUnitSphere * 0.3f, ForceMode.Impulse);
+            StartCoroutine(FallRoutine(leaf, Random.Range(fallDelayMin, fallDelayMax)));
         }
     }
 
@@ -245,5 +224,24 @@ public class TreeManager : MonoBehaviour
         }
 
         leaf.transform.localScale = leaf.initialScale;
+    }
+
+    private IEnumerator FallRoutine(LeafData leaf, float delay)
+    {
+        yield return new WaitForSeconds(delay);
+
+        if (!leaf.gameObject.activeSelf)
+            yield break; // peut avoir été désactivée entre-temps
+
+        leaf.transform.SetParent(null);
+        leaf.rb.isKinematic = false;
+
+        Vector3 force = new Vector3(
+            Random.Range(-0.3f, 0.3f),
+            Random.Range(-0.1f, 0f),
+            Random.Range(-0.3f, 0.3f)
+        );
+        leaf.rb.AddForce(force, ForceMode.Impulse);
+        leaf.rb.AddTorque(Random.insideUnitSphere * 0.3f, ForceMode.Impulse);
     }
 }

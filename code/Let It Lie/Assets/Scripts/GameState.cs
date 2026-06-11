@@ -53,6 +53,9 @@ public class GameState : ScriptableObject
     [Range(0f, 1f)]
     public float timeSpeedIncrement = 0.2f;
 
+    [Range(1f, 10f)]
+    public float timeScale = 10f;
+
     [Header("Wind")]
     public Vector3 windForce = new Vector3(0.5f, 0f, 0f);
     public float windTurbulence = 0.2f;

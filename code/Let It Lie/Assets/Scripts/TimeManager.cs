@@ -12,12 +12,14 @@ public class TimeManager : MonoBehaviour
     {
         gameState.OnHold += StartAccelerate;
         gameState.OnInteractionEnd += StartDecelerate;
+        gameState.OnSpeedChange += UpdateTimeScale;
     }
 
     private void OnDisable()
     {
         gameState.OnHold -= StartAccelerate;
         gameState.OnInteractionEnd -= StartDecelerate;
+        gameState.OnSpeedChange -= UpdateTimeScale;
     }
 
     private void Update()
@@ -56,5 +58,11 @@ public class TimeManager : MonoBehaviour
             yield return null;
         }
         _speedRoutine = null;
+    }
+
+    private void UpdateTimeScale(float speed)
+    {
+        float normalized = Mathf.InverseLerp(gameState.minTimeSpeed, gameState.maxTimeSpeed, speed);
+        Time.timeScale = Mathf.Lerp(1f, gameState.timeScale, normalized);
     }
 }
