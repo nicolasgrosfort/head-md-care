@@ -67,6 +67,6 @@
         "*.sln": "*.csproj",
         "*.slnx": "*.csproj"
     },
-    "dotnet.defaultSolution": "Let It Lie.slnx",
+    "dotnet.defaultSolution": "2026-06-10-Let It Lie.slnx",
     "dotnet.enableWorkspaceBasedDevelopment": false
 }
