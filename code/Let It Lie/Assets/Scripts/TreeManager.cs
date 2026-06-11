@@ -212,7 +212,7 @@ public class TreeManager : MonoBehaviour
 
     private IEnumerator GrowRoutine(LeafData leaf)
     {
-        float duration = 2f;
+        float duration = Random.Range(2f, 5f);
         float elapsed = 0f;
         leaf.transform.localScale = Vector3.zero;
 
