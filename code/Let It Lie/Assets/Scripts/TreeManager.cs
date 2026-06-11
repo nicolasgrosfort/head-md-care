@@ -30,6 +30,7 @@ public class TreeManager : MonoBehaviour
         public GameObject gameObject;
         public Transform transform;
         public Rigidbody rb;
+        public LeafAerodynamics aerodynamics;
         public Transform initialParent;
         public Vector3 initialLocalPosition;
         public Quaternion initialLocalRotation;
@@ -58,8 +59,8 @@ public class TreeManager : MonoBehaviour
 
             rb.isKinematic = true;
             rb.mass = 0.01f;
-            rb.linearDamping = 3f;
-            rb.angularDamping = 0.5f;
+            // linearDamping et angularDamping sont gérés par LeafAerodynamics.Awake.
+            // Ne pas les définir ici pour éviter un conflit.
 
             if (!child.GetComponent<Collider>())
                 child.gameObject.AddComponent<BoxCollider>();
@@ -68,18 +69,22 @@ public class TreeManager : MonoBehaviour
             if (rend != null && leafMaterial != null)
                 rend.sharedMaterial = leafMaterial;
 
-            _allLeaves.Add(
-                new LeafData
-                {
-                    gameObject = child.gameObject,
-                    transform = child,
-                    rb = rb,
-                    initialParent = child.parent,
-                    initialLocalPosition = child.localPosition,
-                    initialLocalRotation = child.localRotation,
-                    initialScale = child.localScale,
-                }
-            );
+            // ── Stocker la ref avant AddComponent pour pouvoir la lier à LeafData ──
+            var data = new LeafData
+            {
+                gameObject = child.gameObject,
+                transform = child,
+                rb = rb,
+                initialParent = child.parent,
+                initialLocalPosition = child.localPosition,
+                initialLocalRotation = child.localRotation,
+                initialScale = child.localScale,
+            };
+
+            // LeafAerodynamics.Awake s'exécute immédiatement et configure rb.linearDamping = 0.
+            data.aerodynamics = child.gameObject.AddComponent<LeafAerodynamics>();
+
+            _allLeaves.Add(data);
         }
     }
 
@@ -111,6 +116,7 @@ public class TreeManager : MonoBehaviour
 
         List<LeafData> fallenLeaves = _allLeaves.FindAll(l => l.hasFallen);
 
+        // Mélange Fisher-Yates pour un ordre de repousse aléatoire.
         for (int i = fallenLeaves.Count - 1; i > 0; i--)
         {
             int j = Random.Range(0, i + 1);
@@ -241,24 +247,27 @@ public class TreeManager : MonoBehaviour
         leaf.transform.localScale = leaf.initialScale; // reset pour le prochain printemps
     }
 
+    /// <summary>
+    /// Lance la chute physique de la feuille.
+    /// L'aérodynamique est entièrement gérée par LeafAerodynamics.FixedUpdate ;
+    /// on se contente d'une légère perturbation angulaire initiale pour briser
+    /// la symétrie et déclencher le flottement.
+    /// </summary>
     private IEnumerator FallRoutine(LeafData leaf, float delay)
     {
         yield return new WaitForSeconds(delay);
 
         if (!leaf.gameObject.activeSelf)
-            yield break; // peut avoir été désactivée entre-temps
+            yield break;
 
         leaf.hasFallen = true;
         leaf.transform.SetParent(null);
         leaf.rb.isKinematic = false;
 
-        Vector3 force = new Vector3(
-            Random.Range(-0.3f, 0.3f),
-            Random.Range(-0.1f, 0f),
-            Random.Range(-0.3f, 0.3f)
-        );
-        leaf.rb.AddForce(force, ForceMode.Impulse);
-        leaf.rb.AddTorque(Random.insideUnitSphere * 0.3f, ForceMode.Impulse);
+        // Petite impulsion angulaire aléatoire pour briser la symétrie initiale.
+        // Pas de force linéaire : l'aérodynamique gère la dérive naturellement.
+        Vector3 tiltAxis = new Vector3(Random.Range(-1f, 1f), 0f, Random.Range(-1f, 1f)).normalized;
+        leaf.rb.AddTorque(tiltAxis * 0.02f, ForceMode.VelocityChange);
     }
 
     private IEnumerator KillFlowerRoutine(LeafData leaf, float delay)
@@ -275,9 +284,13 @@ public class TreeManager : MonoBehaviour
 
         if (shouldGrow)
         {
-            // Repousse la feuille
             leaf.hasFallen = false;
+
+            // Vider la vélocité accumulée pendant la chute avant de redevenir cinématique.
+            leaf.rb.linearVelocity = Vector3.zero;
+            leaf.rb.angularVelocity = Vector3.zero;
             leaf.rb.isKinematic = true;
+
             leaf.transform.SetParent(leaf.initialParent);
             leaf.transform.localPosition = leaf.initialLocalPosition;
             leaf.transform.localRotation = leaf.initialLocalRotation;
@@ -286,7 +299,7 @@ public class TreeManager : MonoBehaviour
         }
         else
         {
-            // Pas de repousse → fleur à la place
+            // Pas de repousse → fleur à la place.
             SpawnFlower(leaf);
         }
     }
