@@ -167,11 +167,15 @@ public class TreeManager : MonoBehaviour
 
     private void OnWinter(int dayNight)
     {
-        if (dayNight == 0)
+        if (dayNight == gameState.Day)
             return;
 
         foreach (var leaf in _allLeaves)
-            leaf.gameObject.SetActive(false);
+        {
+            if (!leaf.gameObject.activeSelf)
+                continue;
+            StartCoroutine(ShrinkRoutine(leaf, Random.Range(fallDelayMin, fallDelayMax)));
+        }
     }
 
     // ─── Fleurs ───────────────────────────────────────────────────────────────
@@ -224,6 +228,33 @@ public class TreeManager : MonoBehaviour
         }
 
         leaf.transform.localScale = leaf.initialScale;
+    }
+
+    private IEnumerator ShrinkRoutine(LeafData leaf, float delay)
+    {
+        yield return new WaitForSeconds(delay);
+
+        if (!leaf.gameObject.activeSelf)
+            yield break;
+
+        float duration = 2f;
+        float elapsed = 0f;
+        Vector3 startScale = leaf.transform.localScale;
+
+        while (elapsed < duration)
+        {
+            elapsed += Time.deltaTime;
+            leaf.transform.localScale = Vector3.Lerp(
+                startScale,
+                Vector3.zero,
+                Mathf.SmoothStep(0f, 1f, elapsed / duration)
+            );
+            yield return null;
+        }
+
+        leaf.transform.localScale = Vector3.zero;
+        leaf.gameObject.SetActive(false);
+        leaf.transform.localScale = leaf.initialScale; // reset pour le prochain printemps
     }
 
     private IEnumerator FallRoutine(LeafData leaf, float delay)
