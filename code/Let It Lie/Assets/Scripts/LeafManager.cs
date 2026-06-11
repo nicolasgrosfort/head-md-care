@@ -17,12 +17,19 @@ public class Leaf : MonoBehaviour
 
     private Vector3 _initialScale;
 
-    public void Init(GameState state, GameObject prefab)
+    public void Init(GameState state, GameObject prefab, Material leafMat = null)
     {
         gameState = state;
         gameState.OnDayNightChange += HandleDayNightChange;
 
         flowerPrefab = prefab;
+
+        if (leafMat != null)
+        {
+            Renderer rend = GetComponent<Renderer>();
+            if (rend != null)
+                rend.sharedMaterial = leafMat;
+        }
 
         HandleDayNightChange(gameState.season);
     }
@@ -186,7 +193,8 @@ public class Leaf : MonoBehaviour
         }
 
         _spawnedFlower = Instantiate(flowerPrefab, spawnPosition, spawnRotation);
-        flowerAnimator = _spawnedFlower.GetComponent<Animator>(); // ← instance, pas prefab
+        flowerAnimator = _spawnedFlower.GetComponent<Animator>();
+
         gameObject.SetActive(false);
     }
 

@@ -11,6 +11,9 @@ public class TreeManager : MonoBehaviour
     [SerializeField]
     private string leafPrefix = "Leaf.";
 
+    [SerializeField]
+    private Material leafMaterial;
+
     [Header("Flower")]
     [SerializeField]
     private GameObject flowerPrefab;
@@ -34,7 +37,7 @@ public class TreeManager : MonoBehaviour
                 child.gameObject.AddComponent<BoxCollider>();
 
             Leaf leaf = child.gameObject.AddComponent<Leaf>();
-            leaf.Init(gameState, flowerPrefab);
+            leaf.Init(gameState, flowerPrefab, leafMaterial);
             _leaves.Add(leaf);
         }
     }

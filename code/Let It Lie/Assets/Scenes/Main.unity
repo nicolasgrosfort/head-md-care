@@ -2204,6 +2204,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8262087586530721501, guid: b4720e4c69b0347018402423a08bb572, type: 3}
+      propertyPath: leafMaterial
+      value: 
+      objectReference: {fileID: 2100000, guid: 11c8f1523131c4bf886ba610ef637dcc, type: 2}
+    - target: {fileID: 8262087586530721501, guid: b4720e4c69b0347018402423a08bb572, type: 3}
+      propertyPath: flowerMaterial
+      value: 
+      objectReference: {fileID: 2100000, guid: ab4cb3c913ab9400d81c8269dde527a0, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
