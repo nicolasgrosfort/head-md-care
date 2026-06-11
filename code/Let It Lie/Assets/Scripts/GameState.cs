@@ -16,7 +16,7 @@ public class GameState : ScriptableObject
     public float lifeDecrement = -0.0001f;
 
     [Header("Season")]
-    [Tooltip("0-1, 0 = spring, 0.25 = summer, 0.5 = fall, 0.75 = winter")]
+    [Tooltip("0 = spring, 0.25 = summer, 0.5 = fall, 0.75 = winter")]
     [Range(0f, 1f)]
     public float season = 0f;
     private readonly float seasonCycle = 0.25f;
@@ -80,6 +80,14 @@ public class GameState : ScriptableObject
     public event Action OnDrag;
     public event Action OnInteractionEnd;
     public event Action<InteractionType> OnInteractionChange;
+    public event Action<int, int> OnSpringNight;
+    public event Action<int, int> OnSummerNight;
+    public event Action<int, int> OnFallNight;
+    public event Action<int, int> OnWinterNight;
+    public event Action<int, int> OnSpringDay;
+    public event Action<int, int> OnSummerDay;
+    public event Action<int, int> OnFallDay;
+    public event Action<int, int> OnWinterDay;
 
     /* PUBLIC COMPUTED PROPERTIES */
     public float NormalisedTimeSpeed =>
@@ -144,6 +152,8 @@ public class GameState : ScriptableObject
         season = defaultSeason;
         time = defaultTime;
         timeSpeed = defaultTimeSpeed;
+        currentSeason = Mathf.FloorToInt(defaultSeason / seasonCycle) % 4;
+        currentDayNight = Mathf.FloorToInt(defaultTime / 0.5f);
     }
 
     public void IncreaseTime()
@@ -153,8 +163,8 @@ public class GameState : ScriptableObject
             time = 0f;
 
         ChangeSeason();
-        ChangeLife();
         ChangeDayNight();
+        ChangeLife();
 
         OnTimeChange?.Invoke(time);
     }
@@ -193,24 +203,46 @@ public class GameState : ScriptableObject
         season += timeSpeed * timeFactor * seasonCycle;
         if (season >= 1f)
             season = 0f;
-
-        int nextSeason = Mathf.FloorToInt(season / seasonCycle);
-        if (currentSeason != nextSeason)
-        {
-            currentSeason = nextSeason;
-            OnSeasonChange?.Invoke(currentSeason);
-
-            Debug.Log($"Season changed to {currentSeason}");
-        }
     }
 
     private void ChangeDayNight()
     {
         int dayNight = Mathf.FloorToInt(time / 0.5f);
-        if (currentDayNight != dayNight)
+        if (currentDayNight == dayNight)
+            return;
+
+        currentDayNight = dayNight;
+
+        if (currentDayNight == 0)
         {
-            currentDayNight = dayNight;
-            OnDayNightChange?.Invoke(currentDayNight, currentSeason);
+            int nextSeason = Mathf.FloorToInt(season / seasonCycle);
+            if (currentSeason != nextSeason)
+            {
+                currentSeason = nextSeason;
+                OnSeasonChange?.Invoke(currentSeason);
+            }
         }
+
+        OnDayNightChange?.Invoke(currentDayNight, currentSeason);
+        DispatchDaySeasonEvent(currentDayNight, currentSeason);
+    }
+
+    private void DispatchDaySeasonEvent(int cycle, int season)
+    {
+        Action<int, int> evt = (cycle, season) switch
+        {
+            (0, 0) => OnSpringNight,
+            (0, 1) => OnSummerNight,
+            (0, 2) => OnFallNight,
+            (0, 3) => OnWinterNight,
+            (1, 0) => OnSpringDay,
+            (1, 1) => OnSummerDay,
+            (1, 2) => OnFallDay,
+            (1, 3) => OnWinterDay,
+            _ => null,
+        };
+        evt?.Invoke(cycle, season);
+
+        Debug.Log($"Season: {season}, Cycle: {cycle}");
     }
 }

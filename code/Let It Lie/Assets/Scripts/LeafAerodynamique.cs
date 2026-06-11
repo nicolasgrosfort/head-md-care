@@ -131,6 +131,11 @@ public class LeafAerodynamics : MonoBehaviour
         if (_rb.isKinematic || _rb.IsSleeping())
             return;
 
+        // Guard NaN/Inf : si PhysX a corrompu l'état du corps (ex. collision dégénérée),
+        // ne pas appliquer de forces supplémentaires qui propageraient la corruption.
+        if (!IsStateFinite())
+            return;
+
         Vector3 leafNormal = GetLeafNormal();
         ApplyAerodynamicDrag(leafNormal);
         ApplyStabilisationTorque(leafNormal);
@@ -199,6 +204,23 @@ public class LeafAerodynamics : MonoBehaviour
     }
 
     // ── Helpers ───────────────────────────────────────────────────────────────
+
+    /// <summary>
+    /// Vérifie que l'état physique du corps est sain (pas de NaN ni d'infini).
+    /// Un MeshCollider convex dégénéré (scale → 0) peut corrompre l'état PhysX ;
+    /// ce guard évite de propager la corruption en appliquant des forces sur un NaN.
+    /// </summary>
+    private bool IsStateFinite()
+    {
+        Vector3 vel = _rb.linearVelocity;
+        Vector3 ang = _rb.angularVelocity;
+        return float.IsFinite(vel.x)
+            && float.IsFinite(vel.y)
+            && float.IsFinite(vel.z)
+            && float.IsFinite(ang.x)
+            && float.IsFinite(ang.y)
+            && float.IsFinite(ang.z);
+    }
 
     private Vector3 GetLeafNormal() =>
         normalAxis switch
