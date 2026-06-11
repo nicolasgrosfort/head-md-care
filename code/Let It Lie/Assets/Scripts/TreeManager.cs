@@ -36,6 +36,7 @@ public class TreeManager : MonoBehaviour
         public Vector3 initialScale;
         public GameObject spawnedFlower;
         public Animator flowerAnimator;
+        public bool hasFallen;
     }
 
     private List<LeafData> _allLeaves = new();
@@ -108,19 +109,20 @@ public class TreeManager : MonoBehaviour
         if (dayNight == 0)
             return;
 
-        List<LeafData> shuffled = new(_allLeaves);
-        for (int i = shuffled.Count - 1; i > 0; i--)
+        List<LeafData> fallenLeaves = _allLeaves.FindAll(l => l.hasFallen);
+
+        for (int i = fallenLeaves.Count - 1; i > 0; i--)
         {
             int j = Random.Range(0, i + 1);
-            (shuffled[i], shuffled[j]) = (shuffled[j], shuffled[i]);
+            (fallenLeaves[i], fallenLeaves[j]) = (fallenLeaves[j], fallenLeaves[i]);
         }
 
-        int toShow = Mathf.RoundToInt(_allLeaves.Count * gameState.life);
+        int toRegrow = Mathf.RoundToInt(fallenLeaves.Count * gameState.life);
 
-        for (int i = 0; i < _allLeaves.Count; i++)
+        for (int i = 0; i < fallenLeaves.Count; i++)
         {
-            bool shouldGrow = i < toShow;
-            StartCoroutine(SpringRoutine(shuffled[i], Random.Range(0f, 5f), shouldGrow));
+            bool shouldGrow = i < toRegrow;
+            StartCoroutine(SpringRoutine(fallenLeaves[i], Random.Range(0f, 5f), shouldGrow));
         }
     }
 
@@ -246,6 +248,7 @@ public class TreeManager : MonoBehaviour
         if (!leaf.gameObject.activeSelf)
             yield break; // peut avoir été désactivée entre-temps
 
+        leaf.hasFallen = true;
         leaf.transform.SetParent(null);
         leaf.rb.isKinematic = false;
 
@@ -270,18 +273,21 @@ public class TreeManager : MonoBehaviour
     {
         yield return new WaitForSeconds(delay);
 
-        if (!shouldGrow)
+        if (shouldGrow)
         {
-            leaf.gameObject.SetActive(false);
-            yield break;
+            // Repousse la feuille
+            leaf.hasFallen = false;
+            leaf.rb.isKinematic = true;
+            leaf.transform.SetParent(leaf.initialParent);
+            leaf.transform.localPosition = leaf.initialLocalPosition;
+            leaf.transform.localRotation = leaf.initialLocalRotation;
+            leaf.gameObject.SetActive(true);
+            StartCoroutine(GrowRoutine(leaf));
         }
-
-        SpawnFlower(leaf);
-        leaf.rb.isKinematic = true;
-        leaf.transform.SetParent(leaf.initialParent);
-        leaf.transform.localPosition = leaf.initialLocalPosition;
-        leaf.transform.localRotation = leaf.initialLocalRotation;
-        leaf.gameObject.SetActive(true);
-        StartCoroutine(GrowRoutine(leaf));
+        else
+        {
+            // Pas de repousse → fleur à la place
+            SpawnFlower(leaf);
+        }
     }
 }
