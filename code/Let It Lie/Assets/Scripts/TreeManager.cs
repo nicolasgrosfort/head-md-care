@@ -41,7 +41,8 @@ public class TreeManager : MonoBehaviour
         public GameObject spawnedFlower;
         public Animator flowerAnimator;
 
-        public bool hasFallen;
+        public bool hasFallen = false;
+        public bool hasBudding = true;
     }
 
     private List<LeafData> _allLeaves = new();
@@ -137,7 +138,9 @@ public class TreeManager : MonoBehaviour
 
     private void OnSpringNight(int cycle, int season)
     {
-        List<LeafData> fallenLeaves = Shuffle(_allLeaves.FindAll(l => l.hasFallen));
+        List<LeafData> fallenLeaves = Shuffle(_allLeaves.FindAll(l => l.hasFallen && l.hasBudding));
+
+        Debug.Log($"Spring Night: {fallenLeaves.Count} fallen leaves can potentially bud.");
 
         for (int i = 0; i < fallenLeaves.Count; i++)
         {
@@ -147,6 +150,11 @@ public class TreeManager : MonoBehaviour
 
     private void OnSpringDay(int cycle, int season)
     {
+        foreach (var leaf in _allLeaves)
+        {
+            leaf.hasBudding = false;
+        }
+
         List<LeafData> nextLeaves = TakePercent(
             _allLeaves.FindAll(l => l.hasFallen),
             gameState.life * 100f
@@ -228,8 +236,19 @@ public class TreeManager : MonoBehaviour
     {
         yield return new WaitForSeconds(delay);
 
-        if (leaf.flowerAnimator != null)
-            leaf.flowerAnimator.SetTrigger("Dead");
+        if (leaf.flowerAnimator == null)
+            yield break;
+
+        leaf.flowerAnimator.SetTrigger("Dead");
+
+        AnimatorStateInfo state = leaf.flowerAnimator.GetCurrentAnimatorStateInfo(0);
+        yield return new WaitForSeconds(state.length);
+
+        if (leaf.spawnedFlower != null)
+            Destroy(leaf.spawnedFlower);
+
+        leaf.spawnedFlower = null;
+        leaf.flowerAnimator = null;
     }
 
     private IEnumerator BuddingRoutine(LeafData leaf, float delay)
@@ -237,6 +256,7 @@ public class TreeManager : MonoBehaviour
         yield return new WaitForSeconds(delay);
 
         leaf.hasFallen = false;
+        leaf.hasBudding = true;
 
         leaf.rb.linearVelocity = Vector3.zero;
         leaf.rb.angularVelocity = Vector3.zero;
@@ -253,9 +273,12 @@ public class TreeManager : MonoBehaviour
     {
         yield return new WaitForSeconds(delay);
 
-        if (leaf.gameObject.activeSelf)
-            yield break;
-        if (flowerPrefab == null || leaf.spawnedFlower != null)
+        if (
+            leaf.gameObject.activeSelf
+            || flowerPrefab == null
+            || leaf.spawnedFlower != null
+            || !leaf.hasBudding
+        )
             yield break;
 
         Vector3 pos = GetRandomSpawnPosition();
