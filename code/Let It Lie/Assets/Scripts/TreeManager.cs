@@ -25,6 +25,9 @@ public class TreeManager : MonoBehaviour
     [SerializeField]
     private FlowerZone[] zones;
 
+    [SerializeField]
+    private Material[] flowerColorVariants;
+
     [Header("Worm")]
     [SerializeField]
     private Transform worm;
@@ -198,6 +201,8 @@ public class TreeManager : MonoBehaviour
         return list.GetRange(0, count);
     }
 
+    // PRIVATE METHODS
+
     private Vector3 GetRandomSpawnPosition()
     {
         if (zones.Length == 0)
@@ -205,6 +210,29 @@ public class TreeManager : MonoBehaviour
 
         FlowerZone zone = zones[Random.Range(0, zones.Length)];
         return zone.GetRandomPosition();
+    }
+
+    private void ApplyRandomFlowerMaterial(GameObject flower)
+    {
+        if (flowerColorVariants == null || flowerColorVariants.Length == 0)
+            return;
+
+        var smr = flower.GetComponentInChildren<SkinnedMeshRenderer>();
+        if (smr == null)
+            return;
+
+        Material chosen = flowerColorVariants[Random.Range(0, flowerColorVariants.Length)];
+
+        Material[] mats = smr.sharedMaterials;
+        for (int i = 0; i < mats.Length; i++)
+        {
+            if (mats[i].name.Contains("Flower"))
+            {
+                mats[i] = chosen;
+                break;
+            }
+        }
+        smr.sharedMaterials = mats;
     }
 
     // COROUTINES
@@ -290,6 +318,8 @@ public class TreeManager : MonoBehaviour
         leaf.spawnedFlower = Instantiate(flowerPrefab, pos, rot);
         leaf.spawnedFlower.transform.localScale = scale;
         leaf.flowerAnimator = leaf.spawnedFlower.GetComponent<Animator>();
+
+        ApplyRandomFlowerMaterial(leaf.spawnedFlower);
     }
 
     private IEnumerator MoveWormRoutine()
