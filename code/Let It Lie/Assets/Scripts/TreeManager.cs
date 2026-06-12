@@ -289,9 +289,6 @@ public class TreeManager : MonoBehaviour
 
     private IEnumerator GerminationRoutine(LeafData leaf, float delay)
     {
-        Debug.Log(
-            $"Trying to germinate leaf {leaf.gameObject.name}, prefab: {flowerPrefab}, spawnedFlower: {leaf.spawnedFlower}, hasBudding: {leaf.hasBudding}"
-        );
         yield return new WaitForSeconds(delay);
         if (
             leaf.gameObject.activeSelf
@@ -302,9 +299,15 @@ public class TreeManager : MonoBehaviour
             yield break;
 
         Vector3 pos = GetRandomSpawnPosition();
-        Quaternion rot = Quaternion.Euler(0f, Random.Range(0f, 360f), 0f);
+        Quaternion rot = Quaternion.Euler(
+            Random.Range(-20f, 20f),
+            Random.Range(0f, 360f),
+            Random.Range(-20f, 20f)
+        );
+        Vector3 scale = Vector3.one * Random.Range(0.1f, 0.3f);
 
         leaf.spawnedFlower = Instantiate(flowerPrefab, pos, rot);
+        leaf.spawnedFlower.transform.localScale = scale;
         leaf.flowerAnimator = leaf.spawnedFlower.GetComponent<Animator>();
     }
 }
