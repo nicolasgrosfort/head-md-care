@@ -11,12 +11,15 @@ public class WindManager : MonoBehaviour
     [Header("Wind")]
     [SerializeField]
     private float windOrigin = 60f;
-    public float windDuration = 0.6f;
+    public float windDuration = 2f;
     public float windForce = 100f;
     public float windVariation = 20f;
     public float maxDepth = 200f;
     public float maxDistance = 10f;
     public LayerMask layerMask = ~0;
+
+    [SerializeField]
+    private ParticleSystem windParticleSystem;
 
     public string gameTag = "Leaf";
     private GameObject[] gameLeaves;
@@ -67,6 +70,9 @@ public class WindManager : MonoBehaviour
         Vector3 origin = ray.origin + ray.direction * windOrigin;
         Vector3 direction = ray.direction;
 
+        windParticleSystem.gameObject.SetActive(true);
+        windParticleSystem.transform.position = origin;
+
         Debug.DrawRay(origin, direction * maxDepth, Color.red, 5f);
 
         float timeElapsed = 0f;
@@ -75,6 +81,8 @@ public class WindManager : MonoBehaviour
         {
             float t = timeElapsed / windDuration;
             float intensity = 1f - t;
+
+            windParticleSystem.transform.localScale = new Vector3(0.2f, 0.2f, 0.2f) * intensity;
 
             foreach (GameObject leaf in gameLeaves)
             {
@@ -136,6 +144,7 @@ public class WindManager : MonoBehaviour
 
         Debug.Log($"gameLeaves length: {gameLeaves.Length}");
 
+        windParticleSystem.gameObject.SetActive(false);
         yield return null;
     }
 }
