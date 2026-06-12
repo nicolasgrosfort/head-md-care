@@ -25,25 +25,31 @@ public class TreeManager : MonoBehaviour
     [SerializeField]
     private GameObject flowerPrefab;
 
+    [SerializeField]
+    private FlowerZone[] zones;
+
+    [Header("Wind")]
+    [SerializeField]
+    private WindManager windManager;
+
     private class LeafData
     {
         public GameObject gameObject;
         public Transform transform;
         public Rigidbody rb;
+        public LeafAerodynamics aerodynamics;
         public Transform initialParent;
         public Vector3 initialLocalPosition;
         public Quaternion initialLocalRotation;
         public Vector3 initialScale;
         public GameObject spawnedFlower;
         public Animator flowerAnimator;
-        public bool hasFallen;
+
+        public bool hasFallen = false;
+        public bool hasBudding = true;
     }
 
     private List<LeafData> _allLeaves = new();
-
-    private void OnEnable() => gameState.OnDayNightChange += HandleDayNightChange;
-
-    private void OnDisable() => gameState.OnDayNightChange -= HandleDayNightChange;
 
     private void Awake()
     {
@@ -57,90 +63,92 @@ public class TreeManager : MonoBehaviour
                 rb = child.gameObject.AddComponent<Rigidbody>();
 
             rb.isKinematic = true;
-            rb.mass = 0.01f;
-            rb.linearDamping = 3f;
-            rb.angularDamping = 0.5f;
+            rb.mass = 0.001f;
+            rb.linearDamping = 5f;
 
-            if (!child.GetComponent<Collider>())
-                child.gameObject.AddComponent<BoxCollider>();
+            MeshCollider mc = child.GetComponent<MeshCollider>();
+            if (mc == null)
+                mc = child.gameObject.AddComponent<MeshCollider>();
+
+            mc.convex = true;
 
             Renderer rend = child.GetComponent<Renderer>();
             if (rend != null && leafMaterial != null)
                 rend.sharedMaterial = leafMaterial;
 
-            _allLeaves.Add(
-                new LeafData
-                {
-                    gameObject = child.gameObject,
-                    transform = child,
-                    rb = rb,
-                    initialParent = child.parent,
-                    initialLocalPosition = child.localPosition,
-                    initialLocalRotation = child.localRotation,
-                    initialScale = child.localScale,
-                }
-            );
+            var leaf = new LeafData
+            {
+                gameObject = child.gameObject,
+                transform = child,
+                rb = rb,
+                initialParent = child.parent,
+                initialLocalPosition = child.localPosition,
+                initialLocalRotation = child.localRotation,
+                initialScale = child.localScale,
+            };
+
+            _allLeaves.Add(leaf);
         }
     }
 
-    // ─── Saisons ──────────────────────────────────────────────────────────────
-
-    private void HandleDayNightChange(int dayNight, int season)
+    private void OnEnable()
     {
-        switch (season)
-        {
-            case 0:
-                OnSpring(dayNight);
-                break;
-            case 1:
-                OnSummer(dayNight);
-                break;
-            case 2:
-                OnFall(dayNight);
-                break;
-            case 3:
-                OnWinter(dayNight);
-                break;
-        }
+        gameState.OnFallNight += OnFallNight;
+        gameState.OnFallDay += OnFallDay;
+        gameState.OnSpringNight += OnSpringNight;
+        gameState.OnSpringDay += OnSpringDay;
+        gameState.OnSummerNight += OnSummerNight;
+        gameState.OnSummerDay += OnSummerDay;
+        gameState.OnWinterNight += OnWinterNight;
+        gameState.OnWinterDay += OnWinterDay;
+
+        gameState.OnClick += OnClick;
     }
 
-    private void OnSpring(int dayNight)
+    private void OnDisable()
     {
-        if (dayNight == 0)
+        gameState.OnFallNight -= OnFallNight;
+        gameState.OnFallDay -= OnFallDay;
+        gameState.OnSpringNight -= OnSpringNight;
+        gameState.OnSpringDay -= OnSpringDay;
+        gameState.OnSummerNight -= OnSummerNight;
+        gameState.OnSummerDay -= OnSummerDay;
+        gameState.OnWinterNight -= OnWinterNight;
+        gameState.OnWinterDay -= OnWinterDay;
+
+        gameState.OnClick -= OnClick;
+    }
+
+    private void OnClick(Vector2 screenPos)
+    {
+        if (windManager == null)
             return;
 
-        List<LeafData> fallenLeaves = _allLeaves.FindAll(l => l.hasFallen);
+        Ray ray = Camera.main.ScreenPointToRay(screenPos);
 
-        for (int i = fallenLeaves.Count - 1; i > 0; i--)
-        {
-            int j = Random.Range(0, i + 1);
-            (fallenLeaves[i], fallenLeaves[j]) = (fallenLeaves[j], fallenLeaves[i]);
-        }
-
-        int toRegrow = Mathf.RoundToInt(fallenLeaves.Count * gameState.life);
-
-        for (int i = 0; i < fallenLeaves.Count; i++)
-        {
-            bool shouldGrow = i < toRegrow;
-            StartCoroutine(SpringRoutine(fallenLeaves[i], Random.Range(0f, 5f), shouldGrow));
-        }
-    }
-
-    private void OnSummer(int dayNight)
-    {
-        if (dayNight == 0)
+        // Plan horizontal à hauteur fixe (ex: hauteur moyenne des feuilles)
+        Plane horizontal = new Plane(
+            Vector3.up,
+            new Vector3(0f, windManager.windPlane.position.y, 0f)
+        );
+        if (!horizontal.Raycast(ray, out float enter))
             return;
 
-        foreach (var leaf in _allLeaves)
-            if (leaf.flowerAnimator != null)
-                StartCoroutine(KillFlowerRoutine(leaf, Random.Range(0f, 5f)));
+        Vector3 clickPoint = ray.GetPoint(enter);
+
+        Vector3 direction = ray.direction;
+        direction.y = 0f;
+        windManager.windDirection = direction.normalized;
+
+        var rbs = _allLeaves
+            .FindAll(l => l.hasFallen && l.gameObject.activeSelf)
+            .ConvertAll(l => l.rb);
+
+        windManager.TriggerGust(rbs, windManager.windPlane, clickPoint);
     }
 
-    private void OnFall(int dayNight)
+    private void OnFallNight(int cycle, int season)
     {
-        if (dayNight == 0)
-            return;
-
         foreach (var leaf in _allLeaves)
         {
             if (!leaf.gameObject.activeSelf)
@@ -149,96 +157,104 @@ public class TreeManager : MonoBehaviour
         }
     }
 
-    private void OnWinter(int dayNight)
-    {
-        if (dayNight == gameState.Day)
-            return;
+    private void OnFallDay(int cycle, int season) { }
 
+    private void OnWinterNight(int cycle, int season)
+    {
         foreach (var leaf in _allLeaves)
         {
-            if (!leaf.gameObject.activeSelf)
+            if (!leaf.hasFallen || !leaf.gameObject.activeSelf)
                 continue;
-            StartCoroutine(ShrinkRoutine(leaf, Random.Range(fallDelayMin, fallDelayMax)));
+
+            StartCoroutine(HumificationRoutine(leaf, Random.Range(0f, 3f)));
         }
+        return;
     }
 
-    // ─── Fleurs ───────────────────────────────────────────────────────────────
+    private void OnWinterDay(int cycle, int season) { }
 
-    private void SpawnFlower(LeafData leaf)
+    private void OnSpringNight(int cycle, int season)
     {
-        if (flowerPrefab == null)
-            return;
-        if (leaf.spawnedFlower != null)
-            return;
+        List<LeafData> fallenLeaves = Shuffle(_allLeaves.FindAll(l => l.hasFallen && l.hasBudding));
 
-        Vector3 pos = leaf.transform.position;
-        Quaternion rot = leaf.transform.rotation;
+        Debug.Log($"Spring Night: {fallenLeaves.Count} fallen leaves can potentially bud.");
 
-        if (
-            Physics.Raycast(
-                leaf.transform.position + Vector3.up * 0.1f,
-                Vector3.down,
-                out RaycastHit hit,
-                0.5f
-            )
-        )
+        for (int i = 0; i < fallenLeaves.Count; i++)
         {
-            rot = Quaternion.FromToRotation(Vector3.up, hit.normal);
-            pos = hit.point;
+            StartCoroutine(GerminationRoutine(fallenLeaves[i], Random.Range(0f, 5f)));
         }
-
-        leaf.spawnedFlower = Instantiate(flowerPrefab, pos, rot);
-        leaf.flowerAnimator = leaf.spawnedFlower.GetComponent<Animator>();
-        leaf.gameObject.SetActive(false);
     }
 
-    // ─── Coroutines ───────────────────────────────────────────────────────────
-
-    private IEnumerator GrowRoutine(LeafData leaf)
+    private void OnSpringDay(int cycle, int season)
     {
-        float duration = Random.Range(2f, 5f);
-        float elapsed = 0f;
-        leaf.transform.localScale = Vector3.zero;
-
-        while (elapsed < duration)
+        foreach (var leaf in _allLeaves)
         {
-            elapsed += Time.deltaTime;
-            leaf.transform.localScale = Vector3.Lerp(
-                Vector3.zero,
-                leaf.initialScale,
-                Mathf.SmoothStep(0f, 1f, elapsed / duration)
-            );
-            yield return null;
+            leaf.hasBudding = false;
         }
 
-        leaf.transform.localScale = leaf.initialScale;
+        List<LeafData> nextLeaves = TakePercent(
+            _allLeaves.FindAll(l => l.hasFallen),
+            gameState.life * 100f
+        );
+
+        for (int i = 0; i < nextLeaves.Count; i++)
+        {
+            StartCoroutine(BuddingRoutine(nextLeaves[i], Random.Range(0f, 5f)));
+        }
     }
 
-    private IEnumerator ShrinkRoutine(LeafData leaf, float delay)
+    private void OnSummerNight(int cycle, int season) { }
+
+    private void OnSummerDay(int cycle, int season)
+    {
+        foreach (var leaf in _allLeaves)
+            if (leaf.flowerAnimator != null)
+                StartCoroutine(WitherRoutine(leaf, Random.Range(0f, 5f)));
+    }
+
+    // UTILS
+
+    private List<T> Shuffle<T>(List<T> list)
+    {
+        for (int i = list.Count - 1; i > 0; i--)
+        {
+            int j = Random.Range(0, i + 1);
+
+            (list[i], list[j]) = (list[j], list[i]);
+        }
+
+        return list;
+    }
+
+    public List<T> TakePercent<T>(List<T> list, float percent, bool random = true)
+    {
+        if (random)
+            list = Shuffle(list);
+
+        int count = Mathf.CeilToInt(list.Count * percent / 100f);
+
+        return list.GetRange(0, count);
+    }
+
+    private Vector3 GetRandomSpawnPosition()
+    {
+        if (zones.Length == 0)
+            return Vector3.zero;
+
+        FlowerZone zone = zones[Random.Range(0, zones.Length)];
+        return zone.GetRandomPosition();
+    }
+
+    // COROUTINES
+
+    private IEnumerator HumificationRoutine(LeafData leaf, float delay)
     {
         yield return new WaitForSeconds(delay);
 
         if (!leaf.gameObject.activeSelf)
             yield break;
 
-        float duration = 2f;
-        float elapsed = 0f;
-        Vector3 startScale = leaf.transform.localScale;
-
-        while (elapsed < duration)
-        {
-            elapsed += Time.deltaTime;
-            leaf.transform.localScale = Vector3.Lerp(
-                startScale,
-                Vector3.zero,
-                Mathf.SmoothStep(0f, 1f, elapsed / duration)
-            );
-            yield return null;
-        }
-
-        leaf.transform.localScale = Vector3.zero;
         leaf.gameObject.SetActive(false);
-        leaf.transform.localScale = leaf.initialScale; // reset pour le prochain printemps
     }
 
     private IEnumerator FallRoutine(LeafData leaf, float delay)
@@ -246,48 +262,66 @@ public class TreeManager : MonoBehaviour
         yield return new WaitForSeconds(delay);
 
         if (!leaf.gameObject.activeSelf)
-            yield break; // peut avoir été désactivée entre-temps
+            yield break;
 
         leaf.hasFallen = true;
         leaf.transform.SetParent(null);
         leaf.rb.isKinematic = false;
-
-        Vector3 force = new Vector3(
-            Random.Range(-0.3f, 0.3f),
-            Random.Range(-0.1f, 0f),
-            Random.Range(-0.3f, 0.3f)
-        );
-        leaf.rb.AddForce(force, ForceMode.Impulse);
-        leaf.rb.AddTorque(Random.insideUnitSphere * 0.3f, ForceMode.Impulse);
     }
 
-    private IEnumerator KillFlowerRoutine(LeafData leaf, float delay)
+    private IEnumerator WitherRoutine(LeafData leaf, float delay)
     {
         yield return new WaitForSeconds(delay);
 
-        if (leaf.flowerAnimator != null)
-            leaf.flowerAnimator.SetTrigger("Dead");
+        if (leaf.flowerAnimator == null)
+            yield break;
+
+        leaf.flowerAnimator.SetTrigger("Dead");
+
+        AnimatorStateInfo state = leaf.flowerAnimator.GetCurrentAnimatorStateInfo(0);
+        yield return new WaitForSeconds(state.length);
+
+        if (leaf.spawnedFlower != null)
+            Destroy(leaf.spawnedFlower);
+
+        leaf.spawnedFlower = null;
+        leaf.flowerAnimator = null;
     }
 
-    private IEnumerator SpringRoutine(LeafData leaf, float delay, bool shouldGrow)
+    private IEnumerator BuddingRoutine(LeafData leaf, float delay)
     {
         yield return new WaitForSeconds(delay);
 
-        if (shouldGrow)
-        {
-            // Repousse la feuille
-            leaf.hasFallen = false;
-            leaf.rb.isKinematic = true;
-            leaf.transform.SetParent(leaf.initialParent);
-            leaf.transform.localPosition = leaf.initialLocalPosition;
-            leaf.transform.localRotation = leaf.initialLocalRotation;
-            leaf.gameObject.SetActive(true);
-            StartCoroutine(GrowRoutine(leaf));
-        }
-        else
-        {
-            // Pas de repousse → fleur à la place
-            SpawnFlower(leaf);
-        }
+        leaf.hasFallen = false;
+        leaf.hasBudding = true;
+
+        leaf.rb.linearVelocity = Vector3.zero;
+        leaf.rb.angularVelocity = Vector3.zero;
+        leaf.rb.isKinematic = true;
+
+        leaf.transform.SetParent(leaf.initialParent);
+        leaf.transform.localPosition = leaf.initialLocalPosition;
+        leaf.transform.localRotation = leaf.initialLocalRotation;
+
+        leaf.gameObject.SetActive(true);
+    }
+
+    private IEnumerator GerminationRoutine(LeafData leaf, float delay)
+    {
+        yield return new WaitForSeconds(delay);
+
+        if (
+            leaf.gameObject.activeSelf
+            || flowerPrefab == null
+            || leaf.spawnedFlower != null
+            || !leaf.hasBudding
+        )
+            yield break;
+
+        Vector3 pos = GetRandomSpawnPosition();
+        Quaternion rot = Quaternion.Euler(0f, Random.Range(0f, 360f), 0f);
+
+        leaf.spawnedFlower = Instantiate(flowerPrefab, pos, rot);
+        leaf.flowerAnimator = leaf.spawnedFlower.GetComponent<Animator>();
     }
 }
