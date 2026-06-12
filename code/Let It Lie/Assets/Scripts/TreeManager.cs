@@ -35,6 +35,10 @@ public class TreeManager : MonoBehaviour
     [SerializeField]
     private float wormMoveDuration = 3f;
 
+    [Header("Butterfly")]
+    [SerializeField]
+    private GameObject butterflyPrefab;
+
     private class LeafData
     {
         public GameObject gameObject;
@@ -116,7 +120,10 @@ public class TreeManager : MonoBehaviour
         }
     }
 
-    private void OnFallDay(int cycle, int season) { }
+    private void OnFallDay(int cycle, int season)
+    {
+        butterflyPrefab.SetActive(false);
+    }
 
     private void OnWinterNight(int cycle, int season)
     {
@@ -166,6 +173,8 @@ public class TreeManager : MonoBehaviour
         {
             StartCoroutine(BuddingRoutine(nextLeaves[i], Random.Range(0f, 5f)));
         }
+
+        butterflyPrefab.SetActive(true);
     }
 
     private void OnSummerNight(int cycle, int season) { }
