@@ -18,9 +18,6 @@ public class TreeManager : MonoBehaviour
     [SerializeField]
     private float fallDelayMax = 3f;
 
-    [SerializeField]
-    private Material leafMaterial;
-
     [Header("Flower")]
     [SerializeField]
     private GameObject flowerPrefab;
@@ -38,8 +35,8 @@ public class TreeManager : MonoBehaviour
         public Transform transform;
         public Rigidbody rb;
         public LeafAerodynamics aerodynamics;
-        public Transform initialParent;
         public Vector3 initialLocalPosition;
+        public Transform initialParent;
         public Quaternion initialLocalRotation;
         public Vector3 initialScale;
         public GameObject spawnedFlower;
@@ -58,30 +55,12 @@ public class TreeManager : MonoBehaviour
             if (!child.name.StartsWith(leafPrefix))
                 continue;
 
-            Rigidbody rb = child.GetComponent<Rigidbody>();
-            if (rb == null)
-                rb = child.gameObject.AddComponent<Rigidbody>();
-
-            rb.isKinematic = false;
-            // rb.mass = 0.001f;
-            // rb.linearDamping = 5f;
-
-            MeshCollider mc = child.GetComponent<MeshCollider>();
-            if (mc == null)
-                mc = child.gameObject.AddComponent<MeshCollider>();
-
-            mc.convex = true;
-
-            Renderer rend = child.GetComponent<Renderer>();
-            if (rend != null && leafMaterial != null)
-                rend.sharedMaterial = leafMaterial;
-
             var leaf = new LeafData
             {
                 gameObject = child.gameObject,
                 transform = child,
-                rb = rb,
                 initialParent = child.parent,
+                rb = child.GetComponent<Rigidbody>(),
                 initialLocalPosition = child.localPosition,
                 initialLocalRotation = child.localRotation,
                 initialScale = child.localScale,
@@ -121,30 +100,30 @@ public class TreeManager : MonoBehaviour
 
     private void OnClick(Vector2 screenPos)
     {
-        if (windManager == null)
-            return;
+        // if (windManager == null)
+        //     return;
 
-        Ray ray = Camera.main.ScreenPointToRay(screenPos);
+        // Ray ray = Camera.main.ScreenPointToRay(screenPos);
 
-        // Plan horizontal à hauteur fixe (ex: hauteur moyenne des feuilles)
-        Plane horizontal = new Plane(
-            Vector3.up,
-            new Vector3(0f, windManager.windPlane.position.y, 0f)
-        );
-        if (!horizontal.Raycast(ray, out float enter))
-            return;
+        // // Plan horizontal à hauteur fixe (ex: hauteur moyenne des feuilles)
+        // Plane horizontal = new Plane(
+        //     Vector3.up,
+        //     new Vector3(0f, windManager.windPlane.position.y, 0f)
+        // );
+        // if (!horizontal.Raycast(ray, out float enter))
+        //     return;
 
-        Vector3 clickPoint = ray.GetPoint(enter);
+        // Vector3 clickPoint = ray.GetPoint(enter);
 
-        Vector3 direction = ray.direction;
-        direction.y = 0f;
-        windManager.windDirection = direction.normalized;
+        // Vector3 direction = ray.direction;
+        // direction.y = 0f;
+        // windManager.windDirection = direction.normalized;
 
-        var rbs = _allLeaves
-            .FindAll(l => l.hasFallen && l.gameObject.activeSelf)
-            .ConvertAll(l => l.rb);
+        // var rbs = _allLeaves
+        //     .FindAll(l => l.hasFallen && l.gameObject.activeSelf)
+        //     .ConvertAll(l => l.rb);
 
-        windManager.TriggerGust(rbs, windManager.windPlane, clickPoint);
+        // windManager.TriggerGust(rbs, windManager.windPlane, clickPoint);
     }
 
     private void OnFallNight(int cycle, int season)
@@ -177,7 +156,9 @@ public class TreeManager : MonoBehaviour
     {
         List<LeafData> fallenLeaves = Shuffle(_allLeaves.FindAll(l => l.hasFallen && l.hasBudding));
 
-        Debug.Log($"Spring Night: {fallenLeaves.Count} fallen leaves can potentially bud.");
+        Debug.Log(
+            $"Spring Night: {fallenLeaves.Count} fallen leaves can potentially bud, all leaves: {_allLeaves.Count}"
+        );
 
         for (int i = 0; i < fallenLeaves.Count; i++)
         {
@@ -265,8 +246,8 @@ public class TreeManager : MonoBehaviour
             yield break;
 
         leaf.hasFallen = true;
-        leaf.transform.SetParent(null);
         leaf.rb.isKinematic = false;
+        leaf.transform.SetParent(null);
     }
 
     private IEnumerator WitherRoutine(LeafData leaf, float delay)
@@ -308,8 +289,10 @@ public class TreeManager : MonoBehaviour
 
     private IEnumerator GerminationRoutine(LeafData leaf, float delay)
     {
+        Debug.Log(
+            $"Trying to germinate leaf {leaf.gameObject.name}, prefab: {flowerPrefab}, spawnedFlower: {leaf.spawnedFlower}, hasBudding: {leaf.hasBudding}"
+        );
         yield return new WaitForSeconds(delay);
-
         if (
             leaf.gameObject.activeSelf
             || flowerPrefab == null

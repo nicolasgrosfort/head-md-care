@@ -20,9 +20,9 @@ MonoBehaviour:
   defaultSeason: 0.25
   time: 0
   defaultTime: 0
-  timeFactor: 0.001
-  timeSpeed: 0.25
-  defaultTimeSpeed: 0.25
+  timeFactor: 0.002
+  timeSpeed: 0.2
+  defaultTimeSpeed: 0.2
   maxTimeSpeed: 1
   minTimeSpeed: 0
   timeSpeedIncrement: 0.5

@@ -18,7 +18,7 @@ public class GameState : ScriptableObject
     [Header("Season")]
     [Tooltip("0 = spring, 0.25 = summer, 0.5 = fall, 0.75 = winter")]
     [Range(0f, 1f)]
-    public float season = 0f;
+    public float season = 0.25f;
     private readonly float seasonCycle = 0.25f;
     private int currentSeason = -1;
 
@@ -34,15 +34,15 @@ public class GameState : ScriptableObject
     public float defaultTime = 0f;
 
     [Range(0.0001f, 0.1f)]
-    public float timeFactor = 0.001f;
+    public float timeFactor = 0.002f;
     private int currentDayNight = -1;
 
     [Header("Speed")]
     [Range(0f, 1f)]
-    public float timeSpeed = 0.25f;
+    public float timeSpeed = 0.2f;
 
     [Range(0f, 1f)]
-    public float defaultTimeSpeed = 0.25f;
+    public float defaultTimeSpeed = 0.2f;
 
     [Range(0f, 1f)]
     public float maxTimeSpeed = 1f;
