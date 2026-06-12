@@ -25,10 +25,6 @@ public class TreeManager : MonoBehaviour
     [SerializeField]
     private FlowerZone[] zones;
 
-    [Header("Wind")]
-    [SerializeField]
-    private WindManager windManager;
-
     [Header("Worm")]
     [SerializeField]
     private Transform worm;
@@ -105,33 +101,7 @@ public class TreeManager : MonoBehaviour
         gameState.OnClick -= OnClick;
     }
 
-    private void OnClick(Vector2 screenPos)
-    {
-        // if (windManager == null)
-        //     return;
-
-        // Ray ray = Camera.main.ScreenPointToRay(screenPos);
-
-        // // Plan horizontal à hauteur fixe (ex: hauteur moyenne des feuilles)
-        // Plane horizontal = new Plane(
-        //     Vector3.up,
-        //     new Vector3(0f, windManager.windPlane.position.y, 0f)
-        // );
-        // if (!horizontal.Raycast(ray, out float enter))
-        //     return;
-
-        // Vector3 clickPoint = ray.GetPoint(enter);
-
-        // Vector3 direction = ray.direction;
-        // direction.y = 0f;
-        // windManager.windDirection = direction.normalized;
-
-        // var rbs = _allLeaves
-        //     .FindAll(l => l.hasFallen && l.gameObject.activeSelf)
-        //     .ConvertAll(l => l.rb);
-
-        // windManager.TriggerGust(rbs, windManager.windPlane, clickPoint);
-    }
+    private void OnClick(Vector2 screenPos) { }
 
     private void OnFallNight(int cycle, int season)
     {
@@ -327,14 +297,13 @@ public class TreeManager : MonoBehaviour
         Vector3 startPos = worm.localPosition;
         Vector3 endPos = startPos;
 
-        startPos.x = -25f;
+        startPos.x = -30f;
         startPos.y = -18f;
         endPos.x = 30f;
         endPos.y = -30f;
 
         worm.localPosition = startPos;
-        worm.localScale = Vector3.one * 0.5f * Mathf.Clamp(gameState.life, 0.5f, 1.2f);
-        // worm.localScale = Vector3.one * 100f;
+        worm.localScale = Vector3.one * 0.5f * Mathf.Clamp(gameState.life, 0.5f, 1.5f);
 
         float elapsed = 0f;
         while (elapsed < wormMoveDuration)

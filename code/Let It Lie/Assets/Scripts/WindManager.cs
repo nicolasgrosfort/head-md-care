@@ -1,59 +1,50 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class WindManager : MonoBehaviour
 {
+    [Header("Game State")]
     [SerializeField]
-    private float windForce = 800f;
+    private GameState gameState;
 
+    [Header("Position du souffle")]
     [SerializeField]
-    private float windDuration = 2f;
+    private Transform pointDeSouffle;
 
-    [SerializeField]
-    public Vector3 windDirection = Vector3.right;
+    public LayerMask layerMask = ~0;
 
-    [SerializeField]
-    public float windRadius = 3f;
+    public float force = 10f;
+    public float dureeImpulsion = 0.5f;
+    public float porteeMax = 200f;
+    public float angleCone = 20f;
 
-    [SerializeField]
-    public Transform windPlane;
+    void OnEnable() => gameState.OnClick += OnClick;
 
-    [SerializeField]
-    public float maxDistance = 5f;
+    void OnDisable() => gameState.OnClick -= OnClick;
 
-    public void TriggerGust(List<Rigidbody> rigidbodies, Transform plane, Vector3 clickPoint)
+    void OnClick(Vector2 screenPos)
     {
-        foreach (var rb in rigidbodies)
-            if (rb != null && !rb.isKinematic)
-                StartCoroutine(ApplyGust(rb, plane, clickPoint));
+        StartCoroutine(Blow(screenPos));
     }
 
-    private IEnumerator ApplyGust(Rigidbody rb, Transform plane, Vector3 clickPoint)
+    IEnumerator Blow(Vector2 screenPos)
     {
-        float elapsed = 0f;
-        while (elapsed < windDuration)
+        Debug.Log("Blow at " + screenPos);
+
+        Ray ray = Camera.main.ScreenPointToRay(screenPos);
+        Debug.Log("Origin: " + ray.origin + " | Direction: " + ray.direction * porteeMax);
+        Debug.DrawRay(ray.origin, ray.direction * porteeMax, Color.red, 5f);
+
+        if (Physics.Raycast(ray, out RaycastHit hit, porteeMax, layerMask))
         {
-            float signedDist = Vector3.Dot(rb.position - plane.position, plane.forward);
-
-            if (signedDist > 0f)
-            {
-                Vector3 flatLeaf = new Vector3(rb.position.x, 0f, rb.position.z);
-                Vector3 flatClick = new Vector3(clickPoint.x, 0f, clickPoint.z);
-                float lateralDist = Vector3.Distance(flatLeaf, flatClick);
-
-                float depthFalloff = Mathf.Clamp01(1f - (signedDist / maxDistance));
-                float lateralFalloff = Mathf.Clamp01(1f - (lateralDist / windRadius));
-
-                // Pas de condition sur lateralFalloff, juste un multiplicateur
-                rb.AddForce(
-                    windDirection * windForce * depthFalloff * lateralFalloff,
-                    ForceMode.Acceleration
-                );
-            }
-
-            elapsed += Time.fixedDeltaTime;
-            yield return new WaitForFixedUpdate();
+            Debug.Log("Hit " + hit.collider.name);
         }
+        else
+        {
+            Debug.Log("No hit");
+            yield break;
+        }
+
+        yield return null;
     }
 }
