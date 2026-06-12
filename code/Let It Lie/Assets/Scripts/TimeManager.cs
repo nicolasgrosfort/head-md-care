@@ -7,12 +7,15 @@ public class TimeManager : MonoBehaviour
     private GameState gameState;
 
     private Coroutine _speedRoutine;
+    private Coroutine _timeRoutine;
 
     private void OnEnable()
     {
         gameState.OnHold += StartAccelerate;
         gameState.OnInteractionEnd += StartDecelerate;
         gameState.OnSpeedChange += UpdateTimeScale;
+
+        _timeRoutine = StartCoroutine(TimeRoutine());
     }
 
     private void OnDisable()
@@ -20,11 +23,9 @@ public class TimeManager : MonoBehaviour
         gameState.OnHold -= StartAccelerate;
         gameState.OnInteractionEnd -= StartDecelerate;
         gameState.OnSpeedChange -= UpdateTimeScale;
-    }
 
-    private void Update()
-    {
-        gameState.IncreaseTime();
+        if (_timeRoutine != null)
+            StopCoroutine(_timeRoutine);
     }
 
     private void StartAccelerate()
@@ -41,11 +42,17 @@ public class TimeManager : MonoBehaviour
         _speedRoutine = StartCoroutine(DecelerateRoutine());
     }
 
+    private void UpdateTimeScale(float speed)
+    {
+        float normalized = Mathf.InverseLerp(gameState.minTimeSpeed, gameState.maxTimeSpeed, speed);
+        Time.timeScale = Mathf.Lerp(1f, gameState.timeScale, normalized);
+    }
+
     private IEnumerator AccelerateRoutine()
     {
         while (true)
         {
-            gameState.IncreaseTimeSpeed();
+            gameState.IncreaseTimeSpeed(Time.unscaledDeltaTime);
             yield return null;
         }
     }
@@ -54,15 +61,18 @@ public class TimeManager : MonoBehaviour
     {
         while (gameState.timeSpeed > gameState.defaultTimeSpeed)
         {
-            gameState.DecreaseTimeSpeed();
+            gameState.DecreaseTimeSpeed(Time.unscaledDeltaTime);
             yield return null;
         }
         _speedRoutine = null;
     }
 
-    private void UpdateTimeScale(float speed)
+    private IEnumerator TimeRoutine()
     {
-        float normalized = Mathf.InverseLerp(gameState.minTimeSpeed, gameState.maxTimeSpeed, speed);
-        Time.timeScale = Mathf.Lerp(1f, gameState.timeScale, normalized);
+        while (true)
+        {
+            gameState.IncreaseTime(Time.unscaledDeltaTime);
+            yield return null;
+        }
     }
 }

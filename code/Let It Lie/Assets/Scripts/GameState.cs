@@ -39,10 +39,10 @@ public class GameState : ScriptableObject
 
     [Header("Speed")]
     [Range(0f, 1f)]
-    public float timeSpeed = 0.01f;
+    public float timeSpeed = 0.25f;
 
     [Range(0f, 1f)]
-    public float defaultTimeSpeed = 0.01f;
+    public float defaultTimeSpeed = 0.25f;
 
     [Range(0f, 1f)]
     public float maxTimeSpeed = 1f;
@@ -51,7 +51,7 @@ public class GameState : ScriptableObject
     public float minTimeSpeed = 0f;
 
     [Range(0f, 1f)]
-    public float timeSpeedIncrement = 0.2f;
+    public float timeSpeedIncrement = 0.5f;
 
     [Range(1f, 10f)]
     public float timeScale = 10f;
@@ -156,40 +156,40 @@ public class GameState : ScriptableObject
         currentDayNight = Mathf.FloorToInt(defaultTime / 0.5f);
     }
 
-    public void IncreaseTime()
+    public void IncreaseTime(float deltaTime)
     {
-        time += timeSpeed * timeFactor;
+        time += timeSpeed * timeFactor * deltaTime * 60f; // *60 pour garder tes valeurs actuelles calibrées sur 60fps
         if (time > 1f)
             time = 0f;
 
-        ChangeSeason();
+        ChangeSeason(deltaTime);
         ChangeDayNight();
-        ChangeLife();
+        ChangeLife(deltaTime);
 
         OnTimeChange?.Invoke(time);
     }
 
-    public void IncreaseTimeSpeed()
+    public void IncreaseTimeSpeed(float deltaTime)
     {
         float t = (timeSpeed - defaultTimeSpeed) / (maxTimeSpeed - defaultTimeSpeed);
-        float increment = timeSpeedIncrement * 0.03f * (2f * t + 0.2f);
+        float increment = timeSpeedIncrement * 0.03f * (2f * t + 0.2f) * deltaTime * 60f;
         timeSpeed = Mathf.Min(timeSpeed + increment, maxTimeSpeed);
         OnSpeedChange?.Invoke(timeSpeed);
     }
 
-    public void DecreaseTimeSpeed()
+    public void DecreaseTimeSpeed(float deltaTime)
     {
         float t = (timeSpeed - defaultTimeSpeed) / (maxTimeSpeed - defaultTimeSpeed);
-        float increment = timeSpeedIncrement * 0.04f * (2f * t + 0.05f);
+        float increment = timeSpeedIncrement * 0.04f * (2f * t + 0.05f) * deltaTime * 60f;
         timeSpeed = Mathf.Max(timeSpeed - increment, minTimeSpeed);
         OnSpeedChange?.Invoke(timeSpeed);
     }
 
     /* PRIVATE METHODS */
 
-    private void ChangeLife()
+    private void ChangeLife(float deltaTime)
     {
-        life += LifeChange;
+        life += LifeChange * deltaTime * 60f;
         if (life > 1f)
             life = 1f;
         else if (life < 0f)
@@ -198,9 +198,9 @@ public class GameState : ScriptableObject
         OnLifeChange?.Invoke(LifeChange);
     }
 
-    private void ChangeSeason()
+    private void ChangeSeason(float deltaTime)
     {
-        season += timeSpeed * timeFactor * seasonCycle;
+        season += timeSpeed * timeFactor * seasonCycle * deltaTime * 60f;
         if (season >= 1f)
             season = 0f;
     }

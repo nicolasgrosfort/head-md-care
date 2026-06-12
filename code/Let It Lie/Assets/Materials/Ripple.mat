@@ -34,10 +34,10 @@ Material:
     - _RingWidth: 0.06
     - _Speed: 2
     - _Strength: 0
-    - _Time2: 6.004654
+    - _Time2: 8.824958
     - _WaveFront: 0
     - _WaveWidth: 0
     m_Colors:
-    - _Center: {r: 0.5714286, g: 0.5895865, b: 0, a: 0}
+    - _Center: {r: 0.58170515, g: 0.5169887, b: 0, a: 0}
   m_BuildTextureStacks: []
   m_AllowLocking: 1
