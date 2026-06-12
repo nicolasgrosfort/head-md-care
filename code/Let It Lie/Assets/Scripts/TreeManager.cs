@@ -29,6 +29,13 @@ public class TreeManager : MonoBehaviour
     [SerializeField]
     private WindManager windManager;
 
+    [Header("Worm")]
+    [SerializeField]
+    private Transform worm;
+
+    [SerializeField]
+    private float wormMoveDuration = 3f;
+
     private class LeafData
     {
         public GameObject gameObject;
@@ -150,7 +157,11 @@ public class TreeManager : MonoBehaviour
         return;
     }
 
-    private void OnWinterDay(int cycle, int season) { }
+    private void OnWinterDay(int cycle, int season)
+    {
+        if (worm != null)
+            StartCoroutine(MoveWormRoutine());
+    }
 
     private void OnSpringNight(int cycle, int season)
     {
@@ -309,5 +320,31 @@ public class TreeManager : MonoBehaviour
         leaf.spawnedFlower = Instantiate(flowerPrefab, pos, rot);
         leaf.spawnedFlower.transform.localScale = scale;
         leaf.flowerAnimator = leaf.spawnedFlower.GetComponent<Animator>();
+    }
+
+    private IEnumerator MoveWormRoutine()
+    {
+        Vector3 startPos = worm.localPosition;
+        Vector3 endPos = startPos;
+
+        startPos.x = -25f;
+        startPos.y = -18f;
+        endPos.x = 30f;
+        endPos.y = -30f;
+
+        worm.localPosition = startPos;
+        worm.localScale = Vector3.one * 0.5f * Mathf.Clamp(gameState.life, 0.5f, 1.2f);
+        // worm.localScale = Vector3.one * 100f;
+
+        float elapsed = 0f;
+        while (elapsed < wormMoveDuration)
+        {
+            elapsed += Time.deltaTime;
+            float t = Mathf.Clamp01(elapsed / wormMoveDuration);
+            worm.localPosition = Vector3.Lerp(startPos, endPos, t);
+            yield return null;
+        }
+
+        worm.localPosition = endPos;
     }
 }
