@@ -76,8 +76,8 @@ public class GameState : ScriptableObject
     public event Action<int> OnSeasonChange;
     public event Action<float> OnSpeedChange;
     public event Action<Vector2> OnClick;
-    public event Action OnHold;
-    public event Action OnDrag;
+    public event Action<Vector2> OnHold;
+    public event Action<Vector2> OnDrag;
     public event Action OnInteractionEnd;
     public event Action<InteractionType> OnInteractionChange;
     public event Action<int, int> OnSpringNight;
@@ -135,10 +135,10 @@ public class GameState : ScriptableObject
                 OnClick?.Invoke(screenPos);
                 break;
             case InteractionType.Hold:
-                OnHold?.Invoke();
+                OnHold?.Invoke(screenPos);
                 break;
             case InteractionType.Drag:
-                OnDrag?.Invoke();
+                OnDrag?.Invoke(screenPos);
                 break;
             case InteractionType.None:
                 OnInteractionEnd?.Invoke();

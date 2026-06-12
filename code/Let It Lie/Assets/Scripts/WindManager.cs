@@ -7,22 +7,34 @@ public class WindManager : MonoBehaviour
     [SerializeField]
     private GameState gameState;
 
-    [Header("Position du souffle")]
+    [Header("Wind")]
     [SerializeField]
-    private Transform pointDeSouffle;
-
+    private float windOrigin = 60f;
+    public float maxDepth = 200f;
     public LayerMask layerMask = ~0;
 
-    public float force = 10f;
-    public float dureeImpulsion = 0.5f;
-    public float porteeMax = 200f;
-    public float angleCone = 20f;
+    // public float force = 10f;
+    // public float dureeImpulsion = 0.5f;
+    // public float angleCone = 20f;
 
-    void OnEnable() => gameState.OnClick += OnClick;
+    void OnEnable()
+    {
+        gameState.OnClick += OnClick;
+        gameState.OnDrag += OnDrag;
+    }
 
-    void OnDisable() => gameState.OnClick -= OnClick;
+    void OnDisable()
+    {
+        gameState.OnClick -= OnClick;
+        gameState.OnDrag -= OnDrag;
+    }
 
     void OnClick(Vector2 screenPos)
+    {
+        StartCoroutine(Blow(screenPos));
+    }
+
+    void OnDrag(Vector2 screenPos)
     {
         StartCoroutine(Blow(screenPos));
     }
@@ -30,12 +42,16 @@ public class WindManager : MonoBehaviour
     IEnumerator Blow(Vector2 screenPos)
     {
         Ray ray = Camera.main.ScreenPointToRay(screenPos);
+        Vector3 shiftedOrigin = ray.origin + ray.direction * windOrigin;
 
-        Debug.DrawRay(ray.origin, ray.direction * porteeMax, Color.red, 5f);
-
-        if (Physics.Raycast(ray, out RaycastHit hit, porteeMax, layerMask))
+        if (Physics.Raycast(shiftedOrigin, ray.direction, out RaycastHit hit, maxDepth, layerMask))
         {
             Debug.Log("Hit " + hit.collider.name);
+            Debug.DrawRay(shiftedOrigin, ray.direction * maxDepth, Color.green, 5f);
+        }
+        else
+        {
+            Debug.DrawRay(shiftedOrigin, ray.direction * maxDepth, Color.red, 5f);
         }
 
         yield return null;

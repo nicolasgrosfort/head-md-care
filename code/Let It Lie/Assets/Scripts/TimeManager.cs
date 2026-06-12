@@ -28,7 +28,7 @@ public class TimeManager : MonoBehaviour
             StopCoroutine(_timeRoutine);
     }
 
-    private void StartAccelerate()
+    private void StartAccelerate(Vector2 screenPos)
     {
         if (_speedRoutine != null)
             StopCoroutine(_speedRoutine);

@@ -24,7 +24,7 @@ public class InteractionManager
     public void OnPointerDown(PointerEventData eventData)
     {
         _pointerDownTime = Time.time;
-        _holdRoutine = StartCoroutine(HoldRoutine());
+        _holdRoutine = StartCoroutine(HoldRoutine(eventData));
     }
 
     public void OnDrag(PointerEventData eventData)
@@ -54,10 +54,10 @@ public class InteractionManager
         gameState.SetInteraction(GameState.InteractionType.None, eventData.position);
     }
 
-    private IEnumerator HoldRoutine()
+    private IEnumerator HoldRoutine(PointerEventData eventData)
     {
         yield return new WaitForSeconds(holdThreshold);
-        gameState.SetInteraction(GameState.InteractionType.Hold);
+        gameState.SetInteraction(GameState.InteractionType.Hold, eventData.position);
     }
 
     private void StopHoldRoutine()
