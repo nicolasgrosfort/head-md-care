@@ -71,8 +71,8 @@ crashlytics-build.properties
 ### Package Manager Dependencies ###
 # ✨ OPTIMISÉ : Ignore TOUTES les dépendances sauf les fichiers de lock
 **/code/**/Packages/*
-!Packages/manifest.json
-!Packages/packages-lock.json
+!**/code/**/Packages/manifest.json
+!**/code/**/Packages/packages-lock.json
 
 # IDEs spécifiques
 .idea/
