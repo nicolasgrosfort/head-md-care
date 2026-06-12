@@ -29,20 +29,13 @@ public class WindManager : MonoBehaviour
 
     IEnumerator Blow(Vector2 screenPos)
     {
-        Debug.Log("Blow at " + screenPos);
-
         Ray ray = Camera.main.ScreenPointToRay(screenPos);
-        Debug.Log("Origin: " + ray.origin + " | Direction: " + ray.direction * porteeMax);
+
         Debug.DrawRay(ray.origin, ray.direction * porteeMax, Color.red, 5f);
 
         if (Physics.Raycast(ray, out RaycastHit hit, porteeMax, layerMask))
         {
             Debug.Log("Hit " + hit.collider.name);
-        }
-        else
-        {
-            Debug.Log("No hit");
-            yield break;
         }
 
         yield return null;
