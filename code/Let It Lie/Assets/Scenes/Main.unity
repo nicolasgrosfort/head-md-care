@@ -2408,7 +2408,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   gameState: {fileID: 11400000, guid: bff1d43fc4e1244ff89e8eb800ecae34, type: 2}
-  holdThreshold: 0.3
+  holdThreshold: 0.2
   dragThreshold: 10
 --- !u!1001 &1976252130643660029
 PrefabInstance:
@@ -2498,6 +2498,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 177597682}
     m_Modifications:
+    - target: {fileID: 231769708850201625, guid: b4720e4c69b0347018402423a08bb572, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 0488e9a8a65df45be8f377f2bd00c47c, type: 2}
     - target: {fileID: 4564577546436457277, guid: b4720e4c69b0347018402423a08bb572, type: 3}
       propertyPath: flowerPrefab
       value: 
