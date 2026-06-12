@@ -285,7 +285,7 @@ public class TreeManager : MonoBehaviour
             Random.Range(0f, 360f),
             Random.Range(-20f, 20f)
         );
-        Vector3 scale = Vector3.one * Random.Range(4f, 6f);
+        Vector3 scale = Vector3.one * Random.Range(12f, 18f);
 
         leaf.spawnedFlower = Instantiate(flowerPrefab, pos, rot);
         leaf.spawnedFlower.transform.localScale = scale;
