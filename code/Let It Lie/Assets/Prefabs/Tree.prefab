@@ -103,4 +103,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::TreeManager
   gameState: {fileID: 11400000, guid: bff1d43fc4e1244ff89e8eb800ecae34, type: 2}
   leafPrefix: Leaf.
+  fallDelayMin: 0
+  fallDelayMax: 3
+  leafMaterial: {fileID: 0}
   flowerPrefab: {fileID: 440452780328071791, guid: b5ddca80235e04bc592cec82371d4b39, type: 3}
+  zones: []
+  windManager: {fileID: 0}

@@ -62,9 +62,9 @@ public class TreeManager : MonoBehaviour
             if (rb == null)
                 rb = child.gameObject.AddComponent<Rigidbody>();
 
-            rb.isKinematic = true;
-            rb.mass = 0.001f;
-            rb.linearDamping = 5f;
+            rb.isKinematic = false;
+            // rb.mass = 0.001f;
+            // rb.linearDamping = 5f;
 
             MeshCollider mc = child.GetComponent<MeshCollider>();
             if (mc == null)
