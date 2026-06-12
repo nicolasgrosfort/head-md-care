@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class TreeManager : MonoBehaviour
 {
@@ -108,7 +109,7 @@ public class TreeManager : MonoBehaviour
         gameState.OnClick -= OnClick;
     }
 
-    private void OnClick(Vector2 screenPos) { }
+    private void OnClick(PointerEventData eventData) { }
 
     private void OnFallNight(int cycle, int season)
     {

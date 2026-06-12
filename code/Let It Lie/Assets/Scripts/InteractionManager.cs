@@ -29,10 +29,13 @@ public class InteractionManager
 
     public void OnDrag(PointerEventData eventData)
     {
-        if (eventData.delta.magnitude > dragThreshold)
+        if (
+            eventData.delta.magnitude > dragThreshold
+            && gameState.CurrentInteraction != GameState.InteractionType.Hold
+        )
         {
             StopHoldRoutine();
-            gameState.SetInteraction(GameState.InteractionType.Drag, eventData.position);
+            gameState.SetInteraction(GameState.InteractionType.Drag, eventData);
         }
     }
 
@@ -42,22 +45,22 @@ public class InteractionManager
 
         if (gameState.CurrentInteraction == GameState.InteractionType.Drag)
         {
-            gameState.SetInteraction(GameState.InteractionType.None, eventData.position);
+            gameState.SetInteraction(GameState.InteractionType.None, eventData);
             return;
         }
 
         if (gameState.CurrentInteraction != GameState.InteractionType.Hold)
         {
-            gameState.SetInteraction(GameState.InteractionType.Click, eventData.position);
+            gameState.SetInteraction(GameState.InteractionType.Click, eventData);
         }
 
-        gameState.SetInteraction(GameState.InteractionType.None, eventData.position);
+        gameState.SetInteraction(GameState.InteractionType.None, eventData);
     }
 
     private IEnumerator HoldRoutine(PointerEventData eventData)
     {
         yield return new WaitForSeconds(holdThreshold);
-        gameState.SetInteraction(GameState.InteractionType.Hold, eventData.position);
+        gameState.SetInteraction(GameState.InteractionType.Hold, eventData);
     }
 
     private void StopHoldRoutine()

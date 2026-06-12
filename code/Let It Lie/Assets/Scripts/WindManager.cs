@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class WindManager : MonoBehaviour
 {
@@ -10,20 +11,21 @@ public class WindManager : MonoBehaviour
     [Header("Wind")]
     [SerializeField]
     private float windOrigin = 60f;
-    public float windDuration = 10f;
+    public float windDuration = 0.6f;
+    public float windForce = 100f;
+    public float windVariation = 20f;
     public float maxDepth = 200f;
-    public float mayDistance = 20f;
+    public float maxDistance = 10f;
     public LayerMask layerMask = ~0;
+
+    public string gameTag = "Leaf";
     private GameObject[] gameLeaves;
 
     private Coroutine blowCoroutine;
 
-    // public float force = 10f;
-    // public float dureeImpulsion = 0.5f;
-
     void Awake()
     {
-        gameLeaves = GameObject.FindGameObjectsWithTag("Leaf");
+        gameLeaves = GameObject.FindGameObjectsWithTag(gameTag);
         Debug.Log("Found " + gameLeaves.Length + " leaves.");
     }
 
@@ -39,29 +41,29 @@ public class WindManager : MonoBehaviour
         gameState.OnDrag -= OnDrag;
     }
 
-    void OnClick(Vector2 screenPos)
+    void OnClick(PointerEventData eventData)
     {
-        HandleBlow(screenPos);
+        HandleBlow(eventData);
     }
 
-    void OnDrag(Vector2 screenPos)
+    void OnDrag(PointerEventData eventData)
     {
-        HandleBlow(screenPos);
+        HandleBlow(eventData);
     }
 
-    private void HandleBlow(Vector2 screenPos)
+    private void HandleBlow(PointerEventData eventData)
     {
         if (blowCoroutine != null)
         {
             StopCoroutine(blowCoroutine);
         }
 
-        blowCoroutine = StartCoroutine(Blow(screenPos));
+        blowCoroutine = StartCoroutine(Blow(eventData));
     }
 
-    IEnumerator Blow(Vector2 screenPos)
+    IEnumerator Blow(PointerEventData eventData)
     {
-        Ray ray = Camera.main.ScreenPointToRay(screenPos);
+        Ray ray = Camera.main.ScreenPointToRay(eventData.position);
         Vector3 origin = ray.origin + ray.direction * windOrigin;
         Vector3 direction = ray.direction;
 
@@ -83,20 +85,49 @@ public class WindManager : MonoBehaviour
                 float distance = Vector3.Cross(toLeaf, direction).magnitude;
 
                 if (depth < 0 || depth > maxDepth)
-                {
                     continue;
-                }
+                if (distance > maxDistance)
+                    continue;
 
-                float distanceNormalized = distance / mayDistance;
+                float distanceNormalized = distance / maxDistance;
                 float depthNormalized = depth / maxDepth;
+                float magnitudeNormalized = Mathf.Clamp(eventData.delta.magnitude / 100f, 1f, 2f);
 
-                float effect = (1f - distanceNormalized) * (1f - depthNormalized) * intensity;
+                float effect =
+                    (1f - distanceNormalized)
+                    * (1f - depthNormalized)
+                    * magnitudeNormalized
+                    * intensity;
 
-                leaf.GetComponent<Renderer>().material.color = Color.Lerp(
-                    Color.green,
-                    Color.red,
-                    effect
+                // leaf.GetComponent<Renderer>().material.color = Color.Lerp(
+                //     Color.green,
+                //     Color.red,
+                //     effect
+                // );
+
+                Vector3 forceDirection = direction.normalized * effect * windForce;
+                Vector3 randomVariation = new Vector3(
+                    Random.Range(-windVariation, windVariation),
+                    Random.Range(-windVariation, windVariation),
+                    Random.Range(-windVariation, windVariation)
                 );
+                forceDirection += randomVariation;
+
+                Vector3 torqueDirection =
+                    Vector3.Cross(Vector3.up, toLeaf).normalized * effect * windForce * 0.5f;
+                Vector3 randomTorqueVariation = new Vector3(
+                    Random.Range(-windVariation, windVariation),
+                    Random.Range(-windVariation, windVariation),
+                    Random.Range(-windVariation, windVariation)
+                );
+                torqueDirection += randomTorqueVariation;
+
+                Rigidbody leafRigidbody = leaf.GetComponent<Rigidbody>();
+                if (leafRigidbody != null)
+                {
+                    leafRigidbody.AddForce(forceDirection, ForceMode.Force);
+                    leafRigidbody.AddTorque(torqueDirection, ForceMode.Force);
+                }
             }
 
             timeElapsed += Time.deltaTime;

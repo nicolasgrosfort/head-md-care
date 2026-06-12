@@ -12945,7 +12945,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: -1, z: 13.3}
-  m_LocalScale: {x: 200, y: 2, z: 200}
+  m_LocalScale: {x: 500, y: 2, z: 600}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 177597682}
@@ -18390,11 +18390,14 @@ MonoBehaviour:
   gameState: {fileID: 11400000, guid: bff1d43fc4e1244ff89e8eb800ecae34, type: 2}
   windOrigin: 20
   windDuration: 10
+  windForce: 10
+  windVariation: 5
   maxDepth: 200
-  mayDistance: 20
+  maxDistance: 20
   layerMask:
     serializedVersion: 2
     m_Bits: 0
+  gameTag: Leaf
 --- !u!108 &1581512261
 Light:
   m_ObjectHideFlags: 0
@@ -21350,15 +21353,18 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a95767d521acc4795911720c4b5572fd, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: '::'
+  m_EditorClassIdentifier: Assembly-CSharp::WindManager
   gameState: {fileID: 11400000, guid: bff1d43fc4e1244ff89e8eb800ecae34, type: 2}
-  windOrigin: 20
-  windDuration: 20
+  windOrigin: 60
+  windDuration: 2
+  windForce: 100
+  windVariation: 20
   maxDepth: 200
-  mayDistance: 20
+  maxDistance: 10
   layerMask:
     serializedVersion: 2
     m_Bits: 1024
+  gameTag: Leaf
 --- !u!4 &1967474225
 Transform:
   m_ObjectHideFlags: 0
@@ -21438,7 +21444,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 604808785856071120, guid: 4f0e175111cc845f3858dda98d1a4c7d, type: 3}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3969337984957138817, guid: 4f0e175111cc845f3858dda98d1a4c7d, type: 3}
       propertyPath: m_Name

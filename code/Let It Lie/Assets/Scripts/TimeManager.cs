@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class TimeManager : MonoBehaviour
 {
@@ -28,7 +29,7 @@ public class TimeManager : MonoBehaviour
             StopCoroutine(_timeRoutine);
     }
 
-    private void StartAccelerate(Vector2 screenPos)
+    private void StartAccelerate(PointerEventData eventData)
     {
         if (_speedRoutine != null)
             StopCoroutine(_speedRoutine);

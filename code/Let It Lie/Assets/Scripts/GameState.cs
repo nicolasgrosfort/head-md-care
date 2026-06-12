@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 [CreateAssetMenu(fileName = "GameState", menuName = "Game/GameState")]
 public class GameState : ScriptableObject
@@ -75,9 +76,9 @@ public class GameState : ScriptableObject
     public event Action<int, int> OnDayNightChange;
     public event Action<int> OnSeasonChange;
     public event Action<float> OnSpeedChange;
-    public event Action<Vector2> OnClick;
-    public event Action<Vector2> OnHold;
-    public event Action<Vector2> OnDrag;
+    public event Action<PointerEventData> OnClick;
+    public event Action<PointerEventData> OnHold;
+    public event Action<PointerEventData> OnDrag;
     public event Action OnInteractionEnd;
     public event Action<InteractionType> OnInteractionChange;
     public event Action<int, int> OnSpringNight;
@@ -124,7 +125,7 @@ public class GameState : ScriptableObject
         Reset();
     }
 
-    public void SetInteraction(InteractionType type, Vector2 screenPos = default)
+    public void SetInteraction(InteractionType type, PointerEventData eventData = null)
     {
         currentInteraction = type;
         OnInteractionChange?.Invoke(currentInteraction);
@@ -132,13 +133,13 @@ public class GameState : ScriptableObject
         switch (type)
         {
             case InteractionType.Click:
-                OnClick?.Invoke(screenPos);
+                OnClick?.Invoke(eventData);
                 break;
             case InteractionType.Hold:
-                OnHold?.Invoke(screenPos);
+                OnHold?.Invoke(eventData);
                 break;
             case InteractionType.Drag:
-                OnDrag?.Invoke(screenPos);
+                OnDrag?.Invoke(eventData);
                 break;
             case InteractionType.None:
                 OnInteractionEnd?.Invoke();
