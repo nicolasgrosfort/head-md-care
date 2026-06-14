@@ -3497,7 +3497,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 1a844cae6f7da4f4cb23b157d22077df, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 929505252475402072, guid: 1a844cae6f7da4f4cb23b157d22077df, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
@@ -41643,6 +41643,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tree-low-poly
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 8c3a3f1c232b54194af8734792112c9a, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 948882458637225146, guid: 8c3a3f1c232b54194af8734792112c9a, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
@@ -49941,7 +49945,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5147346289038751703, guid: 82e98e00881d440e38e45433c3b5e3d4, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5486752692865084781, guid: 82e98e00881d440e38e45433c3b5e3d4, type: 3}
       propertyPath: m_LocalScale.x

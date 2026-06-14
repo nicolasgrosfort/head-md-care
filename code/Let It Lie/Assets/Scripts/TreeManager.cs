@@ -19,6 +19,18 @@ public class TreeManager : MonoBehaviour
     [SerializeField]
     private float fallDelayMax = 3f;
 
+    [SerializeField]
+    private Color springColor = Color.green;
+
+    [SerializeField]
+    private Color summerColor = Color.yellow;
+
+    [SerializeField]
+    private Color fallColor = Color.brown;
+
+    [SerializeField]
+    private Color winterColor = Color.white;
+
     [Header("Flower")]
     [SerializeField]
     private GameObject flowerPrefab;
@@ -91,7 +103,7 @@ public class TreeManager : MonoBehaviour
         gameState.OnSummerDay += OnSummerDay;
         gameState.OnWinterNight += OnWinterNight;
         gameState.OnWinterDay += OnWinterDay;
-
+        gameState.OnLifeChange += HandleLifeChange;
         gameState.OnClick += OnClick;
     }
 
@@ -105,11 +117,29 @@ public class TreeManager : MonoBehaviour
         gameState.OnSummerDay -= OnSummerDay;
         gameState.OnWinterNight -= OnWinterNight;
         gameState.OnWinterDay -= OnWinterDay;
-
+        gameState.OnLifeChange -= HandleLifeChange;
         gameState.OnClick -= OnClick;
     }
 
     private void OnClick(PointerEventData eventData) { }
+
+    private void HandleLifeChange(float life)
+    {
+        foreach (var leaf in _allLeaves)
+        {
+            if (!leaf.gameObject.activeSelf)
+                continue;
+
+            Color color = leaf.gameObject.GetComponent<Renderer>().material.color;
+            float alpha = Mathf.Clamp(gameState.life, 0.2f, 0.8f);
+            leaf.gameObject.GetComponent<Renderer>().material.color = new Color(
+                color.r,
+                color.g,
+                color.b,
+                alpha
+            );
+        }
+    }
 
     private void OnFallNight(int cycle, int season)
     {
@@ -117,7 +147,15 @@ public class TreeManager : MonoBehaviour
         {
             if (!leaf.gameObject.activeSelf)
                 continue;
+
             StartCoroutine(FallRoutine(leaf, Random.Range(fallDelayMin, fallDelayMax)));
+
+            leaf.gameObject.GetComponent<Renderer>().material.color = new Color(
+                fallColor.r + Random.Range(-0.2f, 0.2f),
+                fallColor.g,
+                fallColor.b + Random.Range(-0.2f, 0.2f),
+                fallColor.a
+            );
         }
     }
 
@@ -134,8 +172,14 @@ public class TreeManager : MonoBehaviour
                 continue;
 
             StartCoroutine(HumificationRoutine(leaf, Random.Range(0f, 3f)));
+
+            leaf.gameObject.GetComponent<Renderer>().material.color = new Color(
+                winterColor.r,
+                winterColor.g,
+                winterColor.b + Random.Range(-0.2f, 0.2f),
+                winterColor.a
+            );
         }
-        return;
     }
 
     private void OnWinterDay(int cycle, int season)
@@ -148,13 +192,22 @@ public class TreeManager : MonoBehaviour
     {
         List<LeafData> fallenLeaves = Shuffle(_allLeaves.FindAll(l => l.hasFallen && l.hasBudding));
 
-        Debug.Log(
-            $"Spring Night: {fallenLeaves.Count} fallen leaves can potentially bud, all leaves: {_allLeaves.Count}"
-        );
-
         for (int i = 0; i < fallenLeaves.Count; i++)
         {
             StartCoroutine(GerminationRoutine(fallenLeaves[i], Random.Range(0f, 5f)));
+        }
+
+        foreach (var leaf in _allLeaves)
+        {
+            if (leaf.gameObject.activeSelf)
+            {
+                leaf.gameObject.GetComponent<Renderer>().material.color = new Color(
+                    springColor.r,
+                    springColor.g + Random.Range(-0.2f, 0.2f),
+                    springColor.b,
+                    springColor.a
+                );
+            }
         }
     }
 
@@ -178,13 +231,29 @@ public class TreeManager : MonoBehaviour
         butterflyPrefab.SetActive(true);
     }
 
-    private void OnSummerNight(int cycle, int season) { }
+    private void OnSummerNight(int cycle, int season)
+    {
+        foreach (var leaf in _allLeaves)
+        {
+            if (leaf.gameObject.activeSelf)
+            {
+                leaf.gameObject.GetComponent<Renderer>().material.color = new Color(
+                    summerColor.r + Random.Range(-0.2f, 0.2f),
+                    summerColor.g,
+                    summerColor.b,
+                    summerColor.a
+                );
+            }
+        }
+    }
 
     private void OnSummerDay(int cycle, int season)
     {
         foreach (var leaf in _allLeaves)
+        {
             if (leaf.flowerAnimator != null)
                 StartCoroutine(WitherRoutine(leaf, Random.Range(0f, 5f)));
+        }
     }
 
     // UTILS
