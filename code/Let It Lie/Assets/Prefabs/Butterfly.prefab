@@ -52,6 +52,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Butterfly
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 7890ab771174d49e3be0b1b985554d6a, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -102,3 +106,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb30d44e511cf4c16b159aecd0195103, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
+  sphereCenter: {x: 0, y: 0, z: 0}
+  sphereRadius: 3
+  moveSpeed: 1.5
+  rotationSpeed: 3
+  waypointReachDistance: 0.3
+  noiseStrength: 0.5
+  noiseSpeed: 0.5
+  animator: {fileID: 0}
+  baseFlapSpeed: 1.5
+  speedMultiplier: 0.5
