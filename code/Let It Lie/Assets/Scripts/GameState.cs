@@ -170,6 +170,12 @@ public class GameState : ScriptableObject
         OnTimeChange?.Invoke(time);
     }
 
+    public void SetTimeSpeed(float speed)
+    {
+        timeSpeed = Mathf.Clamp(speed, minTimeSpeed, maxTimeSpeed);
+        OnSpeedChange?.Invoke(timeSpeed);
+    }
+
     public void IncreaseTimeSpeed(float deltaTime)
     {
         float t = (timeSpeed - defaultTimeSpeed) / (maxTimeSpeed - defaultTimeSpeed);
@@ -182,7 +188,7 @@ public class GameState : ScriptableObject
     {
         float t = (timeSpeed - defaultTimeSpeed) / (maxTimeSpeed - defaultTimeSpeed);
         float increment = timeSpeedIncrement * 0.04f * (2f * t + 0.05f) * deltaTime * 60f;
-        timeSpeed = Mathf.Max(timeSpeed - increment, minTimeSpeed);
+        timeSpeed = Mathf.Max(timeSpeed - increment, defaultTimeSpeed);
         OnSpeedChange?.Invoke(timeSpeed);
     }
 

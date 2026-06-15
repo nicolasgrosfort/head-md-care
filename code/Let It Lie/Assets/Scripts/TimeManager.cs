@@ -27,6 +27,8 @@ public class TimeManager : MonoBehaviour
 
         if (_timeRoutine != null)
             StopCoroutine(_timeRoutine);
+
+        Time.timeScale = 1f;
     }
 
     private void StartAccelerate(PointerEventData eventData)
@@ -45,7 +47,12 @@ public class TimeManager : MonoBehaviour
 
     private void UpdateTimeScale(float speed)
     {
-        float normalized = Mathf.InverseLerp(gameState.minTimeSpeed, gameState.maxTimeSpeed, speed);
+        float normalized = Mathf.InverseLerp(
+            gameState.defaultTimeSpeed,
+            gameState.maxTimeSpeed,
+            speed
+        );
+
         Time.timeScale = Mathf.Lerp(1f, gameState.timeScale, normalized);
     }
 
@@ -65,6 +72,9 @@ public class TimeManager : MonoBehaviour
             gameState.DecreaseTimeSpeed(Time.unscaledDeltaTime);
             yield return null;
         }
+
+        gameState.SetTimeSpeed(gameState.defaultTimeSpeed);
+        Time.timeScale = 1f;
         _speedRoutine = null;
     }
 
