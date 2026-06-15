@@ -190,6 +190,7 @@ public class WindManager : MonoBehaviour
                     }
                     else
                     {
+                        gameState.DecreaseLife(0.2f * effect * Time.deltaTime);
                         leafRigidbody.AddForce(forceDirection * Time.deltaTime, ForceMode.Impulse);
                         leafRigidbody.AddTorque(
                             torqueDirection * Time.deltaTime,

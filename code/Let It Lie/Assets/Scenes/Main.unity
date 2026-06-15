@@ -28287,7 +28287,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 525679496196547470, guid: 9f236b79c3ac34b2db4720e255212ef6, type: 3}
       propertyPath: rootBones.Array.data[0].minScale
-      value: 0.4
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 525679496196547470, guid: 9f236b79c3ac34b2db4720e255212ef6, type: 3}
       propertyPath: rootBones.Array.data[1].maxScale

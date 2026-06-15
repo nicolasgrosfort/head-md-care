@@ -165,7 +165,7 @@ public class GameState : ScriptableObject
 
     public void IncreaseTime(float deltaTime)
     {
-        time += timeSpeed * timeFactor * deltaTime * 60f; // *60 pour garder tes valeurs actuelles calibrées sur 60fps
+        time += timeSpeed * timeFactor * deltaTime * 60f; // *60 pour garder les valeurs actuelles calibrées sur 60fps
         if (time > 1f)
             time = 0f;
 
@@ -174,6 +174,11 @@ public class GameState : ScriptableObject
         ChangeLife(deltaTime);
 
         OnTimeChange?.Invoke(time);
+    }
+
+    public void DecreaseLife(float delta)
+    {
+        ChangeLife(-delta);
     }
 
     public void SetTimeSpeed(float speed)
