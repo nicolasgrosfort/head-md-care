@@ -149,13 +149,6 @@ public class TreeManager : MonoBehaviour
                 continue;
 
             StartCoroutine(FallRoutine(leaf, Random.Range(fallDelayMin, fallDelayMax)));
-
-            leaf.gameObject.GetComponent<Renderer>().material.color = new Color(
-                fallColor.r + Random.Range(-0.2f, 0.2f),
-                fallColor.g,
-                fallColor.b + Random.Range(-0.2f, 0.2f),
-                fallColor.a
-            );
         }
     }
 
@@ -185,15 +178,12 @@ public class TreeManager : MonoBehaviour
     {
         foreach (var leaf in _allLeaves)
         {
-            if (leaf.gameObject.activeSelf)
-            {
-                leaf.gameObject.GetComponent<Renderer>().material.color = new Color(
-                    springColor.r,
-                    springColor.g + Random.Range(-0.2f, 0.2f),
-                    springColor.b,
-                    springColor.a
-                );
-            }
+            leaf.gameObject.GetComponent<Renderer>().material.color = new Color(
+                springColor.r,
+                springColor.g + Random.Range(-0.2f, 0.2f),
+                springColor.b,
+                springColor.a
+            );
         }
 
         List<LeafData> fallenLeaves = Shuffle(_allLeaves.FindAll(l => l.hasFallen && l.hasBudding));
@@ -228,16 +218,27 @@ public class TreeManager : MonoBehaviour
         {
             if (leaf.gameObject.activeSelf)
             {
-                leaf.gameObject.GetComponent<Renderer>().material.color = new Color(
+                Color nextSummerColor = new Color(
                     summerColor.r + Random.Range(-0.2f, 0.2f),
                     summerColor.g,
                     summerColor.b,
                     summerColor.a
                 );
+                StartCoroutine(
+                    ProgressiveColor(
+                        leaf,
+                        leaf.gameObject.GetComponent<Renderer>().material.color,
+                        nextSummerColor,
+                        Random.Range(0.5f, 2f)
+                    )
+                );
             }
         }
 
-        butterflyPrefab.SetActive(true);
+        if (gameState.life > 0.25f)
+        {
+            butterflyPrefab.SetActive(true);
+        }
     }
 
     private void OnSummerDay(int cycle, int season)
@@ -246,6 +247,21 @@ public class TreeManager : MonoBehaviour
         {
             if (leaf.flowerAnimator != null)
                 StartCoroutine(WitherRoutine(leaf, Random.Range(0f, 5f)));
+
+            Color nextFallColor = new Color(
+                fallColor.r + Random.Range(-0.2f, 0.2f),
+                fallColor.g,
+                fallColor.b + Random.Range(-0.2f, 0.2f),
+                fallColor.a
+            );
+            StartCoroutine(
+                ProgressiveColor(
+                    leaf,
+                    leaf.gameObject.GetComponent<Renderer>().material.color,
+                    nextFallColor,
+                    Random.Range(0.5f, 2f)
+                )
+            );
         }
     }
 
@@ -418,5 +434,28 @@ public class TreeManager : MonoBehaviour
         }
 
         worm.localPosition = endPos;
+    }
+
+    private IEnumerator ProgressiveColor(
+        LeafData leaf,
+        Color startColor,
+        Color endColor,
+        float duration
+    )
+    {
+        float elapsed = 0f;
+        while (elapsed < duration)
+        {
+            elapsed += Time.deltaTime;
+            float t = Mathf.Clamp01(elapsed / duration);
+
+            leaf.gameObject.GetComponent<Renderer>().material.color = Color.Lerp(
+                startColor,
+                endColor,
+                t
+            );
+
+            yield return null;
+        }
     }
 }
