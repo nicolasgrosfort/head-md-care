@@ -16388,6 +16388,10 @@ MonoBehaviour:
   leafPrefix: Leaf
   fallDelayMin: 0
   fallDelayMax: 3
+  springColor: {r: 0, g: 1, b: 0, a: 1}
+  summerColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
+  fallColor: {r: 0.6470588, g: 0.1647059, b: 0.1647059, a: 1}
+  winterColor: {r: 1, g: 1, b: 1, a: 1}
   flowerPrefab: {fileID: 3577674285376433515, guid: e0b1362eeeb974d81ad252c93ef6d9c8, type: 3}
   zones:
   - {fileID: 871088196}
@@ -16753,8 +16757,8 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0.07924271, y: -0.00017346167, z: 0.0022769505, w: 0.99685276}
   m_LocalPosition: {x: 0, y: -56.5, z: 136.6}
-  m_LocalScale: {x: 36.999996, y: 36.999996, z: 36.999996}
-  m_ConstrainProportionsScale: 1
+  m_LocalScale: {x: 133.8, y: 36.999996, z: 36.999996}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 177597682}
   m_LocalEulerAnglesHint: {x: -9.09, y: -0.041, z: 0.265}
@@ -31838,6 +31842,10 @@ MonoBehaviour:
   leafPrefix: Leaf
   fallDelayMin: 0
   fallDelayMax: 3
+  springColor: {r: 0, g: 1, b: 0, a: 1}
+  summerColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
+  fallColor: {r: 0.6470588, g: 0.1647059, b: 0.1647059, a: 1}
+  winterColor: {r: 1, g: 1, b: 1, a: 1}
   flowerPrefab: {fileID: 3577674285376433515, guid: e0b1362eeeb974d81ad252c93ef6d9c8, type: 3}
   zones:
   - {fileID: 9177152944080318275}

@@ -227,8 +227,6 @@ public class TreeManager : MonoBehaviour
         {
             StartCoroutine(BuddingRoutine(nextLeaves[i], Random.Range(0f, 5f)));
         }
-
-        butterflyPrefab.SetActive(true);
     }
 
     private void OnSummerNight(int cycle, int season)
@@ -245,6 +243,8 @@ public class TreeManager : MonoBehaviour
                 );
             }
         }
+
+        butterflyPrefab.SetActive(true);
     }
 
     private void OnSummerDay(int cycle, int season)
