@@ -1,7 +1,9 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using Random = UnityEngine.Random;
 
 public class TreeManager : MonoBehaviour
 {
@@ -208,10 +210,7 @@ public class TreeManager : MonoBehaviour
 
         List<LeafData> fallenLeaves = Shuffle(_allLeaves.FindAll(l => l.hasFallen && l.hasBudding));
 
-        for (int i = 0; i < fallenLeaves.Count; i++)
-        {
-            StartCoroutine(GerminationRoutine(fallenLeaves[i], Random.Range(0f, 5f)));
-        }
+        StartCoroutine(GerminationAndNotify(fallenLeaves));
 
         StartCoroutine(
             FogTransition(fogEmission, maxFogEmission, minFogEmission, fogTransitionDuration)
@@ -349,6 +348,23 @@ public class TreeManager : MonoBehaviour
 
     // COROUTINES
 
+    private IEnumerator GerminationAndNotify(List<LeafData> fallenLeaves)
+    {
+        List<Coroutine> coroutines = new List<Coroutine>();
+
+        for (int i = 0; i < fallenLeaves.Count; i++)
+        {
+            coroutines.Add(
+                StartCoroutine(GerminationRoutine(fallenLeaves[i], Random.Range(0f, 5f)))
+            );
+        }
+
+        foreach (Coroutine c in coroutines)
+            yield return c;
+
+        gameState.TriggerGerminationEnd();
+    }
+
     private IEnumerator HumificationRoutine(LeafData leaf, float delay)
     {
         yield return new WaitForSeconds(delay);
@@ -426,7 +442,7 @@ public class TreeManager : MonoBehaviour
             Random.Range(0f, 360f),
             Random.Range(-25f, 25f)
         );
-        Vector3 scale = Vector3.one * Random.Range(10f, 20f);
+        Vector3 scale = Vector3.one * Random.Range(5f, 10f);
 
         leaf.spawnedFlower = Instantiate(flowerPrefab, pos, rot);
         leaf.spawnedFlower.transform.localScale = scale;

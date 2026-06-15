@@ -21,7 +21,7 @@ public class LifeManager : MonoBehaviour
 
     void Update()
     {
-        _vignette.intensity.value = Mathf.Lerp(0.4f, 0f, gameState.life);
+        _vignette.intensity.value = Mathf.Lerp(0.45f, 0f, gameState.life);
         _filmGrain.intensity.value = Mathf.Lerp(1f, 0f, gameState.life);
         _whiteBalance.temperature.value = Mathf.Lerp(100f, 0f, gameState.life);
         _whiteBalance.tint.value = Mathf.Lerp(100f, 0f, gameState.life);

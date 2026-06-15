@@ -89,6 +89,7 @@ public class GameState : ScriptableObject
     public event Action<int, int> OnSummerDay;
     public event Action<int, int> OnFallDay;
     public event Action<int, int> OnWinterDay;
+    public event Action OnGerminationEnd;
 
     /* PUBLIC COMPUTED PROPERTIES */
     public float NormalisedTimeSpeed =>
@@ -123,6 +124,11 @@ public class GameState : ScriptableObject
         OnDrag = null;
         OnInteractionEnd = null;
         Reset();
+    }
+
+    public void TriggerGerminationEnd()
+    {
+        OnGerminationEnd?.Invoke();
     }
 
     public void SetInteraction(InteractionType type, PointerEventData eventData = null)

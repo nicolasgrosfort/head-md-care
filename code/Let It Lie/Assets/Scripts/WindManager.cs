@@ -18,7 +18,7 @@ public class WindManager : MonoBehaviour
     public float maxDepth = 200f;
     public float maxDistance = 10f;
     public LayerMask layerMask = ~0;
-    public float wiggleIntensity = 5f;
+    public float wiggleIntensity = 6f;
 
     [SerializeField]
     private ParticleSystem windParticleSystem;
@@ -26,8 +26,13 @@ public class WindManager : MonoBehaviour
     [SerializeField]
     private Material rippleMaterial;
 
-    public string gameTag = "Leaf";
+    public string leafTag = "Leaf";
+    public string flowerTag = "Flower";
+
     private GameObject[] gameLeaves;
+    private GameObject[] gameFlowers = new GameObject[0];
+    private List<GameObject> gameObjects = new List<GameObject>();
+
     private Dictionary<GameObject, Quaternion> originalRotations =
         new Dictionary<GameObject, Quaternion>();
 
@@ -40,25 +45,25 @@ public class WindManager : MonoBehaviour
 
     void Awake()
     {
-        gameLeaves = GameObject.FindGameObjectsWithTag(gameTag);
-        Debug.Log("Found " + gameLeaves.Length + " leaves.");
-
+        gameLeaves = GameObject.FindGameObjectsWithTag(leafTag);
         foreach (GameObject leaf in gameLeaves)
-        {
             originalRotations[leaf] = leaf.transform.localRotation;
-        }
+
+        gameObjects = new List<GameObject>(gameLeaves);
     }
 
     void OnEnable()
     {
         gameState.OnClick += OnClick;
         gameState.OnDrag += OnDrag;
+        gameState.OnGerminationEnd += InitializeFlowers;
     }
 
     void OnDisable()
     {
         gameState.OnClick -= OnClick;
         gameState.OnDrag -= OnDrag;
+        gameState.OnGerminationEnd -= InitializeFlowers;
     }
 
     void OnClick(PointerEventData eventData)
@@ -69,6 +74,18 @@ public class WindManager : MonoBehaviour
     void OnDrag(PointerEventData eventData)
     {
         HandleBlow(eventData);
+    }
+
+    private void InitializeFlowers()
+    {
+        gameFlowers = GameObject.FindGameObjectsWithTag(flowerTag);
+        foreach (GameObject flower in gameFlowers)
+            originalRotations[flower] = flower.transform.localRotation;
+
+        gameObjects = new List<GameObject>(gameLeaves);
+        gameObjects.AddRange(gameFlowers);
+
+        Debug.Log("Initialized " + gameFlowers.Length + " flowers.");
     }
 
     private void HandleBlow(PointerEventData eventData)
@@ -111,7 +128,7 @@ public class WindManager : MonoBehaviour
 
             windParticleSystem.transform.localScale = new Vector3(0.2f, 0.2f, 0.2f) * intensity;
 
-            foreach (GameObject leaf in gameLeaves)
+            foreach (GameObject leaf in gameObjects)
             {
                 Vector3 position = leaf.transform.position;
                 Vector3 toLeaf = position - origin;
@@ -163,9 +180,13 @@ public class WindManager : MonoBehaviour
                 Rigidbody leafRigidbody = leaf.GetComponent<Rigidbody>();
                 if (leafRigidbody != null)
                 {
-                    if (leafRigidbody.isKinematic)
+                    if (leaf.CompareTag(flowerTag))
                     {
-                        Wiggle(leaf, originalRotations[leaf], effect, t);
+                        Wiggle(leaf, originalRotations[leaf], effect, t, 4f);
+                    }
+                    else if (leafRigidbody.isKinematic)
+                    {
+                        Wiggle(leaf, originalRotations[leaf], effect, t, 1f);
                     }
                     else
                     {
@@ -220,12 +241,18 @@ public class WindManager : MonoBehaviour
         rippleMaterial.SetFloat("_Strength", 0f);
     }
 
-    private void Wiggle(GameObject leaf, Quaternion initialRotation, float intensity, float t)
+    private void Wiggle(
+        GameObject leaf,
+        Quaternion initialRotation,
+        float intensity,
+        float t,
+        float multiplier
+    )
     {
-        float fade = wiggleIntensity * intensity * (1f - t);
-        float angleX = Mathf.Sin(Time.time * 40f) * fade;
+        float fade = wiggleIntensity * intensity * (1f - t) * multiplier;
+        float angleX = Mathf.Sin(Time.time * 30f) * fade;
         float angleY = Mathf.Sin(Time.time * 20f) * fade * 0.2f;
-        float angleZ = Mathf.Sin(Time.time * 30f) * fade * 0.3f;
+        float angleZ = Mathf.Sin(Time.time * 10f) * fade * 0.3f;
         leaf.transform.localRotation = initialRotation * Quaternion.Euler(angleX, angleY, angleZ);
     }
 }
