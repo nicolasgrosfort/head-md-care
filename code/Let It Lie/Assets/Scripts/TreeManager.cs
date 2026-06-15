@@ -68,6 +68,8 @@ public class TreeManager : MonoBehaviour
     [SerializeField]
     private GameObject butterflyPrefab;
 
+    private float lifeMaxFogEmission = 0f;
+
     private class LeafData
     {
         public GameObject gameObject;
@@ -185,8 +187,10 @@ public class TreeManager : MonoBehaviour
             StartCoroutine(HumificationRoutine(leaf, Random.Range(0f, 3f)));
         }
 
+        lifeMaxFogEmission = Mathf.Lerp(minFogEmission, maxFogEmission, gameState.life);
+
         StartCoroutine(
-            FogTransition(fogEmission, minFogEmission, maxFogEmission, fogTransitionDuration)
+            FogTransition(fogEmission, minFogEmission, lifeMaxFogEmission, fogTransitionDuration)
         );
     }
 
@@ -213,7 +217,7 @@ public class TreeManager : MonoBehaviour
         StartCoroutine(GerminationAndNotify(fallenLeaves));
 
         StartCoroutine(
-            FogTransition(fogEmission, maxFogEmission, minFogEmission, fogTransitionDuration)
+            FogTransition(fogEmission, lifeMaxFogEmission, minFogEmission, fogTransitionDuration)
         );
     }
 
@@ -462,7 +466,7 @@ public class TreeManager : MonoBehaviour
         endPos.y = -30f;
 
         worm.localPosition = startPos;
-        worm.localScale = Vector3.one * 0.5f * Mathf.Clamp(gameState.life, 0.5f, 1.5f);
+        worm.localScale = Vector3.one * 0.5f * Mathf.Clamp(gameState.life, 0.0f, 2f);
 
         float elapsed = 0f;
         while (elapsed < wormMoveDuration)

@@ -21463,7 +21463,7 @@ MonoBehaviour:
   fogParticle: {fileID: 1768718113}
   fogTransitionDuration: 4
   minFogEmission: 0
-  maxFogEmission: 30
+  maxFogEmission: 40
   flowerPrefab: {fileID: 3577674285376433515, guid: e0b1362eeeb974d81ad252c93ef6d9c8, type: 3}
   zones:
   - {fileID: 9177152944080318275}

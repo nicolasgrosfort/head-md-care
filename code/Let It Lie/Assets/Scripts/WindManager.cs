@@ -128,9 +128,12 @@ public class WindManager : MonoBehaviour
 
             windParticleSystem.transform.localScale = new Vector3(0.2f, 0.2f, 0.2f) * intensity;
 
-            foreach (GameObject leaf in gameObjects)
+            foreach (GameObject gameObject in gameObjects)
             {
-                Vector3 position = leaf.transform.position;
+                if (gameObject == null)
+                    continue;
+
+                Vector3 position = gameObject.transform.position;
                 Vector3 toLeaf = position - origin;
 
                 float depth = Vector3.Dot(toLeaf, direction);
@@ -153,7 +156,7 @@ public class WindManager : MonoBehaviour
 
                 if (debugMode)
                 {
-                    leaf.GetComponent<Renderer>().material.color = Color.Lerp(
+                    gameObject.GetComponent<Renderer>().material.color = Color.Lerp(
                         Color.green,
                         Color.red,
                         effect
@@ -177,16 +180,16 @@ public class WindManager : MonoBehaviour
                 );
                 torqueDirection += randomTorqueVariation;
 
-                Rigidbody leafRigidbody = leaf.GetComponent<Rigidbody>();
+                Rigidbody leafRigidbody = gameObject.GetComponent<Rigidbody>();
                 if (leafRigidbody != null)
                 {
-                    if (leaf.CompareTag(flowerTag))
+                    if (gameObject.CompareTag(flowerTag))
                     {
-                        Wiggle(leaf, originalRotations[leaf], effect, t, 4f);
+                        Wiggle(gameObject, originalRotations[gameObject], effect, t, 4f);
                     }
                     else if (leafRigidbody.isKinematic)
                     {
-                        Wiggle(leaf, originalRotations[leaf], effect, t, 1f);
+                        Wiggle(gameObject, originalRotations[gameObject], effect, t, 1f);
                     }
                     else
                     {
