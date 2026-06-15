@@ -46589,7 +46589,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::WindManager
   gameState: {fileID: 11400000, guid: bff1d43fc4e1244ff89e8eb800ecae34, type: 2}
-  windOrigin: 60
+  windOrigin: 50
   windDuration: 0.6
   windForce: 100
   windVariation: 20

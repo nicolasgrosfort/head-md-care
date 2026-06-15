@@ -10,7 +10,7 @@ public class WindManager : MonoBehaviour
 
     [Header("Wind")]
     [SerializeField]
-    private float windOrigin = 60f;
+    private float windOrigin = 50f;
     public float windDuration = 0.6f;
     public float windForce = 120f;
     public float windVariation = 40f;
@@ -99,7 +99,8 @@ public class WindManager : MonoBehaviour
 
                 float distanceNormalized = distance / maxDistance;
                 float depthNormalized = depth / maxDepth;
-                float magnitudeNormalized = Mathf.Clamp(eventData.delta.magnitude / 100f, 1f, 2f);
+                float deltaMM = eventData.delta.magnitude / Screen.dpi * 25.4f;
+                float magnitudeNormalized = Mathf.Clamp(deltaMM / 10f, 1f, 2f);
 
                 float effect =
                     (1f - distanceNormalized)
