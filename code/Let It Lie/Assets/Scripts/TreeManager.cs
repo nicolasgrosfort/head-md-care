@@ -36,7 +36,7 @@ public class TreeManager : MonoBehaviour
     private ParticleSystem fogParticle;
 
     [SerializeField]
-    private float fogTransitionDuration = 5f;
+    private float fogTransitionDuration = 4f;
 
     [SerializeField]
     private float minFogEmission = 0f;
@@ -253,7 +253,7 @@ public class TreeManager : MonoBehaviour
                         leaf,
                         leaf.gameObject.GetComponent<Renderer>().material.color,
                         nextSummerColor,
-                        Random.Range(0.5f, 2f)
+                        Random.Range(0.5f, 4f)
                     )
                 );
             }
@@ -283,7 +283,7 @@ public class TreeManager : MonoBehaviour
                     leaf,
                     leaf.gameObject.GetComponent<Renderer>().material.color,
                     nextFallColor,
-                    Random.Range(0.5f, 2f)
+                    Random.Range(0.5f, 4f)
                 )
             );
         }

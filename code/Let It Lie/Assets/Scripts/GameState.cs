@@ -13,8 +13,8 @@ public class GameState : ScriptableObject
     [Range(0f, 1f)]
     public float defaultLife = 0.5f;
 
-    public float lifeIncrement = 0.00001f;
-    public float lifeDecrement = -0.0001f;
+    public float lifeIncrement = 0.0002f;
+    public float lifeDecrement = -0.001f;
 
     [Header("Season")]
     [Tooltip("0 = spring, 0.25 = summer, 0.5 = fall, 0.75 = winter")]

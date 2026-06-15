@@ -1,4 +1,4 @@
-using NUnit.Framework.Constraints;
+using System;
 using UnityEngine;
 
 public class RootManager : MonoBehaviour
@@ -7,16 +7,16 @@ public class RootManager : MonoBehaviour
     [SerializeField]
     private GameState gameState;
 
-    private Transform _mainRoot;
-    private Transform _upRoot;
-    private Transform _downRoot;
-
-    void Awake()
+    [Serializable]
+    private class RootBone
     {
-        _mainRoot = FindBoneRecursive(transform, "MainRoot");
-        _upRoot = FindBoneRecursive(transform, "UpRoot");
-        _downRoot = FindBoneRecursive(transform, "DownRoot");
+        public Transform bone;
+        public float minScale;
+        public float maxScale;
     }
+
+    [SerializeField]
+    private RootBone[] rootBones;
 
     void OnEnable()
     {
@@ -30,25 +30,13 @@ public class RootManager : MonoBehaviour
 
     private void HandleRootsSize(float lifeChange)
     {
-        float mainScale = Mathf.Lerp(0.8f, 1f, gameState.life);
-        float upScale = Mathf.Lerp(0.1f, 1f, gameState.life);
-        float downScale = Mathf.Lerp(0.1f, 1f, gameState.life);
-
-        if (_mainRoot != null)
-            _mainRoot.localScale = new Vector3(mainScale, mainScale, mainScale);
-        if (_upRoot != null)
-            _upRoot.localScale = new Vector3(upScale, upScale, upScale);
-        if (_downRoot != null)
-            _downRoot.localScale = new Vector3(downScale, downScale, downScale);
-    }
-
-    private Transform FindBoneRecursive(Transform parent, string boneName)
-    {
-        foreach (Transform child in parent.GetComponentsInChildren<Transform>())
+        foreach (var rootBone in rootBones)
         {
-            if (child.name == boneName)
-                return child;
+            if (rootBone.bone != null)
+            {
+                float scale = Mathf.Lerp(rootBone.minScale, rootBone.maxScale, gameState.life);
+                rootBone.bone.localScale = new Vector3(scale, scale, scale);
+            }
         }
-        return null;
     }
 }
