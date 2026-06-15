@@ -11,9 +11,9 @@ public class WindManager : MonoBehaviour
     [Header("Wind")]
     [SerializeField]
     private float windOrigin = 60f;
-    public float windDuration = 2f;
-    public float windForce = 100f;
-    public float windVariation = 20f;
+    public float windDuration = 0.6f;
+    public float windForce = 120f;
+    public float windVariation = 40f;
     public float maxDepth = 200f;
     public float maxDistance = 10f;
     public LayerMask layerMask = ~0;
