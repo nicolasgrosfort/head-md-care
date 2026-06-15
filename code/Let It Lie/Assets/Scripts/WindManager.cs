@@ -1,4 +1,5 @@
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
@@ -17,6 +18,7 @@ public class WindManager : MonoBehaviour
     public float maxDepth = 200f;
     public float maxDistance = 10f;
     public LayerMask layerMask = ~0;
+    public float wiggleIntensity = 5f;
 
     [SerializeField]
     private ParticleSystem windParticleSystem;
@@ -26,6 +28,8 @@ public class WindManager : MonoBehaviour
 
     public string gameTag = "Leaf";
     private GameObject[] gameLeaves;
+    private Dictionary<GameObject, Quaternion> originalRotations =
+        new Dictionary<GameObject, Quaternion>();
 
     private Coroutine blowCoroutine;
     private Coroutine rippleCoroutine;
@@ -38,6 +42,11 @@ public class WindManager : MonoBehaviour
     {
         gameLeaves = GameObject.FindGameObjectsWithTag(gameTag);
         Debug.Log("Found " + gameLeaves.Length + " leaves.");
+
+        foreach (GameObject leaf in gameLeaves)
+        {
+            originalRotations[leaf] = leaf.transform.localRotation;
+        }
     }
 
     void OnEnable()
@@ -154,8 +163,18 @@ public class WindManager : MonoBehaviour
                 Rigidbody leafRigidbody = leaf.GetComponent<Rigidbody>();
                 if (leafRigidbody != null)
                 {
-                    leafRigidbody.AddForce(forceDirection * Time.deltaTime, ForceMode.Impulse);
-                    leafRigidbody.AddTorque(torqueDirection * Time.deltaTime, ForceMode.Impulse);
+                    if (leafRigidbody.isKinematic)
+                    {
+                        Wiggle(leaf, originalRotations[leaf], effect, t);
+                    }
+                    else
+                    {
+                        leafRigidbody.AddForce(forceDirection * Time.deltaTime, ForceMode.Impulse);
+                        leafRigidbody.AddTorque(
+                            torqueDirection * Time.deltaTime,
+                            ForceMode.Impulse
+                        );
+                    }
                 }
             }
 
@@ -199,5 +218,14 @@ public class WindManager : MonoBehaviour
         }
 
         rippleMaterial.SetFloat("_Strength", 0f);
+    }
+
+    private void Wiggle(GameObject leaf, Quaternion initialRotation, float intensity, float t)
+    {
+        float fade = wiggleIntensity * intensity * (1f - t);
+        float angleX = Mathf.Sin(Time.time * 40f) * fade;
+        float angleY = Mathf.Sin(Time.time * 20f) * fade * 0.2f;
+        float angleZ = Mathf.Sin(Time.time * 30f) * fade * 0.3f;
+        leaf.transform.localRotation = initialRotation * Quaternion.Euler(angleX, angleY, angleZ);
     }
 }
