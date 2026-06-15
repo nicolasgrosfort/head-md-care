@@ -422,11 +422,11 @@ public class TreeManager : MonoBehaviour
 
         Vector3 pos = GetRandomSpawnPosition();
         Quaternion rot = Quaternion.Euler(
-            Random.Range(-20f, 20f),
+            Random.Range(-25f, 25f),
             Random.Range(0f, 360f),
-            Random.Range(-20f, 20f)
+            Random.Range(-25f, 25f)
         );
-        Vector3 scale = Vector3.one * Random.Range(12f, 18f);
+        Vector3 scale = Vector3.one * Random.Range(10f, 20f);
 
         leaf.spawnedFlower = Instantiate(flowerPrefab, pos, rot);
         leaf.spawnedFlower.transform.localScale = scale;
