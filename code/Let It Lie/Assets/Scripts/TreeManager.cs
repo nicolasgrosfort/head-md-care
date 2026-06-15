@@ -183,13 +183,6 @@ public class TreeManager : MonoBehaviour
 
     private void OnSpringNight(int cycle, int season)
     {
-        List<LeafData> fallenLeaves = Shuffle(_allLeaves.FindAll(l => l.hasFallen && l.hasBudding));
-
-        for (int i = 0; i < fallenLeaves.Count; i++)
-        {
-            StartCoroutine(GerminationRoutine(fallenLeaves[i], Random.Range(0f, 5f)));
-        }
-
         foreach (var leaf in _allLeaves)
         {
             if (leaf.gameObject.activeSelf)
@@ -201,6 +194,13 @@ public class TreeManager : MonoBehaviour
                     springColor.a
                 );
             }
+        }
+
+        List<LeafData> fallenLeaves = Shuffle(_allLeaves.FindAll(l => l.hasFallen && l.hasBudding));
+
+        for (int i = 0; i < fallenLeaves.Count; i++)
+        {
+            StartCoroutine(GerminationRoutine(fallenLeaves[i], Random.Range(0f, 5f)));
         }
     }
 
