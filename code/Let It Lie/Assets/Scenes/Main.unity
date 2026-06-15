@@ -71171,6 +71171,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: UnderCube
       objectReference: {fileID: 0}
+    - target: {fileID: 2159793523831712161, guid: 81ff6b4ca7eef47739919a83d40ccb85, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4579945474004814488, guid: 81ff6b4ca7eef47739919a83d40ccb85, type: 3}
       propertyPath: m_LocalScale.x
       value: 11.03
