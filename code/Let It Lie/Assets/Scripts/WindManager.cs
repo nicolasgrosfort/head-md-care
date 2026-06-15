@@ -99,8 +99,7 @@ public class WindManager : MonoBehaviour
 
                 float distanceNormalized = distance / maxDistance;
                 float depthNormalized = depth / maxDepth;
-                float deltaMM = eventData.delta.magnitude / Screen.dpi * 25.4f;
-                float magnitudeNormalized = Mathf.Clamp(deltaMM / 10f, 1f, 2f);
+                float magnitudeNormalized = Mathf.Clamp(eventData.delta.magnitude / 100f, 1f, 2f);
 
                 float effect =
                     (1f - distanceNormalized)
@@ -108,11 +107,11 @@ public class WindManager : MonoBehaviour
                     * magnitudeNormalized
                     * intensity;
 
-                // leaf.GetComponent<Renderer>().material.color = Color.Lerp(
-                //     Color.green,
-                //     Color.red,
-                //     effect
-                // );
+                leaf.GetComponent<Renderer>().material.color = Color.Lerp(
+                    Color.green,
+                    Color.red,
+                    effect
+                );
 
                 Vector3 forceDirection = direction.normalized * effect * windForce;
                 Vector3 randomVariation = new Vector3(
@@ -134,8 +133,11 @@ public class WindManager : MonoBehaviour
                 Rigidbody leafRigidbody = leaf.GetComponent<Rigidbody>();
                 if (leafRigidbody != null)
                 {
-                    leafRigidbody.AddForce(forceDirection, ForceMode.Force);
-                    leafRigidbody.AddTorque(torqueDirection, ForceMode.Force);
+                    // leafRigidbody.AddForce(forceDirection, ForceMode.Force);
+                    // leafRigidbody.AddTorque(torqueDirection, ForceMode.Force);
+
+                    leafRigidbody.AddForce(forceDirection * Time.deltaTime, ForceMode.Impulse);
+                    leafRigidbody.AddTorque(torqueDirection * Time.deltaTime, ForceMode.Impulse);
                 }
             }
 
