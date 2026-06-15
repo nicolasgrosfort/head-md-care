@@ -1,0 +1,437 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &4669696399906928138
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: 053b5c6611dfc4af5a5a93dc4e6676f8, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 4.78
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 053b5c6611dfc4af5a5a93dc4e6676f8, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 4.78
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 053b5c6611dfc4af5a5a93dc4e6676f8, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 4.78
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 053b5c6611dfc4af5a5a93dc4e6676f8, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -46.8
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 053b5c6611dfc4af5a5a93dc4e6676f8, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -57.8
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 053b5c6611dfc4af5a5a93dc4e6676f8, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 51.8
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 053b5c6611dfc4af5a5a93dc4e6676f8, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.9149597
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 053b5c6611dfc4af5a5a93dc4e6676f8, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 053b5c6611dfc4af5a5a93dc4e6676f8, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 053b5c6611dfc4af5a5a93dc4e6676f8, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.40354517
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 053b5c6611dfc4af5a5a93dc4e6676f8, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 053b5c6611dfc4af5a5a93dc4e6676f8, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 053b5c6611dfc4af5a5a93dc4e6676f8, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: -47.6
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 053b5c6611dfc4af5a5a93dc4e6676f8, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -7875461834455606340, guid: 053b5c6611dfc4af5a5a93dc4e6676f8, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: dec37911f3bd94d94af6c016c73d530b, type: 2}
+    - target: {fileID: -7340578703850338290, guid: 053b5c6611dfc4af5a5a93dc4e6676f8, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: dec37911f3bd94d94af6c016c73d530b, type: 2}
+    - target: {fileID: -2835795543298663914, guid: 053b5c6611dfc4af5a5a93dc4e6676f8, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -2639638324218457063, guid: 053b5c6611dfc4af5a5a93dc4e6676f8, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -334273043444700044, guid: 053b5c6611dfc4af5a5a93dc4e6676f8, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -309040044974646324, guid: 053b5c6611dfc4af5a5a93dc4e6676f8, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 053b5c6611dfc4af5a5a93dc4e6676f8, type: 3}
+      propertyPath: m_Name
+      value: Roots
+      objectReference: {fileID: 0}
+    - target: {fileID: 2499900675981040021, guid: 053b5c6611dfc4af5a5a93dc4e6676f8, type: 3}
+      propertyPath: m_Name
+      value: DownRoot
+      objectReference: {fileID: 0}
+    - target: {fileID: 2700157433895878828, guid: 053b5c6611dfc4af5a5a93dc4e6676f8, type: 3}
+      propertyPath: m_Name
+      value: UpRoot
+      objectReference: {fileID: 0}
+    - target: {fileID: 4783906601490614784, guid: 053b5c6611dfc4af5a5a93dc4e6676f8, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6627087315438279792, guid: 053b5c6611dfc4af5a5a93dc4e6676f8, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6905609870639353253, guid: 053b5c6611dfc4af5a5a93dc4e6676f8, type: 3}
+      propertyPath: m_Name
+      value: MainRoot
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 053b5c6611dfc4af5a5a93dc4e6676f8, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 525679496196547470}
+    - targetCorrespondingSourceObject: {fileID: 7036213049465896255, guid: 053b5c6611dfc4af5a5a93dc4e6676f8, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4922376535436871317}
+    - targetCorrespondingSourceObject: {fileID: 1790183945725220954, guid: 053b5c6611dfc4af5a5a93dc4e6676f8, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4884550312852112839}
+    - targetCorrespondingSourceObject: {fileID: 4819001077394492298, guid: 053b5c6611dfc4af5a5a93dc4e6676f8, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3035001133746083963}
+    - targetCorrespondingSourceObject: {fileID: -1328230143343150466, guid: 053b5c6611dfc4af5a5a93dc4e6676f8, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 9030625452279264400}
+    - targetCorrespondingSourceObject: {fileID: 2700157433895878828, guid: 053b5c6611dfc4af5a5a93dc4e6676f8, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 9194363418445343576}
+    - targetCorrespondingSourceObject: {fileID: -7529875050453074263, guid: 053b5c6611dfc4af5a5a93dc4e6676f8, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 5773690495464188426}
+    - targetCorrespondingSourceObject: {fileID: -6804224529849698862, guid: 053b5c6611dfc4af5a5a93dc4e6676f8, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7608636460312389069}
+    - targetCorrespondingSourceObject: {fileID: 1944362705653258875, guid: 053b5c6611dfc4af5a5a93dc4e6676f8, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3482543050111936265}
+    - targetCorrespondingSourceObject: {fileID: 2499900675981040021, guid: 053b5c6611dfc4af5a5a93dc4e6676f8, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4277777216908788253}
+    - targetCorrespondingSourceObject: {fileID: -1873819587508681436, guid: 053b5c6611dfc4af5a5a93dc4e6676f8, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4688244805876649928}
+    - targetCorrespondingSourceObject: {fileID: -8980596700500077884, guid: 053b5c6611dfc4af5a5a93dc4e6676f8, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1508688500330496984}
+  m_SourcePrefab: {fileID: 100100000, guid: 053b5c6611dfc4af5a5a93dc4e6676f8, type: 3}
+--- !u!1 &157238756650106240 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4819001077394492298, guid: 053b5c6611dfc4af5a5a93dc4e6676f8, type: 3}
+  m_PrefabInstance: {fileID: 4669696399906928138}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &3035001133746083963
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 157238756650106240}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2d8418b0b9634b1892b0268dd9c2743, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.Animation.Rigging::UnityEngine.Animations.Rigging.BoneRenderer
+  boneShape: 1
+  drawBones: 1
+  drawTripods: 0
+  boneSize: 1
+  tripodSize: 1
+  boneColor: {r: 0, g: 0, b: 1, a: 0.3372549}
+  m_Transforms: []
+--- !u!1 &2408227742135782197 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7036213049465896255, guid: 053b5c6611dfc4af5a5a93dc4e6676f8, type: 3}
+  m_PrefabInstance: {fileID: 4669696399906928138}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &4922376535436871317
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2408227742135782197}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2d8418b0b9634b1892b0268dd9c2743, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.Animation.Rigging::UnityEngine.Animations.Rigging.BoneRenderer
+  boneShape: 1
+  drawBones: 1
+  drawTripods: 0
+  boneSize: 1
+  tripodSize: 1
+  boneColor: {r: 0, g: 0, b: 1, a: 0.5}
+  m_Transforms: []
+--- !u!1 &2679856325529121582 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -1873819587508681436, guid: 053b5c6611dfc4af5a5a93dc4e6676f8, type: 3}
+  m_PrefabInstance: {fileID: 4669696399906928138}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &4688244805876649928
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2679856325529121582}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2d8418b0b9634b1892b0268dd9c2743, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.Animation.Rigging::UnityEngine.Animations.Rigging.BoneRenderer
+  boneShape: 1
+  drawBones: 1
+  drawTripods: 0
+  boneSize: 1
+  tripodSize: 1
+  boneColor: {r: 0, g: 0, b: 1, a: 0.3372549}
+  m_Transforms: []
+--- !u!1 &3269390793178074228 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -1328230143343150466, guid: 053b5c6611dfc4af5a5a93dc4e6676f8, type: 3}
+  m_PrefabInstance: {fileID: 4669696399906928138}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &9030625452279264400
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3269390793178074228}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2d8418b0b9634b1892b0268dd9c2743, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.Animation.Rigging::UnityEngine.Animations.Rigging.BoneRenderer
+  boneShape: 1
+  drawBones: 1
+  drawTripods: 0
+  boneSize: 1
+  tripodSize: 1
+  boneColor: {r: 0, g: 0, b: 1, a: 0.3372549}
+  m_Transforms: []
+--- !u!1 &4868561362298250446 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -8980596700500077884, guid: 053b5c6611dfc4af5a5a93dc4e6676f8, type: 3}
+  m_PrefabInstance: {fileID: 4669696399906928138}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1508688500330496984
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4868561362298250446}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2d8418b0b9634b1892b0268dd9c2743, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.Animation.Rigging::UnityEngine.Animations.Rigging.BoneRenderer
+  boneShape: 1
+  drawBones: 1
+  drawTripods: 0
+  boneSize: 1
+  tripodSize: 1
+  boneColor: {r: 0, g: 0, b: 1, a: 0.3372549}
+  m_Transforms: []
+--- !u!1 &5480724562462264155 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 053b5c6611dfc4af5a5a93dc4e6676f8, type: 3}
+  m_PrefabInstance: {fileID: 4669696399906928138}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &525679496196547470
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5480724562462264155}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a85bfc09b11b7480cba844b6455bb0d2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
+  gameState: {fileID: 0}
+--- !u!1 &6291135789450758307 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -7529875050453074263, guid: 053b5c6611dfc4af5a5a93dc4e6676f8, type: 3}
+  m_PrefabInstance: {fileID: 4669696399906928138}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &5773690495464188426
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6291135789450758307}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2d8418b0b9634b1892b0268dd9c2743, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.Animation.Rigging::UnityEngine.Animations.Rigging.BoneRenderer
+  boneShape: 1
+  drawBones: 1
+  drawTripods: 0
+  boneSize: 1
+  tripodSize: 1
+  boneColor: {r: 0, g: 0, b: 1, a: 0.3372549}
+  m_Transforms: []
+--- !u!1 &6347290352093785680 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1790183945725220954, guid: 053b5c6611dfc4af5a5a93dc4e6676f8, type: 3}
+  m_PrefabInstance: {fileID: 4669696399906928138}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &4884550312852112839
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6347290352093785680}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2d8418b0b9634b1892b0268dd9c2743, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.Animation.Rigging::UnityEngine.Animations.Rigging.BoneRenderer
+  boneShape: 1
+  drawBones: 1
+  drawTripods: 0
+  boneSize: 1
+  tripodSize: 1
+  boneColor: {r: 0, g: 0, b: 1, a: 0.3372549}
+  m_Transforms: []
+--- !u!1 &6500343212809759857 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1944362705653258875, guid: 053b5c6611dfc4af5a5a93dc4e6676f8, type: 3}
+  m_PrefabInstance: {fileID: 4669696399906928138}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &3482543050111936265
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6500343212809759857}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2d8418b0b9634b1892b0268dd9c2743, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.Animation.Rigging::UnityEngine.Animations.Rigging.BoneRenderer
+  boneShape: 1
+  drawBones: 1
+  drawTripods: 0
+  boneSize: 1
+  tripodSize: 1
+  boneColor: {r: 0, g: 0, b: 1, a: 0.3372549}
+  m_Transforms: []
+--- !u!1 &7015642802382980056 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -6804224529849698862, guid: 053b5c6611dfc4af5a5a93dc4e6676f8, type: 3}
+  m_PrefabInstance: {fileID: 4669696399906928138}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &7608636460312389069
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7015642802382980056}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2d8418b0b9634b1892b0268dd9c2743, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.Animation.Rigging::UnityEngine.Animations.Rigging.BoneRenderer
+  boneShape: 1
+  drawBones: 1
+  drawTripods: 0
+  boneSize: 1
+  tripodSize: 1
+  boneColor: {r: 0, g: 0, b: 1, a: 0.3372549}
+  m_Transforms: []
+--- !u!1 &7097521593676771231 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2499900675981040021, guid: 053b5c6611dfc4af5a5a93dc4e6676f8, type: 3}
+  m_PrefabInstance: {fileID: 4669696399906928138}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &4277777216908788253
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7097521593676771231}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2d8418b0b9634b1892b0268dd9c2743, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.Animation.Rigging::UnityEngine.Animations.Rigging.BoneRenderer
+  boneShape: 1
+  drawBones: 1
+  drawTripods: 0
+  boneSize: 1
+  tripodSize: 1
+  boneColor: {r: 0, g: 0, b: 1, a: 0.3372549}
+  m_Transforms: []
+--- !u!1 &7329321159984543398 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2700157433895878828, guid: 053b5c6611dfc4af5a5a93dc4e6676f8, type: 3}
+  m_PrefabInstance: {fileID: 4669696399906928138}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &9194363418445343576
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7329321159984543398}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2d8418b0b9634b1892b0268dd9c2743, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.Animation.Rigging::UnityEngine.Animations.Rigging.BoneRenderer
+  boneShape: 1
+  drawBones: 1
+  drawTripods: 0
+  boneSize: 1
+  tripodSize: 1
+  boneColor: {r: 0, g: 0, b: 1, a: 0.3372549}
+  m_Transforms: []
