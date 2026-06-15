@@ -172,13 +172,6 @@ public class TreeManager : MonoBehaviour
                 continue;
 
             StartCoroutine(HumificationRoutine(leaf, Random.Range(0f, 3f)));
-
-            leaf.gameObject.GetComponent<Renderer>().material.color = new Color(
-                winterColor.r,
-                winterColor.g,
-                winterColor.b + Random.Range(-0.2f, 0.2f),
-                winterColor.a
-            );
         }
     }
 
@@ -371,6 +364,7 @@ public class TreeManager : MonoBehaviour
         leaf.transform.SetParent(leaf.initialParent);
         leaf.transform.localPosition = leaf.initialLocalPosition;
         leaf.transform.localRotation = leaf.initialLocalRotation;
+        leaf.transform.localScale = leaf.initialScale;
 
         leaf.gameObject.SetActive(true);
     }
