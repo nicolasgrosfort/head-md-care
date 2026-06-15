@@ -203,6 +203,7 @@ public class WindManager : MonoBehaviour
                 }
             }
 
+            gameState.TriggerBloom(timeElapsed / windDuration);
             timeElapsed += Time.deltaTime;
             yield return null;
         }

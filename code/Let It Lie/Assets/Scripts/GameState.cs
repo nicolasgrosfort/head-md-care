@@ -79,6 +79,7 @@ public class GameState : ScriptableObject
     public event Action<PointerEventData> OnClick;
     public event Action<PointerEventData> OnHold;
     public event Action<PointerEventData> OnDrag;
+    public event Action<float> OnBloom;
     public event Action OnInteractionEnd;
     public event Action<InteractionType> OnInteractionChange;
     public event Action<int, int> OnSpringNight;
@@ -119,6 +120,7 @@ public class GameState : ScriptableObject
         OnSpeedChange = null;
         OnDayNightChange = null;
         OnInteractionChange = null;
+        OnBloom = null;
         OnClick = null;
         OnHold = null;
         OnDrag = null;
@@ -129,6 +131,11 @@ public class GameState : ScriptableObject
     public void TriggerGerminationEnd()
     {
         OnGerminationEnd?.Invoke();
+    }
+
+    public void TriggerBloom(float effect)
+    {
+        OnBloom?.Invoke(effect);
     }
 
     public void SetInteraction(InteractionType type, PointerEventData eventData = null)

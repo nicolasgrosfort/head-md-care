@@ -19292,7 +19292,7 @@ AudioSource:
   m_GameObject: {fileID: 1122471544}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 24300002, guid: a6a2ee30ba814453980b5ef83a21b2bd, type: 2}
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 8300000, guid: c1c8abf349eb145239a343e40e458b54, type: 3}
   m_PlayOnAwake: 1
@@ -19408,6 +19408,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   gameState: {fileID: 11400000, guid: bff1d43fc4e1244ff89e8eb800ecae34, type: 2}
+  mixer: {fileID: 24100000, guid: a6a2ee30ba814453980b5ef83a21b2bd, type: 2}
+  dryLevel: 0
+  centerFreq: 5000
+  octaveRange: 1
+  minGain: 1
 --- !u!1 &1124332398 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -5634555867588758645, guid: 1a844cae6f7da4f4cb23b157d22077df, type: 3}
