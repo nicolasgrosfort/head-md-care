@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 5413364321875868213}
   - component: {fileID: 8008518996111538636}
   - component: {fileID: 6794067185211479925}
+  - component: {fileID: -9152538506510322943}
   m_Layer: 0
   m_Name: Stars
   m_TagString: Untagged
@@ -4836,3 +4837,15 @@ ParticleSystemRenderer:
   m_MeshWeighting1: 1
   m_MeshWeighting2: 1
   m_MeshWeighting3: 1
+--- !u!114 &-9152538506510322943
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5478841982695939991}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ea4a4f8f165c46a198663153ce01db3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
