@@ -48992,7 +48992,6 @@ GameObject:
   - component: {fileID: 2118482673}
   - component: {fileID: 2118482672}
   - component: {fileID: 2118482671}
-  - component: {fileID: 2118482670}
   - component: {fileID: 2118482675}
   - component: {fileID: 2118482676}
   - component: {fileID: 2118482677}
@@ -49003,21 +49002,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &2118482670
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2118482669}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8f82a46cdcbce4fe8aba962a8401b581, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: '::'
-  gameState: {fileID: 11400000, guid: bff1d43fc4e1244ff89e8eb800ecae34, type: 2}
-  rippleMaterial: {fileID: 2100000, guid: a7d8e1c555da94ac297f44e29b887110, type: 2}
-  rippleDuration: 1
 --- !u!114 &2118482671
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -50057,7 +50041,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3906340279608061692, guid: 620bd7b9d4947424986c7f3325e61267, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4108077215502422233, guid: 620bd7b9d4947424986c7f3325e61267, type: 3}
       propertyPath: moveSpeed

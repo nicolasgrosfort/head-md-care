@@ -54,7 +54,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 7890ab771174d49e3be0b1b985554d6a, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -108,7 +108,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: '::'
   sphereCenter: {x: 0, y: 0, z: 0}
   sphereRadius: 3
-  moveSpeed: 1.5
+  moveSpeed: 2
   rotationSpeed: 3
   waypointReachDistance: 0.3
   noiseStrength: 0.5

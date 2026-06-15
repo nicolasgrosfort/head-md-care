@@ -7,11 +7,11 @@ public class ButterflyFlight : MonoBehaviour
     private Vector3 sphereCenter; // offset en local par rapport au point de départ
 
     [SerializeField]
-    private float sphereRadius = 3f;
+    private float sphereRadius = 4f;
 
     [Header("Mouvement")]
     [SerializeField]
-    private float moveSpeed = 1.5f;
+    private float moveSpeed = 2f;
 
     [SerializeField]
     private float rotationSpeed = 3f;
@@ -21,10 +21,10 @@ public class ButterflyFlight : MonoBehaviour
 
     [Header("Variation organique")]
     [SerializeField]
-    private float noiseStrength = 0.5f;
+    private float noiseStrength = 0.1f;
 
     [SerializeField]
-    private float noiseSpeed = 0.5f;
+    private float noiseSpeed = 10f;
 
     [Header("Animation (battement d'ailes)")]
     [SerializeField]
