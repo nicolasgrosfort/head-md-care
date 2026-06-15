@@ -40,7 +40,7 @@ public class ClicFeedback : MonoBehaviour, IPointerClickHandler
         if (_rippleCoroutine != null)
             StopCoroutine(_rippleCoroutine);
 
-        _rippleCoroutine = StartCoroutine(AnimateRipple(uv, depthRadius));
+        _rippleCoroutine = StartCoroutine(AnimateRipple(uv, 0.1f));
     }
 
     private IEnumerator AnimateRipple(Vector2 center, float maxRadius)

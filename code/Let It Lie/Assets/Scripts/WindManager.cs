@@ -12,7 +12,7 @@ public class WindManager : MonoBehaviour
     [SerializeField]
     private float windOrigin = 50f;
     public float windDuration = 0.6f;
-    public float windForce = 120f;
+    public float windForce = 100f;
     public float windVariation = 40f;
     public float maxDepth = 200f;
     public float maxDistance = 10f;
@@ -21,10 +21,18 @@ public class WindManager : MonoBehaviour
     [SerializeField]
     private ParticleSystem windParticleSystem;
 
+    [SerializeField]
+    private Material rippleMaterial;
+
     public string gameTag = "Leaf";
     private GameObject[] gameLeaves;
 
     private Coroutine blowCoroutine;
+    private Coroutine rippleCoroutine;
+
+    [Header("Debug")]
+    [SerializeField]
+    private bool debugMode = false;
 
     void Awake()
     {
@@ -62,6 +70,16 @@ public class WindManager : MonoBehaviour
         }
 
         blowCoroutine = StartCoroutine(Blow(eventData));
+
+        if (rippleCoroutine != null)
+            StopCoroutine(rippleCoroutine);
+
+        Vector2 uv = new Vector2(
+            eventData.position.x / Screen.width,
+            eventData.position.y / Screen.height
+        );
+
+        rippleCoroutine = StartCoroutine(AnimateRipple(uv, 0.1f));
     }
 
     IEnumerator Blow(PointerEventData eventData)
@@ -107,11 +125,14 @@ public class WindManager : MonoBehaviour
                     * magnitudeNormalized
                     * intensity;
 
-                leaf.GetComponent<Renderer>().material.color = Color.Lerp(
-                    Color.green,
-                    Color.red,
-                    effect
-                );
+                if (debugMode)
+                {
+                    leaf.GetComponent<Renderer>().material.color = Color.Lerp(
+                        Color.green,
+                        Color.red,
+                        effect
+                    );
+                }
 
                 Vector3 forceDirection = direction.normalized * effect * windForce;
                 Vector3 randomVariation = new Vector3(
@@ -133,9 +154,6 @@ public class WindManager : MonoBehaviour
                 Rigidbody leafRigidbody = leaf.GetComponent<Rigidbody>();
                 if (leafRigidbody != null)
                 {
-                    // leafRigidbody.AddForce(forceDirection, ForceMode.Force);
-                    // leafRigidbody.AddTorque(torqueDirection, ForceMode.Force);
-
                     leafRigidbody.AddForce(forceDirection * Time.deltaTime, ForceMode.Impulse);
                     leafRigidbody.AddTorque(torqueDirection * Time.deltaTime, ForceMode.Impulse);
                 }
@@ -149,5 +167,37 @@ public class WindManager : MonoBehaviour
 
         windParticleSystem.gameObject.SetActive(false);
         yield return null;
+    }
+
+    private IEnumerator AnimateRipple(Vector2 center, float maxRadius)
+    {
+        rippleMaterial.SetVector("_Center", new Vector4(center.x, center.y, 0, 0));
+
+        float duration = 0.6f;
+        float elapsed = 0f;
+
+        while (elapsed < duration)
+        {
+            elapsed += Time.deltaTime;
+            float t = elapsed / duration;
+            float smoothT = Mathf.SmoothStep(0f, 1f, t);
+
+            float waveFront = Mathf.Lerp(0f, maxRadius, smoothT);
+            float waveWidth = Mathf.Lerp(0.01f, maxRadius * 0.2f, smoothT);
+
+            float amplitude =
+                t < 0.1f
+                    ? Mathf.Lerp(0f, 0.006f, t / 0.1f)
+                    : Mathf.Lerp(0.006f, 0f, (t - 0.1f) / 0.9f);
+
+            rippleMaterial.SetFloat("_Time2", elapsed * 10f);
+            rippleMaterial.SetFloat("_Strength", amplitude);
+            rippleMaterial.SetFloat("_WaveFront", waveFront);
+            rippleMaterial.SetFloat("_WaveWidth", waveWidth);
+
+            yield return null;
+        }
+
+        rippleMaterial.SetFloat("_Strength", 0f);
     }
 }
