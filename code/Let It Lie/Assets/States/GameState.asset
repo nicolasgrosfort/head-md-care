@@ -12,16 +12,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b12524538e184b1aadedec060134954, type: 3}
   m_Name: GameState
   m_EditorClassIdentifier: Assembly-CSharp::GameState
-  life: 0.5400054
+  life: 0.3384688
   defaultLife: 0.5
   lifeIncrement: 0.0002
   lifeDecrement: -0.001
-  season: 0.2700027
+  season: 0.9028961
   defaultSeason: 0.25
-  time: 0.080010734
+  time: 0.6109558
   defaultTime: 0
   timeFactor: 0.002
-  timeSpeed: 0.2
+  timeSpeed: 0.1999086
   defaultTimeSpeed: 0.2
   maxTimeSpeed: 1
   minTimeSpeed: 0
