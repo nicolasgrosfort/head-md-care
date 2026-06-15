@@ -31,6 +31,20 @@ public class TreeManager : MonoBehaviour
     [SerializeField]
     private Color winterColor = Color.white;
 
+    [Header("Fog")]
+    [SerializeField]
+    private ParticleSystem fogParticle;
+
+    [SerializeField]
+    private float fogTransitionDuration = 5f;
+
+    [SerializeField]
+    private float minFogEmission = 0f;
+
+    [SerializeField]
+    private float maxFogEmission = 30f;
+    private ParticleSystem.EmissionModule fogEmission;
+
     [Header("Flower")]
     [SerializeField]
     private GameObject flowerPrefab;
@@ -73,6 +87,8 @@ public class TreeManager : MonoBehaviour
 
     private void Awake()
     {
+        fogEmission = fogParticle.emission;
+
         foreach (Transform child in GetComponentsInChildren<Transform>())
         {
             if (!child.name.StartsWith(leafPrefix))
@@ -166,6 +182,10 @@ public class TreeManager : MonoBehaviour
 
             StartCoroutine(HumificationRoutine(leaf, Random.Range(0f, 3f)));
         }
+
+        StartCoroutine(
+            FogTransition(fogEmission, minFogEmission, maxFogEmission, fogTransitionDuration)
+        );
     }
 
     private void OnWinterDay(int cycle, int season)
@@ -192,6 +212,10 @@ public class TreeManager : MonoBehaviour
         {
             StartCoroutine(GerminationRoutine(fallenLeaves[i], Random.Range(0f, 5f)));
         }
+
+        StartCoroutine(
+            FogTransition(fogEmission, minFogEmission, maxFogEmission, fogTransitionDuration)
+        );
     }
 
     private void OnSpringDay(int cycle, int season)
@@ -455,6 +479,23 @@ public class TreeManager : MonoBehaviour
                 t
             );
 
+            yield return null;
+        }
+    }
+
+    private IEnumerator FogTransition(
+        ParticleSystem.EmissionModule fogEmission,
+        float startRate,
+        float endRate,
+        float duration
+    )
+    {
+        float elapsed = 0f;
+        while (elapsed < duration)
+        {
+            elapsed += Time.deltaTime;
+            float t = Mathf.Clamp01(elapsed / duration);
+            fogEmission.rateOverTime = Mathf.Lerp(startRate, endRate, t);
             yield return null;
         }
     }
