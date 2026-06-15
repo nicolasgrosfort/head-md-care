@@ -17,10 +17,10 @@ public class AudioManager : MonoBehaviour
 
     [Header("EQ")]
     [SerializeField]
-    private float centerFreq = 6000f;
+    private float centerFreq = 6500f;
 
     [SerializeField]
-    private float octaveRange = 2f;
+    private float octaveRange = 1.5f;
 
     [SerializeField]
     private float minGain = 1f;
