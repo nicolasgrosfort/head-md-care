@@ -214,7 +214,7 @@ public class TreeManager : MonoBehaviour
         }
 
         StartCoroutine(
-            FogTransition(fogEmission, minFogEmission, maxFogEmission, fogTransitionDuration)
+            FogTransition(fogEmission, maxFogEmission, minFogEmission, fogTransitionDuration)
         );
     }
 

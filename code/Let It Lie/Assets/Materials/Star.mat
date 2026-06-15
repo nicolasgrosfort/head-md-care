@@ -7,8 +7,8 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Ripple
-  m_Shader: {fileID: 4800000, guid: 48655edc0895646ebbf272e33d5c7521, type: 3}
+  m_Name: Star
+  m_Shader: {fileID: 10720, guid: 0000000000000000f000000000000000, type: 0}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
@@ -24,20 +24,11 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _MainTex:
-        m_Texture: {fileID: 8600000, guid: 8689ebee788fb471f96e8854504b12b0, type: 2}
+        m_Texture: {fileID: 2800000, guid: 24458972492294fbba4cba572fac451c, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Ints: []
-    m_Floats:
-    - _Frequency: 18
-    - _Radius: 0.3
-    - _RingWidth: 0.06
-    - _Speed: 2
-    - _Strength: 0
-    - _Time2: 6.119094
-    - _WaveFront: 0.1
-    - _WaveWidth: 0.020000001
-    m_Colors:
-    - _Center: {r: 0.36834925, g: 0.4145343, b: 0, a: 0}
+    m_Floats: []
+    m_Colors: []
   m_BuildTextureStacks: []
   m_AllowLocking: 1
