@@ -12,12 +12,17 @@
             "id": "f22e87c5ef441ae6",
             "type": "leaf",
             "state": {
-              "type": "image",
+              "type": "canvas",
               "state": {
-                "file": "assets/images/2026-06-02-raking-up-fallen-leaves.jpeg"
+                "file": "process/explorations/1-stories.canvas",
+                "viewState": {
+                  "x": 4639.829779614304,
+                  "y": 1400.0099376924184,
+                  "zoom": -0.5200597173066359
+                }
               },
-              "icon": "lucide-image",
-              "title": "2026-06-02-raking-up-fallen-leaves"
+              "icon": "lucide-layout-dashboard",
+              "title": "1-stories"
             }
           }
         ]
@@ -230,9 +235,10 @@
   },
   "active": "f22e87c5ef441ae6",
   "lastOpenFiles": [
+    "process/explorations/0-moodboard.canvas",
+    "assets/images/2026-06-02-raking-up-fallen-leaves.jpeg",
     "assets/assets.base",
     "process/explorations/1-stories.canvas",
-    "process/explorations/0-moodboard.canvas",
     "code/Let It Lie/Temp/ADB-Refresh7281096931b164426af09acf4e64ac51",
     "code/Let It Lie/Temp/ADB-Refresh8baaf1e32539d46acb1ee30c0d4b30e6",
     "code/Let It Lie/Temp/ADB-Refreshc9d7d479b6b2b45bcb35c19d724ed779",
@@ -242,7 +248,6 @@
     "code/Let It Lie/Temp/Burst/burst-aot96c15jpa.8su",
     "code/Let It Lie/Temp/Burst/burst-aot5vqfzm8d.9gd",
     "code/Let It Lie/Temp/Burst/burst-aothji77ia2.d1h",
-    "code/Let It Lie/Temp/Burst/burst-aot6bijl3gi.ddl",
     "code/Let It Lie/Assets/Textures/Clic.png",
     "code/Let It Lie/Assets/Textures/Click.png",
     "code/Let It Lie/Assets/Textures/Clic.jpg",
@@ -255,7 +260,6 @@
     "process/journal/2026-06-08-chore-interaction.md",
     "code/Let It Lie/Assets/Textures/Leaves.png",
     "code/Let It Lie/Assets/Textures/Fog.png",
-    "code/Let It Lie/Assets/Textures/ParticleCloudWhite.png",
     "code/Let It Lie/Library/PackageCache/com.unity.probuilder@1f279ab829b7/Samples~/Runtime/Runtime Editing/README.md",
     "code/Let It Lie/Library/PackageCache/com.unity.probuilder@1f279ab829b7/External/KdTree/README.md",
     "code/Let It Lie/Library/PackageCache/com.unity.probuilder@1f279ab829b7/External/KdTree/LICENSE.md",

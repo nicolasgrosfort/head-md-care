@@ -5,9 +5,12 @@
 
 Developed at HEAD – Genève in collaboration with the Geneva Municipal Library, it was created for the exhibition Bonjour, comment ça va ?
 
-## Demonstration
+## Summary
 
-A demo of the game is available online at : [lab.tekh.studio/let-it-lie](https://lab.tekh.studio/let-it-lie/)
+| Object            | Link                                                              |
+| ----------------- | ----------------------------------------------------------------- |
+| **Demonstration** | [lab.tekh.studio/let-it-lie](https://lab.tekh.studio/let-it-lie/) |
+| **Press-kit**     | []()                                                              |
 
 
 # Repository
