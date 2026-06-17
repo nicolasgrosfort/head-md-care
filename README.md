@@ -1,14 +1,21 @@
-# Care
+# Let It Lie
+![Let It Lie](./assets/images/2026-06-17-let-it-lie-cover-1.png)
 
-An interactive project that explores how to tell a tablet-based story about the concept of care in the context of "Cimetière des Rois" in collaboration with the Geneva Municipal Library.
-¨
-# Obsidian
+**Let It Lie** is an interactive tablet-based experience that explores the notion of care as an act of presence. Set within the living ecosystem of the "Cimetière des Rois", the project invites players to question when caring means acting and when it means letting natural cycles unfold on their own. 
 
-The documentation for this repository is built in Obsidian, and you’ll have a better experience opening it with the app.
+Developed at HEAD – Genève in collaboration with the Geneva Municipal Library, it was created for the exhibition Bonjour, comment ça va ?
+
+## Demonstration
+
+A demo of the game is available online at : [lab.tekh.studio/let-it-lie](https://lab.tekh.studio/let-it-lie/)
+
 
 # Repository
-
 Some informations about the repository and how to use it.
+
+## Obsidian
+The documentation for this repository is built in Obsidian, and you’ll have a better experience opening it with the app.
+
 
 ## Structure
 
@@ -35,6 +42,3 @@ Hans, a gardener in a cemetery, performs his daily tending tasks until one day, 
 
 ![Scénario](./assets/images/2026-05-21-scenario.png)
 
-## Demo
-
-A demo of the game is available online at : [lab.tekh.studio/let-it-lie](https://lab.tekh.studio/let-it-lie/)
