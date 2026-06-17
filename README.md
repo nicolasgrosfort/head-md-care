@@ -35,4 +35,6 @@ Hans, a gardener in a cemetery, performs his daily tending tasks until one day, 
 
 ![Scénario](./assets/images/2026-05-21-scenario.png)
 
+## Demo
 
+A demo of the game is available online at : [lab.tekh.studio/let-it-lie](https://lab.tekh.studio/let-it-lie/)
