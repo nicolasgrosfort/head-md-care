@@ -7,10 +7,10 @@ Developed at HEAD – Genève in collaboration with the Geneva Municipal Library
 
 ## Summary
 
-| Object            | Link                                                              |
-| ----------------- | ----------------------------------------------------------------- |
-| **Demonstration** | [lab.tekh.studio/let-it-lie](https://lab.tekh.studio/let-it-lie/) |
-| **Press-kit**     | []()                                                              |
+| Object            | Link                                                                          |
+| ----------------- | ----------------------------------------------------------------------------- |
+| **Demonstration** | [lab.tekh.studio/let-it-lie](https://lab.tekh.studio/let-it-lie/)             |
+| **Press-kit**     | [Press Kit (2026-06-17)](./presskit/2026-06-17-head-mmd1-care-let-it-lie.pdf) |
 
 
 # Repository
