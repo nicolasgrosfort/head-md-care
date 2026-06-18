@@ -9,7 +9,7 @@ Developed at HEAD – Genève in collaboration with the Geneva Municipal Library
 
 ### Presskit
 
-- [PDF presentation](./2026-06-17-head-mmd1-care-let-it-lie.pdf)
+- [PDF presentation](./presskit/2026-06-17-head-mmd1-care-let-it-lie.pdf)
 - [Vidéo presentation (soon)](#)
 - [Onlyne prototype](https://lab.tekh.studio/let-it-lie/)
 
