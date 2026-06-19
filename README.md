@@ -39,7 +39,17 @@ Developed at HEAD – Genève in collaboration with the Geneva Municipal Library
 
 *Important and significant steps that guided the project.*
 
-
+| Folder         | Content                                                                                               |
+| -------------- | ----------------------------------------------------------------------------------------------------- |
+| `bases`        | Obsidian collections                                                                                  |
+| `code`         | An exploration series with Unity                                                                      |
+| `context`      | The various pieces of information useful for situating the context of the project                     |
+| `exploration`  | Contains research and work in progress                                                                |
+| `journal`      | A record of the information, discussions and important milestones that marked the project             |
+| `ressources`   | A collection of projects that align with our project, and that we can use as references               |
+| `robot`        | A space intended for robots which explains how he should behave and what the important information is |
+| `feedbacks`    | *Key feedback received during the process*                                                            |
+| `Observations` | *Interview and observation notes*                                                                     |
 ## About this repository
 
 *Some informations and how to use it.*

@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "process/feedbacks/readme.md",
+                "file": "process/readme.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": true,
@@ -43,7 +43,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "readme.md",
+                "file": "process/observations/2026-05-12-rencontre-avec-verena.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": true,
@@ -58,7 +58,7 @@
                 }
               },
               "icon": "lucide-file",
-              "title": "readme"
+              "title": "2026-05-12-rencontre-avec-verena"
             }
           }
         ]
@@ -118,7 +118,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 530.5
+    "width": 550.5
   },
   "right": {
     "id": "7f0cef7a8c8dae81",
@@ -236,13 +236,26 @@
       "workspaces:Manage workspace layouts": false
     }
   },
-  "active": "a3931beec67bd14c",
+  "active": "bfa8f7163034acb4",
   "lastOpenFiles": [
+    "process/observations/2026-05-12-observation-cimetière-des-rois.md",
+    "process/observations/2026-05-08-interview-janka-jin-jan-sheng.md",
+    "process/observations/2026-05-07-discussion-avec-guillem.md",
+    "process/observations/2026-05-05-rencontre-jardinières.md",
+    "process/observations/2026-04-28-eco-quartier-jonction.md",
+    "process/observations/2026-04-28-cimetière-des-rois.md",
+    "process/observations/2026-04-27-jean-et-bernard-sureaux.md",
+    "readme.md",
+    "process/observations/2026-05-12-rencontre-avec-verena.md",
+    "process/observations/2026-04-27-jean-et-bernard-sureaux.md.tmp.52390.7cd322105ada",
+    "process/readme.md",
+    "process/observations/readme.md",
+    "process/ressources/2026-05-01-ethics-of-care.md",
+    "process/observations",
+    "process/feedbacks/readme.md",
     "process/feedbacks/2026-06-16-presentation-finale.md",
     "process/feedbacks/2026-05-19-douglas-et-andreia.md",
     "process/feedbacks/2026-05-19-cassandre-et-muriel.md",
-    "process/readme.md",
-    "process/feedbacks/readme.md",
     "process/journal/2026-06-17.md",
     "process/feedbacks/2026-06-16-presentation-finale.md.tmp.52390.2a53e4ae4cd5",
     "process/feedbacks",
@@ -255,25 +268,12 @@
     "process/journal/2026-06-04.md",
     "process/journal/2026-06-03.md",
     "process/journal/2026-06-02.md",
-    "process/journal/2026-06-01.md",
-    "process/journal/2026-05-29.md",
-    "process/journal/2026-05-26.md",
-    "process/journal/2026-05-22.md",
-    "process/journal/2026-05-21.md",
-    "process/journal/2026-05-20.md",
-    "process/journal/2026-05-19.md",
-    "process/journal/2026-05-18.md",
-    "process/journal/2026-05-15.md",
-    "process/journal/2026-05-13.md",
-    "process/journal/2026-05-12.md",
     "code/Let It Lie/Blender/untitled.obj",
     "code/Let It Lie/Blender/short-root.fbx",
     "code/Let It Lie/Blender/rootsfbx.fbx",
     "code/Let It Lie/Blender/bone-short-root.fbx",
     "code/Let It Lie/Blender/bone-roots-and-branch.fbx",
     "code/Let It Lie/Blender/Tomb-1.fbx",
-    "code/Let It Lie/Blender/Root.fbx",
-    "code/Let It Lie/Blender/Leaf-group-2fbx.fbx",
     "assets/images/2026-06-17-let-it-lie-cover-1.png",
     "assets/images/2026-06-17-spring-interaction.jpg",
     "assets/images/2026-06-16-screenshot-5.png",
