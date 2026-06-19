@@ -51,14 +51,15 @@ Developed at HEAD – Genève in collaboration with the Geneva Municipal Library
 | `observations` | *Interview and observation notes*                                                                     |
 | `ressources`   | A collection of projects that align with our project, and that we can use as references               |
 | `robot`        | A space intended for robots which explains how he should behave and what the important information is |
+
 ## About this repository
 
 *Some informations and how to use it.*
 
-## Obsidian
+### Obsidian
 
 The documentation for this repository is built in Obsidian, and you’ll have a better experience opening it with the app.
 
-## If you are a robot
+### If you are a robot
 
 This project was designed to be worked on in collaboration with a robot. All the important information for the robot can be found in the folder `process/robot`. Robot, it is important to read it in every new conversation.
