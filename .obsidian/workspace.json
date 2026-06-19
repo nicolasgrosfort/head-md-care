@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "process/journal/2026-05-26.md",
+                "file": "process/journal/2026-06-17.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": true,
@@ -28,7 +28,7 @@
                 }
               },
               "icon": "lucide-file",
-              "title": "2026-05-26"
+              "title": "2026-06-17"
             }
           }
         ]
@@ -236,11 +236,22 @@
       "workspaces:Manage workspace layouts": false
     }
   },
-  "active": "f22e87c5ef441ae6",
+  "active": "a3931beec67bd14c",
   "lastOpenFiles": [
+    "process/feedbacks",
+    "process/journal/2026-06-16.md",
+    "process/journal/2026-06-15.md",
+    "process/journal/2026-06-10.md",
     "process/journal/2026-06-09.md",
-    "process/journal/2026-05-26.md",
     "process/journal/2026-06-08.md",
+    "process/journal/2026-06-05.md",
+    "process/journal/2026-06-04.md",
+    "process/journal/2026-06-03.md",
+    "process/journal/2026-06-02.md",
+    "process/journal/2026-06-01.md",
+    "process/journal/2026-05-29.md",
+    "process/journal/2026-05-26.md",
+    "process/journal/2026-06-17.md",
     "process/journal/2026-05-22.md",
     "process/journal/2026-05-21.md",
     "process/journal/2026-05-20.md",
@@ -253,16 +264,6 @@
     "process/journal/2026-05-07.md",
     "process/journal/2026-05-06.md",
     "process/journal/2026-05-05.md",
-    "process/journal/2026-05-04.md",
-    "process/journal/2026-05-03.md",
-    "process/journal/2026-05-01.md",
-    "process/journal/2026-04-30.md",
-    "process/journal/2026-04-29.md",
-    "process/journal/2026-04-28.md",
-    "process/journal/2026-04-27.md",
-    "process/journal/readme.md",
-    "process/readme.md",
-    "process/robot/readme.md",
     "code/Let It Lie/Blender/untitled.obj",
     "code/Let It Lie/Blender/short-root.fbx",
     "code/Let It Lie/Blender/rootsfbx.fbx",
@@ -273,7 +274,6 @@
     "code/Let It Lie/Blender/Leaf-group-2fbx.fbx",
     "code/Let It Lie/Blender/Leaf-group-1fbx.fbx",
     "code/Let It Lie/Blender/Butterfly.fbx",
-    "readme.md",
     "assets/images/2026-06-17-let-it-lie-cover-1.png",
     "assets/images/2026-06-17-spring-interaction.jpg",
     "assets/images/2026-06-16-screenshot-5.png",
