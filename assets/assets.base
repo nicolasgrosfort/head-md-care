@@ -5,3 +5,8 @@ views:
       and:
         - file.inFolder("assets/images")
     image: file.file
+  - type: table
+    name: Vidéos
+    filters:
+      and:
+        - file.inFolder("assets/videos")

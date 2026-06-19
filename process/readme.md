@@ -1,11 +1,12 @@
 # Process
 
-Contains the important and significant steps that guided and influenced the various choices of the project.
+*Contains the important and significant steps that guided and influenced the various choices of the project.*
 
 ## Structure
 
 | Folder        | Content                                                                                               |
 | ------------- | ----------------------------------------------------------------------------------------------------- |
+| `bases`       | Obsidian collections                                                                                  |
 | `code`        | An exploration series with Unity                                                                      |
 | `context`     | The various pieces of information useful for situating the context of the project                     |
 | `exploration` | Contains research and work in progress                                                                |

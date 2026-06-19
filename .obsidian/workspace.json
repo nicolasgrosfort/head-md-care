@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "readme.md",
+                "file": "process/readme.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": true,
@@ -34,20 +34,31 @@
         ]
       },
       {
-        "id": "b320bac9aca04090",
+        "id": "9e1ea26f133f20c7",
         "type": "tabs",
         "children": [
           {
-            "id": "0e2ec0e64cbcb8fb",
+            "id": "bfa8f7163034acb4",
             "type": "leaf",
             "state": {
-              "type": "bases",
+              "type": "markdown",
               "state": {
-                "file": "assets/assets.base",
-                "viewName": "Images"
+                "file": "readme.md",
+                "mode": "source",
+                "source": false,
+                "backlinks": true,
+                "backlinkOpts": {
+                  "collapseAll": false,
+                  "extraContext": false,
+                  "sortOrder": "alphabetical",
+                  "showSearch": false,
+                  "searchQuery": "",
+                  "backlinkCollapsed": false,
+                  "unlinkedCollapsed": true
+                }
               },
-              "icon": "lucide-layout-grid",
-              "title": "assets"
+              "icon": "lucide-file",
+              "title": "readme"
             }
           }
         ]
@@ -225,11 +236,26 @@
       "workspaces:Manage workspace layouts": false
     }
   },
-  "active": "f22e87c5ef441ae6",
+  "active": "a3931beec67bd14c",
   "lastOpenFiles": [
-    "assets/assets.base",
-    "assets/images/2026-06-17-spring-interaction.jpg",
+    "process/robot/readme.md",
+    "process/readme.md",
+    "code/Let It Lie/Blender/untitled.obj",
+    "code/Let It Lie/Blender/short-root.fbx",
+    "code/Let It Lie/Blender/rootsfbx.fbx",
+    "code/Let It Lie/Blender/bone-short-root.fbx",
+    "code/Let It Lie/Blender/bone-roots-and-branch.fbx",
+    "code/Let It Lie/Blender/Tomb-1.fbx",
+    "code/Let It Lie/Blender/Root.fbx",
+    "code/Let It Lie/Blender/Leaf-group-2fbx.fbx",
+    "code/Let It Lie/Blender/Leaf-group-1fbx.fbx",
+    "code/Let It Lie/Blender/Butterfly.fbx",
     "readme.md",
+    "presskit/readme.md",
+    "assets/images/2026-06-17-let-it-lie-cover-1.png",
+    "code/readme.md",
+    "assets/readme.md.md",
+    "assets/images/2026-06-17-spring-interaction.jpg",
     "assets/images/2026-06-16-screenshot-5.png",
     "assets/images/2026-06-16-screenshot-32.png",
     "assets/images/2026-06-16-screenshot-31.png",
@@ -238,20 +264,9 @@
     "assets/images/2026-06-16-screenshot-28.png",
     "assets/images/2026-06-16-screenshot-27.png",
     "assets/images/2026-06-16-screenshot-26.png",
-    "assets/images/2026-06-16-screenshot-25.png",
-    "assets/videos",
-    "assets/videos/2026-06-02-presentation-intermediaire-2.mov",
-    "assets/videos/2026-06-02-presentation-intermediaire.mov",
-    "assets/videos/2026-06-16-jury.mov",
     "process/explorations/1-stories.canvas",
-    "process/blender/untitled.obj",
-    "process/blender/short-root.fbx",
-    "process/blender/rootsfbx.fbx",
-    "process/blender/bone-short-root.fbx",
-    "process/blender/bone-roots-and-branch.fbx",
     "process/explorations/0-moodboard.canvas",
     "process/journal/2026-06-09.md",
-    "process/readme.md",
     "process/journal/2026-06-08-chore-interaction.md",
     "code/Let It Lie/Library/PackageCache/com.unity.probuilder@1f279ab829b7/Samples~/Runtime/Runtime Editing/README.md",
     "code/Let It Lie/Library/PackageCache/com.unity.probuilder@1f279ab829b7/External/KdTree/README.md",
@@ -270,9 +285,6 @@
     "code/Let It Lie/Library/PackageCache/com.unity.probuilder@1f279ab829b7/Documentation~/workflow-create-bezier.md",
     "code/Let It Lie/Library/PackageCache/com.unity.probuilder@1f279ab829b7/Documentation~/whats-new.md",
     "code/Let It Lie/Library/PackageCache/com.unity.probuilder@1f279ab829b7/Documentation~/vertex-positions.md",
-    "code/Let It Lie/Library/PackageCache/com.unity.probuilder@1f279ab829b7/Documentation~/vertex-colors.md",
-    "code/Let It Lie/Library/PackageCache/com.unity.probuilder@1f279ab829b7/Documentation~/uv_dropdown.md",
-    "code/Let It Lie/Library/PackageCache/com.unity.probuilder@1f279ab829b7/Documentation~/uv-editor.md",
-    "code/Let It Lie/Library/PackageCache/com.unity.probuilder@1f279ab829b7/Documentation~/uv-editor-toolbar.md"
+    "code/Let It Lie/Library/PackageCache/com.unity.probuilder@1f279ab829b7/Documentation~/vertex-colors.md"
   ]
 }
