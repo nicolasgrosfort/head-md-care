@@ -43,7 +43,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "process/observations/2026-05-12-rencontre-avec-verena.md",
+                "file": "readme.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": true,
@@ -58,7 +58,7 @@
                 }
               },
               "icon": "lucide-file",
-              "title": "2026-05-12-rencontre-avec-verena"
+              "title": "readme"
             }
           }
         ]
@@ -236,9 +236,10 @@
       "workspaces:Manage workspace layouts": false
     }
   },
-  "active": "f22e87c5ef441ae6",
+  "active": "bfa8f7163034acb4",
   "lastOpenFiles": [
     "process/observations/2026-05-12-rencontre-avec-verena.md",
+    "process/readme.md",
     "process/observations/2026-05-12-observation-cimetière-des-rois.md",
     "process/observations/2026-05-08-interview-janka-jin-jan-sheng.md",
     "process/observations/2026-05-07-discussion-avec-guillem.md",
@@ -248,7 +249,6 @@
     "process/observations/2026-04-27-jean-et-bernard-sureaux.md",
     "readme.md",
     "process/observations/2026-04-27-jean-et-bernard-sureaux.md.tmp.52390.7cd322105ada",
-    "process/readme.md",
     "process/observations/readme.md",
     "process/ressources/2026-05-01-ethics-of-care.md",
     "process/observations",

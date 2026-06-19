@@ -10,11 +10,11 @@
 | `code`         | An exploration series with Unity                                                                      |
 | `context`      | The various pieces of information useful for situating the context of the project                     |
 | `exploration`  | Contains research and work in progress                                                                |
+| `feedbacks`    | *Key feedback received during the process*                                                            |
 | `journal`      | A record of the information, discussions and important milestones that marked the project             |
+| `observations` | *Interview and observation notes*                                                                     |
 | `ressources`   | A collection of projects that align with our project, and that we can use as references               |
 | `robot`        | A space intended for robots which explains how he should behave and what the important information is |
-| `feedbacks`    | *Key feedback received during the process*                                                            |
-| `Observations` | *Interview and observation notes*                                                                     |
 
 # Journal
 
