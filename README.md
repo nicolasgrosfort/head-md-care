@@ -1,4 +1,5 @@
 # Let It Lie
+
 ![Let It Lie](./assets/images/2026-06-17-let-it-lie-cover-1.png)
 
 **Let It Lie** is an interactive tablet-based experience that explores the notion of care as an act of presence. Set within the living ecosystem of the "Cimetière des Rois", the project invites players to question when caring means acting and when it means letting natural cycles unfold on their own. 
@@ -6,6 +7,19 @@
 Developed at HEAD – Genève in collaboration with the Geneva Municipal Library, it was created for the exhibition "Bonjour, comment ça va ?"
 
 ## Summary
+
+### Assets
+
+*Images and videos of the project and visual references.* 
+
+#### Interesting sample
+
+- [Isle of death](2026-05-06-isle-of-death-1.jpg)
+- [Sketch overview](2026-05-19-overview.png)
+- [Color palette](2026-06-01-color-ground.png)
+- [Perenial plants](2026-06-02-perenial-plants.jpeg)
+- [Game screenshot](2026-06-16-screenshot-5.png)
+- [Game interaction](2026-06-17-spring-interaction.jpg)
 
 ### Presskit
 

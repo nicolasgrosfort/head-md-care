@@ -11,6 +11,36 @@
             "id": "f22e87c5ef441ae6",
             "type": "leaf",
             "state": {
+              "type": "markdown",
+              "state": {
+                "file": "readme.md",
+                "mode": "source",
+                "source": false,
+                "backlinks": true,
+                "backlinkOpts": {
+                  "collapseAll": false,
+                  "extraContext": false,
+                  "sortOrder": "alphabetical",
+                  "showSearch": false,
+                  "searchQuery": "",
+                  "backlinkCollapsed": false,
+                  "unlinkedCollapsed": true
+                }
+              },
+              "icon": "lucide-file",
+              "title": "readme"
+            }
+          }
+        ]
+      },
+      {
+        "id": "b320bac9aca04090",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "0e2ec0e64cbcb8fb",
+            "type": "leaf",
+            "state": {
               "type": "bases",
               "state": {
                 "file": "assets/assets.base",
@@ -195,8 +225,12 @@
       "workspaces:Manage workspace layouts": false
     }
   },
-  "active": "a3931beec67bd14c",
+  "active": "f22e87c5ef441ae6",
   "lastOpenFiles": [
+    "assets/assets.base",
+    "assets/images/2026-06-17-spring-interaction.jpg",
+    "readme.md",
+    "assets/images/2026-06-16-screenshot-5.png",
     "assets/images/2026-06-16-screenshot-32.png",
     "assets/images/2026-06-16-screenshot-31.png",
     "assets/images/2026-06-16-screenshot-30.png",
@@ -205,10 +239,6 @@
     "assets/images/2026-06-16-screenshot-27.png",
     "assets/images/2026-06-16-screenshot-26.png",
     "assets/images/2026-06-16-screenshot-25.png",
-    "assets/images/2026-06-16-screenshot-24.png",
-    "assets/images/2026-06-16-screenshot-23.png",
-    "assets/images/2026-06-16-screenshot-22.png",
-    "assets/assets.base",
     "assets/videos",
     "assets/videos/2026-06-02-presentation-intermediaire-2.mov",
     "assets/videos/2026-06-02-presentation-intermediaire.mov",
@@ -243,7 +273,6 @@
     "code/Let It Lie/Library/PackageCache/com.unity.probuilder@1f279ab829b7/Documentation~/vertex-colors.md",
     "code/Let It Lie/Library/PackageCache/com.unity.probuilder@1f279ab829b7/Documentation~/uv_dropdown.md",
     "code/Let It Lie/Library/PackageCache/com.unity.probuilder@1f279ab829b7/Documentation~/uv-editor.md",
-    "code/Let It Lie/Library/PackageCache/com.unity.probuilder@1f279ab829b7/Documentation~/uv-editor-toolbar.md",
-    "code/Let It Lie/Library/PackageCache/com.unity.probuilder@1f279ab829b7/Documentation~/tools.md"
+    "code/Let It Lie/Library/PackageCache/com.unity.probuilder@1f279ab829b7/Documentation~/uv-editor-toolbar.md"
   ]
 }
