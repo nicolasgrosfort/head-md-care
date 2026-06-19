@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "process/journal/2026-06-17.md",
+                "file": "process/feedbacks/readme.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": true,
@@ -28,7 +28,7 @@
                 }
               },
               "icon": "lucide-file",
-              "title": "2026-06-17"
+              "title": "readme"
             }
           }
         ]
@@ -238,6 +238,13 @@
   },
   "active": "a3931beec67bd14c",
   "lastOpenFiles": [
+    "process/feedbacks/2026-06-16-presentation-finale.md",
+    "process/feedbacks/2026-05-19-douglas-et-andreia.md",
+    "process/feedbacks/2026-05-19-cassandre-et-muriel.md",
+    "process/readme.md",
+    "process/feedbacks/readme.md",
+    "process/journal/2026-06-17.md",
+    "process/feedbacks/2026-06-16-presentation-finale.md.tmp.52390.2a53e4ae4cd5",
     "process/feedbacks",
     "process/journal/2026-06-16.md",
     "process/journal/2026-06-15.md",
@@ -251,7 +258,6 @@
     "process/journal/2026-06-01.md",
     "process/journal/2026-05-29.md",
     "process/journal/2026-05-26.md",
-    "process/journal/2026-06-17.md",
     "process/journal/2026-05-22.md",
     "process/journal/2026-05-21.md",
     "process/journal/2026-05-20.md",
@@ -260,10 +266,6 @@
     "process/journal/2026-05-15.md",
     "process/journal/2026-05-13.md",
     "process/journal/2026-05-12.md",
-    "process/journal/2026-05-08.md",
-    "process/journal/2026-05-07.md",
-    "process/journal/2026-05-06.md",
-    "process/journal/2026-05-05.md",
     "code/Let It Lie/Blender/untitled.obj",
     "code/Let It Lie/Blender/short-root.fbx",
     "code/Let It Lie/Blender/rootsfbx.fbx",
@@ -272,8 +274,6 @@
     "code/Let It Lie/Blender/Tomb-1.fbx",
     "code/Let It Lie/Blender/Root.fbx",
     "code/Let It Lie/Blender/Leaf-group-2fbx.fbx",
-    "code/Let It Lie/Blender/Leaf-group-1fbx.fbx",
-    "code/Let It Lie/Blender/Butterfly.fbx",
     "assets/images/2026-06-17-let-it-lie-cover-1.png",
     "assets/images/2026-06-17-spring-interaction.jpg",
     "assets/images/2026-06-16-screenshot-5.png",

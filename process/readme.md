@@ -13,6 +13,7 @@
 | `journal`     | A record of the information, discussions and important milestones that marked the project             |
 | `ressources`  | A collection of projects that align with our project, and that we can use as references               |
 | `robot`       | A space intended for robots which explains how he should behave and what the important information is |
+| `feedbacks`   | *Key feedback received during the process*                                                            |
 
 # Journal
 
