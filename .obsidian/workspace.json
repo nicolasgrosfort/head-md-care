@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "process/readme.md",
+                "file": "process/journal/2026-05-26.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": true,
@@ -28,7 +28,7 @@
                 }
               },
               "icon": "lucide-file",
-              "title": "readme"
+              "title": "2026-05-26"
             }
           }
         ]
@@ -236,10 +236,33 @@
       "workspaces:Manage workspace layouts": false
     }
   },
-  "active": "a3931beec67bd14c",
+  "active": "f22e87c5ef441ae6",
   "lastOpenFiles": [
-    "process/robot/readme.md",
+    "process/journal/2026-06-09.md",
+    "process/journal/2026-05-26.md",
+    "process/journal/2026-06-08.md",
+    "process/journal/2026-05-22.md",
+    "process/journal/2026-05-21.md",
+    "process/journal/2026-05-20.md",
+    "process/journal/2026-05-19.md",
+    "process/journal/2026-05-18.md",
+    "process/journal/2026-05-15.md",
+    "process/journal/2026-05-13.md",
+    "process/journal/2026-05-12.md",
+    "process/journal/2026-05-08.md",
+    "process/journal/2026-05-07.md",
+    "process/journal/2026-05-06.md",
+    "process/journal/2026-05-05.md",
+    "process/journal/2026-05-04.md",
+    "process/journal/2026-05-03.md",
+    "process/journal/2026-05-01.md",
+    "process/journal/2026-04-30.md",
+    "process/journal/2026-04-29.md",
+    "process/journal/2026-04-28.md",
+    "process/journal/2026-04-27.md",
+    "process/journal/readme.md",
     "process/readme.md",
+    "process/robot/readme.md",
     "code/Let It Lie/Blender/untitled.obj",
     "code/Let It Lie/Blender/short-root.fbx",
     "code/Let It Lie/Blender/rootsfbx.fbx",
@@ -251,10 +274,7 @@
     "code/Let It Lie/Blender/Leaf-group-1fbx.fbx",
     "code/Let It Lie/Blender/Butterfly.fbx",
     "readme.md",
-    "presskit/readme.md",
     "assets/images/2026-06-17-let-it-lie-cover-1.png",
-    "code/readme.md",
-    "assets/readme.md.md",
     "assets/images/2026-06-17-spring-interaction.jpg",
     "assets/images/2026-06-16-screenshot-5.png",
     "assets/images/2026-06-16-screenshot-32.png",
@@ -265,26 +285,6 @@
     "assets/images/2026-06-16-screenshot-27.png",
     "assets/images/2026-06-16-screenshot-26.png",
     "process/explorations/1-stories.canvas",
-    "process/explorations/0-moodboard.canvas",
-    "process/journal/2026-06-09.md",
-    "process/journal/2026-06-08-chore-interaction.md",
-    "code/Let It Lie/Library/PackageCache/com.unity.probuilder@1f279ab829b7/Samples~/Runtime/Runtime Editing/README.md",
-    "code/Let It Lie/Library/PackageCache/com.unity.probuilder@1f279ab829b7/External/KdTree/README.md",
-    "code/Let It Lie/Library/PackageCache/com.unity.probuilder@1f279ab829b7/External/KdTree/LICENSE.md",
-    "code/Let It Lie/Library/PackageCache/com.unity.probuilder@1f279ab829b7/Documentation~/workflow-walkthroughs.md",
-    "code/Let It Lie/Library/PackageCache/com.unity.probuilder@1f279ab829b7/Documentation~/workflow-vertexcolors.md",
-    "code/Let It Lie/Library/PackageCache/com.unity.probuilder@1f279ab829b7/Documentation~/workflow-uvs.md",
-    "code/Let It Lie/Library/PackageCache/com.unity.probuilder@1f279ab829b7/Documentation~/workflow-texture-mapping.md",
-    "code/Let It Lie/Library/PackageCache/com.unity.probuilder@1f279ab829b7/Documentation~/workflow-materials.md",
-    "code/Let It Lie/Library/PackageCache/com.unity.probuilder@1f279ab829b7/Documentation~/workflow-exporting.md",
-    "code/Let It Lie/Library/PackageCache/com.unity.probuilder@1f279ab829b7/Documentation~/workflow-edit.md",
-    "code/Let It Lie/Library/PackageCache/com.unity.probuilder@1f279ab829b7/Documentation~/workflow-edit-tips.md",
-    "code/Let It Lie/Library/PackageCache/com.unity.probuilder@1f279ab829b7/Documentation~/workflow-edit-tasks.md",
-    "code/Let It Lie/Library/PackageCache/com.unity.probuilder@1f279ab829b7/Documentation~/workflow-edit-smoothing.md",
-    "code/Let It Lie/Library/PackageCache/com.unity.probuilder@1f279ab829b7/Documentation~/workflow-create.md",
-    "code/Let It Lie/Library/PackageCache/com.unity.probuilder@1f279ab829b7/Documentation~/workflow-create-bezier.md",
-    "code/Let It Lie/Library/PackageCache/com.unity.probuilder@1f279ab829b7/Documentation~/whats-new.md",
-    "code/Let It Lie/Library/PackageCache/com.unity.probuilder@1f279ab829b7/Documentation~/vertex-positions.md",
-    "code/Let It Lie/Library/PackageCache/com.unity.probuilder@1f279ab829b7/Documentation~/vertex-colors.md"
+    "process/explorations/0-moodboard.canvas"
   ]
 }

@@ -4,6 +4,7 @@ views:
     filters:
       and:
         - file.inFolder("process/journal")
+        - file.name != "readme"
     order:
       - file.name
       - date
