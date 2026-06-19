@@ -6,56 +6,18 @@
       {
         "id": "566a7a44ed22e14a",
         "type": "tabs",
-        "dimension": 86.26373626373626,
         "children": [
           {
             "id": "f22e87c5ef441ae6",
             "type": "leaf",
             "state": {
-              "type": "canvas",
+              "type": "bases",
               "state": {
-                "file": "process/explorations/1-stories.canvas",
-                "viewState": {
-                  "x": 4639.829779614304,
-                  "y": 1400.0099376924184,
-                  "zoom": -0.5200597173066359
-                }
+                "file": "assets/assets.base",
+                "viewName": "Images"
               },
-              "icon": "lucide-layout-dashboard",
-              "title": "1-stories"
-            }
-          }
-        ]
-      },
-      {
-        "id": "317cb80d82fef5e9",
-        "type": "tabs",
-        "dimension": 13.736263736263735,
-        "children": [
-          {
-            "id": "9c06f3d42f4c113d",
-            "type": "leaf",
-            "pinned": true,
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "process/readme.md",
-                "mode": "source",
-                "source": false,
-                "backlinks": true,
-                "backlinkOpts": {
-                  "collapseAll": false,
-                  "extraContext": false,
-                  "sortOrder": "alphabetical",
-                  "showSearch": false,
-                  "searchQuery": "",
-                  "backlinkCollapsed": false,
-                  "unlinkedCollapsed": true
-                }
-              },
-              "pinned": true,
-              "icon": "lucide-file",
-              "title": "readme"
+              "icon": "lucide-layout-grid",
+              "title": "assets"
             }
           }
         ]
@@ -115,7 +77,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 298.5
+    "width": 530.5
   },
   "right": {
     "id": "7f0cef7a8c8dae81",
@@ -233,34 +195,34 @@
       "workspaces:Manage workspace layouts": false
     }
   },
-  "active": "f22e87c5ef441ae6",
+  "active": "a3931beec67bd14c",
   "lastOpenFiles": [
+    "assets/images/2026-06-16-screenshot-32.png",
+    "assets/images/2026-06-16-screenshot-31.png",
+    "assets/images/2026-06-16-screenshot-30.png",
+    "assets/images/2026-06-16-screenshot-29.png",
+    "assets/images/2026-06-16-screenshot-28.png",
+    "assets/images/2026-06-16-screenshot-27.png",
+    "assets/images/2026-06-16-screenshot-26.png",
+    "assets/images/2026-06-16-screenshot-25.png",
+    "assets/images/2026-06-16-screenshot-24.png",
+    "assets/images/2026-06-16-screenshot-23.png",
+    "assets/images/2026-06-16-screenshot-22.png",
+    "assets/assets.base",
+    "assets/videos",
+    "assets/videos/2026-06-02-presentation-intermediaire-2.mov",
+    "assets/videos/2026-06-02-presentation-intermediaire.mov",
+    "assets/videos/2026-06-16-jury.mov",
+    "process/explorations/1-stories.canvas",
     "process/blender/untitled.obj",
     "process/blender/short-root.fbx",
     "process/blender/rootsfbx.fbx",
     "process/blender/bone-short-root.fbx",
     "process/blender/bone-roots-and-branch.fbx",
-    "process/blender/Tomb-1.fbx",
-    "process/blender/Root.fbx",
-    "process/blender/Leaf-group-2fbx.fbx",
-    "process/blender/Leaf-group-1fbx.fbx",
-    "process/blender/Butterfly.fbx",
-    "process/blender/2026-6-11-worm-and-bone.fbx",
     "process/explorations/0-moodboard.canvas",
-    "assets/images/2026-06-02-raking-up-fallen-leaves.jpeg",
-    "process/explorations/1-stories.canvas",
-    "code/Let It Lie/Assets/Textures/Clic.png",
-    "code/Let It Lie/Assets/Textures/Click.png",
-    "code/Let It Lie/Assets/Textures/Clic.jpg",
-    "code/Let It Lie/Assets/Textures/Unknown-2.jpg",
     "process/journal/2026-06-09.md",
-    "process/code/unity/2026-06-02-transparency/Assets/Tomb-textures/mossy_rock_disp_4k.png",
-    "process/code/unity/2026-06-02-transparency/Assets/Tomb-textures/mossy_rock_diff_4k.jpg",
-    "process/code/unity/2026-06-02-transparency/Assets/Tomb-textures/mossy_rock_diff_4k 1.jpg",
     "process/readme.md",
     "process/journal/2026-06-08-chore-interaction.md",
-    "code/Let It Lie/Assets/Textures/Leaves.png",
-    "code/Let It Lie/Assets/Textures/Fog.png",
     "code/Let It Lie/Library/PackageCache/com.unity.probuilder@1f279ab829b7/Samples~/Runtime/Runtime Editing/README.md",
     "code/Let It Lie/Library/PackageCache/com.unity.probuilder@1f279ab829b7/External/KdTree/README.md",
     "code/Let It Lie/Library/PackageCache/com.unity.probuilder@1f279ab829b7/External/KdTree/LICENSE.md",
